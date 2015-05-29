@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PostsController@index');
+Route::get('/', 'HomeController@index');
 
 Route::get('/post/create', 'PostsController@create');
 
