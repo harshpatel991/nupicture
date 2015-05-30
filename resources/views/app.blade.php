@@ -46,6 +46,12 @@
 							</ul>
 						</li>
 					@endif
+
+					<li>
+						<form action="{{ url('/post/create') }}" class="display-inline">
+							<button type="submit" class="btn btn-warning navbar-btn">Post</button>
+						</form>
+					</li>
 				</ul>
 			</div>
 		</div>

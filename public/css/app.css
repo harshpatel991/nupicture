@@ -6606,5 +6606,18 @@ a.list-group-item-danger.active:focus {
 .popover {
   color: #555555;
 }
+.display-inline {
+  display: inline;
+}
+.home-thumbnail-wrapper {
+  padding-top: 25px;
+  height: 350px;
+}
+.home-thumbnail {
+  display: table;
+  width: 100%;
+  background-position: center center;
+  height: 100%;
+}
 
 /*# sourceMappingURL=app.css.map */

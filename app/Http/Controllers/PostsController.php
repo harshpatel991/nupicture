@@ -8,16 +8,6 @@ use Illuminate\Http\Request;
 class PostsController extends Controller {
 
 	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		return view('post.index');
-	}
-
-	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
