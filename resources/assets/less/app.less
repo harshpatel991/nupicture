@@ -5,8 +5,8 @@
 }
 
 .home-thumbnail-wrapper {
-  margin-top: 25px;
-  background-color: #000000;
+  margin-bottom: 10px;
+  background-color: #1f1f1f;
 
   &.lg {
     height:350px;
@@ -20,6 +20,8 @@
     height: 250px;
   }
 
+  position: relative;
+
 }
 
 .home-thumbnail {
@@ -32,14 +34,20 @@
 
   filter: contrast(1.4) brightness(0.9) sepia(0.05);
   -webkit-filter: contrast(1.4) brightness(0.9) sepia(0.05);
+
+  transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  -webkit-transition: opacity .25s ease;
 }
 
 .home-thumbnail:hover {
-  opacity: .5;
-  filter: alpha(opacity=50); /* For IE8 and earlier */
+ opacity: .55;
+ filter: alpha(opacity=55); /* For IE8 and earlier */
 }
 
-.home-thumbnail-content {
+.home-thumbnail-title {
+  z-index: 1;
+
   opacity: 1;
   background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 32%, rgba(0,0,0,0.65) 98%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(32%,rgba(0,0,0,0)), color-stop(98%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
@@ -50,9 +58,9 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
 
   font-family: 'Roboto Slab', serif;
-  font-size: 1.3em;
+  font-size: 1.4em;
   line-height: 110%;
-  text-shadow: 1px 1px #5d5d5d;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
   color: #fff;
 
   width:100%;
@@ -60,6 +68,33 @@
   bottom: 0;
 
   padding-top: 30px;
-  padding-left: 5px;
-  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+
+  .home-thumbnail-info {
+    font-size: .6em;
+  }
+}
+
+.home-thumbnail-title:hover + .home-thumbnail{
+  opacity: .55;
+  filter: alpha(opacity=55); /* For IE8 and earlier */
+}
+
+hr {
+  margin-bottom: 0px;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.categories {
+  font-weight: 700;
+  font-color: @text-color;
+}
+
+.home-column-padding {
+  padding-left:5px;
+  padding-right: 5px;
 }

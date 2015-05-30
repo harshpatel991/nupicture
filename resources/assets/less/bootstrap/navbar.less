@@ -164,9 +164,15 @@
 .navbar-brand {
   float: left;
   padding: @navbar-padding-vertical @navbar-padding-horizontal;
-  font-size: @font-size-large;
+  font-size: 55px;
+  font-weight: 700;
   line-height: @line-height-computed;
   height: @navbar-height;
+
+//  letter-spacing: -1px;
+
+  font-family: 'Roboto Slab', serif;
+
 
   &:hover,
   &:focus {
@@ -393,8 +399,10 @@
 
 // Default navbar
 .navbar-default {
-  background-color: @navbar-default-bg;
-  border-color: @navbar-default-border;
+//  background-color: @navbar-default-bg;
+//  border-color: @navbar-default-border;
+
+  padding-top:20px;
 
   .navbar-brand {
     color: @navbar-default-brand-color;

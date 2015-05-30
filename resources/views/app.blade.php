@@ -25,46 +25,67 @@
 		<div class="container-fluid">
 			<div class="row">
 
-				<div class="col-sm-offset-2 col-sm-8">
+				<div class="col-sm-offset-1 col-sm-10">
 
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="/">Laravel</a>
-			</div>
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle Navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="/">NU PICTURE</a>
+					</div>
 
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">Login</a></li>
-						<li><a href="{{ url('/auth/register') }}">Register</a></li>
-					@else
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							@if (Auth::guest())
+								<li><a href="{{ url('/auth/login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+								<li><a href="{{ url('/auth/register') }}"><span class="glyphicon glyphicon-edit"></span> Register</a></li>
+							@else
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+									</ul>
+								</li>
+							@endif
+
+							<li>
+								<form action="{{ url('/post/create') }}" class="display-inline">
+									<button type="submit" class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
+								</form>
+							</li>
+						</ul>
+
+
+						<div class="clear-both">
+							<ul class="nav navbar-nav">
+								<li><a class="categories" href="">ART</a></li>
+								<li><a class="categories" href="">CUTE</a></li>
+								<li><a class="categories" href="">FUNNY</a></li>
+								<li><a class="categories" href="">INTERESTING</a></li>
+								<li><a class="categories" href="">PHOTOGRAPHY</a></li>
+								<li><a class="categories" href="">WOAH</a></li>
+
 							</ul>
-						</li>
-					@endif
+						</div>
 
-					<li>
-						<form action="{{ url('/post/create') }}" class="display-inline">
-							<button type="submit" class="btn btn-warning navbar-btn">Post</button>
-						</form>
-					</li>
-				</ul>
-			</div>
 
-			</div>
+					</div>
+
+
+
+
+					<hr class="clear-both">
+				</div>
 			</div>
 
 
 		</div>
 	</nav>
+
+
 
 
 	@yield('content')
