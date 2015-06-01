@@ -37,33 +37,9 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$posts = Post::all();
-		$posts = $posts->toArray();
-
-		for($i = 0; $i < count($posts); $i++) {
-			$posts[$i] = array_add($posts[$i], 'thumbnail-class', self::determineThumnailBucket('upload/'.$posts[$i]['content']));
-		}
-//		dd($posts);
 		return view('home', compact('posts'));
 	}
 
-	private static function determineThumnailBucket($file) {
-		list($width, $height, $type, $attr) = getimagesize($file);
-
-		$ratio = $height/$width;
-
-		if ($ratio <= 1.2) //it's a square shape
-		{
-			return 'sm';
-		}
-		else if($ratio < 1.4)
-		{
-			return 'md';
-		}
-		else
-		{
-			return 'lg';
-		}
-	}
 
 
 

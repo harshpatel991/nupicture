@@ -1,9 +1,13 @@
 <?php namespace App\Http\Controllers;
 
+use App\Post;
+use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class PostsController extends Controller {
 
@@ -33,9 +37,14 @@ class PostsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($post)
 	{
-		return view('post.show');
+		$postedBy = User::find($post->user_id);
+
+		$relatedPosts = Post::orderByRaw("RAND()")->get();
+		$popularPosts = Post::orderBy('total_views', 'desc')->limit(5)->get();
+
+		return view('post.post', compact('post', 'postedBy', 'relatedPosts', 'popularPosts'));
 	}
 
 
