@@ -14,13 +14,15 @@
 Route::get('/', 'HomeController@index');
 
 Route::get('/post/create', 'PostsController@create');
-
 Route::get('/post/{post_slug}', 'PostsController@show');
-
 Route::bind('post_slug', function($value, $route) {
 	return App\Post::whereSlug($value)->first();
 });
 
+Route::get('/user/{user_name}', 'UsersController@profile');
+Route::bind('user_name', function($value, $route) {
+	return App\User::where('username', '=', $value)->firstOrFail();
+});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
