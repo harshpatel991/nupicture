@@ -1,6 +1,11 @@
 <?php namespace App\Http\Controllers;
 
+use Input;
+use Redirect;
+
 use App\Post;
+use App\Notification;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller {
 
@@ -41,6 +46,23 @@ class HomeController extends Controller {
 	}
 
 
+	public function getBetaSignUp()
+	{
+		$cashPerPoint = Post::$cashPerPoint;
+		$postNames = Post::$postNames;
+		$basePoints = Post::$basePoints;
+		$perViewPoints = Post::$perViewPoints;
+		return view('betaSignUp', compact('basePoints', 'perViewPoints', 'postNames', 'cashPerPoint'));
+	}
 
+
+	public function postBetaSignUp(Request $request) {
+		$this->validate($request, [
+			'email' => 'required|unique:notifications|max:254|email'
+		]);
+
+		Notification::create($request->all());
+		return Redirect::route('sign-up-beta')->with('message', 'You\'re all set! We\'ll send you an email when you can register.');
+	}
 
 }

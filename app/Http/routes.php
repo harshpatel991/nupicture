@@ -13,6 +13,12 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('/sign-up-beta',
+	['as' => 'sign-up-beta', 'uses' => 'HomeController@getBetaSignUp']);
+
+Route::post('/sign-up-beta',
+	['as' => 'sign-up-beta-post', 'uses' => 'HomeController@postBetaSignUp']);
+
 Route::get('/post/create', 'PostsController@create');
 Route::get('/post/{post_slug}', 'PostsController@show');
 Route::bind('post_slug', function($value, $route) {

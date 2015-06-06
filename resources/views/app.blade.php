@@ -56,6 +56,12 @@
 								<form action="{{ url('/post/create') }}" class="display-inline">
 									<button type="submit" class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
 								</form>
+
+
+								<form action="{{ url('/sign-up-beta') }}" class="display-inline">
+									<button href="/sign-up-beta" class="btn btn-primary navbar-btn">Learn More & Sign Up</button>
+								</form>
+
 							</li>
 						</ul>
 

@@ -6,6 +6,10 @@ class Post extends Model {
 
     public $thumbnailClass = '';
 
+    public static $cashPerPoint = .0025;
+    public static $postNames = ['Image', 'Short Text', 'List', 'Article'];
+    public static $basePoints = [40, 40, 200, 400];
+    public static $perViewPoints = [1, 1, 2, 3];
 
     public function determineThumnailBucket() {
         list($width, $height, $type, $attr) = getimagesize('upload/'.$this->content);
