@@ -6,7 +6,7 @@
 
 .home-thumbnail-wrapper {
   margin-bottom: 10px;
-  background-color: #1f1f1f;
+  background-color: #2d87ba;
 
   &.lg {
     height:350px;
@@ -39,13 +39,8 @@
   -webkit-transition: opacity .25s ease;
 }
 
-.home-thumbnail:hover {
- opacity: .55;
- filter: alpha(opacity=55); /* For IE8 and earlier */
-}
-
 .home-thumbnail-title {
-  z-index: 1;
+  z-index: 2;
 
   opacity: 1;
   background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 32%, rgba(0,0,0,0.65) 98%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
@@ -76,11 +71,27 @@
   }
 }
 
-.home-thumbnail-title:hover + .home-thumbnail{ //  On hover of title, activate home thumbnail opacity
-  opacity: .55;
-  filter: alpha(opacity=55); /* For IE8 and earlier */
+.home-thumbnail-title:hover ~ .thumbnail-hover-background{ //  On hover of title, activate home thumbnail opacity
+  background-color: rgba(.5, .5, .5, .5);
 }
 
+.thumbnail-hover-background {
+  position: absolute;
+  bottom: 0;
+
+  z-index: 1;
+  transition: background-color .25s ease;
+  -moz-transition: background-color .25s ease;
+  -webkit-transition: background-color .25s ease;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(.5, .5, .5, 0);
+}
+
+.thumbnail-hover-background:hover {
+  background-color: rgba(.5, .5, .5, .5);
+}
 
 .clear-both {
   clear: both;

@@ -6642,7 +6642,7 @@ a.list-group-item-danger.active:focus {
 }
 .home-thumbnail-wrapper {
   margin-bottom: 10px;
-  background-color: #1f1f1f;
+  background-color: #2d87ba;
   position: relative;
 }
 .home-thumbnail-wrapper.lg {
@@ -6666,13 +6666,8 @@ a.list-group-item-danger.active:focus {
   -moz-transition: opacity .25s ease;
   -webkit-transition: opacity .25s ease;
 }
-.home-thumbnail:hover {
-  opacity: .55;
-  filter: alpha(opacity=55);
-  /* For IE8 and earlier */
-}
 .home-thumbnail-title {
-  z-index: 1;
+  z-index: 2;
   opacity: 1;
   /* FF3.6+ */
   /* Chrome,Safari4+ */
@@ -6699,10 +6694,22 @@ a.list-group-item-danger.active:focus {
 .home-thumbnail-title .home-thumbnail-info {
   font-size: .6em;
 }
-.home-thumbnail-title:hover + .home-thumbnail {
-  opacity: .55;
-  filter: alpha(opacity=55);
-  /* For IE8 and earlier */
+.home-thumbnail-title:hover ~ .thumbnail-hover-background {
+  background-color: rgba(1, 1, 1, 0.5);
+}
+.thumbnail-hover-background {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  transition: background-color 0.25s ease;
+  -moz-transition: background-color 0.25s ease;
+  -webkit-transition: background-color 0.25s ease;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 1, 1, 0);
+}
+.thumbnail-hover-background:hover {
+  background-color: rgba(1, 1, 1, 0.5);
 }
 .clear-both {
   clear: both;
