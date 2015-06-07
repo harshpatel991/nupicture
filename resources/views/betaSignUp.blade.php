@@ -17,14 +17,18 @@
 				<p>You and your friends probably already share and view content from the internet through email, Facebook, and Twitter. Now you can get paid for it.</p>
 
 				<h3>How it Works</h3>
-				<p>When you submit a post, it will be manually approved by a human. Most posts will be approved.</p>
-				<p>Common reasons for denial include: </p>
+				<p>Once logged in, you will see a button in the top right to post content. Submit content such as images, lists, and articles. We are looking for funny, interesting, and cool content. Check out the <a href="/">frontpage</a> for inspiration.</p>
+
+				<p>When you submit a post, it will be manually reviewed by a human.</p>
+				<p>Reasons for denial include</p>
 
 				<ul>
 					<li><p>Posting content that has already been posted</p></li>
-					<li><p>Post with severe grammatical errors</p></li>
+					<li><p>Posting with severe grammatical errors</p></li>
 					<li><p>Spam/inappropriate content</p></li>
 				</ul>
+
+				<p>As long as your post doesn't fall into the above categories, your post will be approved in less than 12 hours.</p>
 
 				<h3>Gaining Points</h3>
 				<p>You will earn points for each post you make and additionally for amount of unique views that post receives.</p>
@@ -32,15 +36,15 @@
 				<table class="table table-striped">
 					<tr>
 						<th>Post</th>
-						<th>When Posting</th>
+						<th>For Each Posting</th>
 						<th>Per View</th>
 					</tr>
 
 					@for($i = 0; $i < count($basePoints); $i++)
 					<tr>
-						<td>{{$postNames[$i]}}</td>
-						<td>{{$basePoints[$i]}}</td>
-						<td>{{$perViewPoints[$i]}}</td>
+						<td>{{$postNames[$i]}} points</td>
+						<td>{{$basePoints[$i]}} points</td>
+						<td>{{$perViewPoints[$i]}} points</td>
 					</tr>
 					@endfor
 				</table>
@@ -56,7 +60,7 @@
 
 					<tr>
 						<td>1 Point</td>
-						<td>{{$cashPerPoint}}</td>
+						<td>${{$cashPerPoint}}</td>
 
 					</tr>
 				</table>
@@ -88,8 +92,8 @@
 
 				{!! Form::close() !!}
 
-				<p class="small white-font">The only email you will receive from is when registrations begin.
-				Your email address will not be given to anyone else.</p>
+				<p class="small white-font">The only email you will receive from us is when registrations begin.
+				Your email address will not be shared with anyone else.</p>
 
 			</div>
 		</div>

@@ -23,7 +23,8 @@ class PostsTableSeeder extends Seeder {
                 'total_views' => '0',
                 'views_since_payment' => '0',
                 'created_at' => '2015-05-27 05:32:22',
-                'updated_at' => '2015-05-28 01:25:43'
+                'updated_at' => '2015-05-28 01:25:43',
+                'category' => 'art'
             ],
 
             ['id' => 2,
@@ -39,7 +40,8 @@ class PostsTableSeeder extends Seeder {
                 'total_views' => '0',
                 'views_since_payment' => '0',
                 'created_at' => '2015-05-23 05:28:43',
-                'updated_at' => '2015-05-26 03:25:43'
+                'updated_at' => '2015-05-26 03:25:43',
+                'category' => 'cute'
             ],
 
             ['id' => 3,
@@ -55,7 +57,8 @@ class PostsTableSeeder extends Seeder {
                 'total_views' => 123,
                 'views_since_payment' => 123,
                 'created_at' => '2015-05-21 04:25:43',
-                'updated_at' => '2015-05-22 03:25:43'
+                'updated_at' => '2015-05-22 03:25:43',
+                'category' => 'funny'
             ],
 
             ['id' => 4,
@@ -71,7 +74,8 @@ class PostsTableSeeder extends Seeder {
                 'total_views' => '100',
                 'views_since_payment' => '25',
                 'created_at' => '2015-05-19 03:25:43',
-                'updated_at' => '2015-05-26 03:25:43'
+                'updated_at' => '2015-05-26 03:25:43',
+                'category' => 'interesting'
             ],
 
 
@@ -88,7 +92,8 @@ class PostsTableSeeder extends Seeder {
                 'total_views' => '200',
                 'views_since_payment' => '50',
                 'created_at' => '2015-05-15 03:25:43',
-                'updated_at' => '2015-05-26 03:25:43'
+                'updated_at' => '2015-05-26 03:25:43',
+                'category' => 'photograph'
             ]
         );
 

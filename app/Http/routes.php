@@ -11,7 +11,9 @@
 |
 */
 
+Route::get('/{category}', 'HomeController@category');
 Route::get('/', 'HomeController@index');
+
 
 Route::get('/sign-up-beta',
 	['as' => 'sign-up-beta', 'uses' => 'HomeController@getBetaSignUp']);

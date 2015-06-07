@@ -56,8 +56,9 @@
 								<form action="{{ url('/post/create') }}" class="display-inline">
 									<button type="submit" class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
 								</form>
+							</li>
 
-
+							<li>
 								<form action="{{ url('/sign-up-beta') }}" class="display-inline">
 									<button href="/sign-up-beta" class="btn btn-primary navbar-btn">Learn More & Sign Up</button>
 								</form>
@@ -65,15 +66,13 @@
 							</li>
 						</ul>
 
-
-
 						<ul class="nav navbar-nav">
-							<li><a class="category" href="">ART</a></li>
-							<li><a class="category" href="">CUTE</a></li>
-							<li><a class="category" href="">FUNNY</a></li>
-							<li><a class="category" href="">INTERESTING</a></li>
-							<li><a class="category" href="">PHOTOGRAPHY</a></li>
-							<li><a class="category" href="">WOAH</a></li>
+							<li><a class="category" href="/art">ART</a></li>
+							<li><a class="category" href="/cute">CUTE</a></li>
+							<li><a class="category" href="/funny">FUNNY</a></li>
+							<li><a class="category" href="/interesting">INTERESTING</a></li>
+							<li><a class="category" href="/photography">PHOTOGRAPHY</a></li>
+							<li><a class="category" href="/woah">WOAH</a></li>
 						</ul>
 
 

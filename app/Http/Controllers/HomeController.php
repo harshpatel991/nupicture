@@ -45,6 +45,11 @@ class HomeController extends Controller {
 		return view('home', compact('posts'));
 	}
 
+	public function category($category) {
+		$posts = Post::where('category', $category)->get();
+		return view('home', compact('posts'));
+	}
+
 
 	public function getBetaSignUp()
 	{
@@ -64,5 +69,7 @@ class HomeController extends Controller {
 		Notification::create($request->all());
 		return Redirect::route('sign-up-beta')->with('message', 'You\'re all set! We\'ll send you an email when you can register.');
 	}
+
+
 
 }
