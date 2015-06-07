@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/{category}', 'HomeController@category');
-Route::get('/', 'HomeController@index');
 
 
 Route::get('/sign-up-beta',
@@ -20,6 +18,10 @@ Route::get('/sign-up-beta',
 
 Route::post('/sign-up-beta',
 	['as' => 'sign-up-beta-post', 'uses' => 'HomeController@postBetaSignUp']);
+
+Route::get('/{category}', 'HomeController@category');
+Route::get('/', 'HomeController@index');
+
 
 Route::get('/post/create', 'PostsController@create');
 Route::get('/post/{post_slug}', 'PostsController@show');
