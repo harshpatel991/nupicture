@@ -1,9 +1,9 @@
 <div class="container-fluid">
     <div class="row footer">
         <div class="col-md-4 col-md-offset-2">
-            <a href="/auth/signup">Sign Up</a> <br>
+            <a href="/auth/login">Login</a> <br>
             <a href="/auth/register">Register</a> <br>
-            <a href="/auth/about">About?</a>
+            <a href="/sign-up-beta">About</a>
         </div>
 
         <div class="col-md-4">
