@@ -9,7 +9,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-offset-1 col-md-7 col-sm-offset-1 col-sm-6">
+            <div class="col-md-offset-1 col-md-7 col-sm-8">
 
                 <div class="category">{{ $post->category or 'Category' }}</div>
 
