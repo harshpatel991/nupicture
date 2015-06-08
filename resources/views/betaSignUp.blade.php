@@ -85,7 +85,7 @@
 
 						<div class="col-sm-2">
 							<div class="form-group">
-								{!! Form::submit('Submit', array('class'=>'btn btn-primary btn-lg')) !!}
+								{!! Form::submit('Submit', array('class'=>'btn btn-primary')) !!}
 							</div>
 						</div>
 					</div>

@@ -19,6 +19,10 @@ Route::get('/sign-up-beta',
 Route::post('/sign-up-beta',
 	['as' => 'sign-up-beta-post', 'uses' => 'HomeController@postBetaSignUp']);
 
+
+Route::get('/increase-page-views',
+	['as' => 'increase-page-views', 'uses' => 'HomeController@increasePageViews']);
+
 Route::get('/{category}', 'HomeController@category');
 Route::get('/', 'HomeController@index');
 

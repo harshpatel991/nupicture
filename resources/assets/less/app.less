@@ -76,21 +76,37 @@
   bottom: 0;
 
   z-index: 1;
-  transition: background-color .25s ease;
-  -moz-transition: background-color .25s ease;
-  -webkit-transition: background-color .25s ease;
+  transition: background-color .2s ease, color .15s ease;
+  -moz-transition: background-color .2s ease, color .15s ease;
+  -webkit-transition: background-color .2s ease, color .15s ease;
+
 
   width: 100%;
   height: 100%;
   background-color: rgba(.5, .5, .5, 0);
+  color: rgba(.5, .5, .5, 0);
+
 }
+
+.thumbnail-go {
+  font-family: @font-family-serif;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@image-hover-color: rgba(214, 85, 81, 0.83);
 
 .thumbnail-hover-background:hover {
-  background-color: rgba(.5, .5, .5, .6);
+  background-color: @image-hover-color;
+  color: #fff;
 }
 
-.home-thumbnail-title:hover ~ .thumbnail-hover-background{ //  On hover of title, activate home hover background color
-  background-color: rgba(.5, .5, .5, .6);
+.home-thumbnail-title:hover ~ .thumbnail-hover-background { //  On hover of title, activate home hover background color
+  background-color: @image-hover-color;
+  color: #fff;
 }
 
 .clear-both {

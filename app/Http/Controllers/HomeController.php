@@ -70,6 +70,10 @@ class HomeController extends Controller {
 		return Redirect::route('sign-up-beta')->with('message', 'You\'re all set! We\'ll send you an email when you can register.');
 	}
 
+	public function increasePageViews() {
+		return view('increasePageViews');
+	}
+
 
 
 }
