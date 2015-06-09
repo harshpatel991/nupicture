@@ -32,8 +32,6 @@ class HomeController extends Controller {
 		//$this->middleware('auth');
 	}
 
-
-
 	/**
 	 * Show the application dashboard to the user.
 	 *
@@ -41,7 +39,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		$posts = Post::all();
+		$posts = Post::where('status', 'posted')->get();
 		return view('home', compact('posts'));
 	}
 

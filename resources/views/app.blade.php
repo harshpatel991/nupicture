@@ -68,8 +68,6 @@
 
 					</div> {{--End collapse--}}
 
-					<hr class="clear-both">
-
 					<ul class="nav navbar-nav">
 						<li><a class="category" href="/">ALL</a></li>
 						<li><a class="category" href="/art">ART</a></li>
@@ -79,6 +77,9 @@
 						<li><a class="category" href="/photography">PHOTOGRAPHY</a></li>
 						<li><a class="category" href="/woah">WOAH</a></li>
 					</ul>
+
+					<hr class="clear-both">
+
 				</div> {{--End column--}}
 			</div> {{--End row--}}
 		</div> {{--End container fluid--}}

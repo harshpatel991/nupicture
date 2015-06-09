@@ -3793,7 +3793,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
@@ -3981,8 +3981,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 10px;
   }
 }
 .navbar-form {
@@ -6665,6 +6665,7 @@ a.list-group-item-danger.active:focus {
   -webkit-transition: opacity .25s ease;
 }
 .home-thumbnail-title {
+  text-transform: capitalize;
   z-index: 2;
   opacity: 1;
   /* FF3.6+ */
@@ -6715,11 +6716,11 @@ a.list-group-item-danger.active:focus {
           transform: translateX(-50%) translateY(-50%);
 }
 .thumbnail-hover-background:hover {
-  background-color: rgba(214, 85, 81, 0.83);
+  background-color: rgba(214, 85, 81, 0.33);
   color: #fff;
 }
 .home-thumbnail-title:hover ~ .thumbnail-hover-background {
-  background-color: rgba(214, 85, 81, 0.83);
+  background-color: rgba(214, 85, 81, 0.33);
   color: #fff;
 }
 .clear-both {
