@@ -12,7 +12,7 @@ class Post extends Model {
     public static $perViewPoints = [1, 1, 2, 3];
 
     public function determineThumbnailBucket() {
-        list($width, $height, $type, $attr) = getimagesize('upload/'.$this->content);
+        list($width, $height, $type, $attr) = getimagesize('upload/'.$this->thumbnail_image);
 
         $ratio = $height/$width;
 

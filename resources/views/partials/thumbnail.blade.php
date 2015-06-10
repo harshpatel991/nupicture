@@ -5,7 +5,7 @@
             {{$post->title}}
             <div class="home-thumbnail-info">
                 {{$post->total_views}} VIEWS |
-                POSTED {{strtoupper(date_format($post->updated_at, "F j, Y, g a"))}}
+                {{strtoupper(date_format($post->updated_at, "F j, Y"))}}
             </div>
         </div>
 
@@ -14,7 +14,7 @@
             </div>
         </div>
 
-        <div href="#" style="background-image: url('/upload/{{$post->content}}')" class="home-thumbnail" ></div>
+        <div href="#" style="background-image: url('/upload/{{$post->thumbnail_image}}')" class="home-thumbnail" ></div>
 
     </div>
 </a>
