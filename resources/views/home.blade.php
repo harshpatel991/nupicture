@@ -18,13 +18,13 @@
 					</div>
 
 					<div class="col-md-4 col-sm-6 col-xs-12 home-column-padding">
-						@include('partials/thumbnail', ['post' => $posts[3], 'thumbnailClass' => 'xs'])
+						@include('partials/thumbnail', ['post' => $posts[2], 'thumbnailClass' => 'xs'])
 						{{--@include('partials/thumbnail', ['post' => $posts[4]])--}}
 					</div>
 
 
 					<div class="col-md-4 col-sm-6 col-xs-12 home-column-padding">
-						@include('partials/thumbnail', ['post' => $posts[4], 'thumbnailClass' => 'xs'])
+						@include('partials/thumbnail', ['post' => $posts[3], 'thumbnailClass' => 'xs'])
 						{{--@include('partials/thumbnail', ['post' => $posts[2]])--}}
 					</div>
 

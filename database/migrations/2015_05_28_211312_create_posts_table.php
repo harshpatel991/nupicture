@@ -24,7 +24,7 @@ class CreatePostsTable extends Migration {
 			$table->string('title', 255);
 			$table->string('slug', 35)->unique();
 			$table->enum('content_type', ['image', 'short_text', 'list', 'article']);
-			$table->string('content');
+			$table->string('content', 2000);
 			$table->dateTime('posted_at')->nullable(); //when it was approved
 			$table->dateTime('cashedout_at')->nullable(); //when the views_since_payment was reset to 0
 			$table->integer('total_views')->unsigned();

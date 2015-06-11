@@ -6815,7 +6815,7 @@ a.list-group-item-danger.active:focus {
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
 .post-image {
-  width: 100%;
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=app.css.map */
