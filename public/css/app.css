@@ -6817,5 +6817,10 @@ a.list-group-item-danger.active:focus {
 .post-image {
   max-width: 100%;
 }
+.social-media-icons {
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
+}
 
 /*# sourceMappingURL=app.css.map */

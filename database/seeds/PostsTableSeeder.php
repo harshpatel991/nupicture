@@ -135,6 +135,42 @@ class PostsTableSeeder extends Seeder {
                 'created_at' => '2015-05-15 03:25:43',
                 'updated_at' => '2015-05-26 03:25:43',
                 'category' => 'photograph'
+            ],
+
+            ['id' => 8,
+            'user_id' => 2,
+            'status' => 'posted',
+            'admin_message' => null,
+            'title' => 'Post 8',
+            'slug' => 'post-8',
+            'content_type' => 'article',
+            'content' => 'Content for post 8',
+            'thumbnail_image' => 'northern-1.jpg',
+            'posted_at' => '2015-05-18 03:25:43',
+            'cashedout_at' => '2015-05-26 03:25:43',
+            'total_views' => '200',
+            'views_since_payment' => '50',
+            'created_at' => '2015-05-15 03:25:43',
+            'updated_at' => '2015-05-26 03:25:43',
+            'category' => 'photograph'
+            ],
+
+            ['id' => 9,
+                'user_id' => 2,
+                'status' => 'posted',
+                'admin_message' => null,
+                'title' => 'Post 9',
+                'slug' => 'post-9',
+                'content_type' => 'article',
+                'content' => 'Content for post 9',
+                'thumbnail_image' => 'northern-1.jpg',
+                'posted_at' => '2015-05-18 03:25:43',
+                'cashedout_at' => '2015-05-26 03:25:43',
+                'total_views' => '200',
+                'views_since_payment' => '50',
+                'created_at' => '2015-05-15 03:25:43',
+                'updated_at' => '2015-05-26 03:25:43',
+                'category' => 'photograph'
             ]
         );
 

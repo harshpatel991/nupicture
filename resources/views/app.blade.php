@@ -35,19 +35,24 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
+
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+							<span class="glyphicon glyphicon-filter"></span>
+						</button>
+
 						<a class="navbar-brand" href="/">NU PICTURE</a>
 					</div>
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 							@if (Auth::guest())
-								<li><a href="{{ url('/auth/login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-								<li><a href="{{ url('/auth/register') }}"><span class="glyphicon glyphicon-edit"></span> Register</a></li>
+								<li><a href="{{ url('/auth/login') }}" class="category"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+								<li><a href="{{ url('/auth/register') }}" class="category"><span class="glyphicon glyphicon-edit"></span> Register</a></li>
 							@else
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
 									<ul class="dropdown-menu" role="menu">
-										<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+										<li><a href="{{ url('/auth/logout') }}" class="category">Logout</a></li>
 									</ul>
 								</li>
 							@endif
@@ -68,17 +73,20 @@
 
 					</div> {{--End collapse--}}
 
-					<ul class="nav navbar-nav">
-						<li><a class="category" href="/">ALL</a></li>
-						<li><a class="category" href="/art">ART</a></li>
-						<li><a class="category" href="/cute">CUTE</a></li>
-						<li><a class="category" href="/funny">FUNNY</a></li>
-						<li><a class="category" href="/interesting">INTERESTING</a></li>
-						<li><a class="category" href="/photography">PHOTOGRAPHY</a></li>
-						<li><a class="category" href="/woah">WOAH</a></li>
-					</ul>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+						<ul class="nav navbar-nav">
+							<li><a class="category" href="/">ALL</a></li>
+							<li><a class="category" href="/art">ART</a></li>
+							<li><a class="category" href="/cute">CUTE</a></li>
+							<li><a class="category" href="/funny">FUNNY</a></li>
+							<li><a class="category" href="/interesting">INTERESTING</a></li>
+							<li><a class="category" href="/photography">PHOTOGRAPHY</a></li>
+							<li><a class="category" href="/woah">WOAH</a></li>
+						</ul>
 
-					<hr class="clear-both">
+					</div>
+
+					<hr class="clear-both" style="margin-top: 0px;">
 
 				</div> {{--End column--}}
 			</div> {{--End row--}}

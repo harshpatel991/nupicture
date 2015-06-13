@@ -6,17 +6,23 @@
 
 @section('content')
 
-
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-offset-1 col-md-7 col-sm-8">
+
+
+                <img src="/images/twitter.png" class="social-media-icons pull-right">
+                <img src="/images/facebook.png" class="social-media-icons pull-right">
+                <img src="/images/google-plus.png" class="social-media-icons pull-right">
+                <img src="/images/pintrest.png"  class="social-media-icons pull-right">
 
                 <div class="category">{{ $post->category or 'Category' }}</div>
 
                 <h1>{{ $post->title or 'Title' }}</h1>
                 <h6>{{ $postedBy->username or 'Username' }} | Posted On {{ $post->posted_at or 'Date' }}  </h6>
 
-                <h6><span class="badge"><span class="glyphicon glyphicon-fire"></span> {{ $post->total_views or 'Content goes in here...' }} Views </span></h6>
+                <h6><span class="badge"><span class="glyphicon glyphicon-fire"></span> {{ $post->total_views or '0' }} Views </span></h6>
+
 
                 <p>
                     {!! $post->content or 'Content goes in here...' !!}
