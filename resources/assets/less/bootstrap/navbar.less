@@ -164,7 +164,12 @@
 .navbar-brand {
   float: left;
   padding: @navbar-padding-vertical @navbar-padding-horizontal;
-  font-size: 5vw;
+
+  font-size: 1em;
+  @media (min-width: @screen-sm-min) { font-size: 3em; }
+  @media (min-width: @screen-md-min) { font-size: 3.5em; }
+  @media (min-width: @screen-lg-min) { font-size: 4em; }
+
   font-weight: 700;
   line-height: @line-height-computed;
   height: @navbar-height;

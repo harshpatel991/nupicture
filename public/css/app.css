@@ -3904,11 +3904,26 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   padding: 15px 15px;
-  font-size: 5vw;
+  font-size: 1em;
   font-weight: 700;
   line-height: 20px;
   height: 50px;
   font-family: 'Roboto Slab', serif;
+}
+@media (min-width: 768px) {
+  .navbar-brand {
+    font-size: 3em;
+  }
+}
+@media (min-width: 992px) {
+  .navbar-brand {
+    font-size: 3.5em;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar-brand {
+    font-size: 4em;
+  }
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -6611,14 +6626,34 @@ a.list-group-item-danger.active:focus {
 .home-thumbnail-wrapper.lg {
   height: 350px;
 }
+@media (max-width: 768px) {
+  .home-thumbnail-wrapper.lg {
+    height: 200px;
+  }
+}
 .home-thumbnail-wrapper.md {
   height: 300px;
+}
+@media (max-width: 768px) {
+  .home-thumbnail-wrapper.md {
+    height: 200px;
+  }
 }
 .home-thumbnail-wrapper.sm {
   height: 250px;
 }
+@media (max-width: 768px) {
+  .home-thumbnail-wrapper.sm {
+    height: 200px;
+  }
+}
 .home-thumbnail-wrapper.xs {
   height: 200px;
+}
+@media (max-width: 768px) {
+  .home-thumbnail-wrapper.xs {
+    height: 200px;
+  }
 }
 .home-thumbnail {
   width: 100%;
@@ -6646,7 +6681,7 @@ a.list-group-item-danger.active:focus {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
   /* IE6-9 */
   font-family: 'Roboto Slab', serif;
-  font-size: 1.4em;
+  font-size: 1em;
   line-height: 110%;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
   color: #fff;
@@ -6660,6 +6695,21 @@ a.list-group-item-danger.active:focus {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+@media (min-width: 768px) {
+  .home-thumbnail-title {
+    font-size: 1.2em;
+  }
+}
+@media (min-width: 992px) {
+  .home-thumbnail-title {
+    font-size: 1.3em;
+  }
+}
+@media (min-width: 1200px) {
+  .home-thumbnail-title {
+    font-size: 1.4em;
+  }
 }
 .home-thumbnail-title .home-thumbnail-info {
   font-size: .6em;
