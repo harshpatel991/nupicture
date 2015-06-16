@@ -5,7 +5,7 @@ use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -37,8 +37,15 @@ class PostsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($post)
+	public function show($post, Request $request)
 	{
+
+        if(!$request->session()->has('visited'.$post->slug))
+        {
+            $request->session()->put('visited'.$post->slug, true);
+            Post::find($post->id)->update(['total_views' => $post->total_views+1, 'views_since_payment' => $post->views_since_payment+1]);
+        }
+
 		$postedBy = User::find($post->user_id);
 
 		$relatedPosts = Post::orderByRaw("RAND()")->get();

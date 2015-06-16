@@ -109,7 +109,7 @@ class PostsTableSeeder extends Seeder {
                 'content_type' => 'article',
                 'content' => '1. <img src="/upload/cinemagraph-1.gif" class="post-image"> Thanks to <a href="http://www.reddit.com/user/relevant__comment">relevant__comment</a> on reddit for permission to use this image.' .
                 '<br>2. <video loop autoplay class="post-image"><source src="/upload/cinemagraph-2.webm" type="video/webm"> </video>Thanks to <a href="http://bonvallet.deviantart.com">Chronoraven</a> on reddit for permission to use this image.',
-                'thumbnail_image' => 'cinemagraph-1.gif',
+                'thumbnail_image' => 'cinemagraph-thumb.jpg',
                 'posted_at' => '2015-05-18 03:25:43',
                 'cashedout_at' => '2015-05-26 03:25:43',
                 'total_views' => '200',

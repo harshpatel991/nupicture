@@ -33,15 +33,15 @@
                 <div class="row">
 
                     <div class="col-md-4 col-sm-4 col-xs-12 home-column-padding">
-                        @include('partials/thumbnail', ['post' => $relatedPosts[0], 'thumbnailClass' => 'sm'])
+                        @include('partials/thumbnail', ['post' => $relatedPosts[0], 'thumbnailClass' => 'xs'])
                     </div>
 
                     <div class="col-md-4 col-sm-4 col-xs-6 home-column-padding">
-                        @include('partials/thumbnail', ['post' => $relatedPosts[1], 'thumbnailClass' => 'sm'])
+                        @include('partials/thumbnail', ['post' => $relatedPosts[1], 'thumbnailClass' => 'xs'])
                     </div>
 
                     <div class="col-md-4 col-sm-4 col-xs-6 home-column-padding">
-                        @include('partials/thumbnail', ['post' => $relatedPosts[2], 'thumbnailClass' => 'sm'])
+                        @include('partials/thumbnail', ['post' => $relatedPosts[2], 'thumbnailClass' => 'xs'])
                     </div>
 
                 </div>
