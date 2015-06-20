@@ -43,7 +43,10 @@ class PostsController extends Controller {
         if(!$request->session()->has('visited'.$post->slug))
         {
             $request->session()->put('visited'.$post->slug, true);
-            Post::find($post->id)->update(['total_views' => $post->total_views+1, 'views_since_payment' => $post->views_since_payment+1]);
+
+            $post->total_views = $post->total_views+1;
+            $post->views_since_payment = $post->views_since_payment+1;
+            $post->save();
         }
 
 		$postedBy = User::find($post->user_id);
@@ -53,7 +56,4 @@ class PostsController extends Controller {
 
 		return view('post.post', compact('post', 'postedBy', 'relatedPosts', 'popularPosts'));
 	}
-
-
-
 }
