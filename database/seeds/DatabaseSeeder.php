@@ -18,7 +18,11 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('UsersTableSeeder');
 		$this->call('PostsTableSeeder');
-        $this->call('PayoutsTableSeeder');
+        $this->call('PayoutsTableSeederUser1');
+        $this->call('PayoutsTableSeederUser2');
+        $this->call('PayoutsTableSeederUser3');
+        $this->call('PayoutsTableSeederUser4');
+        $this->call('PayoutsTableSeederUser5');
 	}
 
 }

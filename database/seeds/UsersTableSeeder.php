@@ -14,14 +14,35 @@ class UsersTableSeeder extends Seeder {
                 'username'  => 'user1',
                 'email'  => 'email1@gmail.com',
                 'password'  => 'password1',
-                'status' => 'good'
+                'status' => 'payment_requested'
             ],
 
             ['id' => 2,
                 'username'  => 'user2',
                 'email'  => 'email2@gmail.com',
                 'password'  => 'password2',
-                'status' => 'good'
+                'status' => 'payment_requested'
+            ],
+
+            ['id' => 3,
+                'username'  => 'user3',
+                'email'  => 'email3@gmail.com',
+                'password'  => 'password2',
+                'status' => 'payment_requested'
+            ],
+
+            ['id' => 4,
+            'username'  => 'user4',
+            'email'  => 'email4@gmail.com',
+            'password'  => 'password2',
+            'status' => 'good'
+            ],
+
+            ['id' => 5,
+                'username'  => 'user5',
+                'email'  => 'email5@gmail.com',
+                'password'  => 'password2',
+                'status' => 'warning'
             ]
         );
 

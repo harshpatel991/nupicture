@@ -23,7 +23,7 @@ class PayoutsTableSeeder extends Seeder {
             ],
 
             [
-                'content_type'  => 'image',
+                'content_type'  => 'list',
                 'base'  => '200',
                 'per_view'  => '2',
             ],
