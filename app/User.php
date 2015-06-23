@@ -31,4 +31,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+    public function getEnglishStatus() {
+        $englishStatus = array('good' => 'Good', 'payment_requested' => 'Payment Requested', 'warning' => 'warning');
+
+        return $englishStatus[$this->status];
+    }
+
 }

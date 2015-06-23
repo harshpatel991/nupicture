@@ -8,6 +8,13 @@
 
                 <h1>{{$user->username}}'s Profile</h1>
 
+                @if($user->status != 'payment_requested')
+                    <button class="btn btn-success pull-right"><span class="glyphicon glyphicon-usd"></span> Request Payment</button>
+                @endif
+
+                <h6>Status: {{$user->getEnglishStatus()}}</h6> <br>
+
+
                 <div class="table-responsive">
                 <table class="table table-striped">
 
