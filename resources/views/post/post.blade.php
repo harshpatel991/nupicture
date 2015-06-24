@@ -19,13 +19,15 @@
                 <div class="category">{{ $post->category or 'Category' }}</div>
 
                 <h1>{{ $post->title or 'Title' }}</h1>
-                <h6>{{ $postedBy->username or 'Username' }} | Posted On {{ $post->posted_at or 'Date' }}  </h6>
+                <h6>Posted On {{ $post->posted_at or 'Date' }}  </h6>
 
-                <h6><span class="badge"><span class="glyphicon glyphicon-fire"></span> {{ $post->total_views or '0' }} Views </span></h6>
+
 
                 <p>
                     {!! $post->content or 'Content goes in here...' !!}
                 </p>
+
+                <h6>Posted by {{ $postedBy->username or 'Username' }} | <span class="glyphicon glyphicon-fire"></span> {{ $post->total_views or '0' }} Views </h6>
 
                 <hr>
                 <h4 class="section-intro-heading">RELATED POSTS</h4>

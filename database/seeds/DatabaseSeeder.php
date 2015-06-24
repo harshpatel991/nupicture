@@ -17,12 +17,12 @@ class DatabaseSeeder extends Seeder {
 		// $this->call('UserTableSeeder');
 
 		$this->call('UsersTableSeeder');
-		$this->call('PostsTableSeeder');
-        $this->call('PayoutsTableSeederUser1');
-        $this->call('PayoutsTableSeederUser2');
-        $this->call('PayoutsTableSeederUser3');
-        $this->call('PayoutsTableSeederUser4');
-        $this->call('PayoutsTableSeederUser5');
+		$this->call('PayoutsTableSeeder');
+        $this->call('PostsTableSeederUser1');
+        $this->call('PostsTableSeederUser2');
+        $this->call('PostsTableSeederUser3');
+        $this->call('PostsTableSeederUser4');
+        $this->call('PostsTableSeederUser5');
 	}
 
 }

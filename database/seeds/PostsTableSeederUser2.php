@@ -66,11 +66,18 @@ class PostsTableSeederUser2 extends Seeder {
                 'user_id' => 2,
                 'status' => 'posted',
                 'admin_message' => null,
-                'title' => 'Post 8',
+                'title' => 'WIRED\'s beautifully redesigned San Francisco office',
                 'slug' => 'post-8',
                 'content_type' => 'article',
-                'content' => 'Content for post 8',
-                'thumbnail_image' => 'northern-1.jpg',
+                'content' => 'Scott Dadich, the editor in chief at WIRED ordered the San Francisco office of the tech news super giant to be redesigned. '.
+                                'WIRED hired Gensler to give their office a new, modern look. They followed the approach taken by many Silicon Valley tech companies: open floor plans allowing for easy team communication. '.
+                                'Some have critizied these types floor plans. Citing that these plans serve only to reduce costs of cubical walls and increase the amount of distractions that employees are faced with. '.
+                                '<img src="/upload/wired-1.jpg" class="post-image">'.
+                                '<img src="/upload/wired-2.jpg" class="post-image">'.
+                                '<img src="/upload/wired-3.jpg" class="post-image">'.
+                                '<img src="/upload/wired-4.jpg" class="post-image">'.
+                                'Source at <a href="https://www.trnk-nyc.com/stories/scott-dadich-wired/">TRNK</a>',
+                'thumbnail_image' => 'wired-1.jpg',
                 'posted_at' => '2015-05-18 03:25:43',
                 'cashedout_at' => '2015-05-26 03:25:43',
                 'total_views' => '200',
