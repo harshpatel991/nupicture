@@ -45,7 +45,8 @@ class HomeController extends Controller {
 
 	public function category($category) {
 		$posts = Post::where('category', $category)->get();
-		return view('home', compact('posts'));
+
+		return view('category', compact('posts', 'category'));
 	}
 
 

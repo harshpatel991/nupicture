@@ -3918,7 +3918,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-weight: 700;
   line-height: 20px;
   height: 50px;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Roboto Slab', Georgia, "Times New Roman", Times, serif;
 }
 @media (min-width: 768px) {
   .navbar-brand {
