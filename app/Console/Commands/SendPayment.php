@@ -55,19 +55,7 @@ class SendPayment extends Command {
             array_push($userIds, $users['id']);
         }
 
-        $payments = DB::select(DB::raw('SELECT user_id, email, sum(views_since_payment) as total_views_since_payment, SUM(points) as total_points
-                FROM
-                (
-                    SELECT email, posts.id, user_id, posts.content_type, views_since_payment, views_since_payment*per_view as points
-                    FROM posts
-                    INNER JOIN (payouts, users)
-                    ON (posts.content_type = payouts.content_type AND users.id = user_id)
-                    WHERE posts.status = \'posted\'
-                ) AS T
-                WHERE user_id IN ('. join(',',$userIds).')
-                GROUP BY user_id
-
-        '));
+        $payments = User::usersPayments($userIds);
 
         $senderBatchHeader = new \PayPal\Api\PayoutSenderBatchHeader();
         $senderBatchHeader->setSenderBatchId(uniqid())->setEmailSubject("You have a payment");
@@ -126,5 +114,7 @@ class SendPayment extends Command {
 
         $this->info("Created Batch Payout" . $output->getBatchHeader()->getPayoutBatchId() . $request . $output);
         return $output;
+
+        //TODO: mark posts as having 0 views_since_payment
     }
 }

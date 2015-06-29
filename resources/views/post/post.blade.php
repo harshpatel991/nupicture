@@ -8,18 +8,19 @@
 
     <div class="container-fluid">
         <div class="row">
+            <hr>
             <div class="col-md-offset-1 col-md-7 col-sm-8">
 
 
-                <a href="https://twitter.com/intent/tweet?url={{Request::url()}}&text={{$post->title}}"><img src="/images/twitter.png" class="social-media-icons pull-right"></a>
-                <a href="http://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="/images/facebook.png" class="social-media-icons pull-right"></a>
-                <a href="https://plus.google.com/share?url={{Request::url()}}"><img src="/images/google-plus.png" class="social-media-icons pull-right"></a>
-                <a href="http://pinterest.com/pin/create/button/?url={{Request::url()}}&media={{Request::root()}}/upload/{{$post->thumbnail_image}}&description={{$post->title}}"><img src="/images/pintrest.png" class="social-media-icons pull-right"></a>
+                <a href="https://twitter.com/intent/tweet?url={{Request::url()}}&text={{$post->title}}"><img src="/images/twitter.png" class="social-media-icons"></a>
+                <a href="http://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="/images/facebook.png" class="social-media-icons"></a>
+                <a href="https://plus.google.com/share?url={{Request::url()}}"><img src="/images/google-plus.png" class="social-media-icons "></a>
+                <a href="http://pinterest.com/pin/create/button/?url={{Request::url()}}&media={{Request::root()}}/upload/{{$post->thumbnail_image}}&description={{$post->title}}"><img src="/images/pintrest.png" class="social-media-icons"></a>
 
-                <div class="category">{{ $post->category or 'Category' }}</div>
+
 
                 <h1>{{ $post->title or 'Title' }}</h1>
-                <h6>Posted On {{ $post->posted_at or 'Date' }}  </h6>
+
 
 
 
@@ -27,7 +28,10 @@
                     {!! $post->content or 'Content goes in here...' !!}
                 </p>
 
-                <h6>Posted by {{ $postedBy->username or 'Username' }} | <span class="glyphicon glyphicon-fire"></span> {{ $post->total_views or '0' }} Views </h6>
+                <h6>Posted by <b>{{ $postedBy->username or 'Username' }}</b> on <b>{{ $post->category or 'Category' }}</b> at <b>{{ $post->posted_at or 'Date' }}</b>  </h6>
+
+                <h6><span class="glyphicon glyphicon-fire"></span> {{ $post->total_views or '0' }} Views </h6>
+
 
                 <hr>
                 <h4 class="section-intro-heading">RELATED POSTS</h4>
@@ -35,15 +39,15 @@
                 <div class="row">
 
                     <div class="col-md-4 col-sm-4 col-xs-12 home-column-padding">
-                        @include('partials/thumbnail', ['post' => $relatedPosts[0], 'thumbnailClass' => 'xs'])
+                        @include('partials/thumbnail', ['post' => $relatedPosts[0], 'thumbnailClass' => 'sm'])
                     </div>
 
                     <div class="col-md-4 col-sm-4 col-xs-6 home-column-padding">
-                        @include('partials/thumbnail', ['post' => $relatedPosts[1], 'thumbnailClass' => 'xs'])
+                        @include('partials/thumbnail', ['post' => $relatedPosts[1], 'thumbnailClass' => 'sm'])
                     </div>
 
                     <div class="col-md-4 col-sm-4 col-xs-6 home-column-padding">
-                        @include('partials/thumbnail', ['post' => $relatedPosts[2], 'thumbnailClass' => 'xs'])
+                        @include('partials/thumbnail', ['post' => $relatedPosts[2], 'thumbnailClass' => 'sm'])
                     </div>
 
                 </div>

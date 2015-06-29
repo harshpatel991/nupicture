@@ -1,23 +1,41 @@
-<div class="container-fluid">
-    <div class="row footer">
-        <div class="col-md-4 col-md-offset-2">
-            Site<br>
-            <a href="/auth/login">Login</a> <br>
-            <a href="/auth/register">Register</a> <br>
+<div class="container-fluid footer">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-4 col-sm-4 col-xs-12">
+
+            <a class="navbar-brand small" href="/" style="font-size: 2em;">NU PICTURE</a>
+
+
+
+        </div>
+
+        <div class="col-md-6 col-sm-8 col-xs-12">
+
+            <h6>
+            <a href="/auth/login">Login</a>
+            <a href="/auth/register">Register</a>
             <a href="/sign-up-beta">About</a>
-        </div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            </h6>
 
-        <div class="col-md-4">
-            Visit us on <br>
-            <a href="#">Pintrest</a> <br>
-            <a href="#">Twitter</a> <br>
-            <a href="#">Facebook</a> <br>
+            <hr style="margin-top: 5px; margin-bottom:5px; border-color: #4e4e4e;">
+
+            <h6>
+            <a href="#">Pintrest</a>
+            <a href="#">Twitter</a>
+            <a href="#">Facebook</a>
             <a href="#">Google Plus</a>
+            </h6>
+
         </div>
 
 
-        <div class="col-xs-12" id="copyright">
-            Nu Picture 2015
-        </div>
+
+
+
     </div>
+
+
+
+
 </div>

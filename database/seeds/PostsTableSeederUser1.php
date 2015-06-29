@@ -68,7 +68,7 @@ class PostsTableSeederUser1 extends Seeder {
                 'user_id' => 1,
                 'status' => 'posted',
                 'admin_message' => null,
-                'title' => 'Street Art Found in Busan, South Korea',
+                'title' => 'Street Art in Busan, South Korea',
                 'slug' => 'post-4',
                 'content_type' => 'article',
                 'content' => '<img src="/upload/2.jpg" class="post-image">Courtesy of <a href="http://www.reddit.com/user/CrimsonLiquid">CrimsonLiquid</a>',

@@ -9,9 +9,10 @@ class Post extends Model {
     public $thumbnailClass = '';
 
     public static $cashPerPoint = .0025;
-    public static $postNames = ['Image', 'Short Text', 'List', 'Article'];
-    public static $basePoints = [40, 40, 200, 400];
-    public static $perViewPoints = [1, 1, 2, 3];
+    public static $contentTypes = ['image', 'short_text', 'list', 'article'];
+    public static $postNames = ['image' => 'Image', 'short_text' => 'Short Text', 'list' => 'List', 'article' => 'Article'];
+    public static $basePoints = ['image' => 40, 'short_text' => 40, 'list' => 200, 'article' => 400];
+    public static $perViewPoints = ['image' => 1, 'short_text' => 1, 'list' => 2, 'article' => 3];
 
     public function determineThumbnailBucket() {
         list($width, $height, $type, $attr) = getimagesize('upload/'.$this->thumbnail_image);

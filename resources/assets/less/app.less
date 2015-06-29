@@ -7,7 +7,8 @@
 @small-thumbnail-height: 200px;
 
 .home-thumbnail-wrapper {
-  margin-bottom: 16px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: #fff;
 
   &.lg {
@@ -41,12 +42,16 @@
   background-size: cover;
   position: relative;
 
-  filter: contrast(1.05) brightness(1.05);
-  -webkit-filter: contrast(1.05) brightness(1.05);
+  filter: contrast(1.45) brightness(1.2);
+  -webkit-filter: contrast(1.45) brightness(1.2);
 
   transition: opacity 0s ease;
   -moz-transition: opacity 0s ease;
   -webkit-transition: opacity 0s ease;
+
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .home-thumbnail-title {
@@ -62,10 +67,14 @@
   background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 45%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
 
-  font-family: 'Roboto Slab', serif;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+
+  font-family: @font-family-serif;
 
 
-  font-size: 1em;
+  font-size: 1.1em;
   @media (min-width: @screen-sm-min) { font-size: 1.2em; }
   @media (min-width: @screen-md-min) { font-size: 1.3em; }
   @media (min-width: @screen-lg-min) { font-size: 1.4em; }
@@ -84,16 +93,16 @@
   padding-bottom: 10px;
   padding-right: 10px;
 
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+//  white-space: nowrap;
+//  overflow: hidden;
+//  text-overflow: ellipsis;
 
   .home-thumbnail-info {
-    font-size: .6em;
+    font-size: .5em;
   }
 }
 
-.thumbnail-hover-background { //the overlay that appears when hoveing over image
+.thumbnail-hover-background { //the overlay that appears when hovering over image
   position: absolute;
   bottom: 0;
 
@@ -102,6 +111,9 @@
   -moz-transition: background-color .1s ease, color .1s ease;
   -webkit-transition: background-color .1s ease, color .1s ease;
 
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 
   width: 100%;
   height: 100%;
@@ -110,16 +122,7 @@
 
 }
 
-.thumbnail-go {
-  font-family: @font-family-serif;
-  font-size: 30px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-@image-hover-color: rgba(41, 42, 51, 0.74);
+@image-hover-color: rgba(41, 42, 51, 0.40);
 
 .thumbnail-hover-background:hover {
   background-color: @image-hover-color;
@@ -142,8 +145,8 @@
 }
 
 .home-column-padding {
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #h6-post-meta-info {
@@ -176,7 +179,12 @@
   padding-bottom: 20px;
   background-color: #26252d;
   color: #838383;
-  text-align: center;
+  //text-align: center;
+  a {
+    color: #a3a3a3;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .btn-file {
@@ -241,4 +249,63 @@
   width: @social-media-icon-size;
   height: @social-media-icon-size;
   margin-left: 2px;
+  margin-bottom: 10px;
 }
+
+.hero {
+  position: relative;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+
+  //padding: 25px;
+  height: 400px;
+  color: #ffffff;
+
+  filter: contrast(1.45) brightness(1.2);
+  -webkit-filter: contrast(1.2) brightness(1.1) grayscale(10%);
+
+}
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 70%, rgba(0,0,0,0.85) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.85))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 70%,rgba(0,0,0,0.85) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(0,0,0,0) 70%,rgba(0,0,0,0.85) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(0,0,0,0) 70%,rgba(0,0,0,0.85) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 70%,rgba(0,0,0,0.85) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+
+}
+
+.hero-title {
+  font-family: @font-family-serif;
+
+  font-size: 1.1em;
+  @media (min-width: @screen-sm-min) { font-size: 1.4em; }
+  @media (min-width: @screen-md-min) { font-size: 1.8em; }
+  @media (min-width: @screen-lg-min) { font-size: 2.5em; }
+
+  line-height: 110%;
+  text-shadow: 0px 2px 0px rgba(0,0,0,.5);
+  color: #fff;
+
+  width:100%;
+  position: absolute;
+  bottom: 0px;
+
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+
+  .hero-info {
+    font-size: .5em;
+  }
+
+}
+

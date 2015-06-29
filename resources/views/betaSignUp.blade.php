@@ -40,13 +40,13 @@
 						<th>Per View</th>
 					</tr>
 
-					@for($i = 0; $i < count($basePoints); $i++)
+					@foreach($contentTypes as $contentType)
 					<tr>
-						<td>{{$postNames[$i]}} points</td>
-						<td>{{$basePoints[$i]}} points</td>
-						<td>{{$perViewPoints[$i]}} points</td>
+						<td>{{$postNames[$contentType]}} points</td>
+						<td>{{$basePoints[$contentType]}} points</td>
+						<td>{{$perViewPoints[$contentType]}} points</td>
 					</tr>
-					@endfor
+					@endforeach
 				</table>
 
 				<p>Once a post is listed, you can start accumulating views to your post.</p>

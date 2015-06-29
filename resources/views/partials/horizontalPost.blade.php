@@ -5,9 +5,10 @@
         </a>
     </div>
     <div class="media-body ">
+
         <h5><a href="/post/{{$post->slug}}" class="horizontal-post-title">{{$post->title or 'Post Title'}}</a></h5>
 
-        <h6>{{ $postedBy->username or 'Username' }}  </h6>
+
 
     </div>
 </div>

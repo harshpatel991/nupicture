@@ -32,7 +32,7 @@ class PostsTableSeederUser2 extends Seeder {
                 'user_id' => 2,
                 'status' => 'posted',
                 'admin_message' => null,
-                'title' => '10 of the most Awesome Cinemagraphs',
+                'title' => '10 Awesome Cinemagraphs',
                 'slug' => 'post-6',
                 'content_type' => 'article',
                 'content' => '1. <img src="/upload/cinemagraph-1.gif" class="post-image"> Thanks to <a href="http://www.reddit.com/user/relevant__comment">relevant__comment</a> on reddit for permission to use this image.' .
