@@ -14,6 +14,8 @@ class Post extends Model {
     public static $basePoints = ['image' => 40, 'short_text' => 40, 'list' => 200, 'article' => 400];
     public static $perViewPoints = ['image' => 1, 'short_text' => 1, 'list' => 2, 'article' => 3];
 
+    public static $minCashOutPoints = 4000;
+
     public function determineThumbnailBucket() {
         list($width, $height, $type, $attr) = getimagesize('upload/'.$this->thumbnail_image);
 

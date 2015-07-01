@@ -11,6 +11,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	use Authenticatable, CanResetPassword;
 
+    public static $statusGood = 'good';
+    public static $statusPaymentRequested = 'payment_requested';
+
 	/**
 	 * The database table used by the model.
 	 *

@@ -12,14 +12,24 @@
             <div class="col-sm-offset-1 col-sm-10">
                 <hr>
 
+                @if (Session::has('message'))
+                    <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
+                @endif
+
+                @if (Session::has('errors'))
+                    <div class="alert alert-danger" role="alert">{{ Session::get('errors')->first() }}</div>
+                @endif
+
                 <h2>{{$user->username}}'s Profile</h2>
                 <h5>{{$points}} Points</h5>
 
+                @if($user->status == App\User::$statusGood)
                     {!! Form::open() !!}
                         {!! Form::submit('Request Payment', ['class'=> 'btn btn-success']) !!}
                     {!! Form::close() !!}
-
-
+                @elseif ($user->status == App\User::$statusPaymentRequested)
+                    <h6>Payment Requested</h6>
+                @endif
 
 
                 <div class="table-responsive">

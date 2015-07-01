@@ -2,6 +2,7 @@
 
 use App\Post;
 use App\User;
+use Redirect;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -37,19 +38,31 @@ class UsersController extends Controller {
     {
         //TODO: check if the user is logged into the account they are modified
 
-        if($user->status == 'good')
+        if($user->status == User::$statusGood)
         {
-            //check if the user has the min amount to cash out
+            $userPoints = User::usersPayments(array($user->id))[0];
 
-            $results = User::usersPayments(array($user->id));
 
-            dd($results);
+            if($userPoints->total_points >= Post::$minCashOutPoints)
+            {
+                $user->status = User::$statusPaymentRequested;
+                $user->save();
+                return Redirect::back()->with('message', 'Payment requested.');
+            }
+            else
+            {
+                return Redirect::back()->withErrors('You don\'t have the minimum amount of points to cash out.');
+            }
 
+
+        }
+        else if ($user->status == User::$statusPaymentRequested) {
+            return Redirect::back()->with('message', 'You have already requested payment.');
         }
 
 
+        return Redirect::back()->withErrors('You don\'t have permission to perform this action.');
+
     }
-
-
 
 }
