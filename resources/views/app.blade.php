@@ -10,7 +10,7 @@
 
 	<!-- Fonts -->
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -28,7 +28,7 @@
 		<div class="container-fluid">
 			<div class="row">
 
-				<div class="col-sm-12 col-md-offset-1 col-md-10">
+				<div class="col-sm-12 col-md-offset-1 col-md-10 white-background">
 
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -56,11 +56,7 @@
                                     <li><a class="category" href="/interesting">INTERESTING</a></li>
                                     <li><a class="category" href="/photography">PHOTOGRAPHY</a></li>
                                     <li><a class="category" href="/woah">WOAH</a></li>
-
-
-
                                 </ul>
-
 
                             </li>
 
@@ -92,7 +88,6 @@
 						</ul>
 
 					</div> {{--End collapse--}}
-
 
 
 				</div> {{--End column--}}

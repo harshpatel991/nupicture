@@ -3,7 +3,7 @@
 @section('content')
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-12 col-md-offset-1 col-md-10">
+			<div class="col-sm-12 col-md-offset-2 col-md-8 white-background post-main-column">
 
 				@if (Session::has('message'))
 					<div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
@@ -13,7 +13,7 @@
 					<div class="alert alert-danger" role="alert">{{ Session::get('errors')->first('email') }}</div>
 				@endif
 
-				<h1>Welcome</h1>
+				<h1 style="padding-top: 10px;">Welcome</h1>
 				<p>You and your friends probably already share and view content from the internet through email, Facebook, and Twitter. Now you can get paid for it.</p>
 
 				<h3>How it Works</h3>

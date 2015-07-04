@@ -7,70 +7,96 @@
 @section('content')
 	<div class="container-fluid">
 
-        <div class="row hero" style="background-image: url('/upload/{{$posts[0]->thumbnail_image}}');">
-            <div class="hero-overlay">
-            <div class="col-sm-12 col-md-10 col-md-offset-1" style="position:relative; height: 100%;">
-                <div class="hero-title">
-                    {{$posts[0]->title}}
-                    <div class="hero-info">
-                        {{$posts[0]->total_views}} <b>VIEWS </b>|
-                        {{strtoupper(date_format($posts[0]->updated_at, "F j, Y"))}}
+        <div class="row">
+            <div class="col-sm-12 col-lg-10 col-lg-offset-1 hero home-column-padding" style="background-image: url('/upload/{{$posts[5]->thumbnail_image}}');">
+                <div class="hero-overlay">
+                    <div class="hero-title">
+                        {{$posts[0]->title}}
+                        <div class="hero-info">
+                            {{$posts[0]->total_views}} <b>VIEWS </b>|
+                            {{strtoupper(date_format($posts[0]->updated_at, "F j, Y"))}}
+                        </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-sm-9 col-lg-8 col-lg-offset-1"> {{--Left main column--}}
+
+                <div class="row">
+                        <div class="col-sm-12 col-md-6 home-column-padding">
+                                @include('partials/thumbnail', ['post' => $posts[1], 'lg' => true])
+                        </div>
+                        <div class="col-sm-6 col-md-3 home-column-padding">
+                                @include('partials/thumbnail', ['post' => $posts[2], 'lg' => false])
+                        </div>
+                        <div class="col-sm-6 col-md-3 home-column-padding">
+                                @include('partials/thumbnail-stylized', ['post' => $posts[3], 'lg' => false])
+                        </div>
+                </div>
+
+                <div class="row">
+                        <div class="col-sm-12 col-md-3 home-column-padding">
+                                @include('partials/thumbnail-stylized', ['post' => $posts[4], 'lg' => false])
+                        </div>
+                        <div class="col-sm-6 col-md-3 home-column-padding">
+                                @include('partials/thumbnail', ['post' => $posts[5], 'lg' => false])
+                        </div>
+                        <div class="col-sm-6 col-md-6 home-column-padding">
+                                @include('partials/thumbnail', ['post' => $posts[6], 'lg' => true])
+                        </div>
+                </div>
+
+                <div class="row">
+                        <div class="col-sm-12 col-md-3 home-column-padding">
+                                @include('partials/thumbnail', ['post' => $posts[7], 'lg' => false])
+                        </div>
+
+                        <div class="col-sm-6 col-md-3 home-column-padding">
+                                @include('partials/thumbnail', ['post' => $posts[8], 'lg' => false])
+                        </div>
+
+                        <div class="col-sm-6 col-md-3 home-column-padding">
+                                @include('partials/thumbnail', ['post' => $posts[9], 'lg' => false])
+                        </div>
+
+                        <div class="col-sm-12 col-md-3 home-column-padding">
+                                @include('partials/thumbnail-stylized', ['post' => $posts[10], 'lg' => false])
+                        </div>
                 </div>
 
             </div>
+
+
+            <div class="col-sm-3 col-md-3 col-lg-2 home-sidebar"> {{--Side bar column--}}
+                <div class="white-background">
+
+                    <div style="background-color: #bdc3c7; width: 100%; height; 250px; padding: 10px;">
+                        <h2 style="color: #fff;">Write & Earn</h2>
+                        <h4 style="color: #fff;">Write articles on Nu Picture and earn cash</h4>
+                        <div class="btn btn-primary" style="margin: 0 auto;"><span class="glyphicon glyphicon-chevron-right"></span>Join</div>
+                    </div>
+
+                    <h4 class="section-intro-heading">POPULAR POSTS</h4>
+
+                    @include('partials/horizontalPost', ['post' => $posts[10]])
+                    @include('partials/horizontalPost', ['post' => $posts[10]])
+                    @include('partials/horizontalPost', ['post' => $posts[10]])
+                    @include('partials/horizontalPost', ['post' => $posts[10]])
+
+                </div>
+
             </div>
 
 
         </div>
 
 
-		<div class="row">
-			<div class="col-sm-12 col-md-10 col-md-offset-1">
 
 
-				<div class="row">
 
-                    <div class="col-md-4 col-sm-6 col-xs-12 home-column-padding">
-                        @include('partials/thumbnail', ['post' => $posts[0], 'thumbnailClass' => 'sm'])
-                        @include('partials/thumbnail', ['post' => $posts[1], 'thumbnailClass' => 'sm'])
-                        {{--@include('partials/thumbnail', ['post' => $posts[2]])--}}
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 home-column-padding">
-                        @include('partials/thumbnail', ['post' => $posts[1], 'thumbnailClass' => 'sm'])
-                        @include('partials/thumbnail', ['post' => $posts[2], 'thumbnailClass' => 'sm'])
-                        {{--@include('partials/thumbnail', ['post' => $posts[2]])--}}
-                    </div>
-                    <div class="col-md-4 col-sm-6 col-xs-12 home-column-padding">
-                        @include('partials/thumbnail', ['post' => $posts[2], 'thumbnailClass' => 'sm'])
-                        @include('partials/thumbnail', ['post' => $posts[3], 'thumbnailClass' => 'sm'])
-                        {{--@include('partials/thumbnail', ['post' => $posts[2]])--}}
-                    </div>
-
-				</div>
-
-
-				<div class="row">
-					<h4 class="section-intro-heading">RECENT POSTS</h4>
-
-					<div class="col-md-4 col-sm-6 col-xs-12 home-column-padding">
-						@include('partials/thumbnail', ['post' => $posts[1], 'thumbnailClass' => 'sm'])
-						@include('partials/thumbnail', ['post' => $posts[2], 'thumbnailClass' => 'sm'])
-					</div>
-
-					<div class="col-md-4 col-sm-6 col-xs-12 home-column-padding">
-						@include('partials/thumbnail', ['post' => $posts[3], 'thumbnailClass' => 'sm'])
-						@include('partials/thumbnail', ['post' => $posts[4], 'thumbnailClass' => 'sm'])
-					</div>
-
-					<div class="col-md-4 col-sm-6 col-xs-12 home-column-padding">
-						@include('partials/thumbnail', ['post' => $posts[5], 'thumbnailClass' => 'sm'])
-						@include('partials/thumbnail', ['post' => $posts[2], 'thumbnailClass' => 'sm'])
-					</div>
-
-				</div>
-
-			</div>
-		</div>
 	</div>
 @endsection

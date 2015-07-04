@@ -26,10 +26,7 @@ class CreatePostsTable extends Migration {
 			$table->enum('content_type', ['image', 'short_text', 'list', 'article']);
 			$table->string('content', 2000);
 			$table->dateTime('posted_at')->nullable(); //when it was approved
-			$table->dateTime('cashedout_at')->nullable(); //when the views_since_payment was reset to 0
 			$table->integer('total_views')->unsigned();
-			$table->integer('views_since_payment')->unsigned();
-            $table->integer('posting_payment')->unsigned(); //the base payment to be paid on the next time payment is requested
 			$table->timestamps();
 		});
 	}

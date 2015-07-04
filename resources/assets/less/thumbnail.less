@@ -1,0 +1,122 @@
+@text-color: lighten(@gray-base, 33.5%); // #555
+
+@thumbnail-items-spacing: 12px;
+
+@image-height: 200px;
+@text-section-height: 180px;
+
+.home-thumbnail-wrapper {
+  margin-left: @thumbnail-items-spacing/2;
+  margin-right: @thumbnail-items-spacing/2;
+  margin-top: @thumbnail-items-spacing/2;
+  margin-bottom: @thumbnail-items-spacing/2;
+
+  background-color: #fff;
+
+  height: 100%
+}
+
+.home-thumbnail-image-section {
+  width: 100%;
+  height: @image-height;
+
+  background-position: center center;
+  background-size: cover;
+
+  &.stylized {
+    width: 100%;
+    height: @image-height + @text-section-height;
+    background-position: center center;
+    background-size: cover;
+
+    color: #ffffff;
+  }
+}
+
+.home-thumbnail-image-stylized-overlay {
+  height: 100%;
+
+  position: relative;
+
+  @gradient-start: rgba(40, 48, 72, .8);
+  @gradient-end: rgba(133, 147, 152, .7);
+  background: -webkit-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* W3C */
+}
+
+.home-thumbnail-text-section {
+  color: @text-color;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  height: @text-section-height;
+
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+
+.home-thumbnail-title {
+  font-family: @font-family-montserrat;
+  text-transform: capitalize;
+  line-height: 110%;
+
+  font-size: 1.2em;
+  @media (min-width: @screen-sm-min) { font-size: 1.3em; }
+  @media (min-width: @screen-md-min) { font-size: 1.4em; }
+  @media (min-width: @screen-lg-min) { font-size: 1.5em; }
+
+  z-index: 2;
+
+  &.stylized {
+    position: absolute;
+    top: 25%;
+    left: 10px;
+  }
+
+  .home-thumbnail-category {
+    font-family: @font-family-open-sans;
+    font-size: .6em;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    color: @brand-primary;
+    margin-bottom: 10px;
+  }
+
+  .home-thumbnail-summary {
+    font-family: @font-family-open-sans;
+    font-size: .6em;
+    color: #888;
+    line-height: 1.5em;
+
+    overflow: hidden;
+    height: 6em;       /* height is 2x line-height, so two lines will display */
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    &.stylized{
+      color: #fff;
+    }
+  }
+
+  .home-thumbnail-info {
+    font-family: @font-family-open-sans;
+    font-size: .6em;
+    color: #aaa;
+
+    &.stylized {
+      font-family: @font-family-open-sans;
+      font-size: .6em;
+      color: #fff;
+
+    }
+  }
+}

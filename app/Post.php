@@ -16,24 +16,10 @@ class Post extends Model {
 
     public static $minCashOutPoints = 4000;
 
-    public function determineThumbnailBucket() {
-        list($width, $height, $type, $attr) = getimagesize('upload/'.$this->thumbnail_image);
+    public function getStrippedContent()
+    {
+        return strip_tags($this->content);
 
-        $ratio = $height/$width;
 
-        if ($ratio <= 1.2) //it's a square shape
-        {
-            return 'sm';
-        }
-        else if($ratio < 1.4)
-        {
-            return 'md';
-        }
-        else
-        {
-            return 'lg';
-        }
     }
-
-
 }
