@@ -52,12 +52,9 @@ class HomeController extends Controller {
 
 	public function getBetaSignUp()
 	{
-		$cashPerPoint = Post::$cashPerPoint;
         $contentTypes = Post::$contentTypes;
 		$postNames = Post::$postNames;
-		$basePoints = Post::$basePoints;
-		$perViewPoints = Post::$perViewPoints;
-		return view('betaSignUp', compact('basePoints', 'perViewPoints', 'postNames', 'cashPerPoint', 'contentTypes'));
+		return view('betaSignUp', compact('postNames', 'contentTypes'));
 	}
 
 

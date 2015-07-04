@@ -26,7 +26,7 @@ class CreatePostsTable extends Migration {
 			$table->enum('content_type', ['image', 'short_text', 'list', 'article']);
 			$table->string('content', 2000);
 			$table->dateTime('posted_at')->nullable(); //when it was approved
-			$table->integer('total_views')->unsigned();
+			$table->integer('views')->unsigned();
 			$table->timestamps();
 		});
 	}

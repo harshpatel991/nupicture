@@ -44,16 +44,17 @@ class PostsController extends Controller {
         {
             $request->session()->put('visited'.$post->slug, true);
 
-            $post->total_views = $post->total_views+1;
-            $post->views_since_payment = $post->views_since_payment+1;
+            $post->views = $post->views+1;
             $post->save();
         }
+
+        $postedDate = date_format(new \DateTime($post->posted_at), "F j, Y");
 
 		$postedBy = User::find($post->user_id);
 
 		$relatedPosts = Post::orderByRaw("RAND()")->get();
-		$popularPosts = Post::orderBy('total_views', 'desc')->limit(5)->get();
+		$popularPosts = Post::orderBy('views', 'desc')->limit(5)->get();
 
-		return view('post.post', compact('post', 'postedBy', 'relatedPosts', 'popularPosts'));
+		return view('post.post', compact('post', 'postedDate', 'postedBy', 'relatedPosts', 'popularPosts'));
 	}
 }

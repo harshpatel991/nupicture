@@ -21,7 +21,6 @@
                 @endif
 
                 <h2>{{$user->username}}'s Profile</h2>
-                <h5>{{$points}} Points</h5>
 
                 @if($user->status == App\User::$statusGood)
                     {!! Form::open() !!}
@@ -39,11 +38,8 @@
                         <th>Status</th>
                         <th>Title</th>
                         <th>Message</th>
-                        <th>Posting Points</th>
-                        <th>Total Views</th>
-                        <th>Views Since Last Payment</th>
+                        <th>Views</th>
                         <th>Posted</th>
-                        <th>Points</th>
                         <th></th>
                     </tr>
 
@@ -52,9 +48,7 @@
                             <td><h6><span class="label label-{{$post->status}} post-status">{{$statusToEnglish[$post->status]}}</span></h6></td>
                             <td>{{$post->title}}</td>
                             <td>{{$post->admin_message}}</td>
-                            <td>{{$post->posting_payment or 0}}</td>
-                            <td>{{$post->total_views}}</td>
-                            <td>{{$post->views_since_payment}}</td>
+                            <td>{{$post->views}}</td>
 
                             @if($post->posted_at != null)
                                 <td>{{date_format(new DateTime($post->posted_at), "F j, Y")}}</td>
@@ -62,7 +56,6 @@
                                 <td>Not Posted</td>
                             @endif
 
-                            <td>{{$post->posting_payment + ($post->views_since_payment*$pointsPerView[$post->content_type])}}</td>
 
                             @if($post->status == 'posted')
                                 <td><a href="/post/{{$post->slug}}"><span class="glyphicon glyphicon-link"></span></a></td>

@@ -33,37 +33,10 @@
 				<h3>Gaining Points</h3>
 				<p>You will earn points for each post you make and additionally for amount of unique views that post receives.</p>
 
-				<table class="table table-striped">
-					<tr>
-						<th>Post</th>
-						<th>For Each Posting</th>
-						<th>Per View</th>
-					</tr>
-
-					@foreach($contentTypes as $contentType)
-					<tr>
-						<td>{{$postNames[$contentType]}} points</td>
-						<td>{{$basePoints[$contentType]}} points</td>
-						<td>{{$perViewPoints[$contentType]}} points</td>
-					</tr>
-					@endforeach
-				</table>
-
 				<p>Once a post is listed, you can start accumulating views to your post.</p>
 				<p>If you have reached a minimum of 4000 points ($10), you can request a payout. Payouts occur via PayPal at the end of each week.</p>
 
-				<table class="table table-striped">
-					<tr>
-						<th>Points</th>
-						<th>Payout</th>
-					</tr>
 
-					<tr>
-						<td>1 Point</td>
-						<td>${{$cashPerPoint}}</td>
-
-					</tr>
-				</table>
 			</div>
 		</div>
 

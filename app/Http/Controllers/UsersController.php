@@ -23,12 +23,8 @@ class UsersController extends Controller {
 	{
 		$usersPosts = Post::where('user_id', '=', $user->id)->get();
 		$statusToEnglish = ['pending_post' => 'Pending', 'rejected' => 'Rejected', 'posted' => 'Posted'];
-        $payment = User::usersPayments(array($user->id))[0];
-        $points = $payment->total_points;
 
-//        dd($usersPosts);
-        $pointsPerView = Post::$perViewPoints;
-		return view('user.profile', compact('user', 'usersPosts', 'statusToEnglish', 'points', 'pointsPerView'));
+		return view('user.profile', compact('user', 'usersPosts', 'statusToEnglish'));
 	}
 
     /**

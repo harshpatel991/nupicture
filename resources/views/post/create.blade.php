@@ -4,7 +4,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10">
+            <div class="col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10 white-background">
 
 
 

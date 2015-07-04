@@ -23,9 +23,9 @@
                     {!! $post->content or 'Content goes in here...' !!}
                 </p>
 
-                <h6>Posted by <b>{{ $postedBy->username or 'Username' }}</b> on <b>{{ $post->category or 'Category' }}</b> at <b>{{ $post->posted_at or 'Date' }}</b>  </h6>
+                <h6>Posted by <b>{{ $postedBy->username or 'Username' }}</b> in <b>{{ $post->category or 'Category' }}</b> on <b>{{$postedDate or 'Date' }}</b>  </h6>
 
-                <h6><span class="glyphicon glyphicon-fire"></span> {{ $post->total_views or '0' }} Views </h6>
+                <h6><span class="glyphicon glyphicon-fire"></span> {{ $post->views or '0' }} Views </h6>
                 <hr>
 
                 <h4 class="section-intro-heading">RELATED POSTS</h4>

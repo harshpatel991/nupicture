@@ -7,19 +7,7 @@
 @section('content')
 	<div class="container-fluid">
 
-        <div class="row">
-            <div class="col-sm-12 col-lg-10 col-lg-offset-1 hero home-column-padding" style="background-image: url('/upload/{{$posts[5]->thumbnail_image}}');">
-                <div class="hero-overlay">
-                    <div class="hero-title">
-                        {{$posts[0]->title}}
-                        <div class="hero-info">
-                            {{$posts[0]->total_views}} <b>VIEWS </b>|
-                            {{strtoupper(date_format($posts[0]->updated_at, "F j, Y"))}}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @include('partials/hero', ['post' => $posts[1]])
 
 
         <div class="row">

@@ -14,7 +14,7 @@
                     </div>
 
                     <div class="home-thumbnail-info stylized">
-                        {{$post->total_views}} <b>VIEWS </b>|
+                        {{$post->views}} <b>VIEWS </b>|
                         {{strtoupper(date_format($post->updated_at, "F j, Y"))}}
                     </div>
 

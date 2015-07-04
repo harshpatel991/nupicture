@@ -28,7 +28,7 @@
 		<div class="container-fluid">
 			<div class="row">
 
-				<div class="col-sm-12 col-md-offset-1 col-md-10 white-background">
+				<div class="col-sm-12 col-md-offset-1 col-md-10 white-background" style="padding: 10px 10px;">
 
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
