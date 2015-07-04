@@ -18,6 +18,7 @@ class Registrar implements RegistrarContract {
 			'username' => 'required|alpha_dash|max:60|unique:users,username',
 			'email' => 'required|email|max:255|unique:users,email',
 			'password' => 'required|confirmed|min:6',
+            'publisher_id' => 'required|alpha_dash|min:20|max:20',
 		]);
 	}
 
@@ -33,6 +34,7 @@ class Registrar implements RegistrarContract {
 			'username' => $data['username'],
 			'email' => $data['email'],
 			'password' => bcrypt($data['password']),
+            'publisher_id' => $data['publisher_id']
 		]);
 	}
 
