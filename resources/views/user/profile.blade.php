@@ -9,8 +9,8 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-offset-1 col-sm-10">
-                <hr>
+            <div class="col-sm-offset-1 col-sm-10 white-background">
+
 
                 @if (Session::has('message'))
                     <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
@@ -21,6 +21,8 @@
                 @endif
 
                 <h2>{{$user->username}}'s Profile</h2>
+                <h4>Adsense Publisher ID: {{$user->publisher_id or 'Not Set'}}</h4>
+
 
                 @if($user->status == App\User::$statusGood)
                     {!! Form::open() !!}
