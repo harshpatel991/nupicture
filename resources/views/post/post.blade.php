@@ -27,7 +27,7 @@
 
                 <h6><span class="glyphicon glyphicon-fire"></span> {{ $post->views or '0' }} Views </h6>
                 <hr>
-                    @include('partials/leaderboard', ['publisherId' => $postedBy->publisher_id])
+                    @include('partials/leaderboard', ['publisherId' => $publisherId])
                 <hr>
 
                 <h4 class="section-intro-heading">RELATED POSTS</h4>
@@ -51,7 +51,7 @@
 
             <div class="col-md-3 col-sm-4 post-sidebar "> {{--Side bar--}}
                 <div class="white-background">
-                    @include('partials/large-rectangle', ['publisherId' => $postedBy->publisher_id])
+                    @include('partials/large-rectangle', ['publisherId' => $publisherId])
 
                     <h4 class="section-intro-heading">POPULAR POSTS</h4>
 
@@ -59,7 +59,7 @@
                         @include('partials/horizontalPost', ['post' => $popularPost])
                     @endforeach
 
-                    @include('partials/large-skyscraper', ['publisherId' => $postedBy->publisher_id])
+                    @include('partials/large-skyscraper', ['publisherId' => $publisherId])
                 </div>
 
             </div>

@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use DB;
+use Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
@@ -32,14 +33,11 @@ class PostsController extends Controller {
 	}
 
 	/**
-	 * Display the specified resource.
+	 * Display a post
 	 *
-	 * @param  int  $id
-	 * @return Response
 	 */
 	public function show($post, Request $request)
 	{
-
         if(!$request->session()->has('visited'.$post->slug))
         {
             $request->session()->put('visited'.$post->slug, true);
@@ -55,6 +53,27 @@ class PostsController extends Controller {
 		$relatedPosts = Post::orderByRaw("RAND()")->get();
 		$popularPosts = Post::orderBy('views', 'desc')->limit(5)->get();
 
-		return view('post.post', compact('post', 'postedDate', 'postedBy', 'relatedPosts', 'popularPosts'));
+        $appAdWeight = Config::get('app.ad_weight');
+        $appPublisherId = Config::get('app.app_publisher_id');
+        $userAdWeight = 100-$appAdWeight;
+        $userPublisherId = $postedBy->publisher_id;
+        $weightedAdIds = [$appPublisherId => $appAdWeight,$userPublisherId => $userAdWeight];
+
+        //choose a random publisher id
+        $publisherId = $this::getRandomWeightedElement($weightedAdIds);
+
+		return view('post.post', compact('post', 'postedDate', 'postedBy', 'relatedPosts', 'popularPosts', 'publisherId'));
 	}
+
+
+    private static function getRandomWeightedElement(array $weightedValues) {
+        $rand = mt_rand(1, (int) array_sum($weightedValues));
+
+        foreach ($weightedValues as $key => $value) {
+            $rand -= $value;
+            if ($rand <= 0) {
+                return $key;
+            }
+        }
+    }
 }

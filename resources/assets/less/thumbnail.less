@@ -11,17 +11,19 @@
   margin-top: @thumbnail-items-spacing/2;
   margin-bottom: @thumbnail-items-spacing/2;
 
-  background-color: #fff;
+  background-color: #141414;
 
   height: 100%;
-  &:hover {
-  opacity:.5;
-  }
 }
 
 .home-thumbnail-image-section {
   width: 100%;
   height: @image-height;
+
+  -webkit-transition: opacity 100ms ease;
+  -moz-transition: opacity 100ms ease;
+  -o-transition: opacity 100ms ease;
+  transition: opacity 100ms ease;
 
   background-position: center center;
   background-size: cover;
@@ -34,6 +36,10 @@
 
     color: #ffffff;
   }
+
+  &:hover {
+    opacity: .85;
+  }
 }
 
 .home-thumbnail-image-stylized-overlay {
@@ -41,21 +47,24 @@
 
   position: relative;
 
-  @gradient-start: rgba(40, 48, 72, .8);
-  @gradient-end: rgba(133, 147, 152, .7);
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+
+  @gradient-start: rgba(40, 48, 72, .9);
+  @gradient-end: rgba(133, 147, 152, .8);
   background: -webkit-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* Chrome 10+, Saf5.1+ */
   background:    -moz-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* FF3.6+ */
   background:     -ms-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* IE10 */
   background:      -o-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* Opera 11.10+ */
   background:         linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* W3C */
-
-
-
 }
 
 
 
 .home-thumbnail-text-section {
+  background-color: #fff;
   color: @text-color;
 
   overflow: hidden;
@@ -71,6 +80,7 @@
 
 
 .home-thumbnail-title {
+
   font-family: @font-family-montserrat;
   text-transform: capitalize;
   line-height: 110%;
