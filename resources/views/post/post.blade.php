@@ -17,15 +17,23 @@
                 <a href="https://plus.google.com/share?url={{Request::url()}}"><img src="/images/google-plus.png" class="social-media-icons "></a>
                 <a href="http://pinterest.com/pin/create/button/?url={{Request::url()}}&media={{Request::root()}}/upload/{{$post->thumbnail_image}}&description={{$post->title}}"><img src="/images/pintrest.png" class="social-media-icons"></a>
 
+                <h6>{{ $post->category or 'Category' }}</h6>
                 <h1>{{ $post->title or 'Title' }}</h1>
 
                 <p>
                     {!! $post->content or 'Content goes in here...' !!}
                 </p>
 
-                <h6>Posted by <b>{{ $postedBy->username or 'Username' }}</b> in <b>{{ $post->category or 'Category' }}</b> on <b>{{$postedDate or 'Date' }}</b>  </h6>
+                <div class="background-gray"> {{--Post meta data--}}
+                    <div class="row">
+                        <div class="col-sm-4"> <h6 class="text-center"><span class="glyphicon glyphicon-user"></span> {{ $postedBy->username or 'Username' }} </h6></div>
+                        <div class="col-sm-4"> <h6 class="text-center"><span class="glyphicon glyphicon-time"></span> {{$postedDate or 'Date' }} </h6></div>
+                        <div class="col-sm-4"> <h6 class="text-center"><span class="glyphicon glyphicon-fire"></span> {{ $post->views or '0' }} Views </h6> </div>
+                    </div>
 
-                <h6><span class="glyphicon glyphicon-fire"></span> {{ $post->views or '0' }} Views </h6>
+
+                </div>
+
                 <hr>
                     @include('partials/leaderboard', ['publisherId' => $publisherId])
                 <hr>

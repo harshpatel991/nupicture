@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder {
@@ -13,7 +14,7 @@ class UsersTableSeeder extends Seeder {
             ['id' => 1,
                 'username'  => 'user1',
                 'email'  => 'email1@gmail.com',
-                'password'  => 'password1',
+                'password'  => bcrypt('password1'),
                 'status' => 'good',
                 'publisher_id' => 'pub-1111111111111111'
             ],
@@ -21,7 +22,7 @@ class UsersTableSeeder extends Seeder {
             ['id' => 2,
                 'username'  => 'user2',
                 'email'  => 'email2@gmail.com',
-                'password'  => 'password2',
+                'password'  => bcrypt('password2'),
                 'status' => 'good',
                 'publisher_id' => 'pub-2222222222222222'
             ],
@@ -29,7 +30,7 @@ class UsersTableSeeder extends Seeder {
             ['id' => 3,
                 'username'  => 'user3',
                 'email'  => 'email3@gmail.com',
-                'password'  => 'password2',
+                'password'  => bcrypt('password3'),
                 'status' => 'good',
                 'publisher_id' => 'pub-3333333333333333'
             ],
@@ -37,7 +38,7 @@ class UsersTableSeeder extends Seeder {
             ['id' => 4,
                 'username'  => 'user4',
                 'email'  => 'email4@gmail.com',
-                'password'  => 'password2',
+                'password'  => bcrypt('password4'),
                 'status' => 'warning',
                 'publisher_id' => 'pub-4444444444444444'
             ],
@@ -45,11 +46,12 @@ class UsersTableSeeder extends Seeder {
             ['id' => 5,
                 'username'  => 'user5',
                 'email'  => 'email5@gmail.com',
-                'password'  => 'password2',
+                'password'  => bcrypt('password5'),
                 'status' => 'warning',
                 'publisher_id' => 'pub-5555555555555555'
             ]
         );
+
 
         // Uncomment the below to run the seeder
         DB::table('users')->insert($users);

@@ -24,9 +24,12 @@
                         @endif
 
                         <h2>{{$user->username}}'s Profile</h2>
-                        <h4>Adsense Publisher ID: {{$user->publisher_id or 'Not Set'}}</h4>
+                        <h5>Joined On: {{date_format(new \DateTime($user->created_on), "F j, Y")}}</h5>
+                        <h5>Adsense Publisher ID: {{$user->publisher_id or 'Not Set'}}</h5>
+
 
                         @if(count($usersPosts) > 0)
+                            <h3>My Posts</h3>
                             <div class="table-responsive">
                                 <table class="table table-striped">
 

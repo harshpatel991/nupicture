@@ -1,14 +1,18 @@
 <div class="media">
-    <div class="media-left">
-        <a href="/post/{{$post->slug}}">
-            <div class="horizontal-post-image" style="background-image: url('/upload/{{$post->thumbnail_image}}'); "></div>
+
+    <div class="media-left media-middle">
+        <a href="#">
+            <img class="media-object horizontal-post-image" style="background-image: url('/upload/{{$post->thumbnail_image}}')">
         </a>
     </div>
-    <div class="media-body ">
 
-        <h5><a href="/post/{{$post->slug}}" class="horizontal-post-title">{{$post->title or 'Post Title'}}</a></h5>
+    <div class="media-body">
+        <h5 class="media-heading">{{$post->title}}</h5>
 
-
-
+        <div class="horizontal-info">
+            {{$post->views}} <b>VIEWS </b> <br>
+            {{strtoupper(date_format($post->updated_at, "F j, Y"))}}
+        </div>
     </div>
+
 </div>

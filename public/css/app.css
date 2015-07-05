@@ -6642,6 +6642,10 @@ body {
 .white-background {
   background-color: #fff;
 }
+.background-gray {
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+}
 .category {
   text-transform: uppercase;
   font-weight: 700;
@@ -6661,8 +6665,8 @@ body {
   text-align: center;
 }
 .horizontal-post-image {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 60px;
   background-position: center center;
   background-size: cover;
 }
@@ -6671,6 +6675,9 @@ body {
 }
 .horizontal-post-title:hover {
   text-decoration: none;
+}
+.horizontal-info {
+  color: #aaa;
 }
 .footer {
   padding-top: 70px;
@@ -6787,6 +6794,9 @@ body {
 .hero-title .hero-info {
   font-size: .5em;
 }
+.open-sans {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
 .home-thumbnail-wrapper {
   margin-left: 6px;
   margin-right: 6px;
@@ -6794,11 +6804,14 @@ body {
   margin-bottom: 6px;
   background-color: #141414;
   height: 100%;
+  transition: opacity 100ms ease;
+}
+.home-thumbnail-wrapper:hover {
+  opacity: .9;
 }
 .home-thumbnail-image-section {
   width: 100%;
   height: 200px;
-  transition: opacity 100ms ease;
   background-position: center center;
   background-size: cover;
 }
@@ -6808,9 +6821,6 @@ body {
   background-position: center center;
   background-size: cover;
   color: #ffffff;
-}
-.home-thumbnail-image-section:hover {
-  opacity: .85;
 }
 .home-thumbnail-image-stylized-overlay {
   height: 100%;

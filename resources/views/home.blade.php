@@ -65,15 +65,15 @@
                     <div style="background-color: #bdc3c7; width: 100%; height; 250px; padding: 10px;">
                         <h2 style="color: #fff;">Write & Earn</h2>
                         <h4 style="color: #fff;">Write articles on Nu Picture and earn cash</h4>
-                        <div class="btn btn-primary" style="margin: 0 auto;"><span class="glyphicon glyphicon-chevron-right"></span>Join</div>
+                        <div class="btn btn-primary" style="margin: 0 auto;">Join <span class="glyphicon glyphicon-chevron-right"></span></div>
                     </div>
 
                     <h4 class="section-intro-heading">POPULAR POSTS</h4>
 
                     @include('partials/horizontalPost', ['post' => $posts[10]])
-                    @include('partials/horizontalPost', ['post' => $posts[10]])
-                    @include('partials/horizontalPost', ['post' => $posts[10]])
-                    @include('partials/horizontalPost', ['post' => $posts[10]])
+                    @include('partials/horizontalPost', ['post' => $posts[9]])
+                    @include('partials/horizontalPost', ['post' => $posts[8]])
+                    @include('partials/horizontalPost', ['post' => $posts[7]])
 
                 </div>
 
