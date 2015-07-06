@@ -1,13 +1,13 @@
 <div class="media">
 
     <div class="media-left media-middle">
-        <a href="#">
+        <a href="/post/{{$post->slug}}">
             <img class="media-object horizontal-post-image" style="background-image: url('/upload/{{$post->thumbnail_image}}')">
         </a>
     </div>
 
     <div class="media-body">
-        <h5 class="media-heading">{{$post->title}}</h5>
+        <a href="/post/{{$post->slug}}" class="horizontal-post-title"><h5 class="media-heading">{{$post->title}}</h5></a>
 
         <div class="horizontal-info">
             {{$post->views}} <b>VIEWS </b> <br>

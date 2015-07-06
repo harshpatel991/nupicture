@@ -6646,6 +6646,10 @@ body {
   background-color: #f8f8f8;
   padding: 10px 20px;
 }
+.background-blue {
+  background-color: #E5EBF1;
+  padding: 10px 20px;
+}
 .category {
   text-transform: uppercase;
   font-weight: 700;
@@ -6738,6 +6742,9 @@ body {
   padding-top: 6px;
   padding-right: 6px;
 }
+.open-sans {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
 .hero-wrapper {
   margin-left: 6px;
   margin-right: 6px;
@@ -6746,7 +6753,7 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  height: 450px;
+  height: 400px;
   color: #ffffff;
 }
 .hero-overlay {
@@ -6793,9 +6800,6 @@ body {
 }
 .hero-title .hero-info {
   font-size: .5em;
-}
-.open-sans {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 .home-thumbnail-wrapper {
   margin-left: 6px;

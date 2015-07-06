@@ -26,6 +26,8 @@
     <!-- Scripts -->
     <script src="/js/jquery-2.1.4.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <script src="/js/analyticsTracking.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -42,7 +44,7 @@
 							<span class="icon-bar"></span>
 						</button>
 
-						<a class="navbar-brand" href="/">NU PICTURE</a>
+						<a class="navbar-brand" href="/">{{strtoupper(Config::get('app.name'))}}</a>
 					</div>
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -79,7 +81,7 @@
 
 							<li>
 								<form action="{{ url('/post/create') }}" class="display-inline">
-									<button type="submit" class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
+									<button type="submit" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
 								</form>
 							</li>
 

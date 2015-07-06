@@ -20,9 +20,10 @@
                     @endif
 
                     <h2>Login</h2>
+                    <p>Don't have an account? <a href="/auth/register">Register</a> or <a href="/sign-up-beta">Learn More</a></p>
 
-                        <div class="panel panel-default">
-                            <div class="panel-body">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
 
                             <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

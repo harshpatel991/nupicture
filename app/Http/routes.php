@@ -20,7 +20,7 @@ Route::post('/sign-up-beta',
 	['as' => 'sign-up-beta-post', 'uses' => 'HomeController@postBetaSignUp']);
 
 
-Route::get('/increase-page-views',
+Route::get('/exposure-guide',
 	['as' => 'increase-page-views', 'uses' => 'HomeController@increasePageViews']);
 
 Route::get('/{category}', 'HomeController@category');

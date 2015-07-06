@@ -1,0 +1,53 @@
+.hero-wrapper {
+  margin-left: @thumbnail-items-spacing/2;
+  margin-right: @thumbnail-items-spacing/2;
+}
+
+.hero {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  height: 400px;
+  color: #ffffff;
+}
+
+.hero-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 60%, rgba(0,0,0,0.6) 90%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%,rgba(0,0,0,0)), color-stop(90%,rgba(0,0,0,0.6))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 60%,rgba(0,0,0,0.6) 90%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(0,0,0,0) 60%,rgba(0,0,0,0.6) 90%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(0,0,0,0) 60%,rgba(0,0,0,0.6) 90%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 60%,rgba(0,0,0,0.6) 90%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+}
+
+.hero-title {
+  font-family: @font-family-montserrat;
+
+  font-size: 1.1em;
+  @media (min-width: @screen-sm-min) { font-size: 1.4em; }
+  @media (min-width: @screen-md-min) { font-size: 1.8em; }
+  @media (min-width: @screen-lg-min) { font-size: 2.5em; }
+
+  line-height: 110%;
+  color: #fff;
+
+  width:100%;
+  position: absolute;
+  bottom: 0px;
+
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+
+  .hero-info {
+    font-size: .5em;
+  }
+
+}

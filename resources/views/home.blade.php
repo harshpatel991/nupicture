@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    Nu Picture
+    {{Config::get('app.name')}}
 @endsection
 
 @section('content')

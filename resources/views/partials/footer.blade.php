@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-offset-1 col-md-4 col-sm-4 col-xs-12">
 
-            <a class="navbar-brand small" href="/" style="font-size: 2em;">NU PICTURE</a>
+            <a class="navbar-brand small" href="/" style="font-size: 2em;">{{strtoupper(Config::get('app.name'))}}</a>
 
 
 
