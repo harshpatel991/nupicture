@@ -7,69 +7,68 @@
             <div class="col-sm-12 col-md-offset-1 col-md-10 white-background">
 
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10">
+                    <div class="col-md-10 col-md-offset-1 col-sm-12">
 
 
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/post/create') }}">
                             <h2>Submit a Post</h2>
                             <hr>
-                            <h4>Some basic info...</h4>
-                            <div class="form-group">
+                            <div class="row form-group">
                                 <label class="col-md-3 control-label" for="title">Title<span class="required">*</span></label>
 
-                                <div class="col-md-7">
+                                <div class="col-md-9">
                                     <input type="text" class="form-control" id="title" placeholder="Enter title" value="{{ old('title') }}">
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="content-type">Post Type<span class="required">*</span></label>
-
-                                <div class="col-md-7">
-                                    <select id="content-type" class="form-control">
-                                        <option value="0">Image</option>
-                                        <option value="1">Short Text (~100 characters)</option>
-                                        <option value="2">List</option>
-                                        <option value="3">Article</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <h4>Now for the content...</h4>
-
-                            <div id="container-image"> {{--Image container start--}}
-
-                            </div> {{--Image container end--}}
-
-                            <div id="container-short-text">
 
                             </div>
+                        <hr>
 
-                            <ol id="container-list">
+                            <div class="row">
+                                <div class="col-sm-8">
 
-                                <div id="container-list-items">
+                                    <h4>Content</h4>
+
+                                    {!! Form::open(array('route' => '/post/create', 'class' => 'form')) !!}
+                                        <h3 id="post-builder-help-text" class="post-builder-help-text text-center">You don't have any content yet. <br>Build your post by clicking the buttons on the right</h3>
+                                        <ol>
+                                            <div id="content-bottom"></div>
+                                        </ol>
+
+                                        <hr>
+
+                                        <h4 id="source-title">Sources</h4>
+                                        <h3 id="sources-builder-help-text" class="post-builder-help-text text-center">(optional)<br>Add sources using the button on the right</h3>
+                                        <div id="source-bottom"></div>
+
+                                        {!! Form::submit('Submit', array('class'=>'btn btn-success')) !!}
+                                    {!! Form::close() !!}
 
                                 </div>
-                                <a class="btn btn-success pull-right" onclick="addImageItemToContainerList();"><span class="glyphicon glyphicon-plus"></span>List Item</a>
-                            </ol>
 
-                            <div id="container-article">
-                                article container
-                            </div>
+                                <div class="col-sm-4">
+
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Add Content</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <div id="add-text-section" class="btn btn-default center-block"> <span class="glyphicon glyphicon-font"></span> Text</div >
+                                            <div id="add-image-section" class="btn btn-default center-block"> <span class="glyphicon glyphicon-picture"></span> Picture</div>
+                                            <hr>
+                                            <div id="add-list-number-section" class="btn btn-default center-block"> <span class="glyphicon glyphicon-list-alt"></span> List Number</div>
+                                        </div>
+                                    </div>
 
 
-
-
-                            <div class="form-group">
-                                <div class="col-md-7 col-md-offset-3">
-                                    <button type="submit" class="btn btn-primary">
-                                        Post
-                                    </button>
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div id="add-source-section" class="btn btn-default center-block"> <span class="glyphicon glyphicon-book"></span> Source</div>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </div>
 
-                        </form>
 
                     </div>
                 </div> {{--End inner row--}}

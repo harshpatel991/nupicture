@@ -27,9 +27,32 @@ class PostsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+        foreach($request->all() as $sectionId => $section)
+        {
+            $TEXT_SECTION_ID = 'section-text';
+            $IMAGE_SECTION_ID = 'section-image';
+            $LIST_NUMBER_SECTION_ID = 'section-listnumber';
+            $SOURCE_SECTION_ID = 'section-source';
+
+            if(strpos($sectionId, $TEXT_SECTION_ID) !== FALSE && count($section) == 2 && (strlen($section[0]) > 0 || strlen($section[1]) > 0 ))
+            {
+                echo "text section with heading: ".$section[0]. " and content: " . $section[1] ."<br>";
+
+            } elseif(strpos($sectionId, $IMAGE_SECTION_ID) !== FALSE && count($section) == 2 && strlen($section[0]))
+            {
+                echo "image section: ".$section[0]. "caption: " . $section[1] . "<br>";
+
+            } elseif(strpos($sectionId, $LIST_NUMBER_SECTION_ID) !== FALSE)
+            {
+                echo "list number section: ".$section. "<br>";
+
+            } elseif(strpos($sectionId, $SOURCE_SECTION_ID) !== FALSE && strlen($section) > 0)
+            {
+                echo "source section: ".$section. "<br>";
+            }
+        }
 	}
 
 	/**

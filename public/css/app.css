@@ -6745,6 +6745,20 @@ body {
 .open-sans {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
+.post-builder-section {
+  padding: 10px;
+  margin: 10px 0px;
+  background-color: #f8f8f8;
+}
+.post-builder-help-text {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #D1D1D1;
+}
+.post-builder-remove-button {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 .hero-wrapper {
   margin-left: 6px;
   margin-right: 6px;

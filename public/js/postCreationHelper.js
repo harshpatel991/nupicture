@@ -1,77 +1,121 @@
-var containers = [$('#container-image'), $('#container-short-text'), $('#container-list'), $('#container-article')];
-var listItemsCount = 0;
-function singleImageItem(postType, index) {
-	return '<div class="form-group">' +
-		'<label class="col-md-3 control-label">Image</label>' +
-		'<div class="col-md-7"> ' +
-			'<div style="position:relative;">' +
-				'<a class="btn btn-default btn-file" href="javascript:;"> Choose File... ' +
-				'<input type="file" class="input-file" name="file_source" size="40" onchange="chooseFileInput(event, this)">' +
-				' </a> ' +
-				'<span class="label label-info" id="'+ postType +'-upload-file-' + index +'"></span> ' +
-			'</div> ' +
-		'</div> ' +
-	'</div>' +
-	'<div class="form-group">' +
-		'<label class="col-md-3 control-label" for="'+ postType +'-post-caption-' + index +'">Caption</label> ' +
-		'<div class="col-md-7">' +
-			'<input type="text" class="form-control" id="'+postType+'-post-caption-' + index +'" placeholder="Enter caption">' +
-		'</div>' +
-	'</div>'+
-	'<div class="form-group">' +
-		'<label class="col-md-3 control-label" for="'+ postType +'-post-text-'+ index +'">Text</label>' +
-		'<div class="col-md-7"> ' +
-			'<textarea class="form-control" rows="4" id="'+ postType +'-post-text-'+ index +'"></textarea>' +
-		'</div> ' +
-	'</div>';
+/**
+ * Adding a text/image/list item section:
+ *   Adds a 'wrapper section' above the content-bottom div
+ *   Removes the text that tells the user to add sections
+ * Adding a source section:
+ *   Adds a 'wrapper section ' above the source-bottom div
+ *   Removes the text that tells the user to add sources
+ *
+ * Removing sections:
+ *   Removes the wrapper
+ * @type {number}
+ */
+var currentGlobalSectionIndex = 1; //the current section number
+var currentListItemNumber = 1; //counter for adding list items
+
+var contentBottom = $('#content-bottom'); //new sections should be placed on top of this
+var sourceBottom = $('#source-bottom'); //new source sections should be placed on top of this
+
+var postBuilderHelpText = $('#post-builder-help-text'); //the text that tells the user that they have no items
+var sourcesHelpText= $('#sources-builder-help-text'); //the text that tells the user that they have no items
+
+var buttonAddTextSection = $('#add-text-section');
+var buttonAddImageSection = $('#add-image-section');
+var buttonAddListNumberSection = $('#add-list-number-section');
+var buttonAddSourceSection= $('#add-source-section');
+
+function textSection (id) {
+    return '<div id="'+id+'-wrapper" class="post-builder-section">' +
+                '<div class="row">' +
+                    '<div class="col-sm-10">' +
+                        '<input class="form-control" name="'+id+'-section-text[]" placeholder="Heading (optional)">' +
+                        '<textarea class="form-control" rows="4" cols="60" name="'+id+'-section-text[]" placeholder="Write your content here"></textarea>' +
+                    '</div>' +
+                    '<div class="col-sm-2">' +
+                        '<div class="btn btn-danger" onclick="removeWrapperId('+id+')"><span class="glyphicon glyphicon-trash"></span></div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
 }
 
-
-function removeImageItemButton(postType, index) {
-	return '<div class="form-group"><div class="col-md-7 col-md-offset-3"><a class="btn-sm btn btn-danger pull-right" onclick="removeItem(\''+postType+'\', '+index+')">Remove</a></div></div>'
+function imageSection (id) {
+    return '<div id="'+id+'-wrapper" class="post-builder-section">' +
+                '<div class="row">' +
+                    '<div class="col-sm-10">' +
+                        '<input type="file" name="'+id+'-section-image[]">' +
+                        '<input class="form-control" name="'+id+'-section-image[]" placeholder="caption (optional)">' +
+                    '</div>' +
+                    '<div class="col-sm-2">' +
+                        '<div class="btn btn-danger" onclick="removeWrapperId('+id+')"><span class="glyphicon glyphicon-trash"></span></div>' +
+                    '</div>' +
+                '</div>';
+            '</div>';
 }
 
-function removeTextItemButton(postType, index) {
-
+function listNumberSection (id) {
+    return '<div id="'+id+'-wrapper" class="">' +
+                '<div class="row">' +
+                    '<div class="col-sm-10">' +
+                        '<h2><li></li></h2><input type="hidden" name="'+id+'-section-listnumber">' +
+                    '</div>' +
+                    '<div class="col-sm-2">' +
+                        '<div class="btn btn-danger post-builder-remove-button" onclick="removeWrapperId('+id+')"><span class="glyphicon glyphicon-trash"></span></div>' +
+                    '</div>' +
+                '</div>';
+            '</div>';
 }
 
-
-$('#content-type').change(function() {
-	showContainer($('#content-type').val());
-});
-
-function showContainer(index) {
-	$.each(containers, function(index, aContainer) {aContainer.hide()});
-	containers[index].show();
+function sourceSection(id) {
+    return '<div id="' + id + '-wrapper" class="post-builder-section">' +
+                '<div class="row">' +
+                    '<div class="col-sm-10">' +
+                        '<input class="form-control" name="' + id + '-section-source" placeholder="Enter a source (ex: http://cnn.com)">' +
+                    '</div>' +
+                    '<div class="col-sm-2">' +
+                        '<div class="btn btn-danger" onclick="removeWrapperId(' + id + ')"><span class="glyphicon glyphicon-trash"></span></div>' +
+                    '</div>' +
+                '</div>';
+            '</div>';
 }
 
-function addToContainerImage() {
-	$('#container-image').append(singleImageItem('image', 0));
+//Set up what to do when the buttons are clicked
+buttonAddTextSection.click(addTextSection);
+buttonAddImageSection.click(addImageSection);
+buttonAddListNumberSection.click(addListNumberSection);
+buttonAddSourceSection.click(addSourceSection);
+
+function addTextSection() {
+    $(textSection(currentGlobalSectionIndex)).insertBefore(contentBottom);
+    addSection();
+    postBuilderHelpText.hide();
 }
 
-function addToContainerShortText() {
-	$('#container-short-text').append(singleTextItem('short-text', 0));
+function addImageSection() {
+    $(imageSection(currentGlobalSectionIndex)).insertBefore(contentBottom);
+    addSection();
+    postBuilderHelpText.hide();
 }
 
-function addImageItemToContainerList() {
-	$('#container-list-items').append('<li>'+singleImageItem('list', listItemsCount)+ removeImageItemButton('list', listItemsCount) + '</li><hr>');
-	listItemsCount = listItemsCount+1;
+function addListNumberSection() {
+    $(listNumberSection(currentGlobalSectionIndex)).insertBefore(contentBottom);
+    addSection();
+    postBuilderHelpText.hide();
+    currentListItemNumber = currentListItemNumber + 1;
 }
 
-function addToContainerArticle() {
-
+function addSourceSection() {
+    $(sourceSection(currentGlobalSectionIndex)).insertBefore(sourceBottom);
+    addSection();
+    sourcesHelpText.hide();
 }
 
-function removeItem(postType, index) {
-	if(postType === 'list') {
-		$('#container-list-items').find('li')[index].remove();
-	}
+//Called when each section is added
+function addSection() {
+    currentGlobalSectionIndex = currentGlobalSectionIndex + 1;
 }
 
-function chooseFileInput(e, inputElement){
-	$(inputElement).closest('div').find('.label').text(e.target.files[0].name);
+//Press on the remove button
+function removeWrapperId(id) {
+    $('#'+id+'-wrapper').remove();
 }
 
-showContainer(0); //show first container at start
-addToContainerImage();
-addToContainerShortText();
