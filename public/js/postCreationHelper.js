@@ -43,7 +43,6 @@ function imageSection (id) {
                 '<div class="row">' +
                     '<div class="col-sm-10">' +
                         '<input type="file" name="'+id+'-section-image[]">' +
-                        '<input class="form-control" name="'+id+'-section-image[]" placeholder="caption (optional)">' +
                     '</div>' +
                     '<div class="col-sm-2">' +
                         '<div class="btn btn-danger" onclick="removeWrapperId('+id+')"><span class="glyphicon glyphicon-trash"></span></div>' +
@@ -85,26 +84,26 @@ buttonAddListNumberSection.click(addListNumberSection);
 buttonAddSourceSection.click(addSourceSection);
 
 function addTextSection() {
-    $(textSection(currentGlobalSectionIndex)).insertBefore(contentBottom);
+    $(textSection(currentGlobalSectionIndex)).hide().fadeIn().insertBefore(contentBottom);
     addSection();
     postBuilderHelpText.hide();
 }
 
 function addImageSection() {
-    $(imageSection(currentGlobalSectionIndex)).insertBefore(contentBottom);
+    $(imageSection(currentGlobalSectionIndex)).hide().fadeIn().insertBefore(contentBottom);
     addSection();
     postBuilderHelpText.hide();
 }
 
 function addListNumberSection() {
-    $(listNumberSection(currentGlobalSectionIndex)).insertBefore(contentBottom);
+    $(listNumberSection(currentGlobalSectionIndex)).hide().fadeIn().insertBefore(contentBottom);
     addSection();
     postBuilderHelpText.hide();
     currentListItemNumber = currentListItemNumber + 1;
 }
 
 function addSourceSection() {
-    $(sourceSection(currentGlobalSectionIndex)).insertBefore(sourceBottom);
+    $(sourceSection(currentGlobalSectionIndex)).hide().fadeIn().insertBefore(sourceBottom);
     addSection();
     sourcesHelpText.hide();
 }
@@ -116,6 +115,8 @@ function addSection() {
 
 //Press on the remove button
 function removeWrapperId(id) {
-    $('#'+id+'-wrapper').remove();
+    $('#'+id+'-wrapper').fadeOut(300, function() {
+        $('#'+id+'-wrapper').remove();
+    });
 }
 

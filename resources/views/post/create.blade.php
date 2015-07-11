@@ -10,25 +10,25 @@
                     <div class="col-md-10 col-md-offset-1 col-sm-12">
 
 
-
+                            {!! Form::open(array('route' => '/post/create', 'class' => 'form', 'files'=>true)) !!}
                             <h2>Submit a Post</h2>
                             <hr>
                             <div class="row form-group">
                                 <label class="col-md-3 control-label" for="title">Title<span class="required">*</span></label>
 
                                 <div class="col-md-9">
-                                    <input type="text" class="form-control" id="title" placeholder="Enter title" value="{{ old('title') }}">
+                                    <input type="text" class="form-control" name="title" placeholder="Enter title" value="{{ old('title') }}">
                                 </div>
 
                             </div>
-                        <hr>
+                            <hr>
 
                             <div class="row">
                                 <div class="col-sm-8">
 
                                     <h4>Content</h4>
 
-                                    {!! Form::open(array('route' => '/post/create', 'class' => 'form')) !!}
+
                                         <h3 id="post-builder-help-text" class="post-builder-help-text text-center">You don't have any content yet. <br>Build your post by clicking the buttons on the right</h3>
                                         <ol>
                                             <div id="content-bottom"></div>
@@ -41,7 +41,7 @@
                                         <div id="source-bottom"></div>
 
                                         {!! Form::submit('Submit', array('class'=>'btn btn-success')) !!}
-                                    {!! Form::close() !!}
+
 
                                 </div>
 
@@ -68,6 +68,8 @@
                                 </div>
 
                             </div>
+
+                        {!! Form::close() !!}
 
 
                     </div>

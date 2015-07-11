@@ -2,13 +2,16 @@
 
 use App\Post;
 use App\User;
+use App\Section;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+
 use DB;
 use Config;
+use \Log;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
+use Illuminate\Support\Str;
 
 class PostsController extends Controller {
 
@@ -29,28 +32,62 @@ class PostsController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+
+        \Log::info('Request to store a post: ' . print_R($request->all(), TRUE));
+        $currentPosition = 0;
+
+        $post = new Post;
+        $post->user_id = 1; //TODO
+        $post->status = Post::$pendingPostStatus;
+        $post->title = $request->input(Section::$TITLE_SECTION_NAME);
+        $post->slug = Str::slug($request->input(Section::$TITLE_SECTION_NAME)).rand(0, 9999);
+        $post->views = 0;
+        $post->save();
+
         foreach($request->all() as $sectionId => $section)
         {
-            $TEXT_SECTION_ID = 'section-text';
-            $IMAGE_SECTION_ID = 'section-image';
-            $LIST_NUMBER_SECTION_ID = 'section-listnumber';
-            $SOURCE_SECTION_ID = 'section-source';
+            $currentPosition ++;
 
-            if(strpos($sectionId, $TEXT_SECTION_ID) !== FALSE && count($section) == 2 && (strlen($section[0]) > 0 || strlen($section[1]) > 0 ))
+            if(strpos($sectionId, Section::$TEXT_SECTION_NAME) !== FALSE && count($section) == 2 && (strlen($section[0]) > 0 || strlen($section[1]) > 0 ))
             {
-                echo "text section with heading: ".$section[0]. " and content: " . $section[1] ."<br>";
+                $newSection = new Section();
+                $newSection ->make($currentPosition, $post->id, Section::$TEXT_SECTION_NAME, $section[0], $section[1]);
+                $newSection->save();
+            }
+            elseif(strpos($sectionId, Section::$IMAGE_SECTION_NAME) !== FALSE && count($section) == 1 && strlen($section[0]) > 0)
+            {
+                $image = $request->file($sectionId)[0];
+                $extension = $image->guessExtension();
+                $imageUploadedName = $post->slug . '-' . $currentPosition . rand(0, 99) . '.' . $extension;
+                $imageUploadStatus = Section::uploadImage($image, $imageUploadedName, $extension);
 
-            } elseif(strpos($sectionId, $IMAGE_SECTION_ID) !== FALSE && count($section) == 2 && strlen($section[0]))
-            {
-                echo "image section: ".$section[0]. "caption: " . $section[1] . "<br>";
+                if($imageUploadStatus !== TRUE) {
+                    Log::warning("Image was not uploaded due to " . $imageUploadStatus);
+                }
 
-            } elseif(strpos($sectionId, $LIST_NUMBER_SECTION_ID) !== FALSE)
+                $newSection = new Section();
+                $newSection ->make($currentPosition, $post->id, Section::$IMAGE_SECTION_NAME, '', $imageUploadedName);
+                $newSection->save();
+            }
+            elseif(strpos($sectionId, Section::$LIST_NUMBER_SECTION_NAME) !== FALSE)
             {
-                echo "list number section: ".$section. "<br>";
-
-            } elseif(strpos($sectionId, $SOURCE_SECTION_ID) !== FALSE && strlen($section) > 0)
+                $newSection = new Section();
+                $newSection->make($currentPosition, $post->id, Section::$LIST_NUMBER_SECTION_NAME, '', '');
+                $newSection->save();
+            }
+            elseif(strpos($sectionId, Section::$SOURCE_SECTION_NAME) !== FALSE && strlen($section) > 0)
             {
-                echo "source section: ".$section. "<br>";
+                $newSection = new Section();
+                $newSection->make($currentPosition, $post->id, Section::$SOURCE_SECTION_NAME, '', $section);
+                $newSection->save();
+            }
+            elseif(strpos($sectionId, Section::$TOKEN_SECTION_NAME) !== FALSE || strpos($sectionId, Section::$TITLE_SECTION_NAME) !== FALSE )
+            {
+                //ignore the token and title section
+            }
+            else
+            {
+                Log::warning('Section '. $sectionId . ' did not fall into any valid sections, ignoring.');
             }
         }
 	}

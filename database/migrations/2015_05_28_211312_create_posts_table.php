@@ -23,7 +23,6 @@ class CreatePostsTable extends Migration {
 			$table->string('admin_message', 300)->nullable();
 			$table->string('title', 255);
 			$table->string('slug', 35)->unique();
-			$table->enum('content_type', ['image', 'short_text', 'list', 'article']);
 			$table->string('content', 2000);
 			$table->dateTime('posted_at')->nullable(); //when it was approved
 			$table->integer('views')->unsigned();
