@@ -11,10 +11,10 @@ class Section extends Model {
     static $LIST_NUMBER_SECTION_NAME = 'section-listnumber';
     static $SOURCE_SECTION_NAME = 'section-source';
     static $TITLE_SECTION_NAME = 'title';
+    static $CATEGORY_SECTION_NAME = 'category';
 
     public function make($position, $postId, $type, $optionalContent, $content)
     {
-
         $this->position = $position;
         $this->post_id = $postId;
         $this->type = $type;
@@ -45,8 +45,22 @@ class Section extends Model {
         }
 
         return true;
+    }
 
+    public function isTextSection() {
+        return $this->type === Section::$TEXT_SECTION_NAME;
+    }
 
+    public function isImageSection() {
+        return $this->type === Section::$IMAGE_SECTION_NAME;
+    }
+
+    public function isListNumberSection() {
+        return $this->type === Section::$LIST_NUMBER_SECTION_NAME;
+    }
+
+    public function isSourceSection() {
+        return $this->type === Section::$SOURCE_SECTION_NAME;
     }
 
 }

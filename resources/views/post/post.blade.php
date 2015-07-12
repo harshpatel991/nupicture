@@ -20,9 +20,39 @@
                 <h6>{{ $post->category or 'Category' }}</h6>
                 <h1>{{ $post->title or 'Title' }}</h1>
 
-                <p>
-                    {!! $post->content or 'Content goes in here...' !!}
-                </p>
+
+                @foreach ($sections as $section)
+
+                    @if($section->isTextSection())
+
+                        <h3>{{$section->optional_content}}</h3>
+                        <p>{{$section->content}}</p>
+
+                    @elseif($section->isImageSection())
+
+                        <img src="/upload/{{$section->content}}" class="post-image">
+
+                    @elseif($section->isListNumberSection())
+                        <div><h3>{{$listNumberCounter++}}. {{$section->optional_content}}</h3></div>
+
+                    @endif
+
+                @endforeach
+
+
+                @if(count($sources) > 0)
+
+                    <h4>Sources</h4>
+                    @foreach($sources as $source)
+                        @if($source->isSourceSection())
+                            <p>{{$source->content}}</p>
+
+                        @endif
+                    @endforeach
+
+                @endif
+
+
 
                 <div class="background-gray"> {{--Post meta data--}}
                     <div class="row">

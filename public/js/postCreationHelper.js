@@ -52,10 +52,10 @@ function imageSection (id) {
 }
 
 function listNumberSection (id) {
-    return '<div id="'+id+'-wrapper" class="">' +
+    return '<div id="'+id+'-wrapper" class="post-builder-section">' +
                 '<div class="row">' +
                     '<div class="col-sm-10">' +
-                        '<h2><li></li></h2><input type="hidden" name="'+id+'-section-listnumber">' +
+                        '<li class="h2"><input class="form-control display-inline" name="'+id+'-section-listnumber" placeholder="Heading (optional)"></li>' +
                     '</div>' +
                     '<div class="col-sm-2">' +
                         '<div class="btn btn-danger post-builder-remove-button" onclick="removeWrapperId('+id+')"><span class="glyphicon glyphicon-trash"></span></div>' +

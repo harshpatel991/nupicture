@@ -22,7 +22,8 @@ class PostsController extends Controller {
 	 */
 	public function create()
 	{
-		return view('post.create');
+        $categories = Post::$categories;
+		return view('post.create', compact('categories'));
 	}
 
 	/**
@@ -32,16 +33,16 @@ class PostsController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-
-        \Log::info('Request to store a post: ' . print_R($request->all(), TRUE));
+        Log::info('Request to store a post: ' . print_R($request->all(), TRUE));
         $currentPosition = 0;
 
         $post = new Post;
         $post->user_id = 1; //TODO
         $post->status = Post::$pendingPostStatus;
         $post->title = $request->input(Section::$TITLE_SECTION_NAME);
-        $post->slug = Str::slug($request->input(Section::$TITLE_SECTION_NAME)).rand(0, 9999);
+        $post->slug = substr(Str::slug($request->input(Section::$TITLE_SECTION_NAME)), 0, 33).rand(0, 99);
         $post->views = 0;
+        $post->category = $request->input(Section::$CATEGORY_SECTION_NAME);
         $post->save();
 
         foreach($request->all() as $sectionId => $section)
@@ -72,7 +73,7 @@ class PostsController extends Controller {
             elseif(strpos($sectionId, Section::$LIST_NUMBER_SECTION_NAME) !== FALSE)
             {
                 $newSection = new Section();
-                $newSection->make($currentPosition, $post->id, Section::$LIST_NUMBER_SECTION_NAME, '', '');
+                $newSection->make($currentPosition, $post->id, Section::$LIST_NUMBER_SECTION_NAME, $section, '');
                 $newSection->save();
             }
             elseif(strpos($sectionId, Section::$SOURCE_SECTION_NAME) !== FALSE && strlen($section) > 0)
@@ -90,6 +91,8 @@ class PostsController extends Controller {
                 Log::warning('Section '. $sectionId . ' did not fall into any valid sections, ignoring.');
             }
         }
+
+        return redirect()->route('post', [$post->slug]);
 	}
 
 	/**
@@ -106,8 +109,12 @@ class PostsController extends Controller {
             $post->save();
         }
 
-        $postedDate = date_format(new \DateTime($post->posted_at), "F j, Y");
+        $sections = Section::where('post_id', '=', $post->id)->orderBy('position')->get();
+        $sources = Section::where('post_id', '=', $post->id)->where('type', '=', Section::$SOURCE_SECTION_NAME)->orderBy('position')->get();
 
+        $listNumberCounter = 1;
+
+        $postedDate = date_format(new \DateTime($post->posted_at), "F j, Y");
 		$postedBy = User::find($post->user_id);
 
 		$relatedPosts = Post::orderByRaw("RAND()")->get();
@@ -122,7 +129,7 @@ class PostsController extends Controller {
         //choose a random publisher id
         $publisherId = $this::getRandomWeightedElement($weightedAdIds);
 
-		return view('post.post', compact('post', 'postedDate', 'postedBy', 'relatedPosts', 'popularPosts', 'publisherId'));
+		return view('post.post', compact('post', 'sections', 'sources', 'postedDate', 'postedBy', 'relatedPosts', 'popularPosts', 'publisherId', 'listNumberCounter'));
 	}
 
 

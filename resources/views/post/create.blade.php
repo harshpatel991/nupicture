@@ -19,6 +19,19 @@
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" name="title" placeholder="Enter title" value="{{ old('title') }}">
                                 </div>
+                            </div>
+                            <div class="row form-group">
+
+                                <label class="col-md-3 control-label" for="category">Category<span class="required">*</span></label>
+
+                                <div class="col-md-9">
+                                    <select name="category" class="form-control">
+                                        @foreach($categories as $category)
+                                            <option value="{{$category}}">{{$category}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
 
                             </div>
                             <hr>
@@ -32,14 +45,14 @@
                                         <h3 id="post-builder-help-text" class="post-builder-help-text text-center">You don't have any content yet. <br>Build your post by clicking the buttons on the right</h3>
                                         <ol>
                                             <div id="content-bottom"></div>
-                                        </ol>
+
 
                                         <hr>
 
                                         <h4 id="source-title">Sources</h4>
                                         <h3 id="sources-builder-help-text" class="post-builder-help-text text-center">(optional)<br>Add sources using the button on the right</h3>
                                         <div id="source-bottom"></div>
-
+                                        </ol>
                                         {!! Form::submit('Submit', array('class'=>'btn btn-success')) !!}
 
 

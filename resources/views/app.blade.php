@@ -60,7 +60,10 @@
                                     <li><a class="category" href="/cute">CUTE</a></li>
                                     <li><a class="category" href="/funny">FUNNY</a></li>
                                     <li><a class="category" href="/interesting">INTERESTING</a></li>
+                                    <li><a class="category" href="/movies">MOVIES</a></li>
+                                    <li><a class="category" href="/news">NEWS</a></li>
                                     <li><a class="category" href="/photography">PHOTOGRAPHY</a></li>
+                                    <li><a class="category" href="/tv">TV</a></li>
                                     <li><a class="category" href="/woah">WOAH</a></li>
                                 </ul>
 
