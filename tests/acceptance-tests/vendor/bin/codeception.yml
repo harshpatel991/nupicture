@@ -15,7 +15,7 @@ extensions:
 modules:
     config:
         Db:
-            dsn: ''
-            user: ''
-            password: ''
+            dsn: 'mysql:host=192.168.55.55;port=3306;dbname=homestead'
+            user: 'homestead'
+            password: '***REMOVED***'
             dump: tests/_data/dump.sql

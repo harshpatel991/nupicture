@@ -14,3 +14,7 @@ modules:
             wait: 10
             capabilities:
                 unexpectedAlertBehaviour: 'accept'
+        - Db:
+             populate: true
+             cleanup: true
+             reconnect: true
