@@ -6,8 +6,21 @@
         <div class="row">
             <div class="col-sm-12 col-md-offset-1 col-md-10 white-background">
 
+
+
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1 col-sm-12">
+
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
 
                             {!! Form::open(array('route' => '/post/create', 'class' => 'form', 'files'=>true)) !!}
@@ -26,8 +39,13 @@
 
                                 <div class="col-md-9">
                                     <select name="category" class="form-control">
+                                        <option value="">Select Category</option>
                                         @foreach($categories as $category)
-                                            <option value="{{$category}}">{{$category}}</option>
+                                            @if(old('category') == $category)
+                                                <option value="{{$category}}" selected="selected">{{ucfirst($category)}}</option>
+                                            @else
+                                                <option value="{{$category}}">{{ucfirst($category)}}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>
@@ -46,14 +64,15 @@
                                         <ol>
                                             <div id="content-bottom"></div>
 
-
+                                        </ol>
                                         <hr>
 
                                         <h4 id="source-title">Sources</h4>
                                         <h3 id="sources-builder-help-text" class="post-builder-help-text text-center">(optional)<br>Add sources using the button on the right</h3>
-                                        <div id="source-bottom"></div>
+                                        <ol>
+                                            <div id="source-bottom"></div>
                                         </ol>
-                                        {!! Form::submit('Submit', array('class'=>'btn btn-success')) !!}
+                                        {!! Form::submit('Submit', array('class'=>'btn btn-success', 'id' => 'submit-form')) !!}
 
 
                                 </div>
@@ -97,4 +116,12 @@
 
 @section('scripts')
     <script src="/js/postCreationHelper.js"></script>
+
+    {{--Load any rejecrted post content--}}
+
+    <script>
+        @foreach($oldSectionsByJS as $oldSection)
+            {{$oldSection->createByJS}}("{{$oldSection->optional_content}}", "{{$oldSection->content}}")();
+        @endforeach
+    </script>
 @endsection

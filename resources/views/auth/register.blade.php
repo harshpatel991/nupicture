@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('page-title')
+    {{strtoupper(Config::get('app.name'))}} | Register
+@endsection
+
 @section('content')
 <div class="container-fluid">
 	<div class="row">
@@ -80,7 +84,7 @@
 
                                 <div class="form-group">
                                     <div class="col-md-9 col-md-offset-3">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" id="submit-register" class="btn btn-primary">
                                             Register
                                         </button>
                                     </div>

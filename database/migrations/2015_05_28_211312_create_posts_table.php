@@ -21,9 +21,8 @@ class CreatePostsTable extends Migration {
 
 			$table->enum('status', ['pending_post', 'rejected', 'posted']);
 			$table->string('admin_message', 300)->nullable();
-			$table->string('title', 255);
+			$table->string('title', 200);
 			$table->string('slug', 35)->unique();
-			$table->string('content', 2000);
 			$table->dateTime('posted_at')->nullable(); //when it was approved
 			$table->integer('views')->unsigned();
 			$table->timestamps();

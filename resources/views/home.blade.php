@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    {{Config::get('app.name')}}
+    {{Config::get('app.name')}} | Home
 @endsection
 
 @section('content')

@@ -217,6 +217,8 @@ class PostTestCest
         $I->dontSeeInDatabase('sections', array('type' => 'section-listnumber', 'position' => '5'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-image', 'position' => '6'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-source', 'content' => 'Remove All Test 4 Content', 'position' => '7'));
+
+        $I->seeInTitle('Creating A Removing All Items');
     }
 
 

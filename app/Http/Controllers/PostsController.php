@@ -4,6 +4,7 @@ use App\Post;
 use App\User;
 use App\Section;
 use App\Http\Requests;
+use App\Http\Requests\StorePostRequest;
 use App\Http\Controllers\Controller;
 
 
@@ -20,10 +21,48 @@ class PostsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function create(Request $request)
 	{
+
+
+        $oldValues = $request->old();
+        $oldSectionsByJS = array();
+
+
+        foreach($oldValues as $sectionId => $section)
+        {
+            $newSection = new Section();
+
+            if(strpos($sectionId, Section::$TEXT_SECTION_NAME) !== FALSE)
+            {
+                $newSection->optional_content = $section[0];
+                $newSection->content = $section[1];
+                $newSection->createByJS = 'addTextSection';
+                array_push($oldSectionsByJS, $newSection);
+            }
+            elseif(strpos($sectionId, Section::$IMAGE_SECTION_NAME) !== FALSE)
+            {
+                $newSection->createByJS = 'addImageSection';
+                array_push($oldSectionsByJS, $newSection);
+            }
+
+            elseif(strpos($sectionId, Section::$LIST_NUMBER_SECTION_NAME) !== FALSE)
+            {
+                $newSection->optional_content = $section;
+                $newSection->createByJS = 'addListNumberSection';
+                array_push($oldSectionsByJS, $newSection);
+            }
+
+            elseif(strpos($sectionId, Section::$SOURCE_SECTION_NAME) !== FALSE)
+            {
+                $newSection->content = $section;
+                $newSection->createByJS = 'addSourceSection';
+                array_push($oldSectionsByJS, $newSection);
+            }
+        }
+
         $categories = Post::$categories;
-		return view('post.create', compact('categories'));
+		return view('post.create', compact('categories', 'oldSectionsByJS'));
 	}
 
 	/**
@@ -31,8 +70,10 @@ class PostsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(StorePostRequest $request)
 	{
+
+
         Log::info('Request to store a post: ' . print_R($request->all(), TRUE));
         $currentPosition = 0;
 
@@ -45,17 +86,23 @@ class PostsController extends Controller {
         $post->category = $request->input(Section::$CATEGORY_SECTION_NAME);
         $post->save();
 
+        //build a validator for the sections
+        foreach($request->except([Section::$TOKEN_SECTION_NAME, Section::$TITLE_SECTION_NAME]) as $sectionId => $section)
+        {
+
+        }
+
         foreach($request->all() as $sectionId => $section)
         {
             $currentPosition ++;
 
-            if(strpos($sectionId, Section::$TEXT_SECTION_NAME) !== FALSE && count($section) == 2 && (strlen($section[0]) > 0 || strlen($section[1]) > 0 ))
+            if(strpos($sectionId, Section::$TEXT_SECTION_NAME) !== FALSE)
             {
                 $newSection = new Section();
                 $newSection ->make($currentPosition, $post->id, Section::$TEXT_SECTION_NAME, $section[0], $section[1]);
                 $newSection->save();
             }
-            elseif(strpos($sectionId, Section::$IMAGE_SECTION_NAME) !== FALSE && count($section) == 1 && strlen($section[0]) > 0)
+            elseif(strpos($sectionId, Section::$IMAGE_SECTION_NAME) !== FALSE)
             {
                 $image = $request->file($sectionId)[0];
                 $extension = $image->guessExtension();
@@ -76,7 +123,7 @@ class PostsController extends Controller {
                 $newSection->make($currentPosition, $post->id, Section::$LIST_NUMBER_SECTION_NAME, $section, '');
                 $newSection->save();
             }
-            elseif(strpos($sectionId, Section::$SOURCE_SECTION_NAME) !== FALSE && strlen($section) > 0)
+            elseif(strpos($sectionId, Section::$SOURCE_SECTION_NAME) !== FALSE)
             {
                 $newSection = new Section();
                 $newSection->make($currentPosition, $post->id, Section::$SOURCE_SECTION_NAME, '', $section);
@@ -101,6 +148,8 @@ class PostsController extends Controller {
 	 */
 	public function show($post, Request $request)
 	{
+
+
         if(!$request->session()->has('visited'.$post->slug))
         {
             $request->session()->put('visited'.$post->slug, true);

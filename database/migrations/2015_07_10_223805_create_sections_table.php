@@ -22,7 +22,7 @@ class CreateSectionsTable extends Migration {
             $table->integer('position')->unsigned();
             $table->enum('type', ['section-text', 'section-image', 'section-listnumber', 'section-source']);
 
-            $table->string('optional_content', 1000);
+            $table->string('optional_content', 200);
             $table->string('content', 2000);
 
             $table->timestamps();

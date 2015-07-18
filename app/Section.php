@@ -63,4 +63,8 @@ class Section extends Model {
         return $this->type === Section::$SOURCE_SECTION_NAME;
     }
 
+    public function validate() {
+
+    }
+
 }

@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('page-title')
+    {{strtoupper(Config::get('app.name'))}} | Login
+@endsection
+
 @section('content')
 <div class="container-fluid">
 	<div class="row">
@@ -54,7 +58,7 @@
 
                                 <div class="form-group">
                                     <div class="col-md-7 col-md-offset-3">
-                                        <button type="submit" class="btn btn-primary">Login</button>
+                                        <button type="submit" class="btn btn-primary" id="submit-login">Login</button>
 
                                         <a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
                                     </div>
