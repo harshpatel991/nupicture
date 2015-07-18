@@ -16,6 +16,10 @@ use Illuminate\Support\Str;
 
 class PostsController extends Controller {
 
+    public function __construct() {
+        $this->middleware('auth', ['except' => 'show']);
+    }
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -23,8 +27,6 @@ class PostsController extends Controller {
 	 */
 	public function create(Request $request)
 	{
-
-
         $oldValues = $request->old();
         $oldSectionsByJS = array();
 
@@ -72,8 +74,6 @@ class PostsController extends Controller {
 	 */
 	public function store(StorePostRequest $request)
 	{
-
-
         Log::info('Request to store a post: ' . print_R($request->all(), TRUE));
         $currentPosition = 0;
 
@@ -86,11 +86,6 @@ class PostsController extends Controller {
         $post->category = $request->input(Section::$CATEGORY_SECTION_NAME);
         $post->save();
 
-        //build a validator for the sections
-        foreach($request->except([Section::$TOKEN_SECTION_NAME, Section::$TITLE_SECTION_NAME]) as $sectionId => $section)
-        {
-
-        }
 
         foreach($request->all() as $sectionId => $section)
         {

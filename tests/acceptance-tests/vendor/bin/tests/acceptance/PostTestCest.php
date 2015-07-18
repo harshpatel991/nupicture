@@ -221,5 +221,7 @@ class PostTestCest
         $I->seeInTitle('Creating A Removing All Items');
     }
 
+    //TODO: test that users cannot create pages with script tags but can add anchor tags
+
 
 }

@@ -11,48 +11,37 @@
 
             <div class="col-md-offset-1 col-md-7 col-sm-8 post-main-column white-background"> {{--Main content column--}}
 
-
                 <a href="https://twitter.com/intent/tweet?url={{Request::url()}}&text={{$post->title}}"><img src="/images/twitter.png" class="social-media-icons"></a>
                 <a href="http://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="/images/facebook.png" class="social-media-icons"></a>
                 <a href="https://plus.google.com/share?url={{Request::url()}}"><img src="/images/google-plus.png" class="social-media-icons "></a>
                 <a href="http://pinterest.com/pin/create/button/?url={{Request::url()}}&media={{Request::root()}}/upload/{{$post->thumbnail_image}}&description={{$post->title}}"><img src="/images/pintrest.png" class="social-media-icons"></a>
 
                 <h6>{{ $post->category or 'Category' }}</h6>
-                <h1>{{ $post->title or 'Title' }}</h1>
-
+                <h1>{!! clean($post->title) !!}</h1>
 
                 @foreach ($sections as $section)
 
                     @if($section->isTextSection())
-
-                        <h3>{{$section->optional_content}}</h3>
-                        <p>{{$section->content}}</p>
-
+                        <h3>{!! clean($section->optional_content) !!}</h3>
+                        <p>{!! clean($section->content) !!}</p>
                     @elseif($section->isImageSection())
-
                         <img src="/upload/{{$section->content}}" class="post-image">
-
                     @elseif($section->isListNumberSection())
-                        <div><h3>{{$listNumberCounter++}}. {{$section->optional_content}}</h3></div>
-
+                        <div><h3>{{$listNumberCounter++}}. {!! clean($section->optional_content) !!}</h3></div>
                     @endif
 
                 @endforeach
-
 
                 @if(count($sources) > 0)
 
                     <h4>Sources</h4>
                     @foreach($sources as $source)
                         @if($source->isSourceSection())
-                            <p>{{$source->content}}</p>
-
+                            <p><a href="{{$source->content}}">{{$source->content}}</a></p>
                         @endif
                     @endforeach
 
                 @endif
-
-
 
                 <div class="background-gray"> {{--Post meta data--}}
                     <div class="row">
