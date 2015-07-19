@@ -23,9 +23,6 @@ class StorePostRequest extends Request {
 	 */
 	public function rules()
 	{
-
-        //TODO: validate the post
-
         $rules = [
             'title' => 'required|max:200',
             'category' => 'required|max:50'
@@ -58,8 +55,6 @@ class StorePostRequest extends Request {
         }
 
         return $rules;
-
-
 	}
 
 //    public function messages()

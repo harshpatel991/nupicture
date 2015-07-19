@@ -49,8 +49,6 @@
                         <div class="col-sm-4"> <h6 class="text-center"><span class="glyphicon glyphicon-time"></span> {{$postedDate or 'Date' }} </h6></div>
                         <div class="col-sm-4"> <h6 class="text-center"><span class="glyphicon glyphicon-fire"></span> {{ $post->views or '0' }} Views </h6> </div>
                     </div>
-
-
                 </div>
 
                 <hr>
@@ -73,7 +71,6 @@
                 </div>
 
                 @include('partials.comments', ['id' => $post->id, 'title' => $post->title])
-
             </div>
 
             <div class="col-md-3 col-sm-4 post-sidebar "> {{--Side bar--}}
@@ -88,7 +85,6 @@
 
                     @include('partials/large-skyscraper', ['publisherId' => $publisherId])
                 </div>
-
             </div>
 
         </div>

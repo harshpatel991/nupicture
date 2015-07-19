@@ -78,14 +78,13 @@ class PostsController extends Controller {
         $currentPosition = 0;
 
         $post = new Post;
-        $post->user_id = 1; //TODO
+        $post->user_id = \Auth::user()->id;
         $post->status = Post::$pendingPostStatus;
         $post->title = $request->input(Section::$TITLE_SECTION_NAME);
         $post->slug = substr(Str::slug($request->input(Section::$TITLE_SECTION_NAME)), 0, 33).rand(0, 99);
         $post->views = 0;
         $post->category = $request->input(Section::$CATEGORY_SECTION_NAME);
         $post->save();
-
 
         foreach($request->all() as $sectionId => $section)
         {

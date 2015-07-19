@@ -6,7 +6,7 @@
 
 
                 <div class="home-thumbnail-title stylized">
-                    <div class="home-thumbnail-category">{{$post->category}}</div>
+                    <div class="home-thumbnail-category"><span class="white-highlight">{{$post->category}}</span></div>
                     {{$post->title}}
 
                     <div class="home-thumbnail-summary stylized">

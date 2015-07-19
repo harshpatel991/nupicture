@@ -6302,7 +6302,7 @@ button.close {
   }
 }
 .navbar {
-  border-width: 0 1px 4px 1px;
+  border-width: 1px 1px 4px 1px;
 }
 .text-primary,
 .text-primary:hover {
@@ -6473,14 +6473,14 @@ label {
 }
 .dropdown-menu {
   margin-top: 0;
-  border-width: 0 1px 4px 1px;
+  border-width: 1px 1px 4px 1px;
   border-top-width: 1px;
   box-shadow: none;
 }
 .breadcrumb {
   border-color: #ededed;
   border-style: solid;
-  border-width: 0 1px 4px 1px;
+  border-width: 1px 1px 4px 1px;
 }
 .pagination > li > a,
 .pager > li > a,
@@ -6488,7 +6488,7 @@ label {
 .pager > li > span {
   position: relative;
   top: 0;
-  border-width: 0 1px 4px 1px;
+  border-width: 1px 1px 4px 1px;
   color: #555555;
   font-size: 12px;
   font-weight: bold;
@@ -6513,14 +6513,14 @@ label {
 .pagination > .disabled > span:hover,
 .pager > .disabled > span:hover {
   top: 0;
-  border-width: 0 1px 4px 1px;
+  border-width: 1px 1px 4px 1px;
 }
 .pagination > .disabled > a:active,
 .pager > .disabled > a:active,
 .pagination > .disabled > span:active,
 .pager > .disabled > span:active {
   top: 0;
-  border-width: 0 1px 4px 1px;
+  border-width: 1px 1px 4px 1px;
 }
 .pager > li > a,
 .pager > li > span,
@@ -6548,7 +6548,7 @@ label {
   opacity: 1;
 }
 .alert {
-  border-width: 0 1px 4px 1px;
+  border-width: 1px 1px 4px 1px;
 }
 .alert .alert-link {
   font-weight: normal;
@@ -6601,7 +6601,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel {
   border: 1px solid #e7e7e7;
-  border-width: 0 1px 4px 1px;
+  border-width: 1px 1px 4px 1px;
 }
 .panel-default .close {
   color: #555555;
@@ -6738,8 +6738,20 @@ body {
   color: #D1D1D1;
 }
 .post-builder-remove-button {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.post-builder-textarea {
+  margin: 5px 0px;
+}
+.post-builder-add-button {
+  background-color: #62798c;
+  border-color: #536777;
+  color: #fff;
+}
+.post-builder-add-button:hover {
+  background-color: #586d7e;
+  color: #fff;
 }
 .hero-wrapper {
   margin-left: 6px;
@@ -6830,8 +6842,12 @@ body {
   /* FF3.6+ */
   /* IE10 */
   /* Opera 11.10+ */
-  background: linear-gradient(90deg, rgba(40, 48, 72, 0.9) 10%, rgba(133, 147, 152, 0.8) 90%);
+  background: linear-gradient(90deg, rgba(68, 130, 179, 0.7) 50%, rgba(59, 126, 149, 0.36) 90%);
   /* W3C */
+}
+.white-highlight {
+  background-color: #fff;
+  padding: 5px;
 }
 .home-thumbnail-text-section {
   background-color: #fff;

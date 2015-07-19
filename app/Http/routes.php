@@ -11,8 +11,6 @@
 |
 */
 
-
-
 Route::get('/sign-up-beta',
 	['as' => 'sign-up-beta', 'uses' => 'HomeController@getBetaSignUp']);
 
@@ -37,7 +35,7 @@ Route::bind('post_slug', function($value, $route) {
 });
 
 Route::get('/user/{user_name}', 'UsersController@profile');
-Route::post('/user/{user_name}', 'UsersController@requestPayment'); //POSTing to users profile -> payment requested
+//Route::post('/user/{user_name}', 'UsersController@requestPayment'); //POSTing to users profile -> payment requested
 Route::bind('user_name', function($value, $route) {
 	return App\User::where('username', '=', $value)->firstOrFail();
 });

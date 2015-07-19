@@ -55,13 +55,18 @@
   -o-transition: opacity 500ms;
   transition: opacity 500ms;
 
-  @gradient-start: rgba(40, 48, 72, .9);
-  @gradient-end: rgba(133, 147, 152, .8);
-  background: -webkit-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* W3C */
+  @gradient-start: rgba(68, 130, 179, 0.7);
+  @gradient-end: rgba(59, 126, 149, 0.36);
+  background: -webkit-linear-gradient(90deg, @gradient-start 50%, @gradient-end 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, @gradient-start 50%, @gradient-end 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, @gradient-start 50%, @gradient-end 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, @gradient-start 50%, @gradient-end 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, @gradient-start 50%, @gradient-end 90%); /* W3C */
+}
+
+.white-highlight {
+  background-color: #fff;
+  padding: 5px;
 }
 
 .home-thumbnail-text-section {
