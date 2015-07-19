@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder {
         $this->call('PostsTableSeederUser2');
         $this->call('PostsTableSeederUser3');
         $this->call('PostsTableSeederUser4');
-        $this->call('PostsTableSeederUser5');
+        $this->call('SectionTableSeederUser1');
+        $this->call('SectionTableSeederUser2');
 	}
 
 }

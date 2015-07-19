@@ -79,7 +79,7 @@
             <div class="col-md-3 col-sm-4 post-sidebar "> {{--Side bar--}}
                 <div class="white-background">
                     @include('partials/large-rectangle', ['publisherId' => $publisherId])
-
+                    <br>
                     <h4 class="section-intro-heading">POPULAR POSTS</h4>
 
                     @foreach($popularPosts as $popularPost)

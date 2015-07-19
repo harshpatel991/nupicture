@@ -6,7 +6,7 @@
                     <div class="hero-title">
                         {{$post->title}}
                         <div class="hero-info">
-                            {{$post->views}} <b>VIEWS </b>|
+                            {{$post->views}} VIEWS |
                             {{strtoupper(date_format($post->updated_at, "F j, Y"))}}
                         </div>
                     </div>

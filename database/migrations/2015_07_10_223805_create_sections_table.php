@@ -19,7 +19,6 @@ class CreateSectionsTable extends Migration {
             $table->integer('post_id')->unsigned();
             $table->foreign('post_id')->references('id')->on('posts');
 
-            $table->integer('position')->unsigned();
             $table->enum('type', ['section-text', 'section-image', 'section-listnumber', 'section-source']);
 
             $table->string('optional_content', 200);

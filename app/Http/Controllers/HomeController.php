@@ -39,8 +39,9 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		$posts = Post::where('status', 'posted')->get();
-		return view('home', compact('posts'));
+		$posts = Post::where('status', 'posted')->limit(10)->get();
+        $popularPosts = Post::orderBy('views', 'desc')->limit(5)->get();
+        return view('home', compact('posts', 'popularPosts'));
 	}
 
 	public function category($category) {
