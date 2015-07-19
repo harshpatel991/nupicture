@@ -1,5 +1,4 @@
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic");
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -978,7 +977,7 @@ h6,
 .h5,
 .h6,
 .h7 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   font-weight: 400;
   line-height: 1.1;
   color: #333333;
@@ -1341,7 +1340,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: Monaco, Consolas, "Courier New", monospace;
 }
 code {
   padding: 2px 4px;
@@ -3922,7 +3921,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   font-weight: 700;
   line-height: 20px;
   height: 50px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
 }
 @media (min-width: 768px) {
   .navbar-brand {
@@ -6651,10 +6650,11 @@ body {
   text-align: center;
 }
 .horizontal-post-image {
-  width: 100px;
-  height: 60px;
+  width: 100%;
+  height: 100px;
   background-position: center center;
   background-size: cover;
+  margin-bottom: 10px;
 }
 .horizontal-post-title {
   color: #333333;
@@ -6663,7 +6663,8 @@ body {
   text-decoration: none;
 }
 .horizontal-info {
-  color: #aaa;
+  font-size: .9em;
+  color: #c8c8c8;
 }
 .footer {
   padding-top: 70px;
@@ -6779,7 +6780,7 @@ body {
   /* IE6-9 */
 }
 .hero-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   font-size: 1.1em;
   line-height: 110%;
   color: #fff;
@@ -6861,7 +6862,7 @@ body {
   padding-right: 10px;
 }
 .home-thumbnail-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', Verdana, Geneva, sans-serif;
   text-transform: capitalize;
   line-height: 110%;
   font-size: 1.2em;
@@ -6912,7 +6913,7 @@ body {
 .home-thumbnail-title .home-thumbnail-info {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: .6em;
-  color: #aaa;
+  color: #c8c8c8;
 }
 .home-thumbnail-title .home-thumbnail-info.stylized {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;

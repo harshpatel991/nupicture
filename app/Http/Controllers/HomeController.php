@@ -52,9 +52,7 @@ class HomeController extends Controller {
 
 	public function getBetaSignUp()
 	{
-        $contentTypes = Post::$contentTypes;
-		$postNames = Post::$postNames;
-		return view('betaSignUp', compact('postNames', 'contentTypes'));
+		return view('betaSignUp');
 	}
 
 

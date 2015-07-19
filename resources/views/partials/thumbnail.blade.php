@@ -15,8 +15,8 @@
                 @endif
 
                 <div class="home-thumbnail-info">
-                    {{$post->views}} <b>VIEWS </b>|
-                    {{strtoupper(date_format($post->updated_at, "F j, Y"))}}
+                    <span class="glyphicon glyphicon-fire"></span> {{$post->views}} VIEWS|
+                    <span class="glyphicon glyphicon-time"></span> {{strtoupper($post->created_at->diffForHumans())}}
                 </div>
             </div>
 
