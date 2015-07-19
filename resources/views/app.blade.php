@@ -69,19 +69,6 @@
 
                             </li>
 
-
-							@if (Auth::guest())
-								{{--<li><a href="{{ url('/auth/login') }}" class="category"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>--}}
-								{{--<li><a href="{{ url('/auth/register') }}" class="category"><span class="glyphicon glyphicon-edit"></span> Register</a></li>--}}
-							@else
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
-									<ul class="dropdown-menu" role="menu">
-										<li><a href="{{ url('/auth/logout') }}" class="category">Logout</a></li>
-									</ul>
-								</li>
-							@endif
-
 							<li>
 								<form action="{{ url('/post/create') }}" class="display-inline">
 									<button type="submit" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
@@ -94,6 +81,19 @@
 								</form>
 
 							</li>
+
+                            @if (Auth::guest())
+                                {{--<li><a href="{{ url('/auth/login') }}" class="category"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>--}}
+                                {{--<li><a href="{{ url('/auth/register') }}" class="category"><span class="glyphicon glyphicon-edit"></span> Register</a></li>--}}
+                            @else
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle navbar-btn" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->username }} <span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ url('/auth/logout') }}" class="category ">Logout</a></li>
+                                    </ul>
+                                </li>
+                            @endif
+
 						</ul>
 
 					</div> {{--End collapse--}}

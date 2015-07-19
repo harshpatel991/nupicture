@@ -21,7 +21,7 @@ class PostsController extends Controller {
     }
 
 	/**
-	 * Show the form for creating a new resource.
+	 * Show the form for creating a new post.
 	 *
 	 * @return Response
 	 */
@@ -45,6 +45,7 @@ class PostsController extends Controller {
             elseif(strpos($sectionId, Section::$IMAGE_SECTION_NAME) !== FALSE)
             {
                 $newSection->createByJS = 'addImageSection';
+                $newSection->optional_content = $section[1];
                 array_push($oldSectionsByJS, $newSection);
             }
 
@@ -74,33 +75,32 @@ class PostsController extends Controller {
 	 */
 	public function store(StorePostRequest $request)
 	{
+
         Log::info('Request to store a post: ' . print_R($request->all(), TRUE));
-        $currentPosition = 0;
 
         $post = new Post;
         $post->user_id = \Auth::user()->id;
         $post->status = Post::$pendingPostStatus;
         $post->title = $request->input(Section::$TITLE_SECTION_NAME);
-        $post->slug = substr(Str::slug($request->input(Section::$TITLE_SECTION_NAME)), 0, 33).rand(0, 99);
+        $post->slug = substr(Str::slug($request->input(Section::$TITLE_SECTION_NAME)), 0, 33).'-'.rand(0, 99);
         $post->views = 0;
         $post->category = $request->input(Section::$CATEGORY_SECTION_NAME);
         $post->save();
 
         foreach($request->all() as $sectionId => $section)
         {
-            $currentPosition ++;
 
             if(strpos($sectionId, Section::$TEXT_SECTION_NAME) !== FALSE)
             {
                 $newSection = new Section();
-                $newSection ->make($currentPosition, $post->id, Section::$TEXT_SECTION_NAME, $section[0], $section[1]);
+                $newSection ->make($post->id, Section::$TEXT_SECTION_NAME, $section[0], $section[1]);
                 $newSection->save();
             }
             elseif(strpos($sectionId, Section::$IMAGE_SECTION_NAME) !== FALSE)
             {
                 $image = $request->file($sectionId)[0];
                 $extension = $image->guessExtension();
-                $imageUploadedName = $post->slug . '-' . $currentPosition . rand(0, 99) . '.' . $extension;
+                $imageUploadedName = $post->slug . '-' . rand(0, 99) . '.' . $extension;
                 $imageUploadStatus = Section::uploadImage($image, $imageUploadedName, $extension);
 
                 if($imageUploadStatus !== TRUE) {
@@ -108,19 +108,19 @@ class PostsController extends Controller {
                 }
 
                 $newSection = new Section();
-                $newSection ->make($currentPosition, $post->id, Section::$IMAGE_SECTION_NAME, '', $imageUploadedName);
+                $newSection ->make($post->id, Section::$IMAGE_SECTION_NAME, $section[1], $imageUploadedName);
                 $newSection->save();
             }
             elseif(strpos($sectionId, Section::$LIST_NUMBER_SECTION_NAME) !== FALSE)
             {
                 $newSection = new Section();
-                $newSection->make($currentPosition, $post->id, Section::$LIST_NUMBER_SECTION_NAME, $section, '');
+                $newSection->make($post->id, Section::$LIST_NUMBER_SECTION_NAME, $section, '');
                 $newSection->save();
             }
             elseif(strpos($sectionId, Section::$SOURCE_SECTION_NAME) !== FALSE)
             {
                 $newSection = new Section();
-                $newSection->make($currentPosition, $post->id, Section::$SOURCE_SECTION_NAME, '', $section);
+                $newSection->make($post->id, Section::$SOURCE_SECTION_NAME, '', $section);
                 $newSection->save();
             }
             elseif(strpos($sectionId, Section::$TOKEN_SECTION_NAME) !== FALSE || strpos($sectionId, Section::$TITLE_SECTION_NAME) !== FALSE )
@@ -142,9 +142,7 @@ class PostsController extends Controller {
 	 */
 	public function show($post, Request $request)
 	{
-
-
-        if(!$request->session()->has('visited'.$post->slug))
+        if(!$request->session()->has('visited'.$post->slug)) //Count a view
         {
             $request->session()->put('visited'.$post->slug, true);
 
@@ -152,8 +150,8 @@ class PostsController extends Controller {
             $post->save();
         }
 
-        $sections = Section::where('post_id', '=', $post->id)->orderBy('position')->get();
-        $sources = Section::where('post_id', '=', $post->id)->where('type', '=', Section::$SOURCE_SECTION_NAME)->orderBy('position')->get();
+        $sections = Section::where('post_id', '=', $post->id)->orderBy('id')->get();
+        $sources = Section::where('post_id', '=', $post->id)->where('type', '=', Section::$SOURCE_SECTION_NAME)->orderBy('id')->get();
 
         $listNumberCounter = 1;
 

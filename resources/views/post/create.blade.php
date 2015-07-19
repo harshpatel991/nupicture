@@ -82,6 +82,9 @@
                                 </div>
 
                                 <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Add Sources</h3>
+                                    </div>
                                     <div class="panel-body">
                                         <div id="add-source-section" class="btn btn-default btn-block post-builder-add-button"> <span class="glyphicon glyphicon-plus-sign"></span> Source</div>
                                     </div>

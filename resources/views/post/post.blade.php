@@ -26,6 +26,9 @@
                         <p>{!! clean($section->content) !!}</p>
                     @elseif($section->isImageSection())
                         <img src="/upload/{{$section->content}}" class="post-image">
+                        @if(strlen($section->optional_content) > 0)
+                            <h6><a href="{!! clean($section->optional_content) !!}">Image Source</a></h6>
+                        @endif
                     @elseif($section->isListNumberSection())
                         <div><h3>{{$listNumberCounter++}}. {!! clean($section->optional_content) !!}</h3></div>
                     @endif

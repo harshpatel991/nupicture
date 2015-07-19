@@ -13,9 +13,8 @@ class Section extends Model {
     static $TITLE_SECTION_NAME = 'title';
     static $CATEGORY_SECTION_NAME = 'category';
 
-    public function make($position, $postId, $type, $optionalContent, $content)
+    public function make($postId, $type, $optionalContent, $content)
     {
-        $this->position = $position;
         $this->post_id = $postId;
         $this->type = $type;
         $this->optional_content = $optionalContent;
