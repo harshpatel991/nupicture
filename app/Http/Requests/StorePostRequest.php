@@ -47,6 +47,11 @@ class StorePostRequest extends Request {
                 $rules[$sectionId] = 'max:200'; //optional content rule
             }
 
+            elseif(strpos($sectionId, Section::$YOUTUBE_SECTION_NAME) !== FALSE)
+            {
+                $rules[$sectionId] = ['max:200','regex:'.Section::$YOUTUBE_ID_REGEX]; //content rule
+            }
+
             elseif(strpos($sectionId, Section::$SOURCE_SECTION_NAME) !== FALSE)
             {
                 $rules[$sectionId] = 'required|min:1|max:200'; //content rule

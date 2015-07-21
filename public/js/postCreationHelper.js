@@ -22,6 +22,7 @@ var sourcesHelpText= $('#sources-builder-help-text'); //the text that tells the 
 var buttonAddTextSection = $('#add-text-section');
 var buttonAddImageSection = $('#add-image-section');
 var buttonAddListNumberSection = $('#add-list-number-section');
+var buttonAddYoutubeSection = $('#add-youtube-section');
 var buttonAddSourceSection= $('#add-source-section');
 
 function textSection (id, optional_content, content) {
@@ -84,13 +85,26 @@ function listNumberSection (id, optional_content) {
             '</div>';
 }
 
-function sourceSection(id, optional_content) {
-    optional_content = optional_content || '';
+function youtubeSection (id, content) {
+    return '<div id="' + id + '-wrapper" class="post-builder-section">' +
+                '<div class="row">' +
+                    '<div class="col-sm-10">' +
+                        '<input class="form-control" name="' + id + '-section-youtube" placeholder="YouTube link (ex: https://www.youtube.com/watch?v=QcIy9NiNbmo)" id="' + id + '-content" value="'+ content +'">' +
+                    '</div>' +
+                    '<div class="col-sm-2">' +
+                        '<div class="btn btn-danger pull-right" onclick="removeWrapperId(' + id + ')" id="' + id + '-remove"><span class="glyphicon glyphicon-trash"></span></div>' +
+                    '</div>' +
+                '</div>' +
+            '</div>';
+}
+
+function sourceSection(id, content) {
+    content = content || '';
 
     return '<div id="' + id + '-wrapper" class="post-builder-section">' +
                 '<div class="row">' +
                     '<div class="col-sm-10">' +
-                        '<input class="form-control" name="' + id + '-section-source" placeholder="Article source (ex: http://cnn.com)" id="' + id + '-content" value="'+ optional_content +'">' +
+                        '<input class="form-control" name="' + id + '-section-source" placeholder="Article source (ex: http://cnn.com)" id="' + id + '-content" value="'+ content +'">' +
                     '</div>' +
                     '<div class="col-sm-2">' +
                         '<div class="btn btn-danger pull-right" onclick="removeWrapperId(' + id + ')" id="' + id + '-remove"><span class="glyphicon glyphicon-trash"></span></div>' +
@@ -103,6 +117,7 @@ function sourceSection(id, optional_content) {
 buttonAddTextSection.click(addTextSection('',''));
 buttonAddImageSection.click(addImageSection('', ''));
 buttonAddListNumberSection.click(addListNumberSection('', ''));
+buttonAddYoutubeSection.click(addYoutubeSection('', ''));
 buttonAddSourceSection.click(addSourceSection('', ''));
 
 function addTextSection(optional_content, content) {
@@ -124,6 +139,15 @@ function addImageSection(optional_content, content) {
 function addListNumberSection(optional_content, content) {
     return function() {
         $(listNumberSection(currentGlobalSectionIndex, optional_content)).hide().fadeIn().insertBefore(contentBottom);
+        addSection();
+        postBuilderHelpText.hide();
+        currentListItemNumber = currentListItemNumber + 1;
+    }
+}
+
+function addYoutubeSection(optional_content, content) {
+    return function() {
+        $(youtubeSection(currentGlobalSectionIndex, content)).hide().fadeIn().insertBefore(contentBottom);
         addSection();
         postBuilderHelpText.hide();
         currentListItemNumber = currentListItemNumber + 1;

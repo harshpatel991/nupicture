@@ -76,6 +76,7 @@
                                     <div class="panel-body">
                                         <div id="add-text-section" class="btn btn-default btn-block post-builder-add-button"> <span class="glyphicon glyphicon-plus-sign"></span> Text </div>
                                         <div id="add-image-section" class="btn btn-default btn-block post-builder-add-button"> <span class="glyphicon glyphicon-plus-sign"></span> Picture </div>
+                                        <div id="add-youtube-section" class="btn btn-default btn-block post-builder-add-button"> <span class="glyphicon glyphicon-plus-sign"></span> YouTube Video </div>
                                         <hr>
                                         <div id="add-list-number-section" class="btn btn-default btn-block post-builder-add-button"> <span class="glyphicon glyphicon-plus-sign"></span> List Number</div>
                                     </div>

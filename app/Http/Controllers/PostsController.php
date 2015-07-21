@@ -56,6 +56,13 @@ class PostsController extends Controller {
                 array_push($oldSectionsByJS, $newSection);
             }
 
+            elseif(strpos($sectionId, Section::$YOUTUBE_SECTION_NAME) !== FALSE)
+            {
+                $newSection->content = $section;
+                $newSection->createByJS = 'addYoutubeSection';
+                array_push($oldSectionsByJS, $newSection);
+            }
+
             elseif(strpos($sectionId, Section::$SOURCE_SECTION_NAME) !== FALSE)
             {
                 $newSection->content = $section;
@@ -115,6 +122,16 @@ class PostsController extends Controller {
             {
                 $newSection = new Section();
                 $newSection->make($post->id, Section::$LIST_NUMBER_SECTION_NAME, $section, '');
+                $newSection->save();
+            }
+            elseif(strpos($sectionId, Section::$YOUTUBE_SECTION_NAME) !== FALSE)
+            {
+                $newSection = new Section();
+
+                //store the youtube video id
+                preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $section, $matches);
+
+                $newSection->make($post->id, Section::$YOUTUBE_SECTION_NAME, '', $matches[1]);
                 $newSection->save();
             }
             elseif(strpos($sectionId, Section::$SOURCE_SECTION_NAME) !== FALSE)

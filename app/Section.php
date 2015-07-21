@@ -9,9 +9,12 @@ class Section extends Model {
     static $TEXT_SECTION_NAME = 'section-text';
     static $IMAGE_SECTION_NAME = 'section-image';
     static $LIST_NUMBER_SECTION_NAME = 'section-listnumber';
+    static $YOUTUBE_SECTION_NAME = 'section-youtube';
     static $SOURCE_SECTION_NAME = 'section-source';
     static $TITLE_SECTION_NAME = 'title';
     static $CATEGORY_SECTION_NAME = 'category';
+
+    static $YOUTUBE_ID_REGEX = "/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/";
 
     public function make($postId, $type, $optionalContent, $content)
     {
@@ -56,6 +59,10 @@ class Section extends Model {
 
     public function isListNumberSection() {
         return $this->type === Section::$LIST_NUMBER_SECTION_NAME;
+    }
+
+    public function isYoutubeSection() {
+        return $this->type === Section::$YOUTUBE_SECTION_NAME;
     }
 
     public function isSourceSection() {

@@ -29,6 +29,10 @@
                         @if(strlen($section->optional_content) > 0)
                             <h6><a href="{!! clean($section->optional_content) !!}">Image Source</a></h6>
                         @endif
+                    @elseif($section->isYoutubeSection())
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item youtube-section" src="https://www.youtube.com/embed/{{$section->content}}" frameborder="0" allowfullscreen></iframe>
+                        </div>
                     @elseif($section->isListNumberSection())
                         <div><h3>{{$listNumberCounter++}}. {!! clean($section->optional_content) !!}</h3></div>
                     @endif
