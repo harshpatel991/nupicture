@@ -47,3 +47,5 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('/sign-up-success', 'HomeController@signupSuccess');

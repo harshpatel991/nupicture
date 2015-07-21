@@ -70,6 +70,15 @@ class HomeController extends Controller {
 		return view('increasePageViews');
 	}
 
+    public function signupSuccess() {
+
+        $email = 'your email';
+        if(\Auth::check()) {
+            $email = \Auth::user()->email;
+        }
+        return view('signUpSuccess', compact('email'));
+    }
+
 
 
 }
