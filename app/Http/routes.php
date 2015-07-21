@@ -21,8 +21,9 @@ Route::post('/sign-up-beta',
 Route::get('/exposure-guide',
 	['as' => 'increase-page-views', 'uses' => 'HomeController@increasePageViews']);
 
-Route::get('/{category}', 'HomeController@category');
-Route::get('/', 'HomeController@index');
+//Route::get('/{category}', 'HomeController@category');
+Route::get('/',
+    ['as' => 'home', 'uses' => 'HomeController@index']);
 
 
 Route::get('/post/create', 'PostsController@create');
@@ -40,6 +41,7 @@ Route::bind('user_name', function($value, $route) {
 	return App\User::where('username', '=', $value)->firstOrFail();
 });
 
+Route::get('/verify/{confirmation_code}', 'RegistrationController@verify');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

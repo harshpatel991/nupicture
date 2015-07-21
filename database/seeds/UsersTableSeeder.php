@@ -16,6 +16,7 @@ class UsersTableSeeder extends Seeder {
                 'email'  => 'email1@gmail.com',
                 'password'  => bcrypt('password1'),
                 'status' => 'good',
+                'confirmation_code' => '1234567890ABCDE1',
                 'publisher_id' => 'pub-1111111111111111'
             ],
 
@@ -24,6 +25,7 @@ class UsersTableSeeder extends Seeder {
                 'email'  => 'email2@gmail.com',
                 'password'  => bcrypt('password2'),
                 'status' => 'good',
+                'confirmation_code' => '1234567890ABCDE2',
                 'publisher_id' => 'pub-2222222222222222'
             ],
 
@@ -31,7 +33,8 @@ class UsersTableSeeder extends Seeder {
                 'username'  => 'user3',
                 'email'  => 'email3@gmail.com',
                 'password'  => bcrypt('password3'),
-                'status' => 'good',
+                'status' => 'unconfirmed',
+                'confirmation_code' => '1234567890ABCDE3',
                 'publisher_id' => 'pub-3333333333333333'
             ],
 
@@ -40,15 +43,8 @@ class UsersTableSeeder extends Seeder {
                 'email'  => 'email4@gmail.com',
                 'password'  => bcrypt('password4'),
                 'status' => 'warning',
+                'confirmation_code' => '1234567890ABCDE4',
                 'publisher_id' => 'pub-4444444444444444'
-            ],
-
-            ['id' => 5,
-                'username'  => 'user5',
-                'email'  => 'email5@gmail.com',
-                'password'  => bcrypt('password5'),
-                'status' => 'warning',
-                'publisher_id' => 'pub-5555555555555555'
             ]
         );
 

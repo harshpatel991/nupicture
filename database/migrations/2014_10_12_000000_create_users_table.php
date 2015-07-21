@@ -19,7 +19,8 @@ class CreateUsersTable extends Migration {
 			$table->string('username', 60)->unique();
 			$table->string('email', 254)->unique();
 			$table->string('password', 60);
-			$table->enum('status', ['good', 'warning']);
+			$table->enum('status', ['good', 'warning', 'unconfirmed']);
+            $table->string('confirmation_code', 16)->nullable();
             $table->string('publisher_id');
 			$table->rememberToken();
 			$table->timestamps();

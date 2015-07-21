@@ -7,8 +7,17 @@
 @section('content')
 	<div class="container-fluid">
 
-        @include('partials/hero', ['post' => $posts[3]])
+        <div class="row">
+            <div class="col-sm-12 col-lg-10 col-lg-offset-1">
+                @if (Session::has('message'))
+                    <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
+                @elseif (Session::has('errors'))
+                    <div class="alert alert-danger" role="alert">{{ Session::get('errors')->first('confirmation') }}</div>
+                @endif
+            </div>
+        </div>
 
+        @include('partials/hero', ['post' => $posts[3]])
 
         <div class="row">
 
