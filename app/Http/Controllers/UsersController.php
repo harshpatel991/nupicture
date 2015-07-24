@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use Auth;
 use App\Post;
 use App\User;
 use Redirect;
@@ -13,15 +14,19 @@ use Illuminate\Support\Facades\App;
 
 class UsersController extends Controller {
 
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
 	/**
 	 * Display the specified resource.
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function profile($user)
+	public function profile()
 	{
-        //TODO: only allow logged in user to view profile
+        $user = Auth::user();
 		$usersPosts = Post::where('user_id', '=', $user->id)->get();
 		$statusToEnglish = ['pending_post' => 'Pending', 'rejected' => 'Rejected', 'posted' => 'Posted'];
 

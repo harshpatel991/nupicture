@@ -34,12 +34,7 @@ Route::bind('post_slug', function($value, $route) {
 	return App\Post::whereSlug($value)->first();
 });
 
-Route::get('/user/{user_name}', 'UsersController@profile');
-//Route::post('/user/{user_name}', 'UsersController@requestPayment'); //POSTing to users profile -> payment requested
-Route::bind('user_name', function($value, $route) {
-	return App\User::where('username', '=', $value)->firstOrFail();
-});
-
+Route::get('/profile', 'UsersController@profile');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
