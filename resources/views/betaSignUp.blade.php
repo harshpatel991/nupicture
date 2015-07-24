@@ -62,7 +62,7 @@
 
                 <div class="row">
                     <div class="col-md-8 col-sm-7 col-md-offset-3">
-                        <h1>Registering for {{Config::get('app.name')}}</h1>
+                        <h1>{{Config::get('app.name')}} Explained</h1>
                     </div>
                 </div>
 

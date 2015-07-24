@@ -11,27 +11,23 @@
             <div class="col-sm-12 col-md-offset-1 col-md-10 white-background post-main-column">
 
                 <br>
-                <br>
-                <h1 class="text-center">You're almost there! Check your inbox</h1>
+                <h1 class="text-center">You're all set!</h1>
                 <br>
                 <img src="/images/email-icon.png" width="130" height="130" class="center-block">
+
+                <h3 class="text-center">We're thrilled to have you here.</h3>
                 <br>
-                <h3 class="text-center">A verification link has been sent to {{$email}}.</h3>
-                <br>
-                <br>
-                <p>While you're waiting, check out these handy pages to help you get started</p>
-                <ul>
-                    <li></li>
-                </ul>
-                <br>
-                <br>
-                <br><br>
-                <br>
+                <div class="text-center">
+                    <a href="/post/create" class="btn btn-lg btn-primary">Create Your First Post</a>
+                    <b>or</b>
+                    <a href="/post/{{$randomPost->slug}}" class="btn btn-lg btn-primary">View A Random Post</a>
+                </div>
                 <br>
                 <br><br>
                 <br>
                 <br>
-                <br>
+                <br><br>
+
 
 
 			</div> {{--End white background--}}

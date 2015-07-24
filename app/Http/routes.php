@@ -25,7 +25,6 @@ Route::get('/exposure-guide',
 Route::get('/',
     ['as' => 'home', 'uses' => 'HomeController@index']);
 
-
 Route::get('/post/create', 'PostsController@create');
 Route::post('/post/create',
     ['as' => '/post/create', 'uses' => 'PostsController@store']);
@@ -41,11 +40,12 @@ Route::bind('user_name', function($value, $route) {
 	return App\User::where('username', '=', $value)->firstOrFail();
 });
 
-Route::get('/verify/{confirmation_code}', 'RegistrationController@verify');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('/sign-up-success', 'HomeController@signupSuccess');
+Route::get('/sign-up-success', 'RegistrationController@signupSuccess');
+Route::get('/verify/{confirmation_code}', 'RegistrationController@verifySuccess');
+

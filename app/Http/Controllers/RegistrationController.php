@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Post;
 use Redirect;
 use App\User;
 use App\Http\Requests;
@@ -9,9 +10,23 @@ use Illuminate\Http\Request;
 
 class RegistrationController extends Controller {
 
+    public function signupSuccess() {
 
-	public function verify($confirmation_code)
+        $recentPosts = Post::orderBy('created_at')->limit(5)->get();
+
+        $email = 'your email';
+        if(\Auth::check()) {
+            $email = \Auth::user()->email;
+        }
+
+        return view('signUpSuccess', compact('email', 'recentPosts', 'randomPost'));
+    }
+
+
+    public function verifySuccess($confirmation_code)
 	{
+        $randomPost = Post::orderByRaw("RAND()")->limit(1)->get()[0];
+
         if(!$confirmation_code)
         {
             return Redirect::route('home');
@@ -25,10 +40,9 @@ class RegistrationController extends Controller {
         }
 
         $user->status = 'good';
-        //$user->confirmation_code = null;
         $user->save();
 
-        return Redirect::route('home')->with('message', 'You have successfully verified your account.');
+        return view('verificationSuccess', compact('randomPost'));
 	}
 
 }

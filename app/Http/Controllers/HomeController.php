@@ -22,11 +22,6 @@ class HomeController extends Controller {
 	|
 	*/
 
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
 	public function __construct()
 	{
 		//$this->middleware('auth');
@@ -50,12 +45,10 @@ class HomeController extends Controller {
 		return view('category', compact('posts', 'category'));
 	}
 
-
 	public function getBetaSignUp()
 	{
 		return view('betaSignUp');
 	}
-
 
 	public function postBetaSignUp(Request $request) {
 		$this->validate($request, [
@@ -69,16 +62,4 @@ class HomeController extends Controller {
 	public function increasePageViews() {
 		return view('increasePageViews');
 	}
-
-    public function signupSuccess() {
-
-        $email = 'your email';
-        if(\Auth::check()) {
-            $email = \Auth::user()->email;
-        }
-        return view('signUpSuccess', compact('email'));
-    }
-
-
-
 }

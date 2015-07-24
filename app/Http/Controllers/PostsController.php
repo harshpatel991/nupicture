@@ -175,7 +175,7 @@ class PostsController extends Controller {
         $postedDate = date_format(new \DateTime($post->posted_at), "F j, Y");
 		$postedBy = User::find($post->user_id);
 
-		$relatedPosts = Post::orderByRaw("RAND()")->get();
+		$relatedPosts = Post::orderByRaw("RAND()")->limit(3)->get();
 		$popularPosts = Post::orderBy('views', 'desc')->limit(5)->get();
 
         $appAdWeight = Config::get('app.ad_weight');

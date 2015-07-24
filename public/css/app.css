@@ -6930,6 +6930,12 @@ body {
   margin-bottom: 10px;
   margin-top: 15px;
 }
+.sign-up-success-social-media-icons {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
 .post-image {
   max-width: 100%;
   padding-top: 5px;

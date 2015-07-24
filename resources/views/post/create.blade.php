@@ -51,7 +51,7 @@
                         <hr>
 
                         <div class="row">
-                            <div class="col-sm-8">
+                            <div class="col-sm-9">
 
                                 <h4>Content</h4>
                                     <h3 id="post-builder-help-text" class="post-builder-help-text text-center">You don't have any content yet. <br>Build your post by clicking the buttons on the right</h3>
@@ -67,18 +67,18 @@
                                     {!! Form::submit('Submit', array('class'=>'btn btn-primary', 'id' => 'submit-form')) !!}
                             </div>
 
-                            <div class="col-sm-4"> {{--Add content buttons--}}
+                            <div class="col-sm-3"> {{--Add content buttons--}}
 
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">Add Content</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <div id="add-text-section" class="btn btn-default btn-block post-builder-add-button"> <span class="glyphicon glyphicon-plus-sign"></span> Text </div>
-                                        <div id="add-image-section" class="btn btn-default btn-block post-builder-add-button"> <span class="glyphicon glyphicon-plus-sign"></span> Picture </div>
-                                        <div id="add-youtube-section" class="btn btn-default btn-block post-builder-add-button"> <span class="glyphicon glyphicon-plus-sign"></span> YouTube Video </div>
+                                        <div id="add-text-section" class="btn btn-default btn-block post-builder-add-button">Text </div>
+                                        <div id="add-image-section" class="btn btn-default btn-block post-builder-add-button">Picture </div>
+                                        <div id="add-youtube-section" class="btn btn-default btn-block post-builder-add-button">YouTube </div>
                                         <hr>
-                                        <div id="add-list-number-section" class="btn btn-default btn-block post-builder-add-button"> <span class="glyphicon glyphicon-plus-sign"></span> List Number</div>
+                                        <div id="add-list-number-section" class="btn btn-default btn-block post-builder-add-button">List Number</div>
                                     </div>
                                 </div>
 
@@ -87,7 +87,7 @@
                                         <h3 class="panel-title">Add Sources</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <div id="add-source-section" class="btn btn-default btn-block post-builder-add-button"> <span class="glyphicon glyphicon-plus-sign"></span> Source</div>
+                                        <div id="add-source-section" class="btn btn-default btn-block post-builder-add-button">Source</div>
                                     </div>
                                 </div>
                             </div>

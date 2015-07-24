@@ -223,5 +223,9 @@ class PostTestCest
 
     //TODO: test that users cannot create pages with script tags but can add anchor tags
 
+    //TODO: test text content that has multiple lines in it (currently this fails)
+
+
+
 
 }
