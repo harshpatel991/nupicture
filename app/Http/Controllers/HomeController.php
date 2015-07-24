@@ -2,7 +2,7 @@
 
 use Input;
 use Redirect;
-
+use Session;
 use App\Post;
 use App\Notification;
 use Illuminate\Http\Request;

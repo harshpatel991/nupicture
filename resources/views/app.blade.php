@@ -86,11 +86,17 @@
                                 {{--<li><a href="{{ url('/auth/login') }}" class="category"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>--}}
                                 {{--<li><a href="{{ url('/auth/register') }}" class="category"><span class="glyphicon glyphicon-edit"></span> Register</a></li>--}}
                             @else
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle navbar-btn" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->username }} <span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="{{ url('/auth/logout') }}" class="category ">Logout</a></li>
-                                    </ul>
+                                <li>
+                                    <div class="btn-group navbar-btn">
+                                        <a href="#" type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->username }}</a>
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{{ url('/auth/logout') }}" class="category ">Logout</a></li>
+                                        </ul>
+                                    </div>
                                 </li>
                             @endif
 
