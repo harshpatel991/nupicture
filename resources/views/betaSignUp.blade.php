@@ -62,6 +62,7 @@
 
                 <div class="row">
                     <div class="col-md-8 col-sm-7 col-md-offset-3">
+                        <br>
                         <h1>{{Config::get('app.name')}} Explained</h1>
                     </div>
                 </div>
@@ -130,37 +131,38 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-md-8 col-sm-9 col-md-offset-3 col-sm-offset-3">
+
+                        <h1>Ready To Get Started?</h1>
+                        <p>Public beta sign ups will start on July 1, 2015. </p>
+                        <p>We'll send you an email once you can register.</p>
+
+                        {!! Form::open(array('route' => 'sign-up-beta-post', 'class' => 'form')) !!}
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-10 col-xs-8">
+                                        {!! Form::text('email', null, array('required', 'class'=>'form-control', 'placeholder'=>'Your email', 'type'=>'email')) !!}
+                                    </div>
+                                    <div class="col-sm-2 col-xs-4">
+                                        {!! Form::submit('Submit', array('class'=>'btn btn-success btn-block')) !!}
+                                    </div>
+                                </div>
+                            </div>
+
+                        {!! Form::close() !!}
+
+                        <p>Your email address will not be shared with anyone else.</p>
+
+                    </div>
+                </div>
+
+
 			</div>
 		</div> {{--End white background--}}
 
-		<div class="row sign-up-row-background">
-			<div class="col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10">
 
-				<h1 class="white-font">Get Notified</h1>
-				<p class="white-font">Public sign-ups are not yet open. Good news is that we'll send you an email once you can sign up.</p>
-
-				{!! Form::open(array('route' => 'sign-up-beta-post', 'class' => 'form')) !!}
-
-					<div class="row">
-						<div class="col-sm-6 col-sm-offset-2">
-							<div class="form-group">
-								{!! Form::text('email', null, array('required', 'class'=>'form-control', 'placeholder'=>'Your email', 'type'=>'email')) !!}
-							</div>
-						</div>
-
-						<div class="col-sm-2">
-							<div class="form-group">
-								{!! Form::submit('Submit', array('class'=>'btn btn-success')) !!}
-							</div>
-						</div>
-					</div>
-
-				{!! Form::close() !!}
-
-				<p class="small white-font">Your email address will not be shared with anyone else.</p>
-
-			</div>
-		</div>
 
 
 	</div>
