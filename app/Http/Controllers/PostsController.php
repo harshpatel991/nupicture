@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use Auth;
 use App\Post;
 use App\User;
 use App\Section;
@@ -18,6 +19,7 @@ class PostsController extends Controller {
 
     public function __construct() {
         $this->middleware('auth', ['except' => 'show']);
+        $this->middleware('verfiedEmail', ['except' => 'show']);
     }
 
 	/**
@@ -86,7 +88,7 @@ class PostsController extends Controller {
         Log::info('Request to store a post: ' . print_R($request->all(), TRUE));
 
         $post = new Post;
-        $post->user_id = \Auth::user()->id;
+        $post->user_id = Auth::user()->id;
         $post->status = Post::$pendingPostStatus;
         $post->title = $request->input(Section::$TITLE_SECTION_NAME);
         $post->slug = substr(Str::slug($request->input(Section::$TITLE_SECTION_NAME)), 0, 33).'-'.rand(0, 99);
