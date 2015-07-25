@@ -21,7 +21,7 @@ class LoginCest
         $I->click(['id' => 'submit-login']);
 
         $I->seeInTitle('Home');
-        $I->see('user1', ['class'=>'dropdown-toggle']); //the user has been logged in
+        $I->see('user1', ['class'=>'btn-default']); //the user has been logged in
     }
 
     public function testLoginInvalid(AcceptanceTester $I)

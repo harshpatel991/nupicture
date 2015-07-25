@@ -25,8 +25,8 @@ class RegisterCest
         $I->fillField(['name' => 'publisher_id'], 'pub-1234567891234567');
         $I->click(['id' => 'submit-register']);
 
-        $I->seeInTitle('Home');
-        $I->see('testingUser', ['class'=>'dropdown-toggle']); //the user has been logged in
+        $I->seeInTitle('Thanks for Registering');
+        $I->see('testingUser', ['class'=>'btn-default']); //the user has been logged in
         $I->seeInDatabase('users', array('username' => 'testingUser', 'email' => 'testingUser@gmail.com', 'publisher_id' => 'pub-1234567891234567'));
 
     }
@@ -153,5 +153,7 @@ class RegisterCest
 
         $I->seeElement(['class'=>'alert-danger']); //see warning message
     }
+
+    //TODO: test email registration
 
 }
