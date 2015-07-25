@@ -37,7 +37,7 @@ class PostsController extends Controller {
             if(strpos($sectionId, Section::$TEXT_SECTION_NAME) !== FALSE)
             {
                 $newSection->optional_content = $section[0];
-                $newSection->content = $section[1];
+                $newSection->content = str_replace( "\r\n", '\r\n', $section[1] );
                 $newSection->createByJS = 'addTextSection';
                 array_push($oldSectionsByJS, $newSection);
             }

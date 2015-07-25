@@ -23,7 +23,7 @@
 
                     @if($section->isTextSection())
                         <h3>{!! clean($section->optional_content) !!}</h3>
-                        <p>{!! clean($section->content) !!}</p>
+                        <p>{!! clean(nl2br($section->content)) !!}</p>
                     @elseif($section->isImageSection())
                         <img src="/upload/{{$section->content}}" class="post-image">
                         @if(strlen($section->optional_content) > 0)

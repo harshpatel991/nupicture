@@ -1,5 +1,6 @@
 <?php namespace App\Http\Requests;
 
+use Auth;
 use App\Section;
 use App\Http\Requests\Request;
 
@@ -12,9 +13,16 @@ class StorePostRequest extends Request {
 	 */
 	public function authorize()
 	{
-		//TODO: make sure the user is allowed to make this request
-        return true;
-	}
+        if (Auth::check())
+        {
+            if(Auth::user()->status === 'good' || Auth::user()->status === 'warning')
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
 	/**
 	 * Get the validation rules that apply to the request.

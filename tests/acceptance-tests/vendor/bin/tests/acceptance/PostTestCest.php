@@ -40,6 +40,18 @@ class PostTestCest
         $I->seeInTitle('Thanks for Registering');
     }
 
+    public function testViewPendingPost(AcceptanceTester $I)
+    {
+        $I->amOnPage('/post/post-10');
+        $I->seeInTitle('Home');
+    }
+
+    public function testViewRejectedPost(AcceptanceTester $I)
+    {
+        $I->amOnPage('/post/post-11');
+        $I->seeInTitle('Home');
+    }
+
     public function testVerifyPost(AcceptanceTester $I)
     {
         $I->seeInDatabase('posts', array('id' => '10', 'status' => 'pending_post'));
@@ -343,13 +355,50 @@ class PostTestCest
         $I->seeInTitle('Creating A Removing All Items');
     }
 
-    //TODO: test that users cannot create pages with script tags but can add anchor tags
+    public function testNewLineTextPostFailure(AcceptanceTester $I)
+    {
+        $this->loginAs($I, 'email1@gmail.com', 'password1'); //confirmed user
 
-    //TODO: test text content that has multiple lines in it (currently this fails)
+        //with optional
+        $I->amOnPage('/');
+        $I->amOnPage('/post/create');
 
-    //TODO: test that unpublished posts cannot be viewed
+        $I->fillField(['name' => 'title'], 'Creating A Test New Line Text Posting Failure');
+        //don't select a category
+        $I->click(['id' => 'add-text-section']);
+        $I->wait(1);
+        $I->fillField(['id' => '1-content'], "Test Content Line 1\nTest Content Line 2\n\nTest Content Line 3");
+        $I->wait(1);
+        $enteredValue = $I->grabValueFrom(['id' => '1-content']);
+        $I->click(['id' => 'submit-form']);
 
-    //TODO: test adding youtube links
+        $I->seeInPageSource('alert alert-danger'); //posting failed, make sure new lines show up in text area
+        $I->seeInPageSource('addTextSection("", "Test Content Line 1\r\nTest Content Line 2\r\n\r\nTest Content Line 3")();');
 
+        $I->seeInField(['id' => '1-content'], $enteredValue);
+    }
 
+    public function testNewLineTextPostSuccess(AcceptanceTester $I)
+    {
+        $this->loginAs($I, 'email1@gmail.com', 'password1'); //confirmed user
+
+        //with optional
+        $I->amOnPage('/');
+        $I->amOnPage('/post/create');
+
+        $I->fillField(['name' => 'title'], 'Creating A Test New Line Text Posting Success');
+        $I->selectOption(['name' => 'category'], 'woah');
+
+        $I->click(['id' => 'add-text-section']);
+        $I->wait(1);
+        $I->fillField(['id' => '1-content'], "Success Test Content Line 1\nTest Content Line 2\n\nTest Content Line 3");
+        $I->click(['id' => 'submit-form']);
+
+        $this->approvePost($I, 'Creating A Test New Line Text Posting Success');
+
+        $I->seeInPageSource('Success Test Content Line 1<br />');
+        $I->seeInPageSource('Test Content Line 2<br /><br />');
+        $I->seeInPageSource('Test Content Line 3</p>');
+        $I->seeInTitle('Creating A Test New Line Text Posting Success');
+    }
 }

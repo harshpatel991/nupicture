@@ -36,7 +36,7 @@ function textSection (id, optional_content, content) {
                         '<textarea class="form-control post-builder-textarea" rows="6" cols="60" name="'+id+'-section-text[]" id="' + id + '-content" placeholder="Your Content*">'+ content +'</textarea>' +
                     '</div>' +
                     '<div class="col-sm-10">' +
-                        '<p style="color: #bbb;">Tags Allowed: b, strong, i, a, ul, ol, li, br, span, and p</p>' +
+                        '<div style="color: #bbb;">Tags Allowed: b, strong, i, a, ul, ol, li, br, span, and p</div>' +
                     '</div>' +
                     '<div class="col-sm-2">' +
                         '<div class="btn btn-danger pull-right post-builder-remove-button" onclick="removeWrapperId('+id+')" id="' + id + '-remove"><span class="glyphicon glyphicon-trash"></span></div>' +
