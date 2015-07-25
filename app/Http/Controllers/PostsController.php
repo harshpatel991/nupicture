@@ -8,7 +8,7 @@ use App\Http\Requests;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Controllers\Controller;
 
-
+use Carbon\Carbon;
 use DB;
 use Config;
 use \Log;
@@ -176,8 +176,8 @@ class PostsController extends Controller {
         $postedDate = date_format(new \DateTime($post->posted_at), "F j, Y");
 		$postedBy = User::find($post->user_id);
 
-		$relatedPosts = Post::orderByRaw("RAND()")->limit(3)->get();
-		$popularPosts = Post::orderBy('views', 'desc')->limit(5)->get();
+		$relatedPosts = Post::where('status', 'posted')->orderByRaw("RAND()")->limit(3)->get();
+		$popularPosts = Post::where('status', 'posted')->orderBy('views', 'desc')->limit(5)->get();
 
         $appAdWeight = Config::get('app.ad_weight');
         $appPublisherId = Config::get('app.app_publisher_id');
@@ -197,6 +197,7 @@ class PostsController extends Controller {
     public function approve($post, Request $request)
     {
         $post->status = 'posted';
+        $post->posted_at = Carbon::now();
         $post->save();
 
         return redirect('/post/'.$post->slug);

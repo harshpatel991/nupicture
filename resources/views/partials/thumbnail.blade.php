@@ -16,7 +16,7 @@
 
                 <div class="home-thumbnail-info">
                     <span class="glyphicon glyphicon-fire"></span> {{$post->views}} VIEWS|
-                    <span class="glyphicon glyphicon-time"></span> {{strtoupper($post->created_at->diffForHumans())}}
+                    <span class="glyphicon glyphicon-time"></span> {{strtoupper($post->posted_at->diffForHumans())}}
                 </div>
             </div>
 

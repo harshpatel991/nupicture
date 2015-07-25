@@ -19,6 +19,7 @@ class PostsTableSeederUser3 extends Seeder {
                 'views' => '16000',
                 'created_at' => '2015-05-27 05:32:22',
                 'updated_at' => '2015-05-28 01:25:43',
+                'posted_at' => null,
                 'category' => 'art'
             ],
 
@@ -34,6 +35,7 @@ class PostsTableSeederUser3 extends Seeder {
                 'views' => '18000',
                 'created_at' => '2015-05-23 05:28:43',
                 'updated_at' => '2015-05-26 03:25:43',
+                'posted_at' => null,
                 'category' => 'cute'
             ],
 
@@ -49,6 +51,7 @@ class PostsTableSeederUser3 extends Seeder {
                 'views' => 4000,
                 'created_at' => '2015-05-21 04:25:43',
                 'updated_at' => '2015-05-22 03:25:43',
+                'posted_at' => '2015-07-26 21:31:34',
                 'category' => 'funny'
             ],
 
@@ -63,6 +66,7 @@ class PostsTableSeederUser3 extends Seeder {
                 'views' => 3000,
                 'created_at' => '2015-05-19 03:25:43',
                 'updated_at' => '2015-05-26 03:25:43',
+                'posted_at' => '2015-07-27 20:44:43',
                 'category' => 'interesting'
             ]
         );

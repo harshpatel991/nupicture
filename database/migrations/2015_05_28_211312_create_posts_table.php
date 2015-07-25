@@ -24,6 +24,7 @@ class CreatePostsTable extends Migration {
 			$table->string('title', 200);
 			$table->string('slug', 35)->unique();
 			$table->integer('views')->unsigned();
+            $table->timestamp('posted_at')->nullable();
 			$table->timestamps();
 		});
 	}

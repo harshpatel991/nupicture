@@ -14,8 +14,8 @@
                     </div>
 
                     <div class="home-thumbnail-info stylized">
-                        {{$post->views}} <b>VIEWS </b>|
-                        {{strtoupper($post->created_at->diffForHumans())}}
+                        <span class="glyphicon glyphicon-fire"></span> {{$post->views}} <b>VIEWS </b>|
+                        <span class="glyphicon glyphicon-time"></span> {{strtoupper($post->posted_at->diffForHumans())}}
                     </div>
 
                 </div>

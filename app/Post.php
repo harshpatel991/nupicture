@@ -14,4 +14,9 @@ class Post extends Model {
     {
         return strip_tags($this->content);
     }
+
+    public function getDates()
+    {
+        return ['created_at', 'updated_at', 'posted_at'];
+    }
 }

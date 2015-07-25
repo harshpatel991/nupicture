@@ -38,7 +38,7 @@
                                         <th>Title</th>
                                         <th>Message</th>
                                         <th>Views</th>
-                                        <th>Posted</th>
+                                        <th>Posted On</th>
                                         <th></th>
                                     </tr>
 
@@ -52,7 +52,7 @@
                                             @if($post->posted_at != null)
                                                 <td>{{date_format(new DateTime($post->posted_at), "F j, Y")}}</td>
                                             @else
-                                                <td>Not Posted</td>
+                                                <td>-</td>
                                             @endif
 
 
