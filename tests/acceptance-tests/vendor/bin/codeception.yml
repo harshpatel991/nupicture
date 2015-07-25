@@ -19,3 +19,4 @@ modules:
             user: 'homestead'
             password: '***REMOVED***'
             dump: tests/_data/dump.sql
+            cleanup: true

@@ -33,7 +33,7 @@ function textSection (id, optional_content, content) {
                 '<div class="row">' +
                     '<div class="col-sm-12">' +
                         '<input class="form-control" name="'+id+'-section-text[]" placeholder="Heading" id="' + id + '-optional" value="'+ optional_content +'">' +
-                        '<textarea class="form-control post-builder-textarea" rows="6" cols="60" name="'+id+'-section-text[]" placeholder="Your Content*">'+ content +'</textarea>' +
+                        '<textarea class="form-control post-builder-textarea" rows="6" cols="60" name="'+id+'-section-text[]" id="' + id + '-content" placeholder="Your Content*">'+ content +'</textarea>' +
                     '</div>' +
                     '<div class="col-sm-10">' +
                         '<p style="color: #bbb;">Tags Allowed: b, strong, i, a, ul, ol, li, br, span, and p</p>' +
