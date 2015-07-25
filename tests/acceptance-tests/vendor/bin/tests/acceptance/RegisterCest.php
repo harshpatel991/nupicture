@@ -27,8 +27,14 @@ class RegisterCest
 
         $I->seeInTitle('Thanks for Registering');
         $I->see('testingUser', ['class'=>'btn-default']); //the user has been logged in
-        $I->seeInDatabase('users', array('username' => 'testingUser', 'email' => 'testingUser@gmail.com', 'publisher_id' => 'pub-1234567891234567'));
+        $I->seeInDatabase('users', array('username' => 'testingUser', 'email' => 'testingUser@gmail.com', 'publisher_id' => 'pub-1234567891234567', 'status' => 'unconfirmed'));
+        $confirmationCode = $I->grabFromDatabase('users', 'confirmation_code', array('username' => 'testingUser'));
 
+        //confirm the user
+        $I->amOnPage('/verify/'.$confirmationCode);
+        $I->seeInTitle('Account Verified');
+        $I->see('You\'re all set!');
+        $I->seeInDatabase('users', array('username' => 'testingUser', 'email' => 'testingUser@gmail.com', 'publisher_id' => 'pub-1234567891234567', 'status' => 'good'));
     }
 
     public function testRegisterInvalidUsername(AcceptanceTester $I)
@@ -154,6 +160,20 @@ class RegisterCest
         $I->seeElement(['class'=>'alert-danger']); //see warning message
     }
 
-    //TODO: test email registration
+    public function testVisitRegisterAlreadyLoggedIn(AcceptanceTester $I)
+    {
+        $I->amOnPage('/');
+        $I->amOnPage('/auth/login');
+
+        $I->fillField(['name' => 'email'], 'email1@gmail.com');
+        $I->fillField(['name' => 'password'], 'password1');
+        $I->click(['id' => 'submit-login']);
+
+        $I->see('user1', ['class'=>'btn-default']); //the user has been logged in
+        $I->seeInTitle('Home');
+
+        $I->amOnPage('/auth/register');
+        $I->seeInTitle('Home');
+    }
 
 }

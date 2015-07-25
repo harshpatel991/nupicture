@@ -85,12 +85,12 @@
                                 <li>
                                     <div class="btn-group navbar-btn">
                                         <a href="/profile" type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->username }}</a>
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button type="button" class="btn btn-default dropdown-toggle" id="profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <span class="caret"></span>
                                             <span class="sr-only">Toggle Dropdown</span>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{{ url('/auth/logout') }}" class="category ">Logout</a></li>
+                                            <li><a href="{{ url('/auth/logout') }}" class="category" id="logout-button">Logout</a></li>
                                         </ul>
                                     </div>
                                 </li>

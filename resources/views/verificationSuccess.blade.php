@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    Thanks for Registering
+    Account Verified
 @endsection
 
 @section('content')

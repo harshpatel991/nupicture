@@ -51,17 +51,21 @@
                         {{--</div>--}}
                     {{--</div>--}}
 
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        @if (Session::has('message'))
+                            <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
+                        @endif
 
-                @if (Session::has('message'))
-                    <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
-                @endif
-
-                @if (Session::has('errors'))
-                    <div class="alert alert-danger" role="alert">{{ Session::get('errors')->first('email') }}</div>
-                @endif
+                        @if (Session::has('errors'))
+                            <div class="alert alert-danger" role="alert">{{ Session::get('errors')->first('email') }}</div>
+                        @endif
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="col-md-8 col-sm-7 col-md-offset-3">
+
                         <br>
                         <h1>{{Config::get('app.name')}} Explained</h1>
                     </div>
@@ -131,12 +135,13 @@
                     </div>
                 </div>
 
+                <br>
                 <div class="row">
                     <div class="col-md-8 col-sm-9 col-md-offset-3 col-sm-offset-3">
 
                         <h1>Ready To Get Started?</h1>
-                        <p>Public beta sign ups will start on July 1, 2015. </p>
-                        <p>We'll send you an email once you can register.</p>
+                        <p>Public beta sign ups start on July 1, 2015.
+                        We'll send you an email once you can register.</p>
 
                         {!! Form::open(array('route' => 'sign-up-beta-post', 'class' => 'form')) !!}
 
@@ -146,7 +151,7 @@
                                         {!! Form::text('email', null, array('required', 'class'=>'form-control', 'placeholder'=>'Your email', 'type'=>'email')) !!}
                                     </div>
                                     <div class="col-sm-2 col-xs-4">
-                                        {!! Form::submit('Submit', array('class'=>'btn btn-success btn-block')) !!}
+                                        {!! Form::submit('Submit', array('class'=>'btn btn-success btn-block', 'id' => 'submit-beta-email-form')) !!}
                                     </div>
                                 </div>
                             </div>

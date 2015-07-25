@@ -44,4 +44,38 @@ class LoginCest
 
         $I->seeElement(['class'=>'alert-danger']); //see warning message
     }
+
+    public function testLogout(AcceptanceTester $I)
+    {
+        $I->amOnPage('/');
+        $I->amOnPage('/auth/login');
+
+        $I->fillField(['name' => 'email'], 'email1@gmail.com');
+        $I->fillField(['name' => 'password'], 'password1');
+        $I->click(['id' => 'submit-login']);
+
+        $I->seeInTitle('Home');
+        $I->see('user1', ['class'=>'btn-default']); //the user has been logged in
+
+        $I->click(['id' => 'profile-dropdown']);
+        $I->click(['id' => 'logout-button']);
+        $I->dontSee('user1', ['class'=>'btn-default']); //the user has been logged out
+    }
+
+    public function testVisitLoginAlreadyLoggedIn(AcceptanceTester $I)
+    {
+        $I->amOnPage('/');
+        $I->amOnPage('/auth/login');
+
+        $I->fillField(['name' => 'email'], 'email1@gmail.com');
+        $I->fillField(['name' => 'password'], 'password1');
+        $I->click(['id' => 'submit-login']);
+
+        $I->see('user1', ['class'=>'btn-default']); //the user has been logged in
+        $I->seeInTitle('Home');
+
+        $I->amOnPage('/auth/login');
+        $I->seeInTitle('Home');
+    }
+
 }
