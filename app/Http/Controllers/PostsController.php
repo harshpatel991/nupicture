@@ -18,8 +18,8 @@ use Illuminate\Support\Str;
 class PostsController extends Controller {
 
     public function __construct() {
-        $this->middleware('auth', ['except' => 'show']);
-        $this->middleware('verfiedEmail', ['except' => 'show']);
+        $this->middleware('auth', ['except' => ['show', 'approve']]);
+        $this->middleware('verfiedEmail', ['except' => ['show', 'approve']]);
     }
 
 	/**
@@ -191,6 +191,16 @@ class PostsController extends Controller {
 		return view('post.post', compact('post', 'sections', 'sources', 'postedDate', 'postedBy', 'relatedPosts', 'popularPosts', 'publisherId', 'listNumberCounter'));
 	}
 
+    /**
+     * Approve a post
+     */
+    public function approve($post, Request $request)
+    {
+        $post->status = 'posted';
+        $post->save();
+
+        return redirect('/post/'.$post->slug);
+    }
 
     private static function getRandomWeightedElement(array $weightedValues) {
         $rand = mt_rand(1, (int) array_sum($weightedValues));

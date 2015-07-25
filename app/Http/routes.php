@@ -37,6 +37,13 @@ Route::bind('post_slug', function($value, $route) {
     App::abort(404);
 });
 
+Route::get('/post/approve/{post_id}', 'PostsController@approve');
+Route::bind('post_id', function($value, $route) {
+    $post = App\Post::whereId($value)->first();
+    if($post) return $post;
+    App::abort(404);
+});
+
 Route::get('/profile', 'UsersController@profile');
 
 Route::controllers([
