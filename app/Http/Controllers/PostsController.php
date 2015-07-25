@@ -24,14 +24,11 @@ class PostsController extends Controller {
 
 	/**
 	 * Show the form for creating a new post.
-	 *
-	 * @return Response
 	 */
 	public function create(Request $request)
 	{
         $oldValues = $request->old();
         $oldSectionsByJS = array();
-
 
         foreach($oldValues as $sectionId => $section)
         {
@@ -79,8 +76,6 @@ class PostsController extends Controller {
 
 	/**
 	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
 	 */
 	public function store(StorePostRequest $request)
 	{
@@ -152,15 +147,19 @@ class PostsController extends Controller {
             }
         }
 
-        return redirect()->route('post', [$post->slug]);
+        return redirect('/profile');
 	}
 
 	/**
 	 * Display a post
-	 *
 	 */
 	public function show($post, Request $request)
 	{
+        if($post->status !== 'posted')
+        {
+            return redirect('/');
+        }
+
         if(!$request->session()->has('visited'.$post->slug)) //Count a view
         {
             $request->session()->put('visited'.$post->slug, true);

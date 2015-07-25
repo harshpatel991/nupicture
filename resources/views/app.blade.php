@@ -34,8 +34,7 @@
 		<div class="container-fluid">
 			<div class="row">
 
-				<div class="col-sm-12 col-md-offset-1 col-md-10 white-background" style="padding: 10px 10px;">
-
+                @yield('navColumn', '<div class="col-sm-12 col-md-offset-1 col-md-10 white-background" style="padding: 10px 10px;">')
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 							<span class="sr-only">Toggle Navigation</span>
@@ -50,34 +49,31 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav navbar-right">
 
-
-                            <li class="dropdown">
-
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">CATEGORIES <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="category" href="/">ALL</a></li>
-                                    <li><a class="category" href="/art">ART</a></li>
-                                    <li><a class="category" href="/cute">CUTE</a></li>
-                                    <li><a class="category" href="/funny">FUNNY</a></li>
-                                    <li><a class="category" href="/interesting">INTERESTING</a></li>
-                                    <li><a class="category" href="/movies">MOVIES</a></li>
-                                    <li><a class="category" href="/news">NEWS</a></li>
-                                    <li><a class="category" href="/photography">PHOTOGRAPHY</a></li>
-                                    <li><a class="category" href="/tv">TV</a></li>
-                                    <li><a class="category" href="/woah">WOAH</a></li>
-                                </ul>
-
-                            </li>
+                            {{--<li class="dropdown">--}}
+                                {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">CATEGORIES <span class="caret"></span></a>--}}
+                                {{--<ul class="dropdown-menu">--}}
+                                    {{--<li><a class="category" href="/">ALL</a></li>--}}
+                                    {{--<li><a class="category" href="/art">ART</a></li>--}}
+                                    {{--<li><a class="category" href="/cute">CUTE</a></li>--}}
+                                    {{--<li><a class="category" href="/funny">FUNNY</a></li>--}}
+                                    {{--<li><a class="category" href="/interesting">INTERESTING</a></li>--}}
+                                    {{--<li><a class="category" href="/movies">MOVIES</a></li>--}}
+                                    {{--<li><a class="category" href="/news">NEWS</a></li>--}}
+                                    {{--<li><a class="category" href="/photography">PHOTOGRAPHY</a></li>--}}
+                                    {{--<li><a class="category" href="/tv">TV</a></li>--}}
+                                    {{--<li><a class="category" href="/woah">WOAH</a></li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
 
 							<li>
 								<form action="{{ url('/post/create') }}" class="display-inline">
-									<button type="submit" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
+									<button type="submit" class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
 								</form>
 							</li>
 
 							<li>
 								<form action="{{ url('/sign-up-beta') }}" class="display-inline">
-									<button href="/sign-up-beta" class="btn btn-primary navbar-btn">Learn More & Sign Up</button>
+									<button href="/sign-up-beta" class="btn btn-default navbar-btn">Learn More & Sign Up</button>
 								</form>
 
 							</li>

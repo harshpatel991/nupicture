@@ -4,6 +4,10 @@
     {{Config::get('app.name')}} | Home
 @endsection
 
+@section('navColumn')
+    <div class="col-sm-12 col-lg-offset-1 col-lg-10 white-background" style="padding: 10px 10px;">
+@endsection
+
 @section('content')
 	<div class="container-fluid">
 

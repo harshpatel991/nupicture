@@ -28,10 +28,13 @@ Route::get('/',
 Route::get('/post/create', 'PostsController@create');
 Route::post('/post/create',
     ['as' => '/post/create', 'uses' => 'PostsController@store']);
+
 Route::get('/post/{post_slug}',
     ['as' => 'post', 'uses' => 'PostsController@show']);
 Route::bind('post_slug', function($value, $route) {
-	return App\Post::whereSlug($value)->first();
+	$post = App\Post::whereSlug($value)->first();
+    if($post) return $post;
+    App::abort(404);
 });
 
 Route::get('/profile', 'UsersController@profile');
