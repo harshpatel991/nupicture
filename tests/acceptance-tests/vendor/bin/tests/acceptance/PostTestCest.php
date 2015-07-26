@@ -69,13 +69,15 @@ class PostTestCest
 
         $I->fillField(['name' => 'title'], 'Creating A Test Text Posting');
         $I->selectOption(['name' => 'category'], 'news');
+        $I->fillField(['name' => 'summary'], 'This is text posting summary');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
         $I->click(['id' =>'add-text-section']);
         $I->wait(1);
         $I->fillField(['id' => '1-optional'], "Test Heading 1"); //with optional
         $I->fillField(['id' => '1-content'], "Test Content 1");
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Test Text Posting', 'category' => 'news', 'status' => 'pending_post'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Test Text Posting', 'category' => 'news', 'summary' => 'This is text posting summary', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Test Heading 1', 'content' => 'Test Content 1', 'id' => '23'));
 
         $this->approvePost($I, 'Creating A Test Text Posting');
@@ -89,12 +91,14 @@ class PostTestCest
 
         $I->fillField(['name' => 'title'], 'Creating A Test Text Posting 2');
         $I->selectOption(['name' => 'category'], 'tv');
+        $I->fillField(['name' => 'summary'], 'This is text posting summary 2');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
         $I->click(['id' =>'add-text-section']);
         $I->wait(1);
         $I->fillField(['id' => '1-content'], "Test Content 2");
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Test Text Posting 2', 'category' => 'tv', 'status' => 'pending_post'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Test Text Posting 2', 'category' => 'tv', 'summary' => 'This is text posting summary 2', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => '', 'content' => 'Test Content 2', 'id' => '24'));
 
         $this->approvePost($I, 'Creating A Test Text Posting 2');
@@ -112,13 +116,15 @@ class PostTestCest
 
         $I->fillField(['name' => 'title'], 'Creating A Test Image Posting');
         $I->selectOption(['name' => 'category'], 'tv');
+        $I->fillField(['name' => 'summary'], 'This is image posting summary');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
         $I->click(['id' =>'add-image-section']);
         $I->wait(1);
         $I->attachFile(['id' => '1-content'], 'test-image.jpg');
         $I->fillField(['id' => '1-optional'], "www.optional-image-source.com");
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Test Image Posting', 'category' => 'tv', 'status' => 'pending_post'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Test Image Posting', 'category' => 'tv', 'summary' => 'This is image posting summary', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-image', 'optional_content' => 'www.optional-image-source.com', 'id' => '23'));
 
         $this->approvePost($I, 'Creating A Test Image Posting');
@@ -132,12 +138,14 @@ class PostTestCest
 
         $I->fillField(['name' => 'title'], 'Creating A Test Image Posting Without Optional');
         $I->selectOption(['name' => 'category'], 'tv');
+        $I->fillField(['name' => 'summary'], 'This is image posting summary 2');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
         $I->click(['id' =>'add-image-section']);
         $I->wait(1);
         $I->attachFile(['id' => '1-content'], 'test-image.jpg');
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Test Image Posting Without Optional', 'category' => 'tv', 'status' => 'pending_post'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Test Image Posting Without Optional', 'category' => 'tv', 'summary' => 'This is image posting summary 2', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-image', 'optional_content' => '', 'id' => '24'));
 
         $this->approvePost($I, 'Creating A Test Image Posting Without Optional');
@@ -156,12 +164,14 @@ class PostTestCest
 
         $I->fillField(['name' => 'title'], 'Creating A Test YouTube Posting');
         $I->selectOption(['name' => 'category'], 'interesting');
+        $I->fillField(['name' => 'summary'], 'This is youtube posting summary');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
         $I->click(['id' =>'add-youtube-section']);
         $I->wait(1);
         $I->fillField(['id' => '1-content'], "https://www.youtube.com/watch?v=-CmadmM5cOk");
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Test YouTube Posting', 'category' => 'interesting', 'status' => 'pending_post'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Test YouTube Posting', 'category' => 'interesting', 'summary' => 'This is youtube posting summary', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-youtube', 'content' => '-CmadmM5cOk', 'id' => '23'));
 
         $this->approvePost($I, 'Creating A Test YouTube Posting');
@@ -180,12 +190,14 @@ class PostTestCest
 
         $I->fillField(['name' => 'title'], 'Creating A Test List Number Posting');
         $I->selectOption(['name' => 'category'], 'tv');
+        $I->fillField(['name' => 'summary'], 'This is list number posting summary');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
         $I->click(['id' =>'add-list-number-section']);
         $I->wait(1);
         $I->fillField(['id' => '1-optional'], 'List Number Heading');
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Test List Number Posting', 'category' => 'tv'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Test List Number Posting', 'category' => 'tv', 'summary' => 'This is list number posting summary', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => 'List Number Heading'));
 
         $this->approvePost($I, 'Creating A Test List Number Posting');
@@ -198,11 +210,13 @@ class PostTestCest
 
         $I->fillField(['name' => 'title'], 'Creating A Test List Number Posting 2');
         $I->selectOption(['name' => 'category'], 'tv');
+        $I->fillField(['name' => 'summary'], 'This is list number posting summary 2');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
         $I->click(['id' =>'add-list-number-section']);
         $I->wait(1);
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Test List Number Posting 2', 'category' => 'tv'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Test List Number Posting 2', 'category' => 'tv', 'summary' => 'This is list number posting summary 2', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => ''));
 
         $this->approvePost($I, 'Creating A Test List Number Posting 2');
@@ -218,12 +232,14 @@ class PostTestCest
 
         $I->fillField(['name' => 'title'], 'Creating A Source Posting');
         $I->selectOption(['name' => 'category'], 'woah');
+        $I->fillField(['name' => 'summary'], 'This is source posting summary');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
         $I->click(['id' =>'add-source-section']);
         $I->wait(1);
         $I->fillField(['id' => '1-content'], 'http://cnn.com');
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Source Posting', 'category' => 'woah'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Source Posting', 'category' => 'woah', 'summary' => 'This is source posting summary', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-source', 'optional_content' => '', 'content' => 'http://cnn.com'));
 
         $this->approvePost($I, 'Creating A Source Posting');
@@ -239,6 +255,9 @@ class PostTestCest
 
         $I->fillField(['name' => 'title'], 'Creating A Removing Items');
         $I->selectOption(['name' => 'category'], 'woah');
+        $I->fillField(['name' => 'summary'], 'This is removing items summary');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
+
         $I->click(['id' =>'add-text-section']); //id 1
         $I->click(['id' =>'add-list-number-section']); //id 2
         $I->click(['id' =>'add-text-section']); //id 3
@@ -282,7 +301,7 @@ class PostTestCest
 
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Removing Items', 'category' => 'woah'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Removing Items', 'category' => 'woah', 'summary' => 'This is removing items summary', 'status' => 'pending_post'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Text 1 Optional - Removed', 'content' => 'Text 1 Content - Removed'));
         $I->seeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => 'List 2 Optional', 'content' => '', 'id' => '23'));
         $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Text 3 Optional', 'content' => 'Text 3 Content', 'id' => '24'));
@@ -294,7 +313,6 @@ class PostTestCest
         $I->dontSeeInDatabase('sections', array('type' => 'section-youtube', 'content' => 'e-ORhEE9VVg'));
         $I->seeInDatabase('sections', array('type' => 'section-youtube', 'optional_content' => '', 'content' => 'VuNIsY6JdUw', 'id' => '28'));
         $I->seeInDatabase('sections', array('type' => 'section-source', 'optional_content' => '', 'content' => 'http://cnn.com', 'id' => '29'));
-
 
         $this->approvePost($I, 'Creating A Removing Items');
 
@@ -318,6 +336,9 @@ class PostTestCest
 
         $I->fillField(['name' => 'title'], 'Creating A Removing All Items');
         $I->selectOption(['name' => 'category'], 'woah');
+        $I->fillField(['name' => 'summary'], 'This is add items and remove all summary');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
+
         $I->click(['id' =>'add-text-section']); //id 1
         $I->click(['id' =>'add-list-number-section']); //id 2
         $I->click(['id' =>'add-image-section']); //id 3
@@ -342,7 +363,7 @@ class PostTestCest
 
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Removing All Items', 'category' => 'woah'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Removing All Items', 'category' => 'woah', 'summary' => 'This is add items and remove all summary', 'status' => 'pending_post'));
         $I->dontSeeInDatabase('sections', array('post_id' => '20'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-text', 'id' => '23'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-listnumber', 'id' => '24'));
@@ -365,6 +386,9 @@ class PostTestCest
 
         $I->fillField(['name' => 'title'], 'Creating A Test New Line Text Posting Failure');
         //don't select a category
+        $I->fillField(['name' => 'summary'], 'This is new line text post failure summary');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
+
         $I->click(['id' => 'add-text-section']);
         $I->wait(1);
         $I->fillField(['id' => '1-content'], "Test Content Line 1\nTest Content Line 2\n\nTest Content Line 3");
@@ -388,6 +412,8 @@ class PostTestCest
 
         $I->fillField(['name' => 'title'], 'Creating A Test New Line Text Posting Success');
         $I->selectOption(['name' => 'category'], 'woah');
+        $I->fillField(['name' => 'summary'], 'This is new line text post success summary');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
 
         $I->click(['id' => 'add-text-section']);
         $I->wait(1);

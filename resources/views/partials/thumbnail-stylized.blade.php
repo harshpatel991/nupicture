@@ -10,7 +10,7 @@
                     {{$post->title}}
 
                     <div class="home-thumbnail-summary stylized">
-                        {{$post->getStrippedContent()}}
+                        {{clean($post->summary)}}
                     </div>
 
                     <div class="home-thumbnail-info stylized">

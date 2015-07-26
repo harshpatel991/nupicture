@@ -117,16 +117,20 @@
     font-family: @font-family-open-sans;
     font-size: .6em;
     color: #888;
-    line-height: 1.5em;
 
+    line-height: 1.5em; //only allow 2 lines on the normal thumbnails
     overflow: hidden;
-    height: 6em;       /* height is 2x line-height, so two lines will display */
+    height: 3em;
 
     margin-top: 5px;
     margin-bottom: 5px;
 
     &.stylized{
       color: #fff;
+
+      overflow: auto; //allow all summary on the stylized thumbnails
+      line-height: 1.5em;
+      height: auto;
     }
   }
 

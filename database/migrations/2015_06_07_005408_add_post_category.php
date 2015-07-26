@@ -14,7 +14,6 @@ class AddPostCategory extends Migration {
 	{
 		Schema::table('posts', function($table)
 		{
-			$table->string('category', 50);
 		});
 	}
 

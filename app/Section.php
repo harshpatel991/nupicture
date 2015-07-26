@@ -13,6 +13,8 @@ class Section extends Model {
     static $SOURCE_SECTION_NAME = 'section-source';
     static $TITLE_SECTION_NAME = 'title';
     static $CATEGORY_SECTION_NAME = 'category';
+    static $SUMMARY_SECTION_NAME = 'summary';
+    static $THUMBNAIL_SECTION_NAME = 'thumbnail';
 
     static $YOUTUBE_ID_REGEX = "/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/";
 

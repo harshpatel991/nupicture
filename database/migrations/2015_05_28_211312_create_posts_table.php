@@ -22,7 +22,12 @@ class CreatePostsTable extends Migration {
 			$table->enum('status', ['pending_post', 'saved', 'rejected', 'posted']);
 			$table->string('admin_message', 300)->nullable();
 			$table->string('title', 200);
-			$table->string('slug', 35)->unique();
+            $table->string('category', 50);
+
+            $table->string('summary', 1000);
+            $table->string('thumbnail_image', 200);
+
+            $table->string('slug', 35)->unique();
 			$table->integer('views')->unsigned();
             $table->timestamp('posted_at')->nullable();
 			$table->timestamps();

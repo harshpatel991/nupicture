@@ -25,18 +25,24 @@
                         @endif
 
                         {!! Form::open(array('route' => '/post/create', 'class' => 'form', 'files'=>true)) !!}
+                        <div class="pull-right">
+                            <p>* = required </p>
+                        </div>
+
                         <h2>Submit a Post</h2>
                         <hr>
+
                         <div class="row form-group">
-                            <label class="col-md-3 control-label" for="title">Title<span class="required">*</span></label>
+                            <label class="col-md-3 control-label" for="title">Title*</label>
 
                             <div class="col-md-9">
                                 <input type="text" class="form-control" name="title" placeholder="Enter title" value="{{ old('title') }}">
                             </div>
                         </div>
+
                         <div class="row form-group">
 
-                            <label class="col-md-3 control-label" for="category">Category<span class="required">*</span></label>
+                            <label class="col-md-3 control-label" for="category">Category*</label>
 
                             <div class="col-md-9">
                                 <select name="category" class="form-control">
@@ -52,6 +58,27 @@
                             </div>
 
                         </div>
+
+                        <div class="row form-group">
+                            <label class="col-md-3 control-label" for="summary">Summary*
+                                <a href="#" data-toggle="tooltip" title="The summary will appear when your post is featured on the home page or on the sidebar." data-placement="bottom"><span class="glyphicon glyphicon-question-sign"></span></a>
+                            </label>
+
+                            <div class="col-md-9">
+                                <textarea cols="2" class="form-control" name="summary" placeholder="Enter 1 sentence summary">{{ old('summary') }}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <label class="col-md-3 control-label" for="thumbnail">Thumbnail*
+                                <a href="#" data-toggle="tooltip" title="The image will appear when your post is featured on the home page or on the sidebar." data-placement="bottom"><span class="glyphicon glyphicon-question-sign"></span></a>
+                            </label>
+
+                            <div class="col-md-9">
+                                <input type="file" name="thumbnail">
+                            </div>
+                        </div>
+
                         <hr>
 
                         <div class="row">

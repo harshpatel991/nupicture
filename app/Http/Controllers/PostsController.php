@@ -79,14 +79,24 @@ class PostsController extends Controller {
 	 */
 	public function store(StorePostRequest $request)
 	{
-
         Log::info('Request to store a post: ' . print_R($request->all(), TRUE));
 
         $post = new Post;
         $post->user_id = Auth::user()->id;
         $post->status = Post::$pendingPostStatus;
         $post->title = $request->input(Section::$TITLE_SECTION_NAME);
-        $post->slug = substr(Str::slug($request->input(Section::$TITLE_SECTION_NAME)), 0, 33).'-'.rand(0, 99);
+        $post->slug = substr(Str::slug($request->input(Section::$TITLE_SECTION_NAME)), 0, 33).'-'.rand(0, 9);
+        $post->summary = $request->input(Section::$SUMMARY_SECTION_NAME);
+
+        $thumbnail = $request->file(Section::$THUMBNAIL_SECTION_NAME); //TODO: this image upload stuff can be refactored. Make a class for this?
+        $thumbnailExtension = $thumbnail->guessExtension();
+        $thumbnailUploadName = $post->slug . rand(0, 99) . '.' . $thumbnailExtension;
+        $thumbnailUploadStatus = Section::uploadImage($thumbnail, $thumbnailUploadName, $thumbnailExtension);
+        if($thumbnailUploadStatus !== TRUE) {
+            Log::warning("Image was not uploaded due to " . $thumbnailUploadStatus);
+        }
+        $post->thumbnail_image = $thumbnailUploadName;
+
         $post->views = 0;
         $post->category = $request->input(Section::$CATEGORY_SECTION_NAME);
         $post->save();
@@ -104,7 +114,7 @@ class PostsController extends Controller {
             {
                 $image = $request->file($sectionId)[0];
                 $extension = $image->guessExtension();
-                $imageUploadedName = $post->slug . '-' . rand(0, 99) . '.' . $extension;
+                $imageUploadedName = $post->slug . rand(0, 99) . '.' . $extension;
                 $imageUploadStatus = Section::uploadImage($image, $imageUploadedName, $extension);
 
                 if($imageUploadStatus !== TRUE) {

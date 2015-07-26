@@ -10,11 +10,6 @@ class Post extends Model {
     public static $rejectedStatus = 'rejected';
     public static $postedStatus = 'posted';
 
-    public function getStrippedContent()
-    {
-        return strip_tags($this->content);
-    }
-
     public function getDates()
     {
         return ['created_at', 'updated_at', 'posted_at'];

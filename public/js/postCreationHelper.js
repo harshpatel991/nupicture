@@ -60,7 +60,7 @@ function imageSection (id, optional_content, content) {
                 '</div>' +
                 '<div class="row">' +
                     '<div class="col-sm-10">' +
-                        '<input class="form-control" name="'+id+'-section-image[]" placeholder="Image source (ex. http://cnn.com)" id="' + id + '-optional" value="'+ optional_content +'">' +
+                        '<input class="form-control" name="'+id+'-section-image[]" placeholder="Image Source (ex. http://cnn.com)" id="' + id + '-optional" value="'+ optional_content +'">' +
                     '</div>' +
                     '<div class="col-sm-2">' +
                         '<div class="btn btn-danger pull-right post-builder-remove-button" onclick="removeWrapperId('+id+')" id="' + id + '-remove"><span class="glyphicon glyphicon-trash"></span></div>' +
@@ -89,7 +89,7 @@ function youtubeSection (id, content) {
     return '<div id="' + id + '-wrapper" class="post-builder-section">' +
                 '<div class="row">' +
                     '<div class="col-sm-10">' +
-                        '<input class="form-control" name="' + id + '-section-youtube" placeholder="YouTube link (ex: https://www.youtube.com/watch?v=QcIy9NiNbmo)" id="' + id + '-content" value="'+ content +'">' +
+                        '<input class="form-control" name="' + id + '-section-youtube" placeholder="YouTube Link* (ex: https://www.youtube.com/watch?v=QcIy9NiNbmo)" id="' + id + '-content" value="'+ content +'">' +
                     '</div>' +
                     '<div class="col-sm-2">' +
                         '<div class="btn btn-danger pull-right" onclick="removeWrapperId(' + id + ')" id="' + id + '-remove"><span class="glyphicon glyphicon-trash"></span></div>' +
@@ -104,7 +104,7 @@ function sourceSection(id, content) {
     return '<div id="' + id + '-wrapper" class="post-builder-section">' +
                 '<div class="row">' +
                     '<div class="col-sm-10">' +
-                        '<input class="form-control" name="' + id + '-section-source" placeholder="Article source (ex: http://cnn.com)" id="' + id + '-content" value="'+ content +'">' +
+                        '<input class="form-control" name="' + id + '-section-source" placeholder="Article Source* (ex: http://cnn.com)" id="' + id + '-content" value="'+ content +'">' +
                     '</div>' +
                     '<div class="col-sm-2">' +
                         '<div class="btn btn-danger pull-right" onclick="removeWrapperId(' + id + ')" id="' + id + '-remove"><span class="glyphicon glyphicon-trash"></span></div>' +
@@ -173,3 +173,7 @@ function removeWrapperId(id) {
         $('#'+id+'-wrapper').remove();
     });
 }
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})

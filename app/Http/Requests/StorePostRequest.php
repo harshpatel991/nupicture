@@ -33,7 +33,9 @@ class StorePostRequest extends Request {
 	{
         $rules = [
             'title' => 'required|max:200',
-            'category' => 'required|max:50'
+            'category' => 'required|max:50',
+            'summary' => 'required|max:1000',
+            'thumbnail' => 'required|max:200'
         ];
 
         foreach($this->request->all() as $sectionId => $section)

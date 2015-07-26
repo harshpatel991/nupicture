@@ -10,7 +10,7 @@
                 {{$post->title}}
                 @if($lg)
                     <div class="home-thumbnail-summary">
-                        {{strip_tags($post->getStrippedContent())}}
+                        {{clean($post->summary)}}
                     </div>
                 @endif
 
