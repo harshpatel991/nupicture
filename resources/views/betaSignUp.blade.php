@@ -73,7 +73,7 @@
 
                 <div class="row">
                     <div class="col-md-offset-1 col-md-2 col-sm-3">
-                        <img src="/images/User-Profile-256.png" width="130" height="130" class="center-block">
+                        <img src="/images/User-Profile-256.png" width="130" height="130" style="margin-top: 20px;" class="center-block">
                     </div>
 
                     <div class="col-md-8 col-sm-9"> {{--Right column--}}
@@ -88,7 +88,7 @@
 
                 <div class="row">
                     <div class="col-md-offset-1 col-md-2 col-sm-3">
-                        <img src="/images/Note-Memo-256.png" width="130" height="130" class="center-block">
+                        <img src="/images/Note-Information-256.png" width="130" height="130" style="margin-top: 20px;" class="center-block">
                     </div>
 
                     <div class="col-md-8 col-sm-9"> {{--Right column--}}
@@ -106,7 +106,7 @@
 
                 <div class="row">
                     <div class="col-md-offset-1 col-md-2 col-sm-3">
-                        <img src="/images/Graph-01-256.png" width="130" height="130" class="center-block">
+                        <img src="/images/Graph-01-256.png" width="130" height="130" style="margin-top: 20px;" class="center-block">
                     </div>
 
                     <div class="col-md-8 col-sm-9"> {{--Right column--}}
@@ -124,7 +124,7 @@
 
                 <div class="row">
                     <div class="col-md-offset-1 col-md-2 col-sm-3">
-                        <img src="/images/Donate-256.png" width="130" height="130" class="center-block">
+                        <img src="/images/Donate-256.png" width="130" height="130" style="margin-top: 20px;" class="center-block">
                     </div>
 
                     <div class="col-md-8 col-sm-9"> {{--Right column--}}
@@ -136,7 +136,7 @@
                 </div>
 
                 <br>
-                <div class="row">
+                <div class="row" style="background-color: #ECEFF5; padding: 50px 0px;">
                     <div class="col-md-8 col-sm-9 col-md-offset-3 col-sm-offset-3">
 
                         <h1>Ready To Get Started?</h1>

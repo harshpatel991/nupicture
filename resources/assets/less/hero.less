@@ -8,7 +8,9 @@
   background-position: center center;
   background-size: cover;
 
-  height: 400px;
+  height: 300px;
+  @media (min-width: @screen-sm-min) { height: 400px; }
+
   color: #ffffff;
 }
 
@@ -29,9 +31,9 @@
 .hero-title {
   font-family: @font-family-montserrat;
 
-  font-size: 1.1em;
-  @media (min-width: @screen-sm-min) { font-size: 1.4em; }
-  @media (min-width: @screen-md-min) { font-size: 1.8em; }
+  font-size: 1.4em;
+  @media (min-width: @screen-sm-min) { font-size: 1.8em; }
+  @media (min-width: @screen-md-min) { font-size: 2.1em; }
   @media (min-width: @screen-lg-min) { font-size: 2.5em; }
 
   line-height: 110%;
@@ -47,7 +49,10 @@
   padding-right: 10px;
 
   .hero-info {
-    font-size: .5em;
+    font-size: .6em;
+
+    @media (min-width: @screen-md-min) { font-size: .5em; }
+    @media (min-width: @screen-lg-min) { font-size: .5em; }
   }
 
 }

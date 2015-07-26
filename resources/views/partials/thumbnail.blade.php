@@ -8,8 +8,13 @@
             <div class="home-thumbnail-title">
                 <div class="home-thumbnail-category">{{$post->category}}</div>
                 {{$post->title}}
+
                 @if($lg)
                     <div class="home-thumbnail-summary">
+                        {{clean($post->summary)}}
+                    </div>
+                @else
+                    <div class="home-thumbnail-summary visible-xs-block">
                         {{clean($post->summary)}}
                     </div>
                 @endif

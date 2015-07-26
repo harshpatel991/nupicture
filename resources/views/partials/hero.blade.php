@@ -6,8 +6,8 @@
                     <div class="hero-title">
                         {{$post->title}}
                         <div class="hero-info">
-                            {{$post->views}} VIEWS |
-                            {{strtoupper(date_format($post->updated_at, "F j, Y"))}}
+                            <span class="glyphicon glyphicon-fire"></span> {{$post->views}} VIEWS |
+                            <span class="glyphicon glyphicon-time"></span> {{strtoupper(date_format($post->updated_at, "F j, Y"))}}
                         </div>
                     </div>
                 </div>
