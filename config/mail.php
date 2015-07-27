@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['address' => 'support@sandbox8da219186f664f479f958d2ac1746725.mailgun.org', 'name' => 'Support'],
 
 	/*
 	|--------------------------------------------------------------------------
