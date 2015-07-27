@@ -9,7 +9,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 col-md-offset-1 col-md-10 white-background">
+            <div class="col-sm-12 col-md-offset-1 col-md-10 white-background post-main-column">
 
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">

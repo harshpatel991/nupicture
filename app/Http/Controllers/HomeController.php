@@ -45,6 +45,10 @@ class HomeController extends Controller {
 		return view('category', compact('posts', 'category'));
 	}
 
+    public function getHowItWorks() {
+        return view('howItWorks');
+    }
+
 	public function getBetaSignUp()
 	{
 		return view('betaSignUp');

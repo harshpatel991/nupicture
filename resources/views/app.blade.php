@@ -73,10 +73,16 @@
 
 							<li>
 								<form action="{{ url('/sign-up-beta') }}" class="display-inline">
-									<button href="/sign-up-beta" class="btn btn-default navbar-btn">Learn More & Sign Up</button>
+									<button href="/sign-up-beta" class="btn btn-default navbar-btn">Early Register</button>
 								</form>
-
 							</li>
+
+                            <li>
+                                <form action="{{ url('/how-it-works') }}" class="display-inline">
+                                    <button href="/sign-up-beta" class="btn btn-default navbar-btn">Learn More</button>
+                                </form>
+
+                            </li>
 
                             @if (Auth::guest())
                                 {{--<li><a href="{{ url('/auth/login') }}" class="category"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>--}}

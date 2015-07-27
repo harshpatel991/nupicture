@@ -27,8 +27,6 @@
   width: 100%;
   height: @image-height;
 
-
-
   background-position: center center;
   background-size: cover;
 
@@ -39,6 +37,9 @@
     background-size: cover;
 
     color: #ffffff;
+
+
+    @media (max-width: @screen-xs-max) { height: (@image-height + @text-section-height)/1.5; }
   }
 
 }
@@ -119,6 +120,7 @@
     line-height: 1.5em; //only allow 2 lines on the normal thumbnails
     overflow: hidden;
     height: 3em;
+    text-transform: none;
 
     margin-top: 5px;
     margin-bottom: 5px;

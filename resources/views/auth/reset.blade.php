@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10">
+		<div class="col-sm-12 col-md-offset-1 col-md-10 white-background post-main-column">
 
 			@if (count($errors) > 0)
 				<div class="alert alert-danger">
@@ -16,7 +16,11 @@
 				</div>
 			@endif
 
-			<h1>Reset Password</h1>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10">
+			        <h1>Reset Password</h1>
+                </div>
+            </div>
 
 			<form class="form-horizontal" role="form" method="POST" action="{{ url('/password/reset') }}">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">

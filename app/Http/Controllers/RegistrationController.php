@@ -39,7 +39,10 @@ class RegistrationController extends Controller {
             return Redirect::route('home')->withErrors(['confirmation' =>'Confirmation code not found']);
         }
 
-        $user->status = 'good';
+        if($user->status = 'unconfirmed')
+        {
+            $user->status = 'good';
+        }
         $user->save();
 
         return view('verificationSuccess', compact('randomPost'));

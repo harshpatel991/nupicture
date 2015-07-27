@@ -7,7 +7,7 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-12 col-md-offset-1 col-md-10 white-background">
+		<div class="col-sm-12 col-md-offset-1 col-md-10 white-background post-main-column">
 
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10">
@@ -24,7 +24,8 @@
                     @endif
 
                     <h2>Login</h2>
-                    <p>Don't have an account? <a href="/auth/register">Register</a> or <a href="/sign-up-beta">Learn More</a></p>
+
+                    <p>Welcome back. Let's get to work.</p>
 
                     <div class="panel panel-default">
                         <div class="panel-body">
@@ -67,6 +68,8 @@
 
                         </div>
                     </div>
+
+                    <p>Don't have an account? <a href="/auth/register">Register</a> or <a href="/sign-up-beta">Learn More</a></p>
 
                 </div>
             </div> {{--Inner row--}}

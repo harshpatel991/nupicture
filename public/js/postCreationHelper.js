@@ -76,7 +76,9 @@ function listNumberSection (id, optional_content) {
     return '<div id="'+id+'-wrapper" class="post-builder-section">' +
                 '<div class="row">' +
                     '<div class="col-sm-10">' +
-                        '<li class="h2" style="margin-top:0px; margin-bottom:0px;"><p><input class="form-control display-inline" name="'+id+'-section-listnumber" placeholder="Heading" id="' + id + '-optional" value="' + optional_content + '"></p></li>' +
+                        '<li class="h2" style="margin-top:0px; margin-bottom:0px;">' +
+                            '<p><input class="form-control display-inline post-builder-list-number-input" name="'+id+'-section-listnumber" placeholder="Heading" id="' + id + '-optional" value="' + optional_content + '"></p>' +
+                        '</li>' +
                     '</div>' +
                     '<div class="col-sm-2">' +
                         '<div class="btn btn-danger pull-right post-builder-remove-button" onclick="removeWrapperId('+id+')" id="' + id + '-remove"><span class="glyphicon glyphicon-trash"></span></div>' +
