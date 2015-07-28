@@ -39,20 +39,19 @@ class PostsTableSeederUser3 extends Seeder {
                 'category' => 'cute'
             ],
 
-            //next two should trigger large payment warning for ~17000
             ['id' => 12,
                 'user_id' => 3,
                 'status' => 'posted',
                 'admin_message' => null,
-                'title' => 'The most powerful supercomputer in Spain, the MareNostrum',
+                'title' => 'Two Students Film Amazing 4K Video of Iceland',
                 'slug' => 'post-12',
-                'summary' => 'A very powerful computer in Spain is stored in a beautiful location.',
-                'thumbnail_image' => 'super-computer-1.jpg',
-                'views' => 4000,
-                'created_at' => '2015-05-21 04:25:43',
-                'updated_at' => '2015-05-22 03:25:43',
-                'posted_at' => '2015-07-26 21:31:34',
-                'category' => 'funny'
+                'summary' => 'Studying at the Stuttgart Media University in Germany, Marcus Sies and Florian Nick have captured some very beautiful shots.',
+                'thumbnail_image' => 'two-students-film-amazing-4k-1.jpg',
+                'views' => 4234,
+                'created_at' => '2015-06-21 04:25:43',
+                'updated_at' => '2015-06-22 03:25:43',
+                'posted_at' => '2015-06-26 21:31:34',
+                'category' => 'photography'
             ],
 
             ['id' => 13,

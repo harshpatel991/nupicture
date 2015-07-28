@@ -1123,6 +1123,9 @@ small,
 .small {
   font-size: 85%;
 }
+.extra-small {
+  font-size: 71%;
+}
 mark,
 .mark {
   background-color: #ff851b;

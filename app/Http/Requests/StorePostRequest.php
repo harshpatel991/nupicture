@@ -24,6 +24,7 @@ class StorePostRequest extends Request {
         return false;
     }
 
+    private $IMAGE_RULES = 'required|min:1|max:2000|image|mimes:png,jpg,jpeg,gif';
 	/**
 	 * Get the validation rules that apply to the request.
 	 *
@@ -35,7 +36,7 @@ class StorePostRequest extends Request {
             'title' => 'required|max:200',
             'category' => 'required|max:50',
             'summary' => 'required|max:1000',
-            'thumbnail' => 'required|max:200'
+            'thumbnail' => $this->IMAGE_RULES
         ];
 
         foreach($this->request->all() as $sectionId => $section)
@@ -49,7 +50,7 @@ class StorePostRequest extends Request {
 
             elseif(strpos($sectionId, Section::$IMAGE_SECTION_NAME) !== FALSE)
             {
-                $rules[$sectionId.'.0'] = 'required|min:1|max:2000|image|mimes:png,jpg,jpeg,gif'; //content rule
+                $rules[$sectionId.'.0'] = $this->IMAGE_RULES; //content rule
             }
 
             elseif(strpos($sectionId, Section::$LIST_NUMBER_SECTION_NAME) !== FALSE)

@@ -77,7 +77,7 @@ function listNumberSection (id, optional_content) {
                 '<div class="row">' +
                     '<div class="col-sm-10">' +
                         '<li class="h2" style="margin-top:0px; margin-bottom:0px;">' +
-                            '<p><input class="form-control display-inline post-builder-list-number-input" name="'+id+'-section-listnumber" placeholder="Heading" id="' + id + '-optional" value="' + optional_content + '"></p>' +
+                            '<p><input class="form-control display-inline" name="'+id+'-section-listnumber" placeholder="Heading" id="' + id + '-optional" value="' + optional_content + '" class=""></p>' +
                         '</li>' +
                     '</div>' +
                     '<div class="col-sm-2">' +
