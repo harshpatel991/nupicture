@@ -157,7 +157,7 @@ class PostsController extends Controller {
             }
         }
 
-        return redirect('/profile');
+        return redirect('/profile')->with('message', 'Your post has been submitted! It will be reviewed in the next 12 hours. You can check it\'s status below.');
 	}
 
 	/**

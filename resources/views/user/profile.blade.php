@@ -16,7 +16,7 @@
 
 
                         @if (Session::has('message'))
-                            <div class="alert alert-success" role="alert">{{ Session::get('message') }}</div>
+                            <div class="alert alert-success" role="alert"><p class="text-center white-font">{{ Session::get('message') }}</p></div>
                         @endif
 
                         @if (Session::has('errors'))
