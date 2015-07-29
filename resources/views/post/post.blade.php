@@ -25,7 +25,7 @@
                         <h3>{!! clean($section->optional_content) !!}</h3>
                         <p>{!! clean(nl2br($section->content)) !!}</p>
                     @elseif($section->isImageSection())
-                        <img src="/upload/{{$section->content}}" class="post-image">
+                        <img src="/upload/{{$section->content}}" class="post-image center-block">
                         @if(strlen($section->optional_content) > 0)
                             <h6><a href="{!! clean($section->optional_content) !!}">Image Source</a></h6>
                         @endif

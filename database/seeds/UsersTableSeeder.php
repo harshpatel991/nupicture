@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder {
 
         $users = array(
             ['id' => 1,
-                'username'  => 'user1',
+                'username'  => 'MudMatter1',
                 'email'  => 'email1@gmail.com',
                 'password'  => bcrypt('password1'),
                 'status' => 'good',
@@ -21,7 +21,7 @@ class UsersTableSeeder extends Seeder {
             ],
 
             ['id' => 2,
-                'username'  => 'user2',
+                'username'  => '2eadaliz',
                 'email'  => 'email2@gmail.com',
                 'password'  => bcrypt('password2'),
                 'status' => 'good',
@@ -30,7 +30,7 @@ class UsersTableSeeder extends Seeder {
             ],
 
             ['id' => 3,
-                'username'  => 'user3',
+                'username'  => 'Network3Dipity',
                 'email'  => 'email3@gmail.com',
                 'password'  => bcrypt('password3'),
                 'status' => 'unconfirmed',
@@ -39,7 +39,7 @@ class UsersTableSeeder extends Seeder {
             ],
 
             ['id' => 4,
-                'username'  => 'user4',
+                'username'  => 'MamaJama04',
                 'email'  => 'email4@gmail.com',
                 'password'  => bcrypt('password4'),
                 'status' => 'warning',

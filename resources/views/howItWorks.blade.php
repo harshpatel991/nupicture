@@ -9,52 +9,10 @@
         <div class="row">
             <div class="col-sm-12 col-md-offset-1 col-md-10 white-background post-main-column">
 
-                {{--<div class="col-md-4 col-sm-5"> Left column--}}
-                    {{--<div class="row">--}}
-                        {{--<div class="col-sm-12">--}}
-                            {{--<div class="background-gray">--}}
-
-                                {{--<h4 class="text-center">Industry Highest Revenue Sharing</h4>--}}
-                                {{--<ul>--}}
-                                    {{--<li></li>--}}
-                                {{--</ul>--}}
-                            {{--</div>--}}
-
-                        {{--</div>--}}
-                    {{--</div>--}}
-
-                    {{--<div class="row">--}}
-                        {{--<div class="col-sm-12">--}}
-                            {{--<div class="background-gray">--}}
-
-                                {{--<h4 class="text-center">Massively Widen the Reach of your Content</h4>--}}
-                                {{--<ul>--}}
-                                    {{--<li><p>Posting your content here, you automatically gain the reputation of {{Config::get('app.name')}}.</p></li>--}}
-                                    {{--<li><p>You could post on your own personal sit but here, you get to skip the process of finding users to read your content.</p></li>--}}
-                                {{--</ul>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-
-                    {{--<div class="row">--}}
-                        {{--<div class="col-sm-12">--}}
-                            {{--<div class="background-gray">--}}
-
-                                {{--<h4 class="text-center">Increase your Writing Profile</h4>--}}
-                                {{--<ul>--}}
-                                    {{--<li><p>Build your writing profile on {{Config::get('app.name')}}.</p></li>--}}
-                                    {{--<li><p>Gain validation for your writing by tracking your page views.</p></li>--}}
-                                {{--</ul>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-
                 <div class="row">
                     <div class="col-md-8 col-sm-7 col-md-offset-3">
                         <h1>{{Config::get('app.name')}} Explained</h1>
-                        <h4>Let's get down to business</h4>
+
                     </div>
                 </div>
 

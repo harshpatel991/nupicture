@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model {
 
-    public static $categories = ['art', 'cute', 'funny', 'interesting', 'movies', 'news', 'photography', 'tv', 'woah'];
+    public static $categories = ['art', 'cute', 'funny', 'how-to', 'interesting', 'movies', 'news', 'photography', 'tv', 'woah'];
 
     public static $pendingPostStatus = 'pending_post';
     public static $rejectedStatus = 'rejected';

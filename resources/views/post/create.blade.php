@@ -24,7 +24,7 @@
                             </div>
                         @endif
 
-                        {!! Form::open(array('route' => '/post/create', 'class' => 'form', 'files'=>true)) !!}
+                        {!! Form::open(array('route' => '/post/create', 'class' => 'form', 'files'=>true, 'id' => 'post-creation')) !!}
                         <div class="pull-right">
                             <p>* = required </p>
                         </div>
@@ -97,6 +97,7 @@
                                         <div id="source-bottom"></div>
                                     </ol>
                                     {!! Form::submit('Submit', array('class'=>'btn btn-primary', 'id' => 'submit-form')) !!}
+
                             </div>
 
                             <div class="col-sm-3"> {{--Add content buttons--}}

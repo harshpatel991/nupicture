@@ -178,4 +178,10 @@ function removeWrapperId(id) {
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
-})
+});
+
+//display loader once button has been hit
+$('#submit-form').click(function() {
+    console.log('hi');
+    $('#submit-form').val( 'Loading...' );
+});
