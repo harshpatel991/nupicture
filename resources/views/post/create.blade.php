@@ -76,6 +76,7 @@
 
                             <div class="col-md-9">
                                 <input type="file" name="thumbnail">
+
                                 <p class="small">Max File Size: 2MB. File types accepted: PNG, GIF, JPG, JPEG. </p>
                             </div>
                         </div>

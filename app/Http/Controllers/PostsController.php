@@ -136,10 +136,13 @@ class PostsController extends Controller {
                 $newSection = new Section();
 
                 //store the youtube video id
-                preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $section, $matches);
+                if(preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:m\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $section, $matches))
+                {
+                    $newSection->make($post->id, Section::$YOUTUBE_SECTION_NAME, '', $matches[1]);
+                    $newSection->save();
+                }
 
-                $newSection->make($post->id, Section::$YOUTUBE_SECTION_NAME, '', $matches[1]);
-                $newSection->save();
+
             }
             elseif(strpos($sectionId, Section::$SOURCE_SECTION_NAME) !== FALSE)
             {
