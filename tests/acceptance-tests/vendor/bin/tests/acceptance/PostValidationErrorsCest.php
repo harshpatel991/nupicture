@@ -24,7 +24,7 @@ class PostValidationErrorsCest
         return $output;
     }
 
-    public function fillOutValidIntroSections(AcceptanceTester $I)
+    private function fillOutValidIntroSections(AcceptanceTester $I)
     {
         $I->amOnPage('/post/create');
         $I->fillField(['name' => 'title'], 'Valid Title');

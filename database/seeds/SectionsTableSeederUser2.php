@@ -71,7 +71,7 @@ class SectionTableSeederUser2 extends Seeder {
                 'post_id' => 7,
                 'type' => 'section-image',
                 'optional_content' => '',
-                'content' => 'northern-super-computer-1.jpg'
+                'content' => 'northern-1.jpg'
             ],
             ['id' => 12,
                 'post_id' => 7,
@@ -95,7 +95,7 @@ class SectionTableSeederUser2 extends Seeder {
                 'post_id' => 8,
                 'type' => 'section-image',
                 'optional_content' => '',
-                'content' => 'wired-super-computer-1.jpg'
+                'content' => 'wired-1.jpg'
             ],
             ['id' => 16,
                 'post_id' => 8,

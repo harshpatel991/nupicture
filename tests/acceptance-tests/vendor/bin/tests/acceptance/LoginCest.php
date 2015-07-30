@@ -21,7 +21,7 @@ class LoginCest
         $I->click(['id' => 'submit-login']);
 
         $I->seeInTitle('Home');
-        $I->see('user1', ['class'=>'btn-default']); //the user has been logged in
+        $I->see('MudMatter1', ['class'=>'btn-default']); //the user has been logged in
     }
 
     public function testLoginInvalid(AcceptanceTester $I)
@@ -55,11 +55,11 @@ class LoginCest
         $I->click(['id' => 'submit-login']);
 
         $I->seeInTitle('Home');
-        $I->see('user1', ['class'=>'btn-default']); //the user has been logged in
+        $I->see('MudMatter1', ['class'=>'btn-default']); //the user has been logged in
 
         $I->click(['id' => 'profile-dropdown']);
         $I->click(['id' => 'logout-button']);
-        $I->dontSee('user1', ['class'=>'btn-default']); //the user has been logged out
+        $I->dontSee('MudMatter1', ['class'=>'btn-default']); //the user has been logged out
     }
 
     public function testVisitLoginAlreadyLoggedIn(AcceptanceTester $I)
@@ -71,7 +71,7 @@ class LoginCest
         $I->fillField(['name' => 'password'], 'password1');
         $I->click(['id' => 'submit-login']);
 
-        $I->see('user1', ['class'=>'btn-default']); //the user has been logged in
+        $I->see('MudMatter1', ['class'=>'btn-default']); //the user has been logged in
         $I->seeInTitle('Home');
 
         $I->amOnPage('/auth/login');

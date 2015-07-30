@@ -90,7 +90,7 @@ class StorePostRequest extends Request {
 
         $messages[Section::$THUMBNAIL_SECTION_NAME.'.required'] = 'Thumbnail is required';
         $messages[Section::$THUMBNAIL_SECTION_NAME.'.max'] = 'Thumbnail must be smaller than :max KB';
-        $messages[Section::$THUMBNAIL_SECTION_NAME.'.image'] = 'File must be an image';
+        $messages[Section::$THUMBNAIL_SECTION_NAME.'.image'] = 'Thumbnail must be an image';
         $messages[Section::$THUMBNAIL_SECTION_NAME.'.mimes'] = 'Thumbnail must be PNG, JPG, JPEG, or GIF';
 
         foreach($this->request->all() as $sectionId => $val)

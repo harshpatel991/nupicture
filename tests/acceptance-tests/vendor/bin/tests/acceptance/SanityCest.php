@@ -52,7 +52,7 @@ class SanityCest
         $I->fillField(['name' => 'email'], 'blah');
         $I->click(['id' => 'submit-beta-email-form']);
         $I->dontSeeInDatabase('notifications', array('email' => 'blah'));
-        $I->see('The email must be a valid email address.');
+        $I->dontSeeInPageSource('alert-danger'); //will get caught by bootstrap js form validation
     }
 
     public function testSanityViewPost(AcceptanceTester $I)
@@ -112,7 +112,7 @@ class SanityCest
         $I->click(['id' => 'submit-login']);
 
         $I->amOnPage('/profile');
-        $I->see('user1\'s Profile');
+        $I->see('MudMatter1\'s Profile');
         $I->see('Adsense Publisher ID: pub-1111111111111111');
         $I->see('A Pending Post');
         $I->see('A Rejected Post Short Text');

@@ -17,6 +17,12 @@ class PostTestCest
         $I->amOnPage('/post/approve/' . $postId);
     }
 
+    private function getSectionID(AcceptanceTester $I, $content, $optionalContent)
+    {
+        $sectionID = $I->grabFromDatabase('sections', 'id', array('content' => $content, 'optional_content' => $optionalContent));
+        return $sectionID;
+    }
+
     public function _before(AcceptanceTester $I)
     {
     }
@@ -78,7 +84,8 @@ class PostTestCest
         $I->click(['id' =>'submit-form']);
 
         $I->seeInDatabase('posts', array('title' => 'Creating A Test Text Posting', 'category' => 'news', 'summary' => 'This is text posting summary', 'status' => 'pending_post'));
-        $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Test Heading 1', 'content' => 'Test Content 1', 'id' => '23'));
+        $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Test Heading 1', 'content' => 'Test Content 1'));
+
 
         $this->approvePost($I, 'Creating A Test Text Posting');
 
@@ -99,7 +106,7 @@ class PostTestCest
         $I->click(['id' =>'submit-form']);
 
         $I->seeInDatabase('posts', array('title' => 'Creating A Test Text Posting 2', 'category' => 'tv', 'summary' => 'This is text posting summary 2', 'status' => 'pending_post'));
-        $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => '', 'content' => 'Test Content 2', 'id' => '24'));
+        $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => '', 'content' => 'Test Content 2'));
 
         $this->approvePost($I, 'Creating A Test Text Posting 2');
 
@@ -125,7 +132,7 @@ class PostTestCest
         $I->click(['id' =>'submit-form']);
 
         $I->seeInDatabase('posts', array('title' => 'Creating A Test Image Posting', 'category' => 'tv', 'summary' => 'This is image posting summary', 'status' => 'pending_post'));
-        $I->seeInDatabase('sections', array('type' => 'section-image', 'optional_content' => 'www.optional-image-source.com', 'id' => '23'));
+        $I->seeInDatabase('sections', array('type' => 'section-image', 'optional_content' => 'www.optional-image-source.com'));
 
         $this->approvePost($I, 'Creating A Test Image Posting');
 
@@ -146,7 +153,7 @@ class PostTestCest
         $I->click(['id' =>'submit-form']);
 
         $I->seeInDatabase('posts', array('title' => 'Creating A Test Image Posting Without Optional', 'category' => 'tv', 'summary' => 'This is image posting summary 2', 'status' => 'pending_post'));
-        $I->seeInDatabase('sections', array('type' => 'section-image', 'optional_content' => '', 'id' => '24'));
+        $I->seeInDatabase('sections', array('type' => 'section-image', 'optional_content' => ''));
 
         $this->approvePost($I, 'Creating A Test Image Posting Without Optional');
 
@@ -172,7 +179,7 @@ class PostTestCest
         $I->click(['id' =>'submit-form']);
 
         $I->seeInDatabase('posts', array('title' => 'Creating A Test YouTube Posting', 'category' => 'interesting', 'summary' => 'This is youtube posting summary', 'status' => 'pending_post'));
-        $I->seeInDatabase('sections', array('type' => 'section-youtube', 'content' => '-CmadmM5cOk', 'id' => '23'));
+        $I->seeInDatabase('sections', array('type' => 'section-youtube', 'content' => '-CmadmM5cOk'));
 
         $this->approvePost($I, 'Creating A Test YouTube Posting');
 
@@ -303,16 +310,18 @@ class PostTestCest
 
         $I->seeInDatabase('posts', array('title' => 'Creating A Removing Items', 'category' => 'woah', 'summary' => 'This is removing items summary', 'status' => 'pending_post'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Text 1 Optional - Removed', 'content' => 'Text 1 Content - Removed'));
-        $I->seeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => 'List 2 Optional', 'content' => '', 'id' => '23'));
-        $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Text 3 Optional', 'content' => 'Text 3 Content', 'id' => '24'));
-        $I->seeInDatabase('sections', array('type' => 'section-image', 'id' => '25'));
+        $I->seeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => 'List 2 Optional', 'content' => ''));
+        $firstSectionID = $this->getSectionID($I, '', 'List 2 Optional');
+
+        $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Text 3 Optional', 'content' => 'Text 3 Content', 'id' => $firstSectionID+1));
+        $I->seeInDatabase('sections', array('type' => 'section-image', 'id' => $firstSectionID+2));
         $I->dontSeeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => 'List 5 Optional - Removed'));
-        $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Text 7 Optional', 'content' => 'Text 7 Content', 'id' => '26'));
+        $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Text 7 Optional', 'content' => 'Text 7 Content', 'id' => $firstSectionID+3));
         $I->dontSeeInDatabase('sections', array('type' => 'section-source', 'content' => 'http://reddit.com - Removed'));
-        $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Text 10 Optional', 'content' => 'Text 10 Content', 'id' => '27'));
+        $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Text 10 Optional', 'content' => 'Text 10 Content', 'id' => $firstSectionID+4));
         $I->dontSeeInDatabase('sections', array('type' => 'section-youtube', 'content' => 'e-ORhEE9VVg'));
-        $I->seeInDatabase('sections', array('type' => 'section-youtube', 'optional_content' => '', 'content' => 'VuNIsY6JdUw', 'id' => '28'));
-        $I->seeInDatabase('sections', array('type' => 'section-source', 'optional_content' => '', 'content' => 'http://cnn.com', 'id' => '29'));
+        $I->seeInDatabase('sections', array('type' => 'section-youtube', 'optional_content' => '', 'content' => 'VuNIsY6JdUw', 'id' => $firstSectionID+5));
+        $I->seeInDatabase('sections', array('type' => 'section-source', 'optional_content' => '', 'content' => 'http://cnn.com', 'id' => $firstSectionID+6));
 
         $this->approvePost($I, 'Creating A Removing Items');
 
@@ -349,6 +358,7 @@ class PostTestCest
         $I->fillField(['id' => '1-optional'], 'Remove All Test 1 Optional');
         $I->fillField(['id' => '2-optional'], 'Remove All Test 2 Optional');
         $I->attachFile(['id' => '3-content'], 'test-image.jpg');
+        $I->fillField(['id' => '3-optional'], 'Remove All Test 3 Image Optional Content');
         $I->fillField(['id' => '4-content'], 'Remove All Test 4 Content');
         $I->fillField(['id' => '5-content'], 'https://www.youtube.com/watch?v=e-ORhEE9VVg');
 
@@ -365,11 +375,11 @@ class PostTestCest
 
         $I->seeInDatabase('posts', array('title' => 'Creating A Removing All Items', 'category' => 'woah', 'summary' => 'This is add items and remove all summary', 'status' => 'pending_post'));
         $I->dontSeeInDatabase('sections', array('post_id' => '20'));
-        $I->dontSeeInDatabase('sections', array('type' => 'section-text', 'id' => '23'));
-        $I->dontSeeInDatabase('sections', array('type' => 'section-listnumber', 'id' => '24'));
-        $I->dontSeeInDatabase('sections', array('type' => 'section-image', 'id' => '25'));
-        $I->dontSeeInDatabase('sections', array('type' => 'section-youtube', 'id' => '26'));
-        $I->dontSeeInDatabase('sections', array('type' => 'section-source', 'id' => '27'));
+        $I->dontSeeInDatabase('sections', array('type' => 'section-text', 'content' => 'Remove All Test 1 Content', 'optional_content' => 'Remove All Test 1 Optional'));
+        $I->dontSeeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => 'Remove All Test 2 Optional'));
+        $I->dontSeeInDatabase('sections', array('type' => 'section-image', 'optional_content' => 'Remove All Test 3 Image Optional Content')); //can't test for the image's content since it's random...
+        $I->dontSeeInDatabase('sections', array('type' => 'section-youtube', 'content' => 'e-ORhEE9VVg'));
+        $I->dontSeeInDatabase('sections', array('type' => 'section-source', 'content' => 'Remove All Test 4 Content'));
 
         $this->approvePost($I, 'Creating A Removing All Items');
 
@@ -422,9 +432,8 @@ class PostTestCest
 
         $this->approvePost($I, 'Creating A Test New Line Text Posting Success');
 
-        $I->seeInPageSource('Success Test Content Line 1<br />');
-        $I->seeInPageSource('Test Content Line 2<br /><br />');
-        $I->seeInPageSource('Test Content Line 3</p>');
+        $I->seeInPageSource('Success Test Content Line 1<br />Test Content Line 2<br /><br />Test Content Line 3');
+
         $I->seeInTitle('Creating A Test New Line Text Posting Success');
     }
 }

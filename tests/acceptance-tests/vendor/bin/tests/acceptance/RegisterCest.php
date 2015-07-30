@@ -42,15 +42,17 @@ class RegisterCest
         $I->amOnPage('/');
         $I->amOnPage('/auth/register');
 
-        $I->fillField(['name' => 'username'], 'user1');
+        //already taken
+        $I->fillField(['name' => 'username'], 'MudMatter1');
         $I->fillField(['name' => 'email'], 'garbage100@gmail.com');
         $I->fillField(['name' => 'password'], 'testingUserPass');
         $I->fillField(['name' => 'password_confirmation'], 'testingUserPass');
         $I->fillField(['name' => 'publisher_id'], 'pub-1234567891234567');
         $I->click(['id' => 'submit-register']);
 
-        $I->seeElement(['class'=>'alert-danger']); //see warning message
+        $I->seeInPageSource('The username has already been taken.'); //see warning message
 
+        //too long
         $I->fillField(['name' => 'username'], 'thisIsAVeryLongUserNameThatIsNotAllowedInTheDatabaseItIsAllowedToBeVeryLong');
         $I->fillField(['name' => 'email'], 'garbage100@gmail.com');
         $I->fillField(['name' => 'password'], 'testingUserPass');
@@ -58,8 +60,9 @@ class RegisterCest
         $I->fillField(['name' => 'publisher_id'], 'pub-1234567891234567');
         $I->click(['id' => 'submit-register']);
 
-        $I->seeElement(['class'=>'alert-danger']); //see warning message
+        $I->seeInPageSource('The username may not be greater than 60 characters.'); //see warning message
 
+        //empty
         $I->fillField(['name' => 'username'], '');
         $I->fillField(['name' => 'email'], 'garbage100@gmail.com');
         $I->fillField(['name' => 'password'], 'testingUserPass');
@@ -67,7 +70,7 @@ class RegisterCest
         $I->fillField(['name' => 'publisher_id'], 'pub-1234567891234567');
         $I->click(['id' => 'submit-register']);
 
-        $I->seeElement(['class'=>'alert-danger']); //see warning message
+        $I->seeInPageSource('The username field is required.'); //see warning message
     }
 
     public function testRegisterInvalidEmail(AcceptanceTester $I)
@@ -75,32 +78,35 @@ class RegisterCest
         $I->amOnPage('/');
         $I->amOnPage('/auth/register');
 
-        $I->fillField(['name' => 'username'], 'user1');
-        $I->fillField(['name' => 'email'], 'email1@gmail.com'); //already taken
+        //already taken
+        $I->fillField(['name' => 'username'], 'newUser1');
+        $I->fillField(['name' => 'email'], 'email1@gmail.com');
         $I->fillField(['name' => 'password'], 'testingUserPass');
         $I->fillField(['name' => 'password_confirmation'], 'testingUserPass');
         $I->fillField(['name' => 'publisher_id'], 'pub-1234567891234567');
         $I->click(['id' => 'submit-register']);
 
-        $I->seeElement(['class'=>'alert-danger']); //see warning message
+        $I->seeInPageSource('The email has already been taken.'); //see warning message
 
+        //too long
         $I->fillField(['name' => 'username'], 'user1');
-        $I->fillField(['name' => 'email'], 'thisIsAVeryLongEmailThatIsNotAllowedInTheDatabase'); //too long
+        $I->fillField(['name' => 'email'], 'thisIsAVeryLongEmailThatIsNotAllowedInTheDatabasethisIsAVeryLongEmailThatIsNotAllowedInTheDatabasethisIsAVeryLongEmailThatIsNotAllowedInTheDatabasethisIsAVeryLongEmailThatIsNotAllowedInTheDatabasethisIsAVeryLongEmailThatIsNotAllowedInTheDatabasethisIsAVeryLongEmailThatIsNotAllowedInTheDatabase@gmail.com');
         $I->fillField(['name' => 'password'], 'testingUserPass');
         $I->fillField(['name' => 'password_confirmation'], 'testingUserPass');
         $I->fillField(['name' => 'publisher_id'], 'pub-1234567891234567');
         $I->click(['id' => 'submit-register']);
 
-        $I->seeElement(['class'=>'alert-danger']); //see warning message
+        $I->seeInPageSource('The email may not be greater than 255 characters.'); //see warning message
 
+        //too short
         $I->fillField(['name' => 'username'], 'user1');
-        $I->fillField(['name' => 'email'], ''); //too short
+        $I->fillField(['name' => 'email'], '');
         $I->fillField(['name' => 'password'], 'testingUserPass');
         $I->fillField(['name' => 'password_confirmation'], 'testingUserPass');
         $I->fillField(['name' => 'publisher_id'], 'pub-1234567891234567');
         $I->click(['id' => 'submit-register']);
 
-        $I->seeElement(['class'=>'alert-danger']); //see warning message
+        $I->seeInPageSource('The email field is required.'); //see warning message
     }
 
     public function testRegisterInvalidPassword(AcceptanceTester $I)
@@ -108,32 +114,35 @@ class RegisterCest
         $I->amOnPage('/');
         $I->amOnPage('/auth/register');
 
+        //empty
         $I->fillField(['name' => 'username'], 'user1');
         $I->fillField(['name' => 'email'], 'testyemail@gmail.com');
-        $I->fillField(['name' => 'password'], ''); //too short
+        $I->fillField(['name' => 'password'], '');
         $I->fillField(['name' => 'password_confirmation'], '');
         $I->fillField(['name' => 'publisher_id'], 'pub-1234567891234567');
         $I->click(['id' => 'submit-register']);
 
-        $I->seeElement(['class'=>'alert-danger']); //see warning message
+        $I->seeInPageSource('The password field is required.'); //see warning message
 
+        //too short
         $I->fillField(['name' => 'username'], 'user1');
         $I->fillField(['name' => 'email'], 'testyemail@gmail.com');
-        $I->fillField(['name' => 'password'], 'thisIsAVeryLongPasswordThatIsNotAllowedInTheDatabase'); //too long
-        $I->fillField(['name' => 'password_confirmation'], 'thisIsAVeryLongPasswordThatIsNotAllowedInTheDatabase');
+        $I->fillField(['name' => 'password'], '1');
+        $I->fillField(['name' => 'password_confirmation'], '1');
         $I->fillField(['name' => 'publisher_id'], 'pub-1234567891234567');
         $I->click(['id' => 'submit-register']);
 
-        $I->seeElement(['class'=>'alert-danger']); //see warning message
+        $I->seeInPageSource('The password must be at least 6 characters.'); //see warning message
 
+        //not matching
         $I->fillField(['name' => 'username'], 'user1');
         $I->fillField(['name' => 'email'], 'testyemail@gmail.com');
-        $I->fillField(['name' => 'password'], '123456'); //not matching
+        $I->fillField(['name' => 'password'], '123456');
         $I->fillField(['name' => 'password_confirmation'], '654321');
         $I->fillField(['name' => 'publisher_id'], 'pub-1234567891234567');
         $I->click(['id' => 'submit-register']);
 
-        $I->seeElement(['class'=>'alert-danger']); //see warning message
+        $I->seeInPageSource('The password confirmation does not match.'); //see warning message
     }
 
     public function testRegisterInvalidPublisherId(AcceptanceTester $I)
@@ -143,21 +152,21 @@ class RegisterCest
 
         $I->fillField(['name' => 'username'], 'user1');
         $I->fillField(['name' => 'email'], 'testyemail@gmail.com');
-        $I->fillField(['name' => 'password'], '123456'); //too short
+        $I->fillField(['name' => 'password'], '123456');
         $I->fillField(['name' => 'password_confirmation'], '123456');
         $I->fillField(['name' => 'publisher_id'], 'pub-12345678912345678'); //too long
         $I->click(['id' => 'submit-register']);
 
-        $I->seeElement(['class'=>'alert-danger']); //see warning message
+        $I->seeInPageSource('The publisher id may not be greater than 20 characters.'); //see warning message
 
         $I->fillField(['name' => 'username'], 'user1');
         $I->fillField(['name' => 'email'], 'testyemail@gmail.com');
-        $I->fillField(['name' => 'password'], 'thisIsAVeryLongPasswordThatIsNotAllowedInTheDatabase'); //too long
-        $I->fillField(['name' => 'password_confirmation'], 'thisIsAVeryLongPasswordThatIsNotAllowedInTheDatabase');
+        $I->fillField(['name' => 'password'], '123456');
+        $I->fillField(['name' => 'password_confirmation'], '123456');
         $I->fillField(['name' => 'publisher_id'], 'pub-123456789123456'); //too short
         $I->click(['id' => 'submit-register']);
 
-        $I->seeElement(['class'=>'alert-danger']); //see warning message
+        $I->seeInPageSource('The publisher id must be at least 20 characters.'); //see warning message
     }
 
     public function testVisitRegisterAlreadyLoggedIn(AcceptanceTester $I)
@@ -169,7 +178,7 @@ class RegisterCest
         $I->fillField(['name' => 'password'], 'password1');
         $I->click(['id' => 'submit-login']);
 
-        $I->see('user1', ['class'=>'btn-default']); //the user has been logged in
+        $I->see('MudMatter1', ['class'=>'btn-default']); //the user has been logged in
         $I->seeInTitle('Home');
 
         $I->amOnPage('/auth/register');
