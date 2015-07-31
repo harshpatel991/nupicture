@@ -66,4 +66,8 @@ class HomeController extends Controller {
 	public function increasePageViews() {
 		return view('increasePageViews');
 	}
+
+    public function privacyPolicy() {
+        return view('privacyPolicy');
+    }
 }

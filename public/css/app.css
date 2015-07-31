@@ -6633,7 +6633,7 @@ body {
 .category {
   text-transform: uppercase;
   font-weight: 700;
-  font-color: #555555;
+  color: #555555;
 }
 .home-column-padding {
   padding-left: 0px;
@@ -6722,6 +6722,9 @@ body {
 .white-font {
   color: #fff;
 }
+.font-light-gray {
+  color: #cbced4;
+}
 .home-sidebar {
   padding-left: 6px;
   padding-top: 6px;
@@ -6761,6 +6764,9 @@ body {
 }
 .post-builder-list-number-input {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+.post-builder-heading-input {
+  font-size: 18px;
 }
 .hero-wrapper {
   margin-left: 6px;

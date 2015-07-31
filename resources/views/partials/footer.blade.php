@@ -9,7 +9,7 @@
             <a href="/auth/login">Login</a> <br> <br>
             <a href="/auth/register">Register</a> <br> <br>
             <a href="/sign-up-beta">About</a> <br> <br>
-            <a href="#">Privacy Policy</a> <br> <br>
+            <a href="/privacy-policy">Privacy Policy</a> <br> <br>
             <a href="#">Terms of Use</a>
             </h6>
         </div>

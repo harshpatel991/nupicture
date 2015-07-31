@@ -32,7 +32,7 @@ function textSection (id, optional_content, content) {
     return '<div id="'+id+'-wrapper" class="post-builder-section">' +
                 '<div class="row">' +
                     '<div class="col-sm-12">' +
-                        '<input class="form-control" name="'+id+'-section-text[]" placeholder="Heading" id="' + id + '-optional" value="'+ optional_content +'">' +
+                        '<input class="form-control post-builder-heading-input" name="'+id+'-section-text[]" placeholder="Heading" id="' + id + '-optional" value="'+ optional_content +'">' +
                         '<textarea class="form-control post-builder-textarea" rows="6" cols="60" name="'+id+'-section-text[]" id="' + id + '-content" placeholder="Your Content*">'+ content +'</textarea>' +
                     '</div>' +
                     '<div class="col-sm-10">' +
@@ -77,7 +77,7 @@ function listNumberSection (id, optional_content) {
                 '<div class="row">' +
                     '<div class="col-sm-10">' +
                         '<li class="h2" style="margin-top:0px; margin-bottom:0px;">' +
-                            '<p><input class="form-control display-inline" name="'+id+'-section-listnumber" placeholder="Heading" id="' + id + '-optional" value="' + optional_content + '" class=""></p>' +
+                            '<p><input class="form-control display-inline post-builder-list-number-input post-builder-heading-input" name="'+id+'-section-listnumber" placeholder="Heading" id="' + id + '-optional" value="' + optional_content + '" class=""></p>' +
                         '</li>' +
                     '</div>' +
                     '<div class="col-sm-2">' +

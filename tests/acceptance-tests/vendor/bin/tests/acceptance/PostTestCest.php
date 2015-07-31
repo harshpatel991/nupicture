@@ -86,7 +86,7 @@ class PostTestCest
         $I->seeInDatabase('posts', array('title' => 'Creating A Test Text Posting', 'category' => 'news', 'summary' => 'This is text posting summary', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Test Heading 1', 'content' => 'Test Content 1'));
 
-
+        $I->seeInPageSource('Creating A Test Text Posting'); //see on profile page
         $this->approvePost($I, 'Creating A Test Text Posting');
 
         $I->seeInPageSource('Test Heading 1');
@@ -108,6 +108,7 @@ class PostTestCest
         $I->seeInDatabase('posts', array('title' => 'Creating A Test Text Posting 2', 'category' => 'tv', 'summary' => 'This is text posting summary 2', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-text', 'optional_content' => '', 'content' => 'Test Content 2'));
 
+        $I->seeInPageSource('Creating A Test Text Posting 2'); //see on profile page
         $this->approvePost($I, 'Creating A Test Text Posting 2');
 
         $I->seeInPageSource('Test Content 2');
@@ -134,6 +135,7 @@ class PostTestCest
         $I->seeInDatabase('posts', array('title' => 'Creating A Test Image Posting', 'category' => 'tv', 'summary' => 'This is image posting summary', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-image', 'optional_content' => 'www.optional-image-source.com'));
 
+        $I->seeInPageSource('Creating A Test Image Posting'); //see on profile page
         $this->approvePost($I, 'Creating A Test Image Posting');
 
         $I->seeInTitle('Creating A Test Image Posting');
@@ -155,6 +157,7 @@ class PostTestCest
         $I->seeInDatabase('posts', array('title' => 'Creating A Test Image Posting Without Optional', 'category' => 'tv', 'summary' => 'This is image posting summary 2', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-image', 'optional_content' => ''));
 
+        $I->seeInPageSource('Creating A Test Image Posting Without Optional'); //see on profile page
         $this->approvePost($I, 'Creating A Test Image Posting Without Optional');
 
         $I->seeInTitle('Creating A Test Image Posting Without Optional');
@@ -181,6 +184,7 @@ class PostTestCest
         $I->seeInDatabase('posts', array('title' => 'Creating A Test YouTube Posting', 'category' => 'interesting', 'summary' => 'This is youtube posting summary', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-youtube', 'content' => '-CmadmM5cOk'));
 
+        $I->seeInPageSource('Creating A Test YouTube Posting'); //see on profile page
         $this->approvePost($I, 'Creating A Test YouTube Posting');
 
         $I->seeInTitle('Creating A Test YouTube Posting');
@@ -207,6 +211,7 @@ class PostTestCest
         $I->seeInDatabase('posts', array('title' => 'Creating A Test List Number Posting', 'category' => 'tv', 'summary' => 'This is list number posting summary', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => 'List Number Heading'));
 
+        $I->seeInPageSource('Creating A Test List Number Posting'); //see on profile page
         $this->approvePost($I, 'Creating A Test List Number Posting');
 
         $I->seeInTitle('Creating A Test List Number Posting');
@@ -226,6 +231,7 @@ class PostTestCest
         $I->seeInDatabase('posts', array('title' => 'Creating A Test List Number Posting 2', 'category' => 'tv', 'summary' => 'This is list number posting summary 2', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => ''));
 
+        $I->seeInPageSource('Creating A Test List Number Posting 2'); //see on profile page
         $this->approvePost($I, 'Creating A Test List Number Posting 2');
 
         $I->seeInTitle('Creating A Test List Number Posting 2');
@@ -249,6 +255,7 @@ class PostTestCest
         $I->seeInDatabase('posts', array('title' => 'Creating A Source Posting', 'category' => 'woah', 'summary' => 'This is source posting summary', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-source', 'optional_content' => '', 'content' => 'http://cnn.com'));
 
+        $I->seeInPageSource('Creating A Source Posting'); //see on profile page
         $this->approvePost($I, 'Creating A Source Posting');
 
         $I->seeInTitle('Creating A Source Posting');
@@ -323,6 +330,7 @@ class PostTestCest
         $I->seeInDatabase('sections', array('type' => 'section-youtube', 'optional_content' => '', 'content' => 'VuNIsY6JdUw', 'id' => $firstSectionID+5));
         $I->seeInDatabase('sections', array('type' => 'section-source', 'optional_content' => '', 'content' => 'http://cnn.com', 'id' => $firstSectionID+6));
 
+        $I->seeInPageSource('Creating A Removing Items'); //see on profile page
         $this->approvePost($I, 'Creating A Removing Items');
 
         $I->seeInTitle('Creating A Removing Items');
@@ -381,6 +389,7 @@ class PostTestCest
         $I->dontSeeInDatabase('sections', array('type' => 'section-youtube', 'content' => 'e-ORhEE9VVg'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-source', 'content' => 'Remove All Test 4 Content'));
 
+        $I->seeInPageSource('Creating A Removing All Items'); //see on profile page
         $this->approvePost($I, 'Creating A Removing All Items');
 
         $I->seeInTitle('Creating A Removing All Items');
@@ -430,6 +439,7 @@ class PostTestCest
         $I->fillField(['id' => '1-content'], "Success Test Content Line 1\nTest Content Line 2\n\nTest Content Line 3");
         $I->click(['id' => 'submit-form']);
 
+        $I->seeInPageSource('Creating A Test New Line Text Posting Success'); //see on profile page
         $this->approvePost($I, 'Creating A Test New Line Text Posting Success');
 
         $I->seeInPageSource('Success Test Content Line 1<br />Test Content Line 2<br /><br />Test Content Line 3');
