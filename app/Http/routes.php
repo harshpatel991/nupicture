@@ -58,3 +58,4 @@ Route::get('/sign-up-success', 'RegistrationController@signupSuccess');
 Route::get('/verify/{confirmation_code}', 'RegistrationController@verifySuccess');
 
 Route::get('/privacy-policy', 'HomeController@privacyPolicy');
+Route::get('/terms-conditions', 'HomeController@termsAndConditions');

@@ -70,4 +70,8 @@ class HomeController extends Controller {
     public function privacyPolicy() {
         return view('privacyPolicy');
     }
+
+    public function termsAndConditions() {
+        return view('termsAndConditions');
+    }
 }
