@@ -73,20 +73,34 @@
                             {{Config::get('app.name')}} has not reviewed all of the sites linked to its Internet web site and is not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement by {{Config::get('app.name')}} of the site. Use of any such linked web site is at the user's own risk.
                         </p>
 
-                        <h3>7. Site Terms of Use Modifications</h3>
+                        <h3>7. Content</h3>
+                        <p>
+                            Users warrant that any content sent by the user to be published on the website will comply with the following constraints:
+                            <ol>
+                                <li>will be original work</li>
+                                <li>will not be posted anywhere else, in whole or in part, on the Internet or in any other media</li>
+                                <li>will not contain any content of any kind whatsoever that is illegal, infringes any copyrights, or is libelous
+                                <li>any third parties contents are included with materials submitted to the site for publishing will have been given appropriate rights from those appropriate thrid parties which hold the copyrights on the published content</li>
+                                <li>will be free of offensive, derogatory, harmful, unlawful, threatening, vulgar, profane, abusive, harassing, obscene, pornographic, defamatory or tortuous content.</li>
+                            </ol>
+                        </p>
+
+                        <p>
+
+                            Users that submit content to the website irrevocably and unconditionally grant {{Config::get('app.name')}} all and complete rights to publish the submitted content on the site or anywhere on the internet, free of charge. {{Config::get('app.name')}} is allowed to publish the content in any edited or modified format without objection from the user. {{Config::get('app.name')}} reserves the right to deny publishing any content for any purpose it sees fit.
+
+                        </p>
+
+                        <h3>8. Site Terms of Use Modifications</h3>
 
                         <p>
                             {{Config::get('app.name')}} may revise these terms of use for its web site at any time without notice. By using this web site you are agreeing to be bound by the then current version of these Terms and Conditions of Use.
                         </p>
 
-                        <h3>8. Governing Law</h3>
+                        <h3>9. Governing Law</h3>
 
                         <p>
                             Any claim relating to {{Config::get('app.name')}}'s web site shall be governed by the laws of the State of Texas without regard to its conflict of law provisions.
-                        </p>
-
-                        <p>
-                            General Terms and Conditions applicable to Use of a Web Site.
                         </p>
 
                     </div>
