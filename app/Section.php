@@ -26,31 +26,6 @@ class Section extends Model {
         $this->content = $content;
     }
 
-    public static function uploadImage($image, $fileName, $extension)
-    {
-        // checking file is valid.
-        if (!$image->isValid()) {
-            return 'File is not valid';
-        }
-        $destinationPath = public_path() . '/upload/';
-
-
-        if ($image->getClientSize() > 4000000) {
-            return 'File is too large';
-        }
-        if ($extension != "jpg" && $extension != "png" && $extension != "jpeg" && $extension != "gif") {
-            return 'File extension is not supported';
-        }
-
-        try {
-            $image->move($destinationPath, $fileName); // uploading file to given path
-        } catch (FileException $e) {
-            return 'Could not move the file: ' . $e->getMessage();
-        }
-
-        return true;
-    }
-
     public function isTextSection() {
         return $this->type === Section::$TEXT_SECTION_NAME;
     }

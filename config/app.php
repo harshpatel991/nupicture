@@ -88,7 +88,7 @@ return [
 	|
 	*/
 
-	'key' => env('APP_KEY', 'SomeRandomString'),
+	'key' => env('APP_KEY', 'rYo2VuiHJ4O4G4AZCUER6vI8QB404U1e'),
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -174,8 +174,8 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
         'Mews\Purifier\PurifierServiceProvider',
-
-	],
+        'Intervention\Image\ImageServiceProvider'
+    ],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -223,7 +223,8 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Form'		=> 'Illuminate\Html\FormFacade',
-		'HTML'		=> 'Illuminate\Html\HtmlFacade'
+		'HTML'		=> 'Illuminate\Html\HtmlFacade',
+        'Image'     => 'Intervention\Image\Facades\Image'
 
 	],
 

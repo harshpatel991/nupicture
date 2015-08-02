@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 
 use Carbon\Carbon;
 use DB;
+use Image;
 use Config;
 use \Log;
 use Illuminate\Http\Request;
@@ -88,22 +89,19 @@ class PostsController extends Controller {
         $post->slug = substr(Str::slug($request->input(Section::$TITLE_SECTION_NAME)), 0, 33).'-'.rand(0, 9);
         $post->summary = $request->input(Section::$SUMMARY_SECTION_NAME);
 
-        $thumbnail = $request->file(Section::$THUMBNAIL_SECTION_NAME); //TODO: this image upload stuff can be refactored. Make a class for this?
-        $thumbnailExtension = $thumbnail->guessExtension();
-        $thumbnailUploadName = $post->slug . rand(0, 99) . '.' . $thumbnailExtension;
-        $thumbnailUploadStatus = Section::uploadImage($thumbnail, $thumbnailUploadName, $thumbnailExtension);
-        if($thumbnailUploadStatus !== TRUE) {
-            Log::warning("Image was not uploaded due to " . $thumbnailUploadStatus);
-        }
-        $post->thumbnail_image = $thumbnailUploadName;
+        $thumbnailUploadName =  $post->slug . rand(0, 9) . '.jpg';
+        Image::make($request->file(Section::$THUMBNAIL_SECTION_NAME))
+            ->encode('jpg')
+            ->fit(800, 600, function ($constraint) { $constraint->upsize();})
+            ->save(Post::getImageUploadPath().$thumbnailUploadName, 70);
 
+        $post->thumbnail_image = $thumbnailUploadName;
         $post->views = 0;
         $post->category = $request->input(Section::$CATEGORY_SECTION_NAME);
         $post->save();
 
         foreach($request->all() as $sectionId => $section)
         {
-
             if(strpos($sectionId, Section::$TEXT_SECTION_NAME) !== FALSE)
             {
                 $newSection = new Section();
@@ -112,14 +110,11 @@ class PostsController extends Controller {
             }
             elseif(strpos($sectionId, Section::$IMAGE_SECTION_NAME) !== FALSE)
             {
-                $image = $request->file($sectionId)[0];
-                $extension = $image->guessExtension();
-                $imageUploadedName = $post->slug . rand(0, 99) . '.' . $extension;
-                $imageUploadStatus = Section::uploadImage($image, $imageUploadedName, $extension);
-
-                if($imageUploadStatus !== TRUE) {
-                    Log::warning("Image was not uploaded due to " . $imageUploadStatus);
-                }
+                $imageUploadedName = $post->slug. rand(0, 99) . '.jpg';
+                Image::make($request->file($sectionId)[0])
+                    ->encode('jpg')
+                    ->widen(1600, function ($constraint) { $constraint->upsize();})
+                    ->save(Post::getImageUploadPath().$imageUploadedName, 75);
 
                 $newSection = new Section();
                 $newSection ->make($post->id, Section::$IMAGE_SECTION_NAME, $section[1], $imageUploadedName);
@@ -141,7 +136,6 @@ class PostsController extends Controller {
                     $newSection->make($post->id, Section::$YOUTUBE_SECTION_NAME, '', $matches[1]);
                     $newSection->save();
                 }
-
 
             }
             elseif(strpos($sectionId, Section::$SOURCE_SECTION_NAME) !== FALSE)

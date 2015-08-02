@@ -4,6 +4,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model {
 
+    public static function getImageUploadPath() {
+        return public_path() . '/upload/';
+    }
+
     public static $categories = ['art', 'cute', 'funny', 'how-to', 'interesting', 'movies', 'news', 'photography', 'tv', 'woah'];
 
     public static $pendingPostStatus = 'pending_post';
