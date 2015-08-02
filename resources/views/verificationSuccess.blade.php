@@ -17,18 +17,35 @@
 
                 <h3 class="text-center">We're thrilled to have you here.</h3>
                 <br>
-                <div class="text-center">
-                    <a href="/post/create" class="btn btn-lg btn-primary">Create Your First Post</a>
-                    <b>or</b>
-                    <a href="/post/{{$randomPost->slug}}" class="btn btn-lg btn-primary">View A Random Post</a>
+                <div class="row">
+
+                    <div class="col-sm-5 col-md-4 col-md-offset-1 col-lg-3 col-lg-offset-2">
+                        <div class="text-center">
+                            <a href="/post/create" class="btn btn-lg btn-primary">Create Your First Post</a>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="text-center">
+                            <h4>OR</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-5 col-md-4 col-lg-3">
+                        <div class="text-center">
+                            <a href="/post/{{$randomPost->slug}}" class="btn btn-lg btn-primary text-center">View A Random Post</a>
+                        </div>
+                    </div>
+
                 </div>
-                <br>
-                <br><br>
-                <br>
-                <br>
-                <br><br>
 
-
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
 
 			</div> {{--End white background--}}
 		</div>
