@@ -46,10 +46,8 @@ class Registrar implements RegistrarContract {
 
             $message->to(Input::get('email'))
                 ->from('support@sandbox8da219186f664f479f958d2ac1746725.mailgun.org')
-                ->subject('Verify your email address');
+                ->subject('Please confirm your email');
         });
-
-        //Flash::message('Thanks for signing up! Please check your email.');
         return $newUser;
 	}
 
