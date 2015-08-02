@@ -69,6 +69,18 @@
                                         </tr>
                                     @endforeach
 
+                                    @for($i = count($usersPosts); $i < 7; $i++)
+                                        <tr>
+                                            <td>‌‌</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+
+                                    @endfor
+
                                 </table>
                             </div>
                         @else

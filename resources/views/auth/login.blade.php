@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    {{strtoupper(Config::get('app.name'))}} | Login
+    Login | {{strtoupper(Config::get('app.name'))}}
 @endsection
 
 @section('content')
