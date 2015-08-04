@@ -140,7 +140,7 @@
 @endsection
 
 @section('scripts')
-    <script src="/js/postCreationHelper.js"></script>
+    <script src="/js/postCreationHelper.js" defer></script>
 
     {{--Load any rejecrted post content--}}
     <script>

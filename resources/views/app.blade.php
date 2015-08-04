@@ -24,10 +24,9 @@
 	<![endif]-->
 
     <!-- Scripts -->
-    <script src="/js/jquery-2.1.4.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-    <script src="/js/analyticsTracking.js"></script>
+    <script src="/js/jquery-2.1.4.min.js" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js" defer></script>
+    <script src="/js/analyticsTracking.js" defer></script>
 </head>
 <body>
 	<nav class="navbar navbar-default">
