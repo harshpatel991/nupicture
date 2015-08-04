@@ -11,7 +11,7 @@
 	<!-- Fonts -->
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+	{{--<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>--}}
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
@@ -25,8 +25,8 @@
 
     <!-- Scripts -->
     <script src="/js/jquery-2.1.4.min.js" defer></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js" defer></script>
-    <script src="/js/analyticsTracking.js" defer></script>
+    <script src="/js/bootstrap.min.js" defer></script>
+
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -115,7 +115,16 @@
 
 	@include('partials/footer')
 
-
 	@yield('scripts')
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-64750185-1', 'auto');
+        ga('send', 'pageview');
+    </script>
 </body>
 </html>
