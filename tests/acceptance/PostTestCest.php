@@ -115,6 +115,33 @@ class PostTestCest
         $I->seeInTitle('Creating A Test Text Posting 2');
     }
 
+    public function testCreateTextPostWithHTMLElements(AcceptanceTester $I)
+    {
+        $this->loginAs($I, 'email1@gmail.com', 'password1'); //confirmed user
+
+        $I->amOnPage('/post/create');
+        $I->fillField(['name' => 'title'], 'Creating A Test HTML Elements Posting');
+        $I->selectOption(['name' => 'category'], 'tv');
+        $I->fillField(['name' => 'summary'], 'This is HTML Elements posting summary');
+        $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
+        $I->click(['id' =>'add-text-section']);
+        $I->wait(1);
+
+        $I->fillField(['id' => '1-content'],
+            "<script>alert(\"hi\");</script> \n<a href=\"http://cnn.com\">Test Link</a> \n<b>Test Bolded Text</b> \n<i>Test Italics Test</i> \n<ul><li>Test List Item 1</li><li>Test List Item 2</li></ul>");
+
+        $I->click(['id' =>'submit-form']);
+        $this->approvePost($I, 'Creating A Test HTML Elements Posting');
+
+        $I->dontSeeInPageSource('<script>alert("hi");</script>');
+        $I->seeInPageSource('<a href="http://cnn.com">Test Link</a>');
+        $I->seeInPageSource('<b>Test Bolded Text</b>');
+        $I->seeInPageSource('<i>Test Italics Test</i>');
+        $I->seeInPageSource('<ul>');
+        $I->seeInPageSource('<li>Test List Item 1</li>');
+
+    }
+
     public function testCreatePostWithImage(AcceptanceTester $I)
     {
         $this->loginAs($I, 'email1@gmail.com', 'password1'); //confirmed user

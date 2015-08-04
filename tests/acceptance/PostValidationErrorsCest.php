@@ -354,6 +354,4 @@ class PostValidationErrorsCest
         $I->seeInPageSource('Source Section #2: Source must be must be less than 200 characters');
     }
 
-    //TODO: test that users cannot create pages with script tags but can add anchor tags
-
 }

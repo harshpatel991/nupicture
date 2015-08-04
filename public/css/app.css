@@ -6613,6 +6613,10 @@ a.list-group-item-danger.active:focus {
 body {
   background-color: #f8f8f8;
 }
+li {
+  font-size: 16px;
+  line-height: 180%;
+}
 .display-inline {
   display: inline;
 }

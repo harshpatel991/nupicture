@@ -39,22 +39,22 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * @param string $userConstraints
      * @return mixed
      */
-    public static function usersPayments($userIds = '[]')
-    {
-        return DB::select(DB::raw('SELECT user_id, email, sum(views_since_payment) as total_views_since_payment, SUM(points) as total_points
-                FROM
-                (
-                    SELECT email, posts.id, user_id, posts.content_type, views_since_payment, views_since_payment*per_view as points
-                    FROM posts
-                    INNER JOIN (payouts, users)
-                    ON (posts.content_type = payouts.content_type AND users.id = user_id)
-                    WHERE posts.status = \'posted\'
-                ) AS T
-                WHERE user_id IN ('. join(',',$userIds).')
-                GROUP BY user_id
-
-        '));
-
-    }
+//    public static function usersPayments($userIds = '[]')
+//    {
+//        return DB::select(DB::raw('SELECT user_id, email, sum(views_since_payment) as total_views_since_payment, SUM(points) as total_points
+//                FROM
+//                (
+//                    SELECT email, posts.id, user_id, posts.content_type, views_since_payment, views_since_payment*per_view as points
+//                    FROM posts
+//                    INNER JOIN (payouts, users)
+//                    ON (posts.content_type = payouts.content_type AND users.id = user_id)
+//                    WHERE posts.status = \'posted\'
+//                ) AS T
+//                WHERE user_id IN ('. join(',',$userIds).')
+//                GROUP BY user_id
+//
+//        '));
+//
+//    }
 
 }

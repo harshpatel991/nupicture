@@ -14,6 +14,10 @@ class Post extends Model {
     public static $rejectedStatus = 'rejected';
     public static $postedStatus = 'posted';
 
+    /**
+     * Required so Carbon knows what to format as Carbon date
+     * @return array
+     */
     public function getDates()
     {
         return ['created_at', 'updated_at', 'posted_at'];
