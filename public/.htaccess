@@ -15,31 +15,37 @@
 </IfModule>
 
 <IfModule mod_headers.c>
-    <FilesMatch "bootstrap\\.min\\.js$">
-        ExpiresByType text/js "access plus 1 month"
-    </FilesMatch>
 
-    <FilesMatch "jquery-2\\.1\\.4\\.min\\.js$">
-            ExpiresByType text/js "access plus 1 month"
-        </FilesMatch>
 </IfModule>
 
 
 <ifModule mod_headers.c>
     ExpiresActive On
 
-    # Expires after 1 hour
+    # Expires after 1 month
     <filesMatch ".(gif|png|jpg|jpeg|ico|pdf|woff)$">
         Header set Cache-Control "max-age=1814400"
     </filesMatch>
 
-    # Expires after 1 day
-    <filesMatch ".(css|min.js)$">
+    # Expires after 1 month
+    <filesMatch "bootstrap\\.min\\.js$">
+        Header set Cache-Control "max-age=1814400"
+    </filesMatch>
+
+    # Expires after 1 month
+    <filesMatch "jquery-2\\.1\\.4\\.min\\.js$">
+        Header set Cache-Control "max-age=1814400"
+    </filesMatch>
+
+    # Expires after 3 hours
+    <filesMatch ".(css)$">
+        Header set Cache-Control "max-age=10800"
+    </filesMatch>
+
+    # Expires after 1 hour
+    <filesMatch ".(js|html)$">
         Header set Cache-Control "max-age=3600"
     </filesMatch>
 
-    # Expires after 1 minute
-    <filesMatch ".(js|html)$">
-        Header set Cache-Control "max-age=120"
-    </filesMatch>
+
 </ifModule>
