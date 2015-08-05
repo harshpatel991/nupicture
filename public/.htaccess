@@ -13,3 +13,17 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+
+<ifModule mod_headers.c>
+    ExpiresActive On
+
+    # Expires after 1 hour
+    <filesMatch ".(gif|png|jpg|jpeg|ico|pdf)$">
+        Header set Cache-Control "max-age=3600"
+    </filesMatch>
+
+    # Expires after 1 day
+    <filesMatch ".(css)$">
+        Header set Cache-Control "max-age=3600"
+    </filesMatch>
+</ifModule>
