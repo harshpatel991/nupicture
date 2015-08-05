@@ -6,16 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>@yield('page-title')</title>
 
-	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-
-	<!-- Fonts -->
-
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
-	{{--<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>--}}
-
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
-
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -23,10 +13,11 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+
     <!-- Scripts -->
     <script src="/js/jquery-2.1.4.min.js" defer></script>
     <script src="/js/bootstrap.min.js" defer></script>
-
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -112,6 +103,10 @@
 	</nav>
 
 	@yield('content')
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
 
 	@include('partials/footer')
 
