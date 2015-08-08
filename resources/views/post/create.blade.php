@@ -15,7 +15,7 @@
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <p style="color:#fff;"><strong>Whoops!</strong> There were some problems with your post.</p>
                                 <ul>
                                     @foreach ($errors->all() as $error)
                                         <li>{{ $error }}</li>
@@ -140,10 +140,10 @@
 @endsection
 
 @section('scripts')
-    <script src="/js/postCreationHelper.js" defer></script>
+    <script src="/js/postCreationHelper.js"></script>
 
     {{--Load any rejecrted post content--}}
-    <script>
+    <script defer>
         @foreach($oldSectionsByJS as $oldSection)
             {{$oldSection->createByJS}}("{{$oldSection->optional_content}}", "{{$oldSection->content}}")();
         @endforeach

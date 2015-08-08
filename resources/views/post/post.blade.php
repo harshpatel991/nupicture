@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-md-offset-1 col-md-7 col-sm-8 post-main-column white-background"> {{--Main content column--}}
+            <div class="col-md-offset-1 col-md-7 col-sm-8 post-main-column white-background post-body"> {{--Main content column--}}
 
                 <a href="https://twitter.com/intent/tweet?url={{Request::url()}}&text={{$post->title}}"><img src="/images/twitter.png" class="social-media-icons"></a>
                 <a href="http://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="/images/facebook.png" class="social-media-icons"></a>
@@ -22,14 +22,15 @@
                 @foreach ($sections as $section)
 
                     @if($section->isTextSection())
-                        <h3>{!! clean($section->optional_content) !!}</h3>
+                        @if($section->optional_content) <h3>{!! clean($section->optional_content) !!}</h3> @endif
                         <p>{!! str_replace( "\n", '<br />', clean($section->content) );  !!}</p>
                     @elseif($section->isImageSection())
                         <img src="/upload/{{$section->content}}" class="post-image">
                         @if(strlen($section->optional_content) > 0)
-                            <h6><a href="{!! clean($section->optional_content) !!}">Image Source</a></h6>
+                            <h6 class="text-center"><a href="{!! clean($section->optional_content) !!}">Image Source</a></h6>
                         @endif
                     @elseif($section->isYoutubeSection())
+                        @if($section->optional_content) <h3>{!! clean($section->optional_content) !!}</h3> @endif
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item youtube-section" src="https://www.youtube.com/embed/{{$section->content}}" frameborder="0" allowfullscreen></iframe>
                         </div>

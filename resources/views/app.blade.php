@@ -13,11 +13,11 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="/js/jquery-2.1.4.min.js" defer></script>
-    <script src="/js/bootstrap.min.js" defer></script>
+
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -106,9 +106,12 @@
 
     <!-- Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+
 
 	@include('partials/footer')
+
+    <script src="/js/jquery-2.1.4.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
 	@yield('scripts')
 
