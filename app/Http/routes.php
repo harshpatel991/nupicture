@@ -21,8 +21,12 @@ Route::get('/how-it-works',
     ['as' => 'how-it-works', 'uses' => 'HomeController@getHowItWorks']);
 
 
-Route::get('/exposure-guide',
+Route::get('/increase-views',
 	['as' => 'increase-page-views', 'uses' => 'HomeController@increasePageViews']);
+
+Route::get('/post-ideas', function() {
+    return view('postIdeas');
+});
 
 //Route::get('/{category}', 'HomeController@category');
 Route::get('/',

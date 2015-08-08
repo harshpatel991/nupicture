@@ -10,7 +10,9 @@
             <a href="/auth/register">Register</a> <br> <br>
             <a href="/sign-up-beta">About</a> <br> <br>
             <a href="/privacy-policy">Privacy Policy</a> <br> <br>
-            <a href="/terms-conditions">Terms of Use</a>
+            <a href="/terms-conditions">Terms of Use</a> <br> <br>
+            <a href="/increase-views">Increasing Your Readers</a> <br> <br>
+            <a href="/post-ideas">Post Ideas</a>
             </h6>
         </div>
 
@@ -22,6 +24,8 @@
             <a href="#">Google Plus</a>
             </h6>
         </div>
+
+
     </div>
 
     <div class="row">

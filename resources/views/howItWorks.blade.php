@@ -44,7 +44,7 @@
                         <p>Specifically, we encourage content that is</p>
                         <ul>
                             <li><p>targeted towards readers from ages 16-40 years</p></li>
-                            <li><p>relevant (such as TV shows, movies, music, and large news stories)</p></li>
+                            <li><p>relevant to popular culture (such as TV shows, movies, music, and large news stories)</p></li>
                             <li><p>interesting (such as funny, timely, and relevant) </p></li>
                         </ul>
                     </div>

@@ -41,22 +41,18 @@
 
                 <div class="row">
                         <div class="col-sm-12 col-md-3 home-column-padding">
-                                @include('partials/thumbnail-stylized', ['post' => $posts[3], 'lg' => false])
+                                @include('partials/thumbnail-stylized', ['post' => $posts[4], 'lg' => false])
                         </div>
                         <div class="col-sm-6 col-md-3 home-column-padding">
-                                @include('partials/thumbnail', ['post' => $posts[4], 'lg' => false])
+                                @include('partials/thumbnail', ['post' => $posts[5], 'lg' => false])
                         </div>
                         <div class="col-sm-6 col-md-6 home-column-padding">
-                                @include('partials/thumbnail', ['post' => $posts[5], 'lg' => true])
+                                @include('partials/thumbnail', ['post' => $posts[6], 'lg' => true])
                         </div>
                 </div>
 
                 <div class="row">
                         <div class="col-sm-12 col-md-3 home-column-padding">
-                                @include('partials/thumbnail', ['post' => $posts[6], 'lg' => false])
-                        </div>
-
-                        <div class="col-sm-6 col-md-3 home-column-padding">
                                 @include('partials/thumbnail', ['post' => $posts[7], 'lg' => false])
                         </div>
 
@@ -64,8 +60,12 @@
                                 @include('partials/thumbnail', ['post' => $posts[8], 'lg' => false])
                         </div>
 
+                        <div class="col-sm-6 col-md-3 home-column-padding">
+                                @include('partials/thumbnail', ['post' => $posts[9], 'lg' => false])
+                        </div>
+
                         <div class="col-sm-12 col-md-3 home-column-padding">
-                                @include('partials/thumbnail-stylized', ['post' => $posts[9], 'lg' => false])
+                                @include('partials/thumbnail-stylized', ['post' => $posts[10], 'lg' => false])
                         </div>
                 </div>
 

@@ -32,14 +32,14 @@
 
   &.stylized {
     width: 100%;
-    height: @image-height + @text-section-height;
+    min-height: @image-height + @text-section-height;
     background-position: center center;
     background-size: cover;
 
     color: #ffffff;
 
 
-    @media (max-width: @screen-xs-max) { height: (@image-height + @text-section-height)/1.5; }
+    @media (max-width: @screen-xs-max) { min-height: (@image-height + @text-section-height)/1.5; }
   }
 
 }
@@ -54,13 +54,13 @@
   -o-transition: opacity 500ms;
   transition: opacity 500ms;
 
-  @gradient-start: rgba(68, 130, 179, 0.7);
-  @gradient-end: rgba(59, 126, 149, 0.36);
-  background: -webkit-linear-gradient(90deg, @gradient-start 50%, @gradient-end 90%); /* Chrome 10+, Saf5.1+ */
-  background:    -moz-linear-gradient(90deg, @gradient-start 50%, @gradient-end 90%); /* FF3.6+ */
-  background:     -ms-linear-gradient(90deg, @gradient-start 50%, @gradient-end 90%); /* IE10 */
-  background:      -o-linear-gradient(90deg, @gradient-start 50%, @gradient-end 90%); /* Opera 11.10+ */
-  background:         linear-gradient(90deg, @gradient-start 50%, @gradient-end 90%); /* W3C */
+  @gradient-start: rgba(38, 144, 228, 0.77);
+  @gradient-end: rgba(57, 69, 139, 0.54);
+  background: -webkit-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, @gradient-start 10%, @gradient-end 90%); /* W3C */
 }
 
 .white-highlight {
@@ -75,7 +75,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 
-  height: @text-section-height;
+  min-height: @text-section-height;
 
   padding-top: 10px;
   padding-left: 10px;

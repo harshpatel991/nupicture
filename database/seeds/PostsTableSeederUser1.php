@@ -10,6 +10,7 @@ class PostsTableSeederUser1 extends Seeder {
         DB::table('posts')->delete();
 
         $posts = array(
+            //pending post
             ['id' => 1,
                 'user_id' => 1,
                 'status' => 'pending_post',
@@ -24,7 +25,7 @@ class PostsTableSeederUser1 extends Seeder {
                 'posted_at' => null,
                 'category' => 'art'
             ],
-
+            //rejected post
             ['id' => 2,
                 'user_id' => 1,
                 'status' => 'rejected',
@@ -63,7 +64,7 @@ class PostsTableSeederUser1 extends Seeder {
                 'slug' => 'street-art-busan-south-korea',
                 'summary' => 'This beautiful street art found in South Korea on the side of a building.',
                 'thumbnail_image' => 'street-art-thumb.jpg',
-                'views' => '100',
+                'views' => '214',
                 'created_at' => '2015-05-19 03:25:43',
                 'updated_at' => '2015-05-26 03:25:43',
                 'posted_at' => '2015-07-23 01:36:11',
