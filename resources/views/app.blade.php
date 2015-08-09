@@ -55,29 +55,31 @@
                                 {{--</ul>--}}
                             {{--</li>--}}
 
-							<li>
-								<form action="{{ url('/post/create') }}" class="display-inline">
-									<button type="submit" class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
-								</form>
-							</li>
-
-							<li>
-								<form action="{{ url('/sign-up-beta') }}" class="display-inline">
-									<button href="/sign-up-beta" class="btn btn-default navbar-btn">Early Register</button>
-								</form>
-							</li>
-
-                            <li>
-                                <form action="{{ url('/how-it-works') }}" class="display-inline">
-                                    <button href="/sign-up-beta" class="btn btn-default navbar-btn">Learn More</button>
-                                </form>
-
-                            </li>
-
                             @if (Auth::guest())
-                                {{--<li><a href="{{ url('/auth/login') }}" class="category"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>--}}
-                                {{--<li><a href="{{ url('/auth/register') }}" class="category"><span class="glyphicon glyphicon-edit"></span> Register</a></li>--}}
+                                <li>
+                                    <form action="{{ url('/how-it-works') }}" class="display-inline">
+                                        <button href="/sign-up-beta" class="btn btn-primary navbar-btn">Learn More</button>
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form action="{{ url('/auth/login') }}" class="display-inline">
+                                        <button type="submit" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form action="{{ url('/auth/register') }}" class="display-inline">
+                                        <button type="submit" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Register</button>
+                                    </form>
+                                </li>
                             @else
+                                <li>
+                                    <form action="{{ url('/post/create') }}" class="display-inline">
+                                        <button type="submit" class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
+                                    </form>
+                                </li>
+
                                 <li>
                                     <div class="btn-group navbar-btn">
                                         <a href="/profile" type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->username }}</a>
@@ -91,6 +93,8 @@
                                     </div>
                                 </li>
                             @endif
+
+
 
 						</ul>
 

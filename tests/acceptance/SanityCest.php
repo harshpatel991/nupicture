@@ -65,9 +65,9 @@ class SanityCest
         $I->see('POPULAR POSTS');
     }
 
-    public function testSanityExposureGuide(AcceptanceTester $I)
+    public function testSanityIncreaseViews(AcceptanceTester $I)
     {
-        $I->amOnPage('/exposure-guide');
+        $I->amOnPage('/increase-views');
         $I->dontSee('Exception');
         $this->ensureFooterAppears($I);
         $I->see('Here are some tips');

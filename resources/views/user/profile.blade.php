@@ -28,7 +28,7 @@
                         @if($user->status === 'unconfirmed')
                             <h5><span class="label label-warning">{{strtoupper($user->status)}}</span></h5>
                         @endif
-                        <h5>Joined On: {{date_format(new \DateTime($user->created_on), "F j, Y")}}</h5>
+                        <h5 >Joined On: {{date_format(new \DateTime($user->created_on), "F j, Y")}}</h5>
                         <h5>Adsense Publisher ID: {{$user->publisher_id or 'Not Set'}}</h5>
 
 
@@ -69,7 +69,7 @@
                                         </tr>
                                     @endforeach
 
-                                    @for($i = count($usersPosts); $i < 7; $i++)
+                                    @for($i = count($usersPosts); $i < 8; $i++)
                                         <tr>
                                             <td>‌‌</td>
                                             <td></td>

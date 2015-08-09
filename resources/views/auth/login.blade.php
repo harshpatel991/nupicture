@@ -69,7 +69,7 @@
                         </div>
                     </div>
 
-                    <p>Don't have an account? <a href="/auth/register">Register</a> or <a href="/sign-up-beta">Learn More</a></p>
+                    <p>Don't have an account? <a href="/auth/register">Register</a> or <a href="/how-it-works">Learn More</a></p>
 
                 </div>
             </div> {{--Inner row--}}

@@ -47,13 +47,13 @@ class SectionTableSeederUser3 extends Seeder {
             ['id' => 29,
                 'post_id' => 13,
                 'type' => 'section-listnumber',
-                'optional_content' => 'Dark Days',
+                'optional_content' => 'Untitled',
                 'content' => ''
             ],
             ['id' => 30,
                 'post_id' => 13,
                 'type' => 'section-image',
-                'optional_content' => 'https://www.reddit.com/r/androidthemes/comments/3ddmmt/dark_days/',
+                'optional_content' => 'https://www.reddit.com/r/androidthemes/comments/3gd66m/untitled/',
                 'content' => 'android-1.jpg'
             ],
 

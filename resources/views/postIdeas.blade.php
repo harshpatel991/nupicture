@@ -3,14 +3,17 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 col-md-offset-1 col-md-10 white-background post-main-column">
+            <div class="col-sm-12 col-md-offset-1 col-md-10 white-background blog-post-main-column">
 
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10">
+                    <div class="col-lg-2 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3">
+                        @include('partials/quickLinks', ['active' =>[false, false, false, true]])
+                    </div>
+                    <div class="col-lg-8 col-md-7 col-sm-9">
 
                         <h1>Post Ideas</h1>
                         <h4>Here are some categories for posts that we have found our readers to prefer</h4>
-
+                        <br>
                         <p>Write about things you are passionate about. Your feelings will come out in your writing and users always react positively to genuine writing.</p>
 
                         <ul>

@@ -3,17 +3,19 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12 col-md-offset-1 col-md-10 white-background post-main-column">
+            <div class="col-sm-12 col-md-offset-1 col-md-10 white-background blog-post-main-column">
 
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2 col-sm-offset-1 col-sm-10">
-
+                    <div class="col-lg-2 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3">
+                        @include('partials/quickLinks', ['active' =>[false, false, true, false]])
+                    </div>
+                    <div class="col-lg-8 col-md-7 col-sm-9">
 
                         <h1>Increasing Your Readers</h1>
-                        <p>Here are some tips to increase the number of page views that your post receives.
-                            Posts that are made specifically to try to earn page views will almost never do well; post content that is funny or interesting to your target audience and allow social media to do the rest.
-                            </p>
-                        <p>Above all, do not spam your post on the internet. Users</p>
+                        <h4>Here are some tips to increase the number of page views that your post receives</h4>
+                        <br>
+                        <p>Posts that are made specifically to try to earn page views will almost never do well; post content that is funny or interesting to your target audience and allow social media to do the rest.</p>
+                        <p>Above all, do not spam your post links on the internet.</p>
 
                         <ul>
                             <li><b>Facebook</b> - You probably already share interesting content on Facebook. Be careful to not post too many links too frequently or else you may annoy your friends.</li>

@@ -2793,8 +2793,8 @@ fieldset[disabled] .btn {
 }
 .btn-default {
   color: #555555;
-  background-color: #eeeeee;
-  border-color: #e2e2e2;
+  background-color: #ffffff;
+  border-color: #f2f2f2;
 }
 .btn-default:hover,
 .btn-default:focus,
@@ -2803,8 +2803,8 @@ fieldset[disabled] .btn {
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
   color: #555555;
-  background-color: #d5d5d5;
-  border-color: #c3c3c3;
+  background-color: #e6e6e6;
+  border-color: #d4d4d4;
 }
 .btn-default:active,
 .btn-default.active,
@@ -2829,11 +2829,11 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-  background-color: #eeeeee;
-  border-color: #e2e2e2;
+  background-color: #ffffff;
+  border-color: #f2f2f2;
 }
 .btn-default .badge {
-  color: #eeeeee;
+  color: #ffffff;
   background-color: #555555;
 }
 .btn-primary {
@@ -4379,8 +4379,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   line-height: 1.42857143;
   text-decoration: none;
   color: #555555;
-  background-color: #eeeeee;
-  border: 1px solid #e2e2e2;
+  background-color: #ffffff;
+  border: 1px solid #f2f2f2;
   margin-left: -1px;
 }
 .pagination > li:first-child > a,
@@ -4399,8 +4399,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > li > a:focus,
 .pagination > li > span:focus {
   color: #555555;
-  background-color: #eeeeee;
-  border-color: #e2e2e2;
+  background-color: #ffffff;
+  border-color: #f2f2f2;
 }
 .pagination > .active > a,
 .pagination > .active > span,
@@ -4421,8 +4421,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pagination > .disabled > a:hover,
 .pagination > .disabled > a:focus {
   color: #999999;
-  background-color: #eeeeee;
-  border-color: #e2e2e2;
+  background-color: #ffffff;
+  border-color: #f2f2f2;
   cursor: not-allowed;
 }
 .pagination-lg > li > a,
@@ -4468,14 +4468,14 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pager li > span {
   display: inline-block;
   padding: 5px 14px;
-  background-color: #eeeeee;
-  border: 1px solid #e2e2e2;
+  background-color: #ffffff;
+  border: 1px solid #f2f2f2;
   border-radius: 15px;
 }
 .pager li > a:hover,
 .pager li > a:focus {
   text-decoration: none;
-  background-color: #eeeeee;
+  background-color: #ffffff;
 }
 .pager .next > a,
 .pager .next > span {
@@ -4490,7 +4490,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .pager .disabled > a:focus,
 .pager .disabled > span {
   color: #999999;
-  background-color: #eeeeee;
+  background-color: #ffffff;
   cursor: not-allowed;
 }
 .label {
@@ -6615,7 +6615,7 @@ body {
 }
 li {
   font-size: 16px;
-  line-height: 180%;
+  line-height: 190%;
 }
 .display-inline {
   display: inline;
@@ -6986,6 +6986,11 @@ li {
 }
 .post-main-column {
   padding-top: 6px;
+  margin-bottom: 10px;
+}
+.blog-post-main-column {
+  padding-top: 24px;
+  padding-bottom: 24px;
   margin-bottom: 10px;
 }
 .post-body {

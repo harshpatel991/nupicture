@@ -409,7 +409,6 @@ class PostTestCest
         $I->click(['id' =>'submit-form']);
 
         $I->seeInDatabase('posts', array('title' => 'Creating A Removing All Items', 'category' => 'woah', 'summary' => 'This is add items and remove all summary', 'status' => 'pending_post'));
-        $I->dontSeeInDatabase('sections', array('post_id' => '20'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-text', 'content' => 'Remove All Test 1 Content', 'optional_content' => 'Remove All Test 1 Optional'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => 'Remove All Test 2 Optional'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-image', 'optional_content' => 'Remove All Test 3 Image Optional Content')); //can't test for the image's content since it's random...

@@ -11,14 +11,17 @@
 |
 */
 
-Route::get('/sign-up-beta',
-	['as' => 'sign-up-beta', 'uses' => 'HomeController@getBetaSignUp']);
+//Route::get('/sign-up-beta',
+//	['as' => 'sign-up-beta', 'uses' => 'HomeController@getBetaSignUp']);
 
-Route::post('/sign-up-beta',
-	['as' => 'sign-up-beta-post', 'uses' => 'HomeController@postBetaSignUp']);
+//Route::post('/sign-up-beta',
+//	['as' => 'sign-up-beta-post', 'uses' => 'HomeController@postBetaSignUp']);
 
 Route::get('/how-it-works',
     ['as' => 'how-it-works', 'uses' => 'HomeController@getHowItWorks']);
+
+Route::get('/content-guidelines',
+    ['as' => 'content-guidelines', 'uses' => 'HomeController@contentGuidelines']);
 
 
 Route::get('/increase-views',
