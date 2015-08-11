@@ -6863,6 +6863,7 @@ li {
   background-size: cover;
 }
 .home-thumbnail-image-section.stylized {
+  display: table;
   width: 100%;
   min-height: 380px;
   background-position: center center;
@@ -6875,6 +6876,8 @@ li {
   }
 }
 .home-thumbnail-image-stylized-overlay {
+  display: table-cell;
+  vertical-align: middle;
   height: 100%;
   position: relative;
   transition: opacity 500ms;
@@ -6900,10 +6903,14 @@ li {
   padding-bottom: 10px;
   padding-right: 10px;
 }
+.home-thumbnail-text-section:not(.stylized) {
+  position: relative;
+}
 .home-thumbnail-title {
   font-family: 'Montserrat', Geneva, Verdana, sans-serif;
   text-transform: capitalize;
   line-height: 110%;
+  padding-bottom: 20px;
   font-size: 1.3em;
   z-index: 2;
 }
@@ -6923,9 +6930,8 @@ li {
   }
 }
 .home-thumbnail-title.stylized {
-  position: absolute;
-  top: 25%;
-  left: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .home-thumbnail-title .home-thumbnail-category {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -6952,12 +6958,17 @@ li {
   line-height: 1.5em;
   height: auto;
 }
-.home-thumbnail-title .home-thumbnail-info {
+.home-thumbnail-info {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-size: .6em;
+  font-size: .9em;
   color: #c8c8c8;
 }
-.home-thumbnail-title .home-thumbnail-info.stylized {
+.home-thumbnail-info:not(.stylized) {
+  position: absolute;
+  bottom: 10px;
+  background-color: #fff;
+}
+.home-thumbnail-info.stylized {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: .6em;
   color: #fff;

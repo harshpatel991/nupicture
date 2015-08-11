@@ -7,7 +7,7 @@
 
             <div class="home-thumbnail-title">
                 <div class="home-thumbnail-category">{{$post->category}}</div>
-                {{$post->title}}
+                <div>{{$post->title}}</div>
 
                 @if($lg)
                     <div class="home-thumbnail-summary">
@@ -19,10 +19,12 @@
                     </div>
                 @endif
 
-                <div class="home-thumbnail-info">
-                    <span class="glyphicon glyphicon-fire"></span> {{$post->views}} VIEWS|
-                    <span class="glyphicon glyphicon-time"></span> {{strtoupper($post->posted_at->diffForHumans())}}
-                </div>
+
+            </div>
+
+            <div class="home-thumbnail-info">
+                <span class="glyphicon glyphicon-fire"></span> {{$post->views}} VIEWS|
+                <span class="glyphicon glyphicon-time"></span> {{strtoupper($post->posted_at->diffForHumans())}}
             </div>
 
         </div>

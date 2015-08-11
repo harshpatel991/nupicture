@@ -31,6 +31,7 @@
   background-size: cover;
 
   &.stylized {
+    display: table;
     width: 100%;
     min-height: @image-height + @text-section-height;
     background-position: center center;
@@ -45,6 +46,9 @@
 }
 
 .home-thumbnail-image-stylized-overlay {
+  display:table-cell;
+  vertical-align: middle;
+
   height: 100%;
 
   position: relative;
@@ -81,6 +85,10 @@
   padding-left: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
+
+  &:not(.stylized) { //to allow not stylized post info to stick to bottom of thumbnail
+    position: relative;
+  }
 }
 
 .home-thumbnail-title {
@@ -88,6 +96,8 @@
   font-family: @font-family-montserrat;
   text-transform: capitalize;
   line-height: 110%;
+
+  padding-bottom: 20px;
 
   font-size: 1.3em;
   @media (min-width: @screen-sm-min) { font-size: 1.4em; }
@@ -97,9 +107,11 @@
   z-index: 2;
 
   &.stylized {
-    position: absolute;
-    top: 25%;
-    left: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+//    position: absolute;
+//    top: 25%;
+//    left: 10px;
   }
 
   .home-thumbnail-category {
@@ -134,16 +146,24 @@
     }
   }
 
-  .home-thumbnail-info {
+
+}
+
+.home-thumbnail-info {
+  font-family: @font-family-open-sans;
+  font-size: .9em;
+  color: #c8c8c8;
+
+  &:not(.stylized) { //to allow not stylized post info to stick to bottom of thumbnail
+    position: absolute;
+    bottom: 10px;
+    background-color: #fff;
+  }
+
+  &.stylized {
     font-family: @font-family-open-sans;
     font-size: .6em;
-    color: #c8c8c8;
+    color: #fff;
 
-    &.stylized {
-      font-family: @font-family-open-sans;
-      font-size: .6em;
-      color: #fff;
-
-    }
   }
 }
