@@ -160,6 +160,40 @@ class SectionTableSeederUser4 extends Seeder {
                 'content' => 'K5DRltODdSQ'
             ],
 
+            ['id' => 76,
+                'post_id' => 21,
+                'type' => 'section-youtube',
+                'optional_content' => '1. James May Looses It After Switching His GPS To Romanian',
+                'content' => 'tND6WneJrgA'
+            ],
+
+            ['id' => 77,
+                'post_id' => 21,
+                'type' => 'section-youtube',
+                'optional_content' => '2. Pie In The Face Game',
+                'content' => 'jVSj1WUZ7Zk'
+            ],
+
+            ['id' => 78,
+                'post_id' => 21,
+                'type' => 'section-youtube',
+                'optional_content' => '3. Father Visits The Mall With His Son',
+                'content' => 'Yx2YiMALbWY'
+            ],
+
+            ['id' => 79,
+                'post_id' => 21,
+                'type' => 'section-youtube',
+                'optional_content' => '4. Weatherman Reads A Shout Out To A 10 Year Old',
+                'content' => 'PfFoDc4NUZA'
+            ],
+
+            ['id' => 80,
+                'post_id' => 21,
+                'type' => 'section-youtube',
+                'optional_content' => '5. Family Gets A Kick Out Of Daughters Gag Reflex',
+                'content' => 'AFimq-NlmI0'
+            ],
 
 
         );

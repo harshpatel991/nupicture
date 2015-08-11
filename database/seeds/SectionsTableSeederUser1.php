@@ -8,10 +8,10 @@ class SectionTableSeederUser1 extends Seeder {
     {
         $sections = array(
             ['id' => 20,
-            'post_id' => 1,
-            'type' => 'section-image',
-            'optional_content' => '',
-            'content' => 'super-computer-1.jpg'
+                'post_id' => 3,
+                'type' => 'section-image',
+                'optional_content' => '',
+                'content' => 'super-computer-1.jpg'
             ],
             ['id' => 21,
                 'post_id' => 4,

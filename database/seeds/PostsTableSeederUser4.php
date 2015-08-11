@@ -89,13 +89,28 @@ class PostsTableSeederUser4 extends Seeder {
                 'admin_message' => null,
                 'title' => '5 Things Every Man Should Know',
                 'slug' => '5-things-every-man-should-know',
-                'summary' => '',
+                'summary' => 'Ever feel like there was a manual that you missed out on things guys should know about?',
                 'thumbnail_image' => 'man-thumb.jpg',
                 'views' => '1104',
                 'created_at' => '2015-08-07 20:23:12',
                 'updated_at' => '2015-08-07 20:24:12',
                 'posted_at' => '2015-08-07 20:44:12',
                 'category' => 'how-to'
+            ],
+
+            ['id' => 21,
+                'user_id' => 4,
+                'status' => 'posted',
+                'admin_message' => null,
+                'title' => '5 Videos That Will Infect You With Their Laughter',
+                'slug' => '10-videos-that-will-have-you-crying',
+                'summary' => '',
+                'thumbnail_image' => 'laugh-thumb.jpg',
+                'views' => '1050',
+                'created_at' => '2015-08-09 14:34:12',
+                'updated_at' => '2015-08-09 14:44:12',
+                'posted_at' => '2015-08-09 14:44:12',
+                'category' => 'funny'
             ]
         );
 

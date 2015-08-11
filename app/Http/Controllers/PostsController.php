@@ -92,7 +92,7 @@ class PostsController extends Controller {
         $thumbnailUploadName =  $post->slug . rand(0, 9) . '.jpg';
         Image::make($request->file(Section::$THUMBNAIL_SECTION_NAME))
             ->encode('jpg')
-            ->fit(800, 600, function ($constraint) { $constraint->upsize();})
+            ->fit(600, 450, function ($constraint) { $constraint->upsize();})
             ->save(Post::getImageUploadPath().$thumbnailUploadName, 70);
 
         $post->thumbnail_image = $thumbnailUploadName;
