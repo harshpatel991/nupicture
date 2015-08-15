@@ -108,8 +108,8 @@
                                                                             <div style="color:#333333;line-height:120%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;">
                                                                                 <div style="font-size: 14px; line-height: 16px; text-align: center;color: #333333;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height: 17px">
                                                                                     <span style="font-size:36px; line-height:43px;"><strong>
-                                                                                            <img src="<?php echo $message->embed($logoPath); ?>">
-                                                                                            <span style="line-height: 43px; font-size: 36px;" data-mce-style="line-height: 43px; font-size: 36px;">{{strtoupper(Config::get('app.name'))}}</span>
+                                                                                            <img style="max-width: 65%" src="<?php echo $message->embed($logoPath); ?>" alt="{{strtoupper(Config::get('app.name'))}}">
+                                                                                            {{--<span style="line-height: 43px; font-size: 36px;" data-mce-style="line-height: 43px; font-size: 36px;">{{strtoupper(Config::get('app.name'))}}</span>--}}
                                                                                     </strong></span>
                                                                                 </div>
                                                                             </div>
