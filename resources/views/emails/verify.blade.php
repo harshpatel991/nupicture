@@ -106,7 +106,12 @@
                                                                     <tbody><tr style="vertical-align: top">
                                                                         <td style="word-break: break-word;-webkit-hyphens: auto;-moz-hyphens: auto;hyphens: auto;border-collapse: collapse !important;vertical-align: top;padding-top: 10px;padding-right: 0px;padding-bottom: 10px;padding-left: 0px">
                                                                             <div style="color:#333333;line-height:120%;font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif;">
-                                                                                <div style="font-size: 14px; line-height: 16px; text-align: center;color: #333333;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height: 17px"><span style="font-size:36px; line-height:43px;"><strong><span style="line-height: 43px; font-size: 36px;" data-mce-style="line-height: 43px; font-size: 36px;">{{strtoupper(Config::get('app.name'))}}</span></strong></span></div>
+                                                                                <div style="font-size: 14px; line-height: 16px; text-align: center;color: #333333;font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;line-height: 17px">
+                                                                                    <span style="font-size:36px; line-height:43px;"><strong>
+                                                                                            <img src="<?php echo $message->embed($logoPath); ?>">
+                                                                                            <span style="line-height: 43px; font-size: 36px;" data-mce-style="line-height: 43px; font-size: 36px;">{{strtoupper(Config::get('app.name'))}}</span>
+                                                                                    </strong></span>
+                                                                                </div>
                                                                             </div>
                                                                         </td>
                                                                     </tr>

@@ -18,10 +18,9 @@
 
         <div class="col-md-3 col-sm-4 col-xs-6 footer-column">
             <h6>
-            <a href="#">Pintrest</a> <br> <br>
-            <a href="#">Twitter</a> <br> <br>
-            <a href="#">Facebook</a> <br> <br>
-            <a href="#">Google Plus</a>
+            <a href="https://www.pinterest.com/topicloop/">Pintrest</a> <br> <br>
+            <a href="https://twitter.com/topicloop">Twitter</a> <br> <br>
+            <a href="https://instagram.com/topicloop/">Instagram</a> <br> <br>
             </h6>
         </div>
 

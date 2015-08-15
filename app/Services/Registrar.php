@@ -42,10 +42,9 @@ class Registrar implements RegistrarContract {
             'confirmation_code' => $confirmationCode
 		]);
 
-        Mail::send('emails.verify', ['confirmationCode' => $confirmationCode], function($message) {
+        Mail::send('emails.verify', ['confirmationCode' => $confirmationCode, 'logoPath' => '/public/images/logo.jpg'], function($message) {
 
             $message->to(Input::get('email'))
-                ->from('support@sandbox8da219186f664f479f958d2ac1746725.mailgun.org')
                 ->subject('Please confirm your email');
         });
         return $newUser;

@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => 'support@sandbox8da219186f664f479f958d2ac1746725.mailgun.org', 'name' => 'Support'],
+	'from' => ['address' => env('MAIL_USERNAME'), 'name' => 'Support'],
 
 	/*
 	|--------------------------------------------------------------------------
@@ -67,7 +67,7 @@ return [
 	|
 	*/
 
-	'encryption' => 'tls',
+	'encryption' => 'ssl',
 
 	/*
 	|--------------------------------------------------------------------------

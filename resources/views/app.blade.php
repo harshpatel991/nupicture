@@ -25,7 +25,8 @@
 			<div class="row">
 
                 @yield('navColumn', '<div class="col-sm-12 col-md-offset-1 col-md-10 white-background" style="padding: 10px 10px;">')
-					<div class="navbar-header">
+
+                <div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 							<span class="sr-only">Toggle Navigation</span>
 							<span class="icon-bar"></span>
@@ -33,7 +34,12 @@
 							<span class="icon-bar"></span>
 						</button>
 
-						<a class="navbar-brand" href="/">{{strtoupper(Config::get('app.name'))}}</a>
+						{{--<a class="navbar-brand" href="/">{{strtoupper(Config::get('app.name'))}}</a>--}}
+
+                        <a href="/">
+                            <img src="/images/logo.jpg" class="navbar-brand-image" alt="{{Config::get('app.name')}}">
+                        </a>
+
 					</div>
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
