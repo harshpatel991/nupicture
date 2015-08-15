@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder {
                 'password'  => bcrypt('password1'),
                 'status' => 'good',
                 'confirmation_code' => '1234567890ABCDE1',
-                'publisher_id' => 'pub-1111111111111111'
+                'publisher_id' => 'pub-6621729644063575'
             ],
 
             ['id' => 2,
@@ -26,7 +26,7 @@ class UsersTableSeeder extends Seeder {
                 'password'  => bcrypt('password2'),
                 'status' => 'good',
                 'confirmation_code' => '1234567890ABCDE2',
-                'publisher_id' => 'pub-2222222222222222'
+                'publisher_id' => 'pub-6621729644063575'
             ],
 
             ['id' => 3,
@@ -35,7 +35,7 @@ class UsersTableSeeder extends Seeder {
                 'password'  => bcrypt('password3'),
                 'status' => 'unconfirmed',
                 'confirmation_code' => '1234567890ABCDE3',
-                'publisher_id' => 'pub-3333333333333333'
+                'publisher_id' => 'pub-6621729644063575'
             ],
 
             ['id' => 4,
@@ -44,7 +44,7 @@ class UsersTableSeeder extends Seeder {
                 'password'  => bcrypt('password4'),
                 'status' => 'warning',
                 'confirmation_code' => '1234567890ABCDE4',
-                'publisher_id' => 'pub-4444444444444444'
+                'publisher_id' => 'pub-6621729644063575'
             ]
         );
 
