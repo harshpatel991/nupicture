@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    Privacy Policy
+    Terms and Conditions of Use | {{Config::get('app.name')}}
 @endsection
 
 @section('content')

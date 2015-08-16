@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    Account Verified
+    Account Verified | {{Config::get('app.name')}}
 @endsection
 
 @section('content')

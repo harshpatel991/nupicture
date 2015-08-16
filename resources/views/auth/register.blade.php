@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    Register | {{strtoupper(Config::get('app.name'))}}
+    Register | {{Config::get('app.name')}}
 @endsection
 
 @section('content')

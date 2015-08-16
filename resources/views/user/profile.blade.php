@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    {{$user->username}}'s Profile
+    {{$user->username}}'s Profile | {{Config::get('app.name')}}
 @endsection
 
 @section('content')

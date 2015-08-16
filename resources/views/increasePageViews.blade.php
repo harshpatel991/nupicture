@@ -1,5 +1,9 @@
 @extends('app')
 
+@section('page-title')
+    Increasing Your Readers | {{Config::get('app.name')}}
+@endsection
+
 @section('content')
     <div class="container-fluid">
         <div class="row">

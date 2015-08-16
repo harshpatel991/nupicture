@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    {{$post->title}} | {{strtoupper(Config::get('app.name'))}}
+    {{$post->title}} | {{Config::get('app.name')}}
 @endsection
 
 @section('content')

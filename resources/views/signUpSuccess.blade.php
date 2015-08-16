@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    Thanks for Registering
+    Thanks for Registering | {{Config::get('app.name')}}
 @endsection
 
 @section('content')
