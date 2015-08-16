@@ -8,7 +8,7 @@
             <h6>
             <a href="/auth/login">Login</a> <br> <br>
             <a href="/auth/register">Register</a> <br> <br>
-            <a href="/sign-up-beta">About</a> <br> <br>
+            <a href="/how-it-works">About</a> <br> <br>
             <a href="/privacy-policy">Privacy Policy</a> <br> <br>
             <a href="/terms-conditions">Terms of Use</a> <br> <br>
             <a href="/increase-views">Increasing Your Readers</a> <br> <br>
@@ -20,7 +20,7 @@
             <h6>
             <a href="https://www.pinterest.com/topicloop/">Pintrest</a> <br> <br>
             <a href="https://twitter.com/topicloop">Twitter</a> <br> <br>
-            <a href="https://instagram.com/topicloop/">Instagram</a> <br> <br>
+            <a href="https://instagram.com/topicloop/">Instagram</a>
             </h6>
         </div>
 

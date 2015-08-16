@@ -78,7 +78,7 @@
                     <div style="background-color: #6BAAD9; width: 100%; height; 250px; padding: 10px;">
                         <h2 style="color: #fff; margin-top: 5px; margin-bottom: 5px;">Write & Earn</h2>
                         <h4 style="color: #fff;">Write articles on {{ Config::get('app.name') }} and earn money</h4>
-                        <a href="/sign-up-beta" class="btn btn-default" style="margin: 0 auto;">Join <span class="glyphicon glyphicon-chevron-right"></span></a>
+                        <a href="/auth/register" class="btn btn-default" style="margin: 0 auto;">Join <span class="glyphicon glyphicon-chevron-right"></span></a>
                     </div>
 
                     <h4 class="section-intro-heading">POPULAR POSTS</h4>

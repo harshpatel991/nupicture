@@ -19,12 +19,12 @@
 
                         <ul>
                             <li><b>Facebook</b> - You probably already share interesting content on Facebook. Be careful to not post too many links too frequently or else you may annoy your friends.</li>
-                            <li><b>Twitter</b> - If you have a large Twitter following relating to items you post on {{Config::get('app.name')}},it may be appropriate to tweet links to your post on {{Config::get('app.name')}}. Otherwise, if you have a personal account, your friends and family may enjoy the funny/interesting things you’ve posted.</li>
-                            <li><b>Stumbleupon</b> -</li>
+                            <li><b>Twitter</b> - If you have a large Twitter following relating to topics you post on {{Config::get('app.name')}}, it may be appropriate to tweet links to your post on {{Config::get('app.name')}}. Otherwise, if you have a personal account, your friends and family may enjoy the funny/interesting things you’ve posted.</li>
+                            <li><b>Stumbleupon</b> - Submit your post and allow the community to decide if it is worthy of sharing with others.</li>
                             <li><b>Reddit</b> - Similar to Stumbleupon, allow the community to decide if your content is funny/interesting enough to promote. You will probably not get a lot of exposure through the larger default subreddits. Instead, find a smaller subreddit that highly relates to your post and would be found interesting by the community.</li>
-                            <li><b>Pinrest</b> - Pintrest users tend to like more visually appealing posts. </li>
-                            <li><b>Ranking On Google</b> - Writing lists or articles about topics that are frequently searched for but do not have many search results can lead to a gold mine of page views. (See long tail for more)</li>
-                            <li><b>Email</b> - It's old school but if your targeted audience is an older population, many older folks will forward emails they find interesting or funny to many of their friends who will again forward the email resulting in potentially many users viewing your content.</li>
+                            <li><b>Pinrest</b> - If you post is visually appealing, consider adding a Pin with a link to your post in the description.</li>
+                            <li><b>Ranking On Google</b> - Writing lists or articles about topics that are frequently searched for but do not have many search results can lead to a gold mine of page views.</li>
+                            <li><b>Email</b> - It's old school, but if your targeted audience is an older population, many older folks will forward emails they find interesting or funny to many of their friends who will again forward the email resulting in potentially many users viewing your content.</li>
                         </ul>
 
                     </div>

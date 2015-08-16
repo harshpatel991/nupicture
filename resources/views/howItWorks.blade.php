@@ -40,14 +40,13 @@
 
                             <div class="col-lg-11 col-sm-10"> {{--Right column--}}
                                 <h3>Content We Are Looking For</h3>
-                                <p>We are different from other sites in that we allow all types of content.</p>
-                                <p>We are looking for original, modern, and interesting content.</p>
+                                <p>We are looking for original, modern, and interesting content. Check out the <a href="/">frontpage</a> for inspiration.</p>
 
                                 <p>Specifically, we encourage content that is</p>
                                 <ul>
-                                    <li><p>targeted towards readers from ages 16-40 years</p></li>
-                                    <li><p>relevant to popular culture (such as TV shows, movies, music, and large news stories)</p></li>
-                                    <li><p>interesting (such as funny, timely, and relevant) </p></li>
+                                    <li><p>Targeted towards readers from ages 16-40 years</p></li>
+                                    <li><p>Relevant to popular culture (such as TV shows, movies, music, and large news stories)</p></li>
+                                    <li><p>Interesting (funny, timely, or relevant) </p></li>
                                 </ul>
                             </div>
                         </div>
@@ -59,7 +58,7 @@
 
                             <div class="col-lg-11 col-sm-10"> {{--Right column--}}
                                 <h3>How it Works</h3>
-                                <p>Once logged in, you will see a button in the top right to post content. Submit content such as articles, lists, images, and videos. We are looking for funny, interesting, and cool content. Check out the <a href="/">frontpage</a> for inspiration.</p>
+                                <p>Once logged in, you will see a button in the top right to post content. Submit content such as articles, lists, images, and videos.</p>
                                 <p>Your first 5 posts will be manually approved by a human. After this, your posts will automatically go live on the website when you post.</p>
                                 <p>Posts will checked for</p>
                                 <ul>
@@ -79,8 +78,10 @@
                             <div class="col-lg-11 col-sm-10"> {{--Right column--}}
                                 <h3>Revenue</h3>
                                 <p>When users visit your post, Adsense advertisements will displayed on the page. <b>{{100-Config::get('app.ad_weight')}}% of the time, advertisements with your Publisher ID will be loaded, allowing you to generate revenue.</b></p>
-                                <p>You will be able to keep track your generated revenue through Adsense</p>
-                                <p>Once a post is listed, you can start sharing your post with your friends and family. For help gaining exposure to your site, take a look our <a href="/increase-views">increasing your readers</a> post.</p>
+                                <p>You will be able to keep track your generated revenue through Adsense.</p>
+                                <p><b>You should not click on the advertisements or ask anyone to click on them for you.</b> Google is very good at detecting fraudulent advertisement clicks and will ban you from Adsense. See all Adsense policies <a href="https://support.google.com/adsense/answer/48182?hl=en">here</a>.</p>
+                                <p>Once a post is listed, you can start sharing your post through social media. For help gaining exposure to your site, take a look our guide to <a href="/increase-views">increasing your readers</a>.</p>
+
                             </div>
                         </div>
                     </div>

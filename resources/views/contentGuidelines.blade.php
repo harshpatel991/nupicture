@@ -14,14 +14,14 @@
                         <h1>Content Guidelines</h1>
                         <h4>Follow these simple guidelines to ensure that your submitted posts are approved quickly</h4>
                         <br>
-                        <p>Users who submit 5 posts that meet these content guidelines will have their submitted posts automatically approved and made live on the site.</p>
+                        <p>Your first 5 posts will be reviewed by a human. Users who have 5 posts that meet the content guidelines will have their posts automatically approved.</p>
 
                         <ol>
                             <li>Content should be written in clear English, free of any major grammatical or spelling errors.</li>
                             <li>Our readers are looking for quality content. Content should not exist for the sole purpose of spamming links.</li>
                             <li>Our targeted readers are 16-40 years old. As such, content should be free of inappropriate links or images.</li>
                             <li>Your post should not encourage users to click on ads or to engage in activity that is against the <a href="https://support.google.com/adsense/topic/1261918?hl=en&ref_topic=1250104">Adsense Program Policies</a>. </li>
-                            <li>Use high quality, relevant images. <a href="https://unsplash.com/">Unsplash</a> has royalty free images you can use.</li>
+                            <li>When appropritae, your post should use high quality, relevant images. <a href="https://unsplash.com/">Unsplash</a> has royalty free images you can use.</li>
                         </ol>
 
                         <p>There is no minimum posting length. Use your best judgement to appropriately size your post.</p>
