@@ -27,22 +27,17 @@ class SectionTableSeederUser3 extends Seeder {
             ],
             ['id' => 26,
                 'post_id' => 12,
-                'type' => 'section-image',
-                'optional_content' => 'https://vimeo.com/132602913',
-                'content' => 'two-students-film-amazing-4k-1.jpg'
+                'type' => 'section-text',
+                'optional_content' => 'Bonus Video',
+                'content' => 'Check out this time lapse of Patagonia filmed in mind-blowing 8K.'
             ],
             ['id' => 27,
                 'post_id' => 12,
-                'type' => 'section-image',
-                'optional_content' => 'https://vimeo.com/132602913',
-                'content' => 'two-students-film-amazing-4k-2.jpg'
+                'type' => 'section-youtube',
+                'optional_content' => '',
+                'content' => 'ChOhcHD8fBA'
             ],
-            ['id' => 28,
-                'post_id' => 12,
-                'type' => 'section-image',
-                'optional_content' => 'https://vimeo.com/132602913',
-                'content' => 'two-students-film-amazing-4k-3.jpg'
-            ],
+
 
             ['id' => 29,
                 'post_id' => 13,

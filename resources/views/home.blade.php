@@ -29,7 +29,7 @@
 
                 <div class="row">
                         <div class="col-sm-12 col-md-6 home-column-padding">
-                                @include('partials/thumbnail', ['post' => $posts[0], 'lg' => true])
+                                @include('partials/thumbnail', ['post' => $posts[5], 'lg' => true])
                         </div>
                         <div class="col-sm-6 col-md-3 home-column-padding">
                                 @include('partials/thumbnail', ['post' => $posts[1], 'lg' => false])
@@ -41,10 +41,10 @@
 
                 <div class="row">
                         <div class="col-sm-12 col-md-3 home-column-padding">
-                                @include('partials/thumbnail-stylized', ['post' => $posts[4], 'lg' => false])
+                                @include('partials/thumbnail-stylized', ['post' => $posts[0], 'lg' => false])
                         </div>
                         <div class="col-sm-6 col-md-3 home-column-padding">
-                                @include('partials/thumbnail', ['post' => $posts[5], 'lg' => false])
+                                @include('partials/thumbnail', ['post' => $posts[4], 'lg' => false])
                         </div>
                         <div class="col-sm-6 col-md-6 home-column-padding">
                                 @include('partials/thumbnail', ['post' => $posts[6], 'lg' => true])

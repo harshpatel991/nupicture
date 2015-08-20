@@ -49,18 +49,79 @@ class SectionTableSeederUser2 extends Seeder {
                 'optional_content' => '',
                 'content' => 'sink-5.jpg'
             ],
+
             ['id' => 8,
+                'post_id' => 6,
+                'type' => 'section-text',
+                'optional_content' => '',
+                'content' => 'Cinemagraphs are animated images created by looping a video such that it cycles perfectly without seam between last frame and first frame. Additionally, to be considered a cinemagraph, every frame of the animation must be able to stand on it\'s own as a still frame image. Artists have created cinemagraphs from scenes from movies, self-shot videos, and even pixel art.'
+            ],
+            ['id' => 9,
+                'post_id' => 6,
+                'type' => 'section-listnumber',
+                'optional_content' => '',
+                'content' => ''
+            ],
+            ['id' => 81,
                 'post_id' => 6,
                 'type' => 'section-image',
                 'optional_content' => 'http://www.reddit.com/user/relevant__comment',
                 'content' => 'cinemagraph-1.gif'
             ],
-            ['id' => 9,
+            ['id' => 82,
+                'post_id' => 6,
+                'type' => 'section-listnumber',
+                'optional_content' => '',
+                'content' => ''
+            ],
+            ['id' => 83,
                 'post_id' => 6,
                 'type' => 'section-image',
                 'optional_content' => 'http://bonvallet.deviantart.com',
                 'content' => 'cinemagraph-2.gif'
             ],
+            ['id' => 84,
+                'post_id' => 6,
+                'type' => 'section-listnumber',
+                'optional_content' => '',
+                'content' => ''
+            ],
+            ['id' => 85,
+                'post_id' => 6,
+                'type' => 'section-image',
+                'optional_content' => '',
+                'content' => 'cinemagraph-3.gif'
+            ],
+            ['id' => 86,
+                'post_id' => 6,
+                'type' => 'section-listnumber',
+                'optional_content' => '',
+                'content' => ''
+            ],
+            ['id' => 87,
+                'post_id' => 6,
+                'type' => 'section-image',
+                'optional_content' => '',
+                'content' => 'cinemagraph-4.gif'
+            ],
+            ['id' => 88,
+                'post_id' => 6,
+                'type' => 'section-listnumber',
+                'optional_content' => '',
+                'content' => ''
+            ],
+            ['id' => 89,
+                'post_id' => 6,
+                'type' => 'section-image',
+                'optional_content' => '',
+                'content' => 'cinemagraph-5.gif'
+            ],
+
+
+
+
+
+
             ['id' => 10,
                 'post_id' => 7,
                 'type' => 'section-text',

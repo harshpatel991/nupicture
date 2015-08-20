@@ -40,7 +40,7 @@
                     <div class="col-sm-4">
                         <img src="/images/Donate-256.png" width="50" height="50" style="margin-top: 20px;" class="center-block">
                         <h3 class="text-center">3. Earn</h3>
-                        <p>When users visit your post, you'll earn <b>{{100-Config::get('app.ad_weight')}}%</b> of the revenue generated.</p>
+                        <p>When users visit your post, you'll earn <b>{{100-Config::get('app.ad_weight')}}%</b> of the Adsense revenue generated.</p>
                         <a class="btn btn-success pull-right" href="/how-it-works">Learn More</a>
                     </div>
                 </div>

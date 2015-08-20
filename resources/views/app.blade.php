@@ -63,11 +63,6 @@
                             {{--</li>--}}
 
                             @if (Auth::guest())
-                                <li>
-                                    <form action="{{ url('/how-it-works') }}" class="display-inline">
-                                        <button href="/sign-up-beta" class="btn btn-primary navbar-btn">Learn More</button>
-                                    </form>
-                                </li>
 
                                 <li>
                                     <form action="{{ url('/auth/login') }}" class="display-inline">
@@ -78,6 +73,12 @@
                                 <li>
                                     <form action="{{ url('/auth/register') }}" class="display-inline">
                                         <button type="submit" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Register</button>
+                                    </form>
+                                </li>
+
+                                <li>
+                                    <form action="{{ url('/how-it-works') }}" class="display-inline">
+                                        <button href="/sign-up-beta" class="btn btn-primary navbar-btn">Learn More</button>
                                     </form>
                                 </li>
                             @else
