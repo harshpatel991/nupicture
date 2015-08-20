@@ -60,15 +60,15 @@ class PostsTableSeederUser1 extends Seeder {
                 'user_id' => 1,
                 'status' => 'posted',
                 'admin_message' => null,
-                'title' => 'Street Art in Busan, South Korea',
-                'slug' => 'street-art-busan-south-korea',
-                'summary' => 'This beautiful street art found in South Korea on the side of a building.',
-                'thumbnail_image' => 'street-art-thumb.jpg',
-                'views' => '214',
-                'created_at' => '2015-05-19 03:25:43',
-                'updated_at' => '2015-05-26 03:25:43',
-                'posted_at' => '2015-07-23 01:36:11',
-                'category' => 'interesting'
+                'title' => 'Dad Creates Star Wars Speeder for Daughter',
+                'slug' => 'dad-creates-star-wars-speeder-for-d',
+                'summary' => 'This adorable rocker was created by a father out of some simple materials.',
+                'thumbnail_image' => 'star-wars-thumb.jpg',
+                'views' => '377',
+                'created_at' => '2015-08-19 03:25:43',
+                'updated_at' => '2015-08-19 03:25:43',
+                'posted_at' => '2015-08-19 01:36:11',
+                'category' => 'cute'
             ]
         );
 

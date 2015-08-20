@@ -42,7 +42,7 @@ class PostsTableSeederUser4 extends Seeder {
                 'user_id' => 4,
                 'status' => 'posted',
                 'admin_message' => null,
-                'title' => 'Tesla Demos Prototype Charger',
+                'title' => 'Tesla Demos Prototype Automatic Charger',
                 'slug' => 'telsa-demos-prototype-charger',
                 'summary' => 'This robot arm automatically finds the charging port on Tesla vehicles.',
                 'thumbnail_image' => 'tesla-thumb.jpg',

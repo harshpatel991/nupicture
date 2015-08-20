@@ -119,9 +119,6 @@ class SectionTableSeederUser2 extends Seeder {
 
 
 
-
-
-
             ['id' => 10,
                 'post_id' => 7,
                 'type' => 'section-text',

@@ -41,7 +41,7 @@ class PostsTableSeederUser2 extends Seeder {
                 'user_id' => 2,
                 'status' => 'posted',
                 'admin_message' => null,
-                'title' => 'Rare White Northern Lights',
+                'title' => 'Rare White Northern Lights Captured In Finland',
                 'slug' => 'white-northern-lights',
                 'summary' => 'Rare white Northern Lights captured on photography.',
                 'thumbnail_image' => 'northern-thumb.jpg',
