@@ -27,7 +27,7 @@
                     @elseif($section->isImageSection())
                         <img src="/upload/{{$section->content}}" class="post-image">
                         @if(strlen($section->optional_content) > 0)
-                            <h6 class="text-center"><a href="{!! clean($section->optional_content) !!}" target="_blank">Image Source</a></h6>
+                            <h6 class="text-center"><a target="_blank" href="{!! clean($section->optional_content) !!}">Image Source</a></h6>
                         @endif
                     @elseif($section->isYoutubeSection())
                         @if($section->optional_content) <h3>{!! clean($section->optional_content) !!}</h3> @endif
@@ -45,7 +45,7 @@
                     <h4>Sources</h4>
                     @foreach($sources as $source)
                         @if($source->isSourceSection())
-                            <p><a href="{{$source->content}}" target="_blank">{{$source->content}}</a></p>
+                            <p><a target="_blank" href="{{$source->content}}">{{$source->content}}</a></p>
                         @endif
                     @endforeach
 

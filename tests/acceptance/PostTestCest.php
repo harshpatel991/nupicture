@@ -167,7 +167,7 @@ class PostTestCest
 
         $I->seeInTitle('Creating A Test Image Posting');
         $I->seeInPageSource('<img class="post-image" src="/upload/creating-a-test-image-posting');
-        $I->seeInPageSource('<a href="www.optional-image-source.com" target="_blank">Image Source</a>');
+        $I->seeInPageSource('<a target="_blank" href="www.optional-image-source.com">Image Source</a>');
 
         //without optional
         $I->amOnPage('/post/create');
