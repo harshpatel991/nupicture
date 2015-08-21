@@ -11,7 +11,7 @@ class SectionTableSeederUser2 extends Seeder {
                 'post_id' => 5,
                 'type' => 'section-text',
                 'optional_content' => '',
-                'content' => 'American Standard has created these beautiful 3D printed faucets. The faucets are created by way of a computer guided laser which fuses powered metal into these incredible shapes. These faucets are expected to begin to ready for production by June 2016.'
+                'content' => 'American Standard has created these beautiful 3D printed faucets. The faucets are created by way of a computer guided laser which fuses powered metal into these incredible shapes. They are expected to begin to ready for production by June 2016.'
             ],
             ['id' => 2,
                 'post_id' => 5,
@@ -123,7 +123,7 @@ class SectionTableSeederUser2 extends Seeder {
                 'post_id' => 7,
                 'type' => 'section-text',
                 'optional_content' => '',
-                'content' => 'These white Northern Lights appeared in Finland. The Northern Lights are a beautiful display caused by emissions from the sun hitting the Earth\'s atmosphere. These images reveal a fairly common display of the Aurora Borealis. Usually images of the Aurora Borealis are captured on images as having a very vibrant appearance while in reality, your eyes would see a grey-ish image closer to what you see below.'
+                'content' => 'These white Northern Lights were captured in Finland. The Northern Lights are a beautiful display caused by emissions from the sun hitting the Earth\'s atmosphere. Even though these images look different from most Northern Lights images you\'ve seen, these images reveal a fairly common display of the Aurora Borealis. Usually, images of the Aurora Borealis are captured as having a very vibrant appearance while in reality, your eyes would see a grey-ish image closer to what you see below.'
             ],
             ['id' => 11,
                 'post_id' => 7,
@@ -147,7 +147,7 @@ class SectionTableSeederUser2 extends Seeder {
                 'post_id' => 8,
                 'type' => 'section-text',
                 'optional_content' => '',
-                'content' => 'Scott Dadich, the editor in chief at WIRED ordered the San Francisco office of the tech news super giant to be redesigned. <br><br>WIRED hired Gensler to give their office a new, modern look. They followed the approach taken by many Silicon Valley tech companies: open floor plans allowing for easy team communication. Some have critizied these types floor plans. Citing that these plans serve only to reduce costs of cubical walls and increase the amount of distractions that employees are faced with.'
+                'content' => 'Scott Dadich, the editor in chief at WIRED magazine, has ordered the San Francisco office of the tech news super giant to be redesigned. <br><br>WIRED hired Gensler to give their office a new, modern look. They followed the approach taken by many Silicon Valley tech companies: open floor plans allowing for easy team communication. Some have critizied these types floor plans. Citing that these plans serve only to reduce costs of cubical walls and increase the amount of distractions that employees are faced with.'
             ],
             ['id' => 15,
                 'post_id' => 8,

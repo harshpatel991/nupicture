@@ -39,6 +39,12 @@ class SectionTableSeederUser3 extends Seeder {
             ],
 
 
+            ['id' => 28,
+                'post_id' => 13,
+                'type' => 'section-text',
+                'optional_content' => '',
+                'content' => 'If you\'re looking to customize your smart phone, here is some inspiration to get you started. Click on the image source links for instructions on how you can make your own Android device look like the screenshots.'
+            ],
             ['id' => 29,
                 'post_id' => 13,
                 'type' => 'section-listnumber',

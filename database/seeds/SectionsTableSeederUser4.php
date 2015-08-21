@@ -122,7 +122,7 @@ class SectionTableSeederUser4 extends Seeder {
                 'post_id' => 20,
                 'type' => 'section-text',
                 'optional-content' => '',
-                'content' => 'Ever feel like there was a manual that you missed out on things guys should know about? We can\'t possibly cover everything there is no know. But, let\'s get you started with these video guides. We\'ll cover basic food preparation, buying a used vehicle, public speaking, proper exercise, and grilling.'
+                'content' => 'Ever feel like there was a manual that you missed out on things guys should know about? We can\'t possibly cover everything there is to know. But, let\'s get you started with these video guides. We\'ll cover basic food preparation, buying a used vehicle, public speaking, proper exercise, and grilling.'
             ],
 
             ['id' => 71,

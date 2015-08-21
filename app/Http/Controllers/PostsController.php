@@ -113,7 +113,7 @@ class PostsController extends Controller {
                 $imageUploadedName = $post->slug. rand(0, 99) . '.jpg';
                 Image::make($request->file($sectionId)[0])
                     ->encode('jpg')
-                    ->widen(1600, function ($constraint) { $constraint->upsize();})
+                    ->widen(1100, function ($constraint) { $constraint->upsize();})
                     ->save(Post::getImageUploadPath().$imageUploadedName, 75);
 
                 $newSection = new Section();
