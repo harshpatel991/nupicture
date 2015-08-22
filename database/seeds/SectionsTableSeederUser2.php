@@ -113,8 +113,20 @@ class SectionTableSeederUser2 extends Seeder {
             ['id' => 89,
                 'post_id' => 6,
                 'type' => 'section-image',
-                'optional_content' => '',
+                'optional_content' => 'https://www.reddit.com/r/Cinemagraphs/comments/3grmr3/oc_dog_days/',
                 'content' => 'cinemagraph-5.gif'
+            ],
+            ['id' => 96,
+                'post_id' => 6,
+                'type' => 'section-listnumber',
+                'optional_content' => '',
+                'content' => ''
+            ],
+            ['id' => 97,
+                'post_id' => 6,
+                'type' => 'section-image',
+                'optional_content' => '',
+                'content' => 'cinemagraph-6.gif'
             ],
 
 

@@ -24,7 +24,7 @@
                             <li>When appropritae, your post should use high quality, relevant images. <a href="https://unsplash.com/">Unsplash</a> has royalty free images you can use.</li>
                         </ol>
 
-                        <p>There is no minimum posting length. Use your best judgement to appropriately size your post.</p>
+                        <p>There is no minimum posting length. Just use your best judgement to appropriately size your post.</p>
 
 
                     </div>

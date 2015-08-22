@@ -78,7 +78,7 @@
                     <div style="background-image: url('images/woman-laptop.jpg'); background-position: center center; background-repeat: no-repeat; background-size: cover;width: 100%; height; 250px; padding: 10px;">
                         <center><h1 style="color: #fff; margin-top: 5px; margin-bottom: 5px;">Write & Earn</h1>
                         <h3 style="color: #fff; padding-bottom: 10px;">Earn money for writing articles on {{ Config::get('app.name') }}</h3>
-                        <a href="/auth/register" class="btn btn-default btn-lg" style="margin: 0 auto;">Join <span class="glyphicon glyphicon-chevron-right"></span></a></center>
+                        <a href="/auth/register" class="btn btn-default btn" style="margin: 0 auto;">Join <span class="glyphicon glyphicon-chevron-right"></span></a></center>
                     </div>
 
                     <h4 class="section-intro-heading">POPULAR POSTS</h4>
