@@ -133,8 +133,22 @@
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-64750185-1', 'auto');
+        ga('create', 'UA-66631637-1', 'auto');
         ga('send', 'pageview');
+
     </script>
+
+    <!-- Start of StatCounter Code for Default Guide -->
+    <script type="text/javascript">
+        var sc_project=10583918;
+        var sc_invisible=1;
+        var sc_security="7e7184aa";
+        var scJsHost = (("https:" == document.location.protocol) ?
+                "https://secure." : "http://www.");
+        document.write("<sc"+"ript type='text/javascript' src='" +
+        scJsHost+
+        "statcounter.com/counter/counter.js'></"+"script>");
+    </script>
+    <!-- End of StatCounter Code for Default Guide -->
 </body>
 </html>
