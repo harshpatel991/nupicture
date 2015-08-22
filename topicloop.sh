@@ -1,14 +1,26 @@
 #!/bin/bash
 
 proddeploy() {
-  echo "Production Deploy"
-  #deploy
-    #backup db
-    #deploy
+  echo "------------Production Deploy------------"
+
+  echo "---Backing Up Production DB"
+  backupremotedb
+
+  echo "Verify DB backup was made."
+  ls -l prod-db-backups
+  echo "Continue? [y/n]"
+  read continue
+
+  if [ "$continue" == "y" ]; then
+      echo "---Deploying"
+      eb deploy
+  else
+    echo "---Deploy canceled"
+  fi
 }
 
 localdev() {
-  echo "Start Local Dev Enviroment"
+  echo "------------Start Local Dev Enviroment------------"
   #start local dev environment
     #start homestead
     #ssh into homestead
@@ -18,16 +30,17 @@ localdev() {
 backupremotedb() {
   echo "------------Backup Remote DB------------"
   #backup remote db
+  echo "Enter DB password..."
   read dbpassword
   dt_now=$(date '+%d_%m_%Y_%H_%M_%S');
-  mysqldump --user=devmaster -p$dbpassword --host=nupicture-dev-db.cwqtmomh10su.us-west-2.rds.amazonaws.com --protocol=tcp --port=3306 --default-character-set=utf8 "nupicture_dev_db" > "./prod-db-backups/backup$dt_now.sql"
-
-
+  mysqldump --user=devmaster -p$dbpassword --host=nupicture-dev-db.cwqtmomh10su.us-west-2.rds.amazonaws.com --protocol=tcp --port=3306 --default-character-set=utf8 "nupicture_dev_db" -r "./prod-db-backups/backup$dt_now.sql"
 }
 
 runtests() {
-  echo "Run Automation Tests"
+  echo "------------Run Automation Tests------------"
   #run tests
+
+  sudo php codecept.phar run tests/acceptance/
 
 }
 

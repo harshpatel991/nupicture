@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="LF2MsO2_mV1-I4x_c-lu8xzvKirpEu0dbQIPr0YtSDA" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
 	<title>@yield('page-title')</title>
 
