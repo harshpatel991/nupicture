@@ -53,7 +53,7 @@ class PostsTableSeederUser1 extends Seeder {
                 'created_at' => '2015-05-21 04:25:43',
                 'updated_at' => '2015-05-22 03:25:43',
                 'posted_at' => '2015-07-22 03:54:23',
-                'category' => 'woah'
+                'category' => 'interesting'
             ],
 
             ['id' => 4,

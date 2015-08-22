@@ -25,7 +25,7 @@
 
                     <h2>Login</h2>
 
-                    <p>Welcome back. Let's get to work.</p>
+                    <p>Welcome back. Let's do this.</p>
 
                     <div class="panel panel-default">
                         <div class="panel-body">

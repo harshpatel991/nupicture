@@ -21,7 +21,7 @@
                             <li>Our readers are looking for quality content. Content should not exist for the sole purpose of spamming links.</li>
                             <li>Our targeted readers are 16-40 years old. As such, content should be free of inappropriate links or images.</li>
                             <li>Your post should not encourage users to click on ads or to engage in activity that is against the <a href="https://support.google.com/adsense/topic/1261918?hl=en&ref_topic=1250104">Adsense Program Policies</a>. </li>
-                            <li>When appropritae, your post should use high quality, relevant images. <a href="https://unsplash.com/">Unsplash</a> has royalty free images you can use.</li>
+                            <li>When appropriate, your post should use high quality, relevant images. <a href="https://unsplash.com/">Unsplash</a> has royalty free images you can use.</li>
                         </ol>
 
                         <p>There is no minimum posting length. Just use your best judgement to appropriately size your post.</p>

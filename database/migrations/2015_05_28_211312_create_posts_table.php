@@ -1,5 +1,7 @@
 <?php
 
+use App\Post;
+
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
@@ -22,7 +24,7 @@ class CreatePostsTable extends Migration {
 			$table->enum('status', ['pending_post', 'saved', 'rejected', 'posted']);
 			$table->string('admin_message', 300)->nullable();
 			$table->string('title', 200);
-            $table->string('category', 50);
+            $table->enum('category', Post::$categories);
 
             $table->string('summary', 1000);
             $table->string('thumbnail_image', 200);
