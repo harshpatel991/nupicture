@@ -144,9 +144,9 @@ class PostsController extends Controller {
                 $newSection->make($post->id, Section::$SOURCE_SECTION_NAME, '', $section);
                 $newSection->save();
             }
-            elseif(strpos($sectionId, Section::$TOKEN_SECTION_NAME) !== FALSE || strpos($sectionId, Section::$TITLE_SECTION_NAME) !== FALSE )
+            elseif(strpos($sectionId, Section::$TOKEN_SECTION_NAME) !== FALSE || strpos($sectionId, Section::$TITLE_SECTION_NAME) !== FALSE || strpos($sectionId, Section::$CATEGORY_SECTION_NAME) !== FALSE || strpos($sectionId, Section::$SUMMARY_SECTION_NAME) !== FALSE || strpos($sectionId, Section::$THUMBNAIL_SECTION_NAME) !== FALSE)
             {
-                //ignore the token and title section
+                //ignore these sections
             }
             else
             {

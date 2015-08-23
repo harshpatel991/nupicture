@@ -1,5 +1,6 @@
 <?php namespace App\Services;
 
+use \Log;
 use Input;
 use Mail;
 use App\User;
@@ -43,10 +44,10 @@ class Registrar implements RegistrarContract {
 		]);
 
         Mail::queue('emails.verify', ['confirmationCode' => $confirmationCode, 'logoPath' => 'http://www.topicloop.com/images/logo.png'], function($message) {
-
             $message->to(Input::get('email'))
                 ->subject('Please confirm your email');
         });
+        Log::info('Confirm email sent out to '.Input::get('email'));
         return $newUser;
 	}
 

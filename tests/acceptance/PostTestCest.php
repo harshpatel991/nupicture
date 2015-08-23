@@ -271,7 +271,7 @@ class PostTestCest
         $I->amOnPage('/post/create');
 
         $I->fillField(['name' => 'title'], 'Creating A Source Posting');
-        $I->selectOption(['name' => 'category'], 'woah');
+        $I->selectOption(['name' => 'category'], 'interesting');
         $I->fillField(['name' => 'summary'], 'This is source posting summary');
         $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
         $I->click(['id' =>'add-source-section']);
@@ -279,7 +279,7 @@ class PostTestCest
         $I->fillField(['id' => '1-content'], 'http://cnn.com');
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Source Posting', 'category' => 'woah', 'summary' => 'This is source posting summary', 'status' => 'pending_post'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Source Posting', 'category' => 'interesting', 'summary' => 'This is source posting summary', 'status' => 'pending_post'));
         $I->seeInDatabase('sections', array('type' => 'section-source', 'optional_content' => '', 'content' => 'http://cnn.com'));
 
         $I->seeInPageSource('Creating A Source Posting'); //see on profile page
@@ -295,7 +295,7 @@ class PostTestCest
         $I->amOnPage('/post/create');
 
         $I->fillField(['name' => 'title'], 'Creating A Removing Items');
-        $I->selectOption(['name' => 'category'], 'woah');
+        $I->selectOption(['name' => 'category'], 'interesting');
         $I->fillField(['name' => 'summary'], 'This is removing items summary');
         $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
 
@@ -342,7 +342,7 @@ class PostTestCest
 
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Removing Items', 'category' => 'woah', 'summary' => 'This is removing items summary', 'status' => 'pending_post'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Removing Items', 'category' => 'interesting', 'summary' => 'This is removing items summary', 'status' => 'pending_post'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-text', 'optional_content' => 'Text 1 Optional - Removed', 'content' => 'Text 1 Content - Removed'));
         $I->seeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => 'List 2 Optional', 'content' => ''));
         $firstSectionID = $this->getSectionID($I, '', 'List 2 Optional');
@@ -379,7 +379,7 @@ class PostTestCest
         $I->amOnPage('/post/create');
 
         $I->fillField(['name' => 'title'], 'Creating A Removing All Items');
-        $I->selectOption(['name' => 'category'], 'woah');
+        $I->selectOption(['name' => 'category'], 'interesting');
         $I->fillField(['name' => 'summary'], 'This is add items and remove all summary');
         $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
 
@@ -408,7 +408,7 @@ class PostTestCest
 
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Removing All Items', 'category' => 'woah', 'summary' => 'This is add items and remove all summary', 'status' => 'pending_post'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Removing All Items', 'category' => 'interesting', 'summary' => 'This is add items and remove all summary', 'status' => 'pending_post'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-text', 'content' => 'Remove All Test 1 Content', 'optional_content' => 'Remove All Test 1 Optional'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => 'Remove All Test 2 Optional'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-image', 'optional_content' => 'Remove All Test 3 Image Optional Content')); //can't test for the image's content since it's random...
@@ -456,7 +456,7 @@ class PostTestCest
         $I->amOnPage('/post/create');
 
         $I->fillField(['name' => 'title'], 'Creating A Test New Line Text Posting Success');
-        $I->selectOption(['name' => 'category'], 'woah');
+        $I->selectOption(['name' => 'category'], 'interesting');
         $I->fillField(['name' => 'summary'], 'This is new line text post success summary');
         $I->attachFile(['name' => 'thumbnail'], 'test-image.jpg');
 

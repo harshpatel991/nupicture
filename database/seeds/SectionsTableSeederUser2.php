@@ -159,7 +159,7 @@ class SectionTableSeederUser2 extends Seeder {
                 'post_id' => 8,
                 'type' => 'section-text',
                 'optional_content' => '',
-                'content' => 'Scott Dadich, the editor in chief at WIRED magazine, has ordered the San Francisco office of the tech news super giant to be redesigned. <br><br>WIRED hired Gensler to give their office a new, modern look. They followed the approach taken by many Silicon Valley tech companies: open floor plans allowing for easy team communication. Some have critizied these types floor plans. Citing that these plans serve only to reduce costs of cubical walls and increase the amount of distractions that employees are faced with.'
+                'content' => 'Scott Dadich, the editor in chief at WIRED magazine, ordered the San Francisco office of the tech news super giant to be redesigned. <br><br>WIRED hired Gensler to give their office a new, modern look. They followed the approach taken by many Silicon Valley tech companies: open floor plans allowing for easy team communication. Some have critizied these types floor plans. Citing that these plans serve only to reduce costs of cubical walls and increase the amount of distractions that employees are faced with. Either way, we think this redesign is incredibly pleasing to look at.'
             ],
             ['id' => 15,
                 'post_id' => 8,
