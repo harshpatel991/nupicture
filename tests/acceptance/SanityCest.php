@@ -86,7 +86,7 @@ class SanityCest
         $I->see('A Pending Post');
         $I->see('A Rejected Post Short Text');
         $I->see('The most powerful supercomputer in Spain, the MareNostrum');
-        $I->see('Street Art in Busan, South Korea');
+        $I->see('Dad Creates Adorable Star Wars Speeder');
     }
 
     public function testSanitySignUpSuccess(AcceptanceTester $I)

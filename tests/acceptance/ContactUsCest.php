@@ -3,7 +3,7 @@ use \AcceptanceTester;
 
 use \Illuminate\Support\Facades;
 
-class RegisterCest
+class ContactUsCest
 {
     public function _before(AcceptanceTester $I)
     {

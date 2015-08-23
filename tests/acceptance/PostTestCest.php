@@ -167,7 +167,7 @@ class PostTestCest
 
         $I->seeInTitle('Creating A Test Image Posting');
         $I->seeInPageSource('<img class="post-image" src="/upload/creating-a-test-image-posting');
-        $I->seeInPageSource('<a target="_blank" href="www.optional-image-source.com">Image Source</a>');
+        $I->seeInPageSource('href="www.optional-image-source.com');
 
         //without optional
         $I->amOnPage('/post/create');
@@ -408,7 +408,7 @@ class PostTestCest
 
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Removing All Items', 'category' => 'interesting', 'summary' => 'This is add items and remove all summary', 'status' => 'pending_post'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Removing All Items', 'category' => 'interestingtestCreatePostWithImage', 'summary' => 'This is add items and remove all summary', 'status' => 'pending_post'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-text', 'content' => 'Remove All Test 1 Content', 'optional_content' => 'Remove All Test 1 Optional'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => 'Remove All Test 2 Optional'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-image', 'optional_content' => 'Remove All Test 3 Image Optional Content')); //can't test for the image's content since it's random...

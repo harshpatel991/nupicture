@@ -64,7 +64,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-4"><span class="glyphicon glyphicon-envelope"></span> E-Mail Address</label>
+                                <label class="col-md-4"><span class="glyphicon glyphicon-envelope"></span> Email Address</label>
                                 <div class="col-lg-8 col-md-8 col-sm-12">
                                     <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                                 </div>

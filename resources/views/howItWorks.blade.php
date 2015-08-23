@@ -82,6 +82,7 @@
                                 <p><b>You should not click on the advertisements or ask anyone to click on them for you.</b> Google is very good at detecting fraudulent advertisement clicks and will ban you from Adsense. See all Adsense policies <a href="https://support.google.com/adsense/answer/48182?hl=en">here</a>.</p>
                                 <p>Once a post is listed, you can start sharing your post through social media. For help gaining exposure to your site, take a look our guide to <a href="/increase-views">increasing your readers</a>.</p>
 
+                                <h3>Any more questions? Feel free to <a href="/contact-us">contact us</a>.</h3>
                             </div>
                         </div>
                     </div>

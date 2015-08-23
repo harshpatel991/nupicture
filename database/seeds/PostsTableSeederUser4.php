@@ -73,7 +73,7 @@ class PostsTableSeederUser4 extends Seeder {
                 'status' => 'posted',
                 'admin_message' => null,
                 'title' => 'Game Of Polygons: Artist Recreates Characters in Low Poly',
-                'slug' => 'post-19',
+                'slug' => 'game-of-polygons-artist',
                 'summary' => 'An Israeli artist has recreated famous portraits of your favorite Game of Thrones characters in low poly.',
                 'thumbnail_image' => 'got-thumb.jpg',
                 'views' => '2361',

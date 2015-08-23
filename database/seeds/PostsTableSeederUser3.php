@@ -44,7 +44,7 @@ class PostsTableSeederUser3 extends Seeder {
                 'status' => 'posted',
                 'admin_message' => null,
                 'title' => 'Two Students Film Amazing 4K Video of Iceland',
-                'slug' => 'post-12',
+                'slug' => 'two-students-film-amazing-4k',
                 'summary' => 'Studying at the Stuttgart Media University in Germany, Marcus Sies and Florian Nick have captured some very beautiful shots.',
                 'thumbnail_image' => 'two-students-film-amazing-4k-thumb.jpg',
                 'views' => 1009,

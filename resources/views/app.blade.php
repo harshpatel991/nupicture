@@ -84,7 +84,7 @@
                             @else
                                 <li>
                                     <form action="{{ url('/post/create') }}" class="display-inline">
-                                        <button type="submit" class="btn btn-success navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
+                                        <button type="submit" class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
                                     </form>
                                 </li>
 
