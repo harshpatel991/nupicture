@@ -128,6 +128,18 @@ class SectionTableSeederUser2 extends Seeder {
                 'optional_content' => '',
                 'content' => 'cinemagraph-6.gif'
             ],
+            ['id' => 98,
+                'post_id' => 6,
+                'type' => 'section-listnumber',
+                'optional_content' => '',
+                'content' => ''
+            ],
+            ['id' => 99,
+                'post_id' => 6,
+                'type' => 'section-image',
+                'optional_content' => '',
+                'content' => 'cinemagraph-7.gif'
+            ],
 
 
 

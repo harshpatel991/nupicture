@@ -27,7 +27,7 @@ class SanityCest
 
     public function testSanityViewPost(AcceptanceTester $I)
     {
-        $I->amOnPage('/post/5-awesome-cinemagraphs');
+        $I->amOnPage('/post/7-awesome-cinemagraphs');
         $I->dontSee('Exception');
         $this->ensureFooterAppears($I);
         $I->see('5 Awesome Cinemagraphs');

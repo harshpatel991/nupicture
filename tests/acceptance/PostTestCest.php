@@ -166,7 +166,7 @@ class PostTestCest
         $this->approvePost($I, 'Creating A Test Image Posting');
 
         $I->seeInTitle('Creating A Test Image Posting');
-        $I->seeInPageSource('<img class="post-image" src="/upload/creating-a-test-image-posting');
+        $I->seeInPageSource('<img class="post-image" src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/creating-a-test-image-posting');
         $I->seeInPageSource('href="www.optional-image-source.com');
 
         //without optional
@@ -188,7 +188,7 @@ class PostTestCest
         $this->approvePost($I, 'Creating A Test Image Posting Without Optional');
 
         $I->seeInTitle('Creating A Test Image Posting Without Optional');
-        $I->seeInPageSource('<img class="post-image" src="/upload/creating-a-test-image-posting');
+        $I->seeInPageSource('<img class="post-image" src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/creating-a-test-image-posting');
 
     }
 
@@ -364,7 +364,7 @@ class PostTestCest
         $I->seeInPageSource('List 2 Optional');
         $I->seeInPageSource('Text 3 Optional');
         $I->seeInPageSource('Text 3 Content');
-        $I->seeInPageSource('<img class="post-image" src="/upload/creating-a-removing-items');
+        $I->seeInPageSource('<img class="post-image" src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/creating-a-removing-items');
         $I->seeInPageSource('Text 7 Optional');
         $I->seeInPageSource('Text 7 Content');
         $I->seeInPageSource('Text 10 Optional');
@@ -408,7 +408,7 @@ class PostTestCest
 
         $I->click(['id' =>'submit-form']);
 
-        $I->seeInDatabase('posts', array('title' => 'Creating A Removing All Items', 'category' => 'interestingtestCreatePostWithImage', 'summary' => 'This is add items and remove all summary', 'status' => 'pending_post'));
+        $I->seeInDatabase('posts', array('title' => 'Creating A Removing All Items', 'category' => 'interesting', 'summary' => 'This is add items and remove all summary', 'status' => 'pending_post'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-text', 'content' => 'Remove All Test 1 Content', 'optional_content' => 'Remove All Test 1 Optional'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-listnumber', 'optional_content' => 'Remove All Test 2 Optional'));
         $I->dontSeeInDatabase('sections', array('type' => 'section-image', 'optional_content' => 'Remove All Test 3 Image Optional Content')); //can't test for the image's content since it's random...
