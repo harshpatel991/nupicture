@@ -8,7 +8,7 @@ class Post extends Model {
         return public_path() . '/upload/';
     }
 
-    public static $categories = ['art', 'cute', 'funny', 'how-to', 'interesting', 'movies', 'news', 'photography', 'tv'];
+    public static $categories = ['art', 'cute', 'funny', 'how-to', 'interesting', 'movies', 'news', 'photography', 'tech', 'tv'];
 
     public static $pendingPostStatus = 'pending_post';
     public static $rejectedStatus = 'rejected';
