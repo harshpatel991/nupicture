@@ -25,7 +25,7 @@
                         @if($section->optional_content) <h3>{!! clean($section->optional_content) !!}</h3> @endif
                         <p>{!! str_replace( "\n", '<br />', clean($section->content) );  !!}</p>
                     @elseif($section->isImageSection())
-                        <img src="/upload/{{$section->content}}" class="post-image">
+                        <img src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/{{$section->content}}" class="post-image">
                         @if(strlen($section->optional_content) > 0)
                             <h6 class="text-center"><a target="_blank" href="{!! clean($section->optional_content) !!}">Image Source</a></h6>
                         @endif

@@ -5,7 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model {
 
     public static function getImageUploadPath() {
-        return public_path() . '/upload/';
+        return '';
+    }
+
+    public static function getBackupImageUploadPath() {
+        return public_path().'/upload/';
     }
 
     public static $categories = ['art', 'cute', 'funny', 'how-to', 'interesting', 'movies', 'news', 'photography', 'tech', 'tv'];

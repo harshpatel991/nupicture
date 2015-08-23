@@ -2,7 +2,7 @@
 
     <div class=" media-middle">
         <a href="/post/{{$post->slug}}">
-            <div class="media-object horizontal-post-image" style="background-image: url('/upload/{{$post->thumbnail_image}}')"></div>
+            <div class="media-object horizontal-post-image" style="background-image: url('http://s3-us-west-2.amazonaws.com/topicloop-upload2/{{$post->thumbnail_image}}')"></div>
         </a>
     </div>
 

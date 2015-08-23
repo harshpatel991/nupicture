@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App;
 use Auth;
 use App\Post;
 use App\User;
@@ -93,7 +94,15 @@ class PostsController extends Controller {
         Image::make($request->file(Section::$THUMBNAIL_SECTION_NAME))
             ->encode('jpg')
             ->fit(600, 450, function ($constraint) { $constraint->upsize();})
-            ->save(Post::getImageUploadPath().$thumbnailUploadName, 70);
+            ->save(Post::getBackupImageUploadPath().$thumbnailUploadName, 70);
+
+        $s3 = App::make('aws')->get('s3');
+        $s3->putObject(array(
+            'ACL'        => 'public-read',
+            'Bucket'     => 'topicloop-upload2',
+            'Key'        => Post::getImageUploadPath().$thumbnailUploadName,
+            'SourceFile' => Post::getBackupImageUploadPath().$thumbnailUploadName,
+        ));
 
         $post->thumbnail_image = $thumbnailUploadName;
         $post->views = 0;
@@ -114,7 +123,13 @@ class PostsController extends Controller {
                 Image::make($request->file($sectionId)[0])
                     ->encode('jpg')
                     ->widen(1100, function ($constraint) { $constraint->upsize();})
-                    ->save(Post::getImageUploadPath().$imageUploadedName, 75);
+                    ->save(Post::getBackupImageUploadPath().$imageUploadedName, 75);
+                $s3->putObject(array(
+                    'ACL'        => 'public-read',
+                    'Bucket'     => 'topicloop-upload2',
+                    'Key'        => Post::getImageUploadPath().$imageUploadedName,
+                    'SourceFile' => Post::getBackupImageUploadPath().$imageUploadedName,
+                ));
 
                 $newSection = new Section();
                 $newSection ->make($post->id, Section::$IMAGE_SECTION_NAME, $section[1], $imageUploadedName);

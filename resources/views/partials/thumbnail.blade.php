@@ -1,7 +1,7 @@
 <a href="/post/{{$post->slug}}" style="text-decoration : none">
     <div class="home-thumbnail-wrapper">
 
-        <div href="#" style="background-image: url('/upload/{{$post->thumbnail_image}}')" class="home-thumbnail-image-section" ></div>
+        <div href="#" style="background-image: url('http://s3-us-west-2.amazonaws.com/topicloop-upload2/{{$post->thumbnail_image}}')" class="home-thumbnail-image-section" ></div>
 
         <div class="home-thumbnail-text-section">
 
