@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use \Log;
+use Mail;
 use Input;
 use Redirect;
 use Session;
@@ -62,6 +64,24 @@ class HomeController extends Controller {
 		Notification::create($request->all());
 		return Redirect::route('sign-up-beta')->with('message', 'You\'re all set! We\'ll send you an email when you can register.');
 	}
+
+    public function getContactUs() {
+        return view('contactUs');
+    }
+
+    public function postContactUs(Request $request) {
+        $this->validate($request, [
+            'email' => 'required|max:254|email',
+            'message' => 'required|max:2500'
+        ]);
+
+        Mail::queue('emails.contactus', ['email' => Input::get('email'), 'content' => Input::get('message')], function($message) {
+            $message->to('support@topicloop.com')
+                ->subject('Contact Us');
+        });
+        Log::info('Contact Us: '. Input::get('email') . ' : ' . Input::get('message'));
+        return Redirect::route('/contact-us')->with('message', 'You\'re all set! We\'ll get back to you as soon as we can.');
+    }
 
 	public function increasePageViews() {
 		return view('increasePageViews');

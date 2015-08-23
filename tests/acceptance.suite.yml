@@ -8,7 +8,7 @@ class_name: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: http://topicloop.com/
+            url: http://homestead.app
             browser: firefox
             window_size: 1024x768
             wait: 2

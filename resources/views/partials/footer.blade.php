@@ -11,8 +11,7 @@
             <a href="/how-it-works">About</a> <br> <br>
             <a href="/privacy-policy">Privacy Policy</a> <br> <br>
             <a href="/terms-conditions">Terms of Use</a> <br> <br>
-            <a href="/increase-views">Gaining Readers</a> <br> <br>
-            <a href="/post-ideas">Post Ideas</a>
+            <a href="/contact-us">Contact Us</a>
             </h6>
         </div>
 
@@ -23,7 +22,6 @@
             <a href="https://instagram.com/topicloop/">Instagram</a>
             </h6>
         </div>
-
 
     </div>
 

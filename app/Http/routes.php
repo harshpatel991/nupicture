@@ -23,7 +23,6 @@ Route::get('/how-it-works',
 Route::get('/content-guidelines',
     ['as' => 'content-guidelines', 'uses' => 'HomeController@contentGuidelines']);
 
-
 Route::get('/increase-views',
 	['as' => 'increase-page-views', 'uses' => 'HomeController@increasePageViews']);
 
@@ -63,6 +62,11 @@ Route::controllers([
 
 Route::get('/sign-up-success', 'RegistrationController@signupSuccess');
 Route::get('/verify/{confirmation_code}', 'RegistrationController@verifySuccess');
+
+Route::get('/contact-us',
+    ['as' => '/contact-us', 'uses' => 'HomeController@getContactUs']);
+Route::post('/contact-us',
+    ['uses' => 'HomeController@postContactUs']);
 
 Route::get('/privacy-policy', 'HomeController@privacyPolicy');
 Route::get('/terms-conditions', 'HomeController@termsAndConditions');
