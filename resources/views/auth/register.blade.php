@@ -9,21 +9,6 @@
         <div class="row">
             <div class="col-sm-12 col-md-offset-1 col-md-10 white-background post-main-column">
 
-                <div class="row"> {{--Session messages row--}}
-                    <div class="col-md-8 col-md-offset-2">
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                    </div>
-                </div>
-
                 <div class="row">
                     <div class="col-sm-4">
                         <img src="/images/User-Add-256.png" width="50" height="50" style="margin-top: 20px;" class="center-block">
@@ -51,6 +36,18 @@
                     <div class="col-md-offset-3 col-md-6 col-sm-10 col-sm-offset-1">
 
                         <h1>Ready To Get Started?</h1>
+
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <br>
 
                         <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
