@@ -19,7 +19,7 @@
             <h6>
             <a href="https://www.pinterest.com/topicloop/">Pintrest</a> <br> <br>
             <a href="https://twitter.com/topicloop">Twitter</a> <br> <br>
-            <a href="https://instagram.com/topicloop/">Instagram</a>
+            <a href="http://topicloop.tumblr.com">Tumblr</a>
             </h6>
         </div>
 

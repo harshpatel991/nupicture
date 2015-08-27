@@ -31,7 +31,7 @@
                         <div class="row">
                             <div class="col-xs-4"><a href="https://www.pinterest.com/topicloop/"><img src="/images/pintrest.png" class="sign-up-success-social-media-icons"></a></div>
                             <div class="col-xs-4"><a href="https://twitter.com/topicloop"><img src="/images/twitter.png" class="sign-up-success-social-media-icons"></a></div>
-                            <div class="col-xs-4"><a href="https://instagram.com/topicloop/"><img src="/images/instagram.png" class="sign-up-success-social-media-icons"></a></div>
+                            <div class="col-xs-4"><a href="http://topicloop.tumblr.com/"><img src="/images/tumblr.jpg" class="sign-up-success-social-media-icons"></a></div>
                         </div>
                     </div>
 
