@@ -21,7 +21,7 @@
 
 </head>
 <body>
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default" itemscope itemtype="http://schema.org/WPHeader">
 		<div class="container-fluid">
 			<div class="row">
 
@@ -66,37 +66,37 @@
 
                                 <li>
                                     <form action="{{ url('/auth/login') }}" class="display-inline">
-                                        <button type="submit" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+                                        <button type="submit" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-log-in"></span> <span itemscope itemtype="http://schema.org/SiteNavigationElement">Login</span></button>
                                     </form>
                                 </li>
 
                                 <li>
                                     <form action="{{ url('/auth/register') }}" class="display-inline">
-                                        <button type="submit" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Register</button>
+                                        <button type="submit" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> <span itemscope itemtype="http://schema.org/SiteNavigationElement">Register</span></button>
                                     </form>
                                 </li>
 
                                 <li>
                                     <form action="{{ url('/how-it-works') }}" class="display-inline">
-                                        <button href="/sign-up-beta" class="btn btn-primary navbar-btn">Learn More</button>
+                                        <button href="/sign-up-beta" class="btn btn-primary navbar-btn" itemscope itemtype="http://schema.org/SiteNavigationElement">Learn More</button>
                                     </form>
                                 </li>
                             @else
                                 <li>
                                     <form action="{{ url('/post/create') }}" class="display-inline">
-                                        <button type="submit" class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Post</button>
+                                        <button type="submit" class="btn btn-primary navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> <span itemscope itemtype="http://schema.org/SiteNavigationElement">Post</span></button>
                                     </form>
                                 </li>
 
                                 <li>
                                     <div class="btn-group navbar-btn">
-                                        <a href="/profile" type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> {{ Auth::user()->username }}</a>
+                                        <a href="/profile" type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> <span itemscope itemtype="http://schema.org/SiteNavigationElement">{{ Auth::user()->username }}</span></a>
                                         <button type="button" class="btn btn-default dropdown-toggle" id="profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <span class="caret"></span>
                                             <span class="sr-only">Toggle Dropdown</span>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{{ url('/auth/logout') }}" class="category" id="logout-button">Logout</a></li>
+                                            <li><a href="{{ url('/auth/logout') }}" class="category" id="logout-button"><span itemscope itemtype="http://schema.org/SiteNavigationElement">Logout</span></a></li>
                                         </ul>
                                     </div>
                                 </li>

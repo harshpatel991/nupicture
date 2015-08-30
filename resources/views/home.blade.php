@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        @include('partials/hero', ['post' => $posts[3]])
+        @include('partials/hero', ['post' => $heroPost])
 
         <div class="row">
 
@@ -29,7 +29,7 @@
 
                 <div class="row">
                         <div class="col-sm-12 col-md-6 home-column-padding">
-                                @include('partials/thumbnail', ['post' => $posts[5], 'lg' => true])
+                                @include('partials/thumbnail', ['post' => $posts[0], 'lg' => true])
                         </div>
                         <div class="col-sm-6 col-md-3 home-column-padding">
                                 @include('partials/thumbnail', ['post' => $posts[1], 'lg' => false])
@@ -41,7 +41,7 @@
 
                 <div class="row">
                         <div class="col-sm-12 col-md-3 home-column-padding">
-                                @include('partials/thumbnail-stylized', ['post' => $posts[0], 'lg' => false])
+                                @include('partials/thumbnail-stylized', ['post' => $posts[3], 'lg' => false])
                         </div>
                         <div class="col-sm-6 col-md-3 home-column-padding">
                                 @include('partials/thumbnail', ['post' => $posts[4], 'lg' => false])
