@@ -9,7 +9,7 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-md-offset-1 col-md-7 col-sm-8 post-main-column white-background post-body" itemscope itemtype ="http://schema.org/Article"> {{--Main content column--}}
+            <article class="col-md-offset-1 col-md-7 col-sm-8 post-main-column white-background post-body" itemscope itemtype ="http://schema.org/Article"> {{--Main content column--}}
                 <meta itemprop="image" content="http://s3-us-west-2.amazonaws.com/topicloop-upload2/{{$post->thumbnail_image}}" />
                 <a href="https://twitter.com/intent/tweet?url={{Request::url()}}&text={{$post->title}}"><img src="/images/twitter.png" class="social-media-icons"></a>
                 <a href="http://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="/images/facebook.png" class="social-media-icons"></a>
@@ -81,9 +81,9 @@
                 </div>
 
                 @include('partials.comments', ['id' => $post->id, 'title' => $post->title])
-            </div>
+            </article>
 
-            <div class="col-md-3 col-sm-4 post-sidebar" itemscope itemtype="http://schema.org/WPSideBar"> {{--Side bar--}}
+            <aside class="col-md-3 col-sm-4 post-sidebar"> {{--Side bar--}}
                 <div class="white-background post-main-column">
                     @include('partials/large-rectangle', ['publisherId' => $publisherId])
                     <br>
@@ -95,7 +95,7 @@
 
                     @include('partials/large-skyscraper', ['publisherId' => $publisherId])
                 </div>
-            </div>
+            </aside>
 
         </div>
     </div>
