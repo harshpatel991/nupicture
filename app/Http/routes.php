@@ -53,6 +53,8 @@ Route::bind('post_id', function($value, $route) {
     App::abort(404);
 });
 
+Route::get('/resendConfirmationEmail', 'HomeController@resendConfirmationEmail');
+
 Route::get('/profile', 'UsersController@profile');
 
 Route::controllers([

@@ -30,7 +30,7 @@ class SanityCest
         $I->amOnPage('/post/7-awesome-cinemagraphs');
         $I->dontSee('Exception');
         $this->ensureFooterAppears($I);
-        $I->see('5 Awesome Cinemagraphs');
+        $I->see('7 Awesome Cinemagraphs');
         $I->see('RELATED POSTS');
         $I->see('POPULAR POSTS');
     }

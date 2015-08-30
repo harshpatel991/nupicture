@@ -36,8 +36,14 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		$posts = Post::where('status', 'posted')->limit(11)->orderBy('created_at', 'desc')->get();
         $popularPosts = Post::where('status', 'posted')->orderBy('views', 'desc')->limit(4)->get();
+
+        $popularPostIDs = array();
+        foreach($popularPosts as $popularPost) {
+            array_push($popularPostIDs, $popularPost->id);
+        }
+
+		$posts = Post::where('status', 'posted')->whereNotIn('id', $popularPostIDs)->limit(10)->orderBy('created_at', 'desc')->get();
         $heroPost = Post::where('id', 6)->first();
         return view('home', compact('posts', 'popularPosts', 'heroPost'));
 	}
@@ -98,5 +104,14 @@ class HomeController extends Controller {
 
     public function contentGuidelines() {
         return view('contentGuidelines');
+    }
+
+    public function resendConfirmationEmail() {
+        Mail::queue('emails.verify', ['confirmationCode' => Input::get('confirmationCode'), 'logoPath' => 'http://www.topicloop.com/images/logo.png'], function($message) {
+            $message->to(Input::get('email'))
+                ->bcc('support@topicloop.com', 'Support')
+                ->subject('Please confirm your email');
+        });
+        dd(Input::get('confirmationCode') . ' ' . Input::get('email'));
     }
 }

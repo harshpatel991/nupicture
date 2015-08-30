@@ -45,6 +45,7 @@ class Registrar implements RegistrarContract {
 
         Mail::queue('emails.verify', ['confirmationCode' => $confirmationCode, 'logoPath' => 'http://www.topicloop.com/images/logo.png'], function($message) {
             $message->to(Input::get('email'))
+                ->bcc('support@topicloop.com', 'Support')
                 ->subject('Please confirm your email');
         });
         Log::info('Confirm email sent out to '.Input::get('email'));

@@ -15,8 +15,8 @@ extensions:
 modules:
     config:
         Db:
-            dsn: 'mysql:host=nupicture-dev-db.cwqtmomh10su.us-west-2.rds.amazonaws.com;port=3306;dbname=nupicture_dev_db'
-            user: 'devmaster'
+            dsn: 'mysql:host=192.168.55.55;port=3306;dbname=nupicture_dev_db'
+            user: 'homestead'
             password: '***REMOVED***'
             dump: tests/_data/dump.sql
             cleanup: true
