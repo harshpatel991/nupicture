@@ -37,6 +37,29 @@ class RegisterCest
         $I->seeInDatabase('users', array('username' => 'testingUser', 'email' => 'testingUser@gmail.com', 'publisher_id' => 'pub-1234567891234567', 'status' => 'good'));
     }
 
+    public function testRegisterWithEmptyAdsenseId(AcceptanceTester $I)
+    {
+        $I->amOnPage('/');
+        $I->amOnPage('/auth/register');
+
+        $I->fillField(['name' => 'username'], 'testingUser');
+        $I->fillField(['name' => 'email'], 'testingUser@gmail.com');
+        $I->fillField(['name' => 'password'], 'testingUserPass');
+        $I->fillField(['name' => 'password_confirmation'], 'testingUserPass');
+        $I->click(['id' => 'submit-register']);
+
+        $I->seeInTitle('Thanks for Registering');
+        $I->see('testingUser', ['class'=>'btn-default']); //the user has been logged in
+        $I->seeInDatabase('users', array('username' => 'testingUser', 'email' => 'testingUser@gmail.com', 'publisher_id' => 'pub-1234567891234567', 'status' => 'unconfirmed'));
+        $confirmationCode = $I->grabFromDatabase('users', 'confirmation_code', array('username' => 'testingUser'));
+
+        //confirm the user
+        $I->amOnPage('/verify/'.$confirmationCode);
+        $I->seeInTitle('Account Verified');
+        $I->see('You\'re all set!');
+        $I->seeInDatabase('users', array('username' => 'testingUser', 'email' => 'testingUser@gmail.com', 'publisher_id' => 'pub-1234567891234567', 'status' => 'good'));
+    }
+
     public function testRegisterInvalidUsername(AcceptanceTester $I)
     {
         $I->amOnPage('/');
@@ -179,10 +202,9 @@ class RegisterCest
         $I->click(['id' => 'submit-login']);
 
         $I->see('MudMatter1', ['class'=>'btn-default']); //the user has been logged in
-        $I->seeInTitle('Home');
 
         $I->amOnPage('/auth/register');
-        $I->seeInTitle('Home');
+        $I->dontSeeInTitle('Register');
     }
 
 }

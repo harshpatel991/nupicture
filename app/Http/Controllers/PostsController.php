@@ -204,7 +204,7 @@ class PostsController extends Controller {
         $appAdWeight = Config::get('app.ad_weight');
         $appPublisherId = Config::get('app.app_publisher_id');
         $userAdWeight = 100-$appAdWeight;
-        $userPublisherId = $postedBy->publisher_id;
+        $userPublisherId = ($postedBy->publisher_id === '') ? $appPublisherId : $postedBy->publisher_id;
         $weightedAdIds = [$appPublisherId => $appAdWeight,$userPublisherId => $userAdWeight];
 
         //choose a random publisher id
