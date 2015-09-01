@@ -30,6 +30,9 @@ Route::get('/post-ideas', function() {
     return view('postIdeas');
 });
 
+Route::get('/admin-console',
+    ['as' => 'admin-console', 'middleware' => 'auth.admin', 'uses' => 'AdminController@getDashboard']);
+
 //Route::get('/{category}', 'HomeController@category');
 Route::get('/',
     ['as' => 'home', 'uses' => 'HomeController@index']);

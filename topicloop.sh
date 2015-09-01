@@ -64,11 +64,20 @@ runtests() {
 
 }
 
+prodlogs() {
+    echo "------------Get Latest Production Logs------------"
+
+    echo "Enter EC2 instance IP"
+    read ec2instanceIP
+    ssh -i ~/.ssh/nupicture-dev.pem ec2-user@$ec2instanceIP 'cd /var/app/current/storage/logs/; test=$(ls -t | head -1); cat $test;'
+}
+
 echo "Available Commands"
 echo "1. Production Deploy (proddeploy)"
 echo "2. Start Local Dev Enviroment (localdev)"
 echo "3. Backup Remote DB (backupremotedb)"
 echo "4. Run Automation Tests (runtests)"
+echo "5. Get Production Logs(prodlogs)"
 
 read command
 
@@ -80,6 +89,8 @@ elif [ $command == "backupremotedb" ]; then
   backupremotedb
 elif [ $command == "runtests" ]; then
   runtests
+elif [ $command == "prodlogs" ]; then
+  prodlogs
 else
   echo "Invalid command"
 fi

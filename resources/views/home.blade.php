@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    Home | {{Config::get('app.name')}}
+    {{Config::get('app.name')}}
 @endsection
 
 @section('navColumn')
