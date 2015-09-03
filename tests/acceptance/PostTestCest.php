@@ -49,13 +49,13 @@ class PostTestCest
     public function testViewPendingPost(AcceptanceTester $I)
     {
         $I->amOnPage('/post/post-10');
-        $I->seeInTitle('Home');
+        $I->dontSeeInTitle('A Pending Post');
     }
 
     public function testViewRejectedPost(AcceptanceTester $I)
     {
         $I->amOnPage('/post/post-11');
-        $I->seeInTitle('Home');
+        $I->dontSeeInTitle('A Rejected Post Short Text');
     }
 
     public function testVerifyPost(AcceptanceTester $I)
@@ -166,7 +166,7 @@ class PostTestCest
         $this->approvePost($I, 'Creating A Test Image Posting');
 
         $I->seeInTitle('Creating A Test Image Posting');
-        $I->seeInPageSource('<img class="post-image" src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/creating-a-test-image-posting');
+        $I->seeInPageSource('<img itemprop="image" class="post-image" src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/creating-a-test-image-posting');
         $I->seeInPageSource('href="www.optional-image-source.com');
 
         //without optional
@@ -188,7 +188,7 @@ class PostTestCest
         $this->approvePost($I, 'Creating A Test Image Posting Without Optional');
 
         $I->seeInTitle('Creating A Test Image Posting Without Optional');
-        $I->seeInPageSource('<img class="post-image" src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/creating-a-test-image-posting');
+        $I->seeInPageSource('<img itemprop="image" class="post-image" src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/creating-a-test-image-posting');
 
     }
 
@@ -364,7 +364,7 @@ class PostTestCest
         $I->seeInPageSource('List 2 Optional');
         $I->seeInPageSource('Text 3 Optional');
         $I->seeInPageSource('Text 3 Content');
-        $I->seeInPageSource('<img class="post-image" src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/creating-a-removing-items');
+        $I->seeInPageSource('<img itemprop="image" class="post-image" src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/creating-a-removing-items');
         $I->seeInPageSource('Text 7 Optional');
         $I->seeInPageSource('Text 7 Content');
         $I->seeInPageSource('Text 10 Optional');

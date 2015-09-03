@@ -90,7 +90,7 @@ class PostsController extends Controller {
         $post->slug = substr(Str::slug($request->input(Section::$TITLE_SECTION_NAME)), 0, 33).'-'.rand(0, 9);
         $post->summary = $request->input(Section::$SUMMARY_SECTION_NAME);
 
-        $thumbnailUploadName =  $post->slug . rand(0, 9) . '.jpg';
+        $thumbnailUploadName =  $post->slug .'-thumb.jpg';
         Image::make($request->file(Section::$THUMBNAIL_SECTION_NAME))
             ->encode('jpg')
             ->fit(600, 450, function ($constraint) { $constraint->upsize();})
@@ -109,6 +109,7 @@ class PostsController extends Controller {
         $post->category = $request->input(Section::$CATEGORY_SECTION_NAME);
         $post->save();
 
+        $sectionIdIndex = 0;
         foreach($request->all() as $sectionId => $section)
         {
             if(strpos($sectionId, Section::$TEXT_SECTION_NAME) !== FALSE)
@@ -119,7 +120,7 @@ class PostsController extends Controller {
             }
             elseif(strpos($sectionId, Section::$IMAGE_SECTION_NAME) !== FALSE)
             {
-                $imageUploadedName = $post->slug. rand(0, 99) . '.jpg';
+                $imageUploadedName = $post->slug . $sectionIdIndex . '.jpg';
                 Image::make($request->file($sectionId)[0])
                     ->encode('jpg')
                     ->widen(1100, function ($constraint) { $constraint->upsize();})
@@ -167,6 +168,8 @@ class PostsController extends Controller {
             {
                 Log::warning('Section '. $sectionId . ' did not fall into any valid sections, ignoring.');
             }
+
+            $sectionIdIndex = $sectionIdIndex + 1;
         }
 
         return redirect('/profile')->with('message', 'Your post has been submitted! It will be reviewed in the next 12 hours. You can check it\'s status below.');

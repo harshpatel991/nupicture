@@ -20,7 +20,7 @@ class LoginCest
         $I->fillField(['name' => 'password'], 'password1');
         $I->click(['id' => 'submit-login']);
 
-        $I->seeInTitle('Home');
+        $I->dontSeeInTitle('Login');
         $I->see('MudMatter1', ['class'=>'btn-default']); //the user has been logged in
     }
 
@@ -54,7 +54,7 @@ class LoginCest
         $I->fillField(['name' => 'password'], 'password1');
         $I->click(['id' => 'submit-login']);
 
-        $I->seeInTitle('Home');
+        $I->dontSeeInTitle('Login');
         $I->see('MudMatter1', ['class'=>'btn-default']); //the user has been logged in
 
         $I->click(['id' => 'profile-dropdown']);
@@ -72,10 +72,10 @@ class LoginCest
         $I->click(['id' => 'submit-login']);
 
         $I->see('MudMatter1', ['class'=>'btn-default']); //the user has been logged in
-        $I->seeInTitle('Home');
+        $I->dontSeeInTitle('Login');
 
         $I->amOnPage('/auth/login');
-        $I->seeInTitle('Home');
+        $I->dontSeeInTitle('Login');
     }
 
 }

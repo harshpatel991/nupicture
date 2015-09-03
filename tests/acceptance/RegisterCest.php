@@ -50,14 +50,14 @@ class RegisterCest
 
         $I->seeInTitle('Thanks for Registering');
         $I->see('testingUser', ['class'=>'btn-default']); //the user has been logged in
-        $I->seeInDatabase('users', array('username' => 'testingUser', 'email' => 'testingUser@gmail.com', 'publisher_id' => 'pub-1234567891234567', 'status' => 'unconfirmed'));
+        $I->seeInDatabase('users', array('username' => 'testingUser', 'email' => 'testingUser@gmail.com', 'publisher_id' => '', 'status' => 'unconfirmed'));
         $confirmationCode = $I->grabFromDatabase('users', 'confirmation_code', array('username' => 'testingUser'));
 
         //confirm the user
         $I->amOnPage('/verify/'.$confirmationCode);
         $I->seeInTitle('Account Verified');
         $I->see('You\'re all set!');
-        $I->seeInDatabase('users', array('username' => 'testingUser', 'email' => 'testingUser@gmail.com', 'publisher_id' => 'pub-1234567891234567', 'status' => 'good'));
+        $I->seeInDatabase('users', array('username' => 'testingUser', 'email' => 'testingUser@gmail.com', 'publisher_id' => '', 'status' => 'good'));
     }
 
     public function testRegisterInvalidUsername(AcceptanceTester $I)
@@ -180,7 +180,7 @@ class RegisterCest
         $I->fillField(['name' => 'publisher_id'], 'pub-12345678912345678'); //too long
         $I->click(['id' => 'submit-register']);
 
-        $I->seeInPageSource('The publisher id may not be greater than 20 characters.'); //see warning message
+        $I->seeInPageSource('The publisher id must be 20 characters.'); //see warning message
 
         $I->fillField(['name' => 'username'], 'user1');
         $I->fillField(['name' => 'email'], 'testyemail@gmail.com');
@@ -189,7 +189,7 @@ class RegisterCest
         $I->fillField(['name' => 'publisher_id'], 'pub-123456789123456'); //too short
         $I->click(['id' => 'submit-register']);
 
-        $I->seeInPageSource('The publisher id must be at least 20 characters.'); //see warning message
+        $I->seeInPageSource('The publisher id must be 20 characters.'); //see warning message
     }
 
     public function testVisitRegisterAlreadyLoggedIn(AcceptanceTester $I)
