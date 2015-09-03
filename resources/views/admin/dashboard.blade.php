@@ -14,20 +14,46 @@
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
 
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Recent Users</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <h1 class="text-center">{{$recentUsersCount}}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><span class="glyphicon glyphicon-pencil"></span> Recent Posts</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <h1 class="text-center">{{$recentPostsCount}}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-4">
+
+                            </div>
+                        </div>
+
                         <h3>Recent Users</h3>
                         <div class="table-responsive">
                             <table class="table table-striped">
 
                                 <tr>
-                                    <th>Username</th>
                                     <th>Status</th>
+                                    <th>Username</th>
                                     <th>Created At</th>
                                 </tr>
 
                                 @foreach($recentUsers as $recentUser)
                                     <tr>
+                                        <td><div class="label label-primary">{{strtoupper($recentUser->status)}}</div></td>
                                         <td>{{$recentUser->username}}</td>
-                                        <td>{{$recentUser->status}}</td>
                                         <td>{{$recentUser->created_at}}</td>
                                     </tr>
                                 @endforeach
@@ -35,24 +61,25 @@
                             </table>
                         </div>
 
-
-
-
                         <h3>Recent Posts</h3>
                         <div class="table-responsive">
                             <table class="table table-striped">
 
                                 <tr>
-                                    <th>Username</th>
                                     <th>Status</th>
-                                    <th>Created At</th>
+                                    <th>Title</th>
+                                    <th>User</th>
+                                    <th>Views</th>
+                                    <th></th>
                                 </tr>
 
                                 @foreach($recentPosts as $recentPost)
                                     <tr>
+                                        <td><div class="label label-primary">{{strtoupper($recentPost->status)}}</div></td>
                                         <td>{{$recentPost->title}}</td>
                                         <td>{{$recentPost->user_id}}</td>
                                         <td>{{$recentPost->views}}</td>
+                                        <td><a href="/post/approve/{{$recentPost->id}}" class="btn btn-success">Approve</a></td>
                                     </tr>
                                 @endforeach
 
@@ -64,7 +91,7 @@
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">
                                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseAllUsers">
-                                            <h3>All Users</h3>
+                                            <h3><span class="glyphicon glyphicon-chevron-down"></span> All Users</h3>
                                         </a>
                                     </h4>
                                 </div>
@@ -99,7 +126,7 @@
                                 <div class="panel-heading" role="tab" id="headingOne">
                                     <h4 class="panel-title">
                                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                            <h3>All Posts</h3>
+                                            <h3><span class="glyphicon glyphicon-chevron-down"></span> All Posts</h3>
                                         </a>
                                     </h4>
                                 </div>
