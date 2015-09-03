@@ -28,10 +28,10 @@
                             <div class="col-xs-4">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title"><span class="glyphicon glyphicon-pencil"></span> Recent Posts</h3>
+                                        <h3 class="panel-title"><span class="glyphicon glyphicon-pencil"></span> Recent Pending Posts</h3>
                                     </div>
                                     <div class="panel-body">
-                                        <h1 class="text-center">{{$recentPostsCount}}</h1>
+                                        <h1 class="text-center">{{$recentPendingPostsCount}}</h1>
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                             </table>
                         </div>
 
-                        <h3>Recent Posts</h3>
+                        <h3>Recent Pending Posts</h3>
                         <div class="table-responsive">
                             <table class="table table-striped">
 
@@ -71,14 +71,16 @@
                                     <th>User</th>
                                     <th>Views</th>
                                     <th></th>
+                                    <th></th>
                                 </tr>
 
-                                @foreach($recentPosts as $recentPost)
+                                @foreach($recentPendingPosts as $recentPost)
                                     <tr>
                                         <td><div class="label label-primary">{{strtoupper($recentPost->status)}}</div></td>
                                         <td>{{$recentPost->title}}</td>
                                         <td>{{$recentPost->user_id}}</td>
                                         <td>{{$recentPost->views}}</td>
+                                        <td><a href="/preview/{{$recentPost->slug}}" class="btn btn-primary">Preview</a></td>
                                         <td><a href="/post/approve/{{$recentPost->id}}" class="btn btn-success">Approve</a></td>
                                     </tr>
                                 @endforeach

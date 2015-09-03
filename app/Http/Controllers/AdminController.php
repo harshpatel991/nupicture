@@ -20,10 +20,10 @@ class AdminController extends Controller {
         $recentUsersCount = count($recentUsers);
 
         $allPosts = Post::get();
-        $recentPosts = Post::where('created_at', '>', $recentTime->toDateString())->orderby('created_at', 'desc')->get();
-        $recentPostsCount = count($recentPosts);
+        $recentPendingPosts = Post::where('created_at', '>', $recentTime->toDateString())->where('status', 'pending_post')->orderby('created_at', 'desc')->get();
+        $recentPendingPostsCount = count($recentPendingPosts);
 
-        return view('admin.dashboard', compact('allUsers', 'recentUsers', 'allPosts', 'recentPosts', 'recentUsersCount', 'recentPostsCount'));
+        return view('admin.dashboard', compact('allUsers', 'recentUsers', 'allPosts', 'recentPendingPosts', 'recentUsersCount', 'recentPendingPostsCount'));
 	}
 
 }

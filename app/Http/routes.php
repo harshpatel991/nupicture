@@ -43,11 +43,16 @@ Route::post('/post/create',
 
 Route::get('/post/{post_slug}',
     ['as' => 'post', 'uses' => 'PostsController@show']);
+Route::get('/preview/{post_slug}',
+    ['as' => 'post-preview', 'uses' => 'PostsController@preview']);
+
 Route::bind('post_slug', function($value, $route) {
 	$post = App\Post::whereSlug($value)->first();
     if($post) return $post;
     App::abort(404);
 });
+
+
 
 Route::get('/post/approve/{post_id}', 'PostsController@approve');
 Route::bind('post_id', function($value, $route) {

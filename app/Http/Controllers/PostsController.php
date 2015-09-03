@@ -21,7 +21,7 @@ class PostsController extends Controller {
 
     public function __construct() {
         $this->middleware('auth', ['except' => ['show', 'approve']]);
-        $this->middleware('verfiedEmail', ['except' => ['show', 'approve']]);
+        $this->middleware('verfiedEmail', ['except' => ['show', 'approve', 'preview']]);
     }
 
 	/**
@@ -179,11 +179,16 @@ class PostsController extends Controller {
 	 * Display a post
 	 */
 	public function show($post, Request $request)
-	{
-        if($post->status !== 'posted')
-        {
+    {
+        if ($post->status !== 'posted') {
             return redirect('/');
         }
+
+        return $this->preview($post, $request);
+    }
+
+    public function preview($post, Request $request)
+    {
 
         if(!$request->session()->has('visited'.$post->slug)) //Count a view
         {
