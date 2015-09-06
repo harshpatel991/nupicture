@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-offset-1 col-md-10 white-background post-main-column">
-
+                <h2 class="text-center">Crowdsourced entertainment stories, created by people like you.</h2>
                 <div class="row">
                     <div class="col-sm-4">
                         <img src="/images/User-Add-256.png" width="50" height="50" style="margin-top: 20px;" class="center-block">
@@ -35,7 +35,7 @@
                 <div class="row blog-post-main-column" style="background-color: #ECEFF5;">
                     <div class="col-md-offset-3 col-md-6 col-sm-10 col-sm-offset-1">
 
-                        <h1>Ready To Get Started?</h1>
+                        <h1>Join The Team</h1>
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">

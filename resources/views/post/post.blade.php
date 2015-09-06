@@ -14,7 +14,7 @@
                 <a href="https://twitter.com/intent/tweet?url={{Request::url()}}&text={{$post->title}}"><img src="/images/twitter.png" class="social-media-icons"></a>
                 <a href="http://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="/images/facebook.png" class="social-media-icons"></a>
                 <a href="https://plus.google.com/share?url={{Request::url()}}"><img src="/images/google-plus.png" class="social-media-icons "></a>
-                <a href="http://pinterest.com/pin/create/button/?url={{Request::url()}}&media={{Request::root()}}/upload/{{$post->thumbnail_image}}&description={{$post->title}}"><img src="/images/pintrest.png" class="social-media-icons"></a>
+                <a href="http://pinterest.com/pin/create/button/?url={{Request::url()}}&media=http://s3-us-west-2.amazonaws.com/topicloop-upload2/{{$post->thumbnail_image}}&description={{$post->title}}"><img src="/images/pintrest.png" class="social-media-icons"></a>
 
                 <h6 itemprop="articleSection">{{ $post->category or 'Category' }}</h6>
                 <h1 itemprop="headline">{!! clean($post->title) !!}</h1>
@@ -28,7 +28,7 @@
                     @elseif($section->isImageSection())
                         <img src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/{{$section->content}}" class="post-image" itemprop="image">
                         @if(strlen($section->optional_content) > 0)
-                            <h6 class="text-center"><a target="_blank" href="{!! clean($section->optional_content) !!}" itemprop="citation">Image Source</a></h6>
+                            <h6 class="text-center"><a target="_blank" href="{!! clean($section->optional_content) !!}" itemprop="citation" rel="nofollow">Image Source</a></h6>
                         @endif
                     @elseif($section->isYoutubeSection())
                         @if($section->optional_content) <h3>{!! clean($section->optional_content) !!}</h3> @endif
@@ -47,7 +47,7 @@
                     <h4>Sources</h4>
                     @foreach($sources as $source)
                         @if($source->isSourceSection())
-                            <p><a target="_blank" href="{{$source->content}}" itemprop="citation">{{$source->content}}</a></p>
+                            <p><a target="_blank" href="{{$source->content}}" itemprop="citation" rel="nofollow">{{$source->content}}</a></p>
                         @endif
                     @endforeach
 

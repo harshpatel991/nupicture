@@ -140,8 +140,8 @@
 
                                                 <tr>
                                                     <th>Username</th>
-                                                    <th>Status</th>
-                                                    <th>Created At</th>
+                                                    <th>User ID</th>
+                                                    <th>Views</th>
                                                 </tr>
 
                                                 @foreach($allPosts as $allPost)

@@ -18,7 +18,7 @@ class AuthenticateAdmin {
             }
         }
 
-        return new RedirectResponse(url('/'));
+        return redirect()->guest('auth/login');
 	}
 
 }
