@@ -20,10 +20,10 @@
                         <br>
                         <p>Above all, write about things you are passionate about. Chances are if you are really into something, our readers will be too.</p>
                         <ul>
-                            <li><b>Geek Culture</b> - Technology, the Internet, comic books, movies, and video games.</li>
-                            <li><b>'Cutesy' Things</b> - Pets, animal friendships, and babies.</li>
-                            <li><b>Lists</b> - For example, "10 Best Workout Songs" or "5 Things You Learned Growing Up [some common element of your childhood]" or "What Your Taste In Fast Food Says About Your Personality".</li>
-                            <li><b>Nostalgia</b> - Anything that relates with the "90s kid": The Fresh Prince of Bel Air, parachute pants, Power Rangers, and old video games. </li>
+                            <li><b>Geek Culture</b> - Technology, the Internet, comic books, movies, and video games.</li> <a href="/post/telsa-demos-prototype-charger">Example</a>
+                            <li><b>'Cutesy' Things</b> - Pets, animal friendships, and babies.</li> <a href="/post/dad-creates-star-wars-speeder-for-d">Example</a>
+                            <li><b>Lists</b> - For example, "10 Best Workout Songs" or "5 Things You Learned Growing Up [some common element of your childhood]" or "What Your Taste In Fast Food Says About Your Personality".</li> <a href="/post/11-android-home-screens">Example</a>
+                            <li><b>Nostalgia</b> - Anything that relates with the "90s kid": The Fresh Prince of Bel Air, parachute pants, Power Rangers, and old video games. </li> <a href="/post/michael-jordans-jersey-from-space-0">Example</a>
                             <li><b>Geo-relatable content</b> - Users love reading about their own city/state/country/school and comparing it to other locations. For example, "Top 10 School Campuses" or "Top 10 States To Win In A Modern Day Civil War" or "Greatest Inventions that [country] Has Given The World".</li>
                         </ul>
 

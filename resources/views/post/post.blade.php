@@ -61,9 +61,9 @@
                     </div>
                 </div>
 
-                <hr>
-                    @include('partials/leaderboard', ['publisherId' => $publisherId])
-                <hr>
+
+                @include('partials/leaderboard', ['publisherId' => $publisherId])
+
 
                 <h4 class="section-intro-heading">RELATED POSTS</h4>
                 <div class="row">

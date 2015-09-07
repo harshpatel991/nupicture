@@ -17,21 +17,22 @@
                         <div class="row">
                             <div class="col-xs-4">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Recent Users</h3>
-                                    </div>
                                     <div class="panel-body">
                                         <h1 class="text-center">{{$recentUsersCount}}</h1>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Recent Users</h3>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-4">
                                 <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title"><span class="glyphicon glyphicon-pencil"></span> Recent Pending Posts</h3>
-                                    </div>
+
                                     <div class="panel-body">
                                         <h1 class="text-center">{{$recentPendingPostsCount}}</h1>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <h3 class="panel-title"><span class="glyphicon glyphicon-pencil"></span> Recent Pending Posts</h3>
                                     </div>
                                 </div>
                             </div>

@@ -44,7 +44,7 @@ class HomeController extends Controller {
         }
 
 		$posts = Post::where('status', 'posted')->whereNotIn('id', $popularPostIDs)->limit(10)->orderBy('created_at', 'desc')->get();
-        $heroPost = Post::where('id', 6)->first();
+        $heroPost = Post::where('slug', '10-fantastic-battlestations-3')->first();
         return view('home', compact('posts', 'popularPosts', 'heroPost'));
 	}
 
