@@ -9,6 +9,9 @@ use App\Post;
 use App\Notification;
 use Illuminate\Http\Request;
 
+use Carbon\Carbon;
+
+
 class HomeController extends Controller {
 
 
@@ -36,14 +39,18 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        $popularPosts = Post::where('status', 'posted')->orderBy('views', 'desc')->limit(4)->get();
 
-        $popularPostIDs = array();
-        foreach($popularPosts as $popularPost) {
-            array_push($popularPostIDs, $popularPost->id);
-        }
+        $recentTime = Carbon::now()->subDays(14);
+        $popularPosts = Post::where('status', 'posted')->where('created_at', '>', $recentTime->toDateString())->orderBy('views', 'desc')->limit(4)->get();
 
-		$posts = Post::where('status', 'posted')->whereNotIn('id', $popularPostIDs)->limit(10)->orderBy('created_at', 'desc')->get();
+        //TODO: can remove
+//        $popularPosts = Post::where('status', 'posted')->orderBy('views', 'desc')->limit(4)->get();
+//        $popularPostIDs = array();
+//        foreach($popularPosts as $popularPost) {
+//            array_push($popularPostIDs, $popularPost->id);
+//        }
+
+		$posts = Post::where('status', 'posted')->limit(10)->orderBy('created_at', 'desc')->get();
         $heroPost = Post::where('slug', '10-fantastic-battlestations-3')->first();
         return view('home', compact('posts', 'popularPosts', 'heroPost'));
 	}
