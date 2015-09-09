@@ -180,6 +180,7 @@ class PostsController extends Controller {
 	 */
 	public function show($post, Request $request)
     {
+
         if ($post->status !== 'posted') {
             return redirect('/');
         }

@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Notification;
 use App\Post;
 use App\User;
 use Carbon\Carbon;
@@ -23,7 +24,9 @@ class AdminController extends Controller {
         $recentPendingPosts = Post::where('created_at', '>', $recentTime->toDateString())->where('status', 'pending_post')->orderby('created_at', 'desc')->get();
         $recentPendingPostsCount = count($recentPendingPosts);
 
-        return view('admin.dashboard', compact('allUsers', 'recentUsers', 'allPosts', 'recentPendingPosts', 'recentUsersCount', 'recentPendingPostsCount'));
+        $newsletterSubscribersCount = count(Notification::all());
+
+        return view('admin.dashboard', compact('allUsers', 'recentUsers', 'allPosts', 'recentPendingPosts', 'recentUsersCount', 'recentPendingPostsCount', 'newsletterSubscribersCount'));
 	}
 
 }

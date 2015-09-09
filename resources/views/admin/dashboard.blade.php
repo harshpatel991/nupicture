@@ -38,6 +38,15 @@
                             </div>
                             <div class="col-xs-4">
 
+                                <div class="panel panel-default">
+
+                                    <div class="panel-body">
+                                        <h1 class="text-center">{{$newsletterSubscribersCount}}</h1>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <h3 class="panel-title"><span class="glyphicon glyphicon-envelope"></span> Newsletter Subscribers</h3>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 

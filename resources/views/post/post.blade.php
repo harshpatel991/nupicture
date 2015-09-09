@@ -24,7 +24,7 @@
 
                     @if($section->isTextSection())
                         @if($section->optional_content) <h3>{!! clean($section->optional_content) !!}</h3> @endif
-                        <p>{!! str_replace( "\n", '<br />', clean($section->content) );  !!}</p>
+                        <p class="post-text-section">{!! str_replace( "\n", '<br />', clean($section->content) );  !!}</p>
                     @elseif($section->isImageSection())
                         <img src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/{{$section->content}}" class="post-image" itemprop="image">
                         @if(strlen($section->optional_content) > 0)
@@ -84,6 +84,27 @@
             </article>
 
             <aside class="col-md-3 col-sm-4 post-sidebar"> {{--Side bar--}}
+                <div class="white-background post-main-column post-news-letter">
+                    @if (Session::has('message'))
+                        <div class="alert alert-success" role="alert"><p class="text-center white-font">{{ Session::get('message') }}</p></div>
+                    @endif
+                    @if (Session::has('errors'))
+                        <div class="alert alert-danger" role="alert">{{ Session::get('errors')->first() }}</div>
+                    @endif
+                    <h6 div class="text-center" style="color:#c3ced1;">Never miss a post</h6>
+                    <h3 div class="text-center" style="color:#475062; margin-top: 10px;">GET ON OUR NEWSLETTER</h3>
+
+                    {!! Form::open(array('route' => 'sign-up-notifications', 'class' => 'form')) !!}
+                        <div class="input-group">
+                            {!! Form::email('email', null, array('required', 'class'=>'form-control', 'placeholder'=>'Email', 'type'=>'email', 'style' => 'height: 36px;')) !!}
+                            <span class="input-group-btn">
+                                {!! Form::submit('Join!', array('class'=>'btn btn-danger', 'id' => 'submit-email-form')) !!}
+                            </span>
+                        </div>
+                    {!! Form::close() !!}
+
+                </div>
+
                 <div class="white-background post-main-column">
                     @include('partials/large-rectangle', ['publisherId' => $publisherId])
                     <br>

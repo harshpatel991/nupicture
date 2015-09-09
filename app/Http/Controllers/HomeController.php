@@ -63,15 +63,6 @@ class HomeController extends Controller {
 		return view('betaSignUp');
 	}
 
-	public function postBetaSignUp(Request $request) {
-		$this->validate($request, [
-			'email' => 'required|unique:notifications|max:254|email'
-		]);
-
-		Notification::create($request->all());
-		return Redirect::route('sign-up-beta')->with('message', 'You\'re all set! We\'ll send you an email when you can register.');
-	}
-
     public function getContactUs() {
         return view('contactUs');
     }
@@ -113,5 +104,15 @@ class HomeController extends Controller {
                 ->subject('Please confirm your email');
         });
         dd(Input::get('confirmationCode') . ' ' . Input::get('email'));
+    }
+
+    public function postEmailNotifications(Request $request) {
+        $this->validate($request, [
+            'email' => 'required|unique:notifications|max:254|email'
+        ]);
+
+        Notification::create(['email' => $request->get('email')]);
+        return redirect()->back()->with('message', 'You\'re all set! Expect an email about every week.');
+
     }
 }

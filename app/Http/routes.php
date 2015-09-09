@@ -52,6 +52,8 @@ Route::bind('post_slug', function($value, $route) {
     App::abort(404);
 });
 
+Route::post('/sign-up-notifications',
+    ['as' => 'sign-up-notifications', 'uses' => 'HomeController@postEmailNotifications']);
 
 
 Route::get('/post/approve/{post_id}', 'PostsController@approve');

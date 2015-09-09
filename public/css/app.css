@@ -6999,8 +6999,8 @@ li {
   color: #fff;
 }
 .social-media-icons {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   margin-left: 2px;
   margin-bottom: 10px;
   margin-top: 15px;
@@ -7014,14 +7014,15 @@ li {
 .post-image {
   max-width: 100%;
   max-height: 700px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 .post-main-column {
   padding-top: 6px;
+  padding-bottom: 6px;
   margin-bottom: 10px;
 }
 .blog-post-main-column {
@@ -7037,6 +7038,13 @@ li {
   padding-right: 10px;
   margin-bottom: 6px;
   margin-bottom: 10px;
+}
+.post-text-section {
+  padding: 10px 0px;
+}
+.post-news-letter {
+  padding-right: 6px;
+  padding-left: 6px;
 }
 
 /*# sourceMappingURL=app.css.map */
