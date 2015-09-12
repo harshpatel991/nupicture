@@ -8,8 +8,6 @@
             <h6><span style="color:#fff">Site</span><br><br></h6>
             <div class="footer-column">
                 <h6>
-                    <a href="/auth/login">Login</a> <br> <br>
-                    <a href="/auth/register">Register</a> <br> <br>
                     <a href="/how-it-works">About</a> <br> <br>
                     <a href="/privacy-policy">Privacy Policy</a> <br> <br>
                     <a href="/terms-conditions">Terms of Use</a> <br> <br>

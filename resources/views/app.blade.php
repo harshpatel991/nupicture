@@ -78,7 +78,7 @@
 
                                 <li>
                                     <form action="{{ url('/how-it-works') }}" class="display-inline">
-                                        <button href="/sign-up-beta" class="btn btn-primary navbar-btn" itemscope itemtype="http://schema.org/SiteNavigationElement">Learn More</button>
+                                        <button href="/sign-up-beta" class="btn btn-primary navbar-btn" itemscope itemtype="http://schema.org/SiteNavigationElement">Write and Earn</button>
                                     </form>
                                 </li>
                             @else

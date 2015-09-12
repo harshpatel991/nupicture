@@ -96,7 +96,7 @@
 
                     {!! Form::open(array('route' => 'sign-up-notifications', 'class' => 'form')) !!}
                         <div class="input-group">
-                            {!! Form::email('email', null, array('required', 'class'=>'form-control', 'placeholder'=>'Email', 'type'=>'email', 'style' => 'height: 36px;')) !!}
+                            {!! Form::email('email', null, array('required', 'class'=>'form-control', 'placeholder'=>'YOUR EMAIL', 'type'=>'email', 'style' => 'height: 36px;')) !!}
                             <span class="input-group-btn">
                                 {!! Form::submit('Join!', array('class'=>'btn btn-danger', 'id' => 'submit-email-form')) !!}
                             </span>
