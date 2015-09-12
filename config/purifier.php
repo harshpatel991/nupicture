@@ -13,6 +13,7 @@ return [
             'CSS.AllowedProperties'    => 'font-weight,font-style,font-family,text-decoration,color,background-color,text-align',
             'AutoFormat.AutoParagraph' => false,
             'AutoFormat.RemoveEmpty'   => true,
+            'HTML.Nofollow'          => true
         ],
         "youtube" => [
             "HTML.SafeIframe" => 'true',

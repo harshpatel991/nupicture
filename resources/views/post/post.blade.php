@@ -24,7 +24,7 @@
 
                     @if($section->isTextSection())
                         @if($section->optional_content) <h3>{!! clean($section->optional_content) !!}</h3> @endif
-                        <p class="post-text-section">{!! str_replace( "\n", '<br />', clean($section->content) );  !!}</p>
+                        @if(strlen($section->content) > 0)<p class="post-text-section">{!! str_replace( "\n", '<br />', clean($section->content) );  !!}</p>@endif
                     @elseif($section->isImageSection())
                         <img src="http://s3-us-west-2.amazonaws.com/topicloop-upload2/{{$section->content}}" class="post-image" itemprop="image">
                         @if(strlen($section->optional_content) > 0)
