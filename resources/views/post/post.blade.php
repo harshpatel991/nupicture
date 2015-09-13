@@ -92,7 +92,7 @@
                         <div class="alert alert-danger" role="alert">{{ Session::get('errors')->first() }}</div>
                     @endif
                     <h6 div class="text-center" style="color:#c3ced1;">Never miss a post</h6>
-                    <h3 div class="text-center" style="color:#475062; margin-top: 10px;">GET ON OUR NEWSLETTER</h3>
+                    <h3 div class="text-center" style="color:#475062; margin-top: 10px;">GET ON THE NEWSLETTER</h3>
 
                     {!! Form::open(array('route' => 'sign-up-notifications', 'class' => 'form')) !!}
                         <div class="input-group">
