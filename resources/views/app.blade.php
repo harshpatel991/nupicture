@@ -72,13 +72,7 @@
 
                                 <li>
                                     <form action="{{ url('/auth/register') }}" class="display-inline">
-                                        <button type="submit" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> <span itemscope itemtype="http://schema.org/SiteNavigationElement">Register</span></button>
-                                    </form>
-                                </li>
-
-                                <li>
-                                    <form action="{{ url('/how-it-works') }}" class="display-inline">
-                                        <button href="/sign-up-beta" class="btn btn-primary navbar-btn" itemscope itemtype="http://schema.org/SiteNavigationElement">Write and Earn</button>
+                                        <button href="/sign-up-beta" class="btn btn-primary navbar-btn" itemscope itemtype="http://schema.org/SiteNavigationElement"><span class="glyphicon glyphicon-usd"></span> Write and Earn</button>
                                     </form>
                                 </li>
                             @else

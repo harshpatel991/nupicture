@@ -11,12 +11,15 @@
 
             <article class="col-md-offset-1 col-md-7 col-sm-8 post-main-column white-background post-body" itemscope itemtype ="http://schema.org/Article"> {{--Main content column--}}
                 <meta itemprop="image" content="http://s3-us-west-2.amazonaws.com/topicloop-upload2/{{$post->thumbnail_image}}" />
+
+                <span class="h6 highlight-blue pull-right" itemprop="articleSection">{{ $post->category or 'Category' }}</span>
+
+                <h6 style="margin-bottom: 0px;">Tell your friends</h6>
                 <a href="https://twitter.com/intent/tweet?url={{Request::url()}}&text={{$post->title}}"><img src="/images/twitter.png" class="social-media-icons"></a>
                 <a href="http://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="/images/facebook.png" class="social-media-icons"></a>
                 <a href="https://plus.google.com/share?url={{Request::url()}}"><img src="/images/google-plus.png" class="social-media-icons "></a>
                 <a href="http://pinterest.com/pin/create/button/?url={{Request::url()}}&media=http://s3-us-west-2.amazonaws.com/topicloop-upload2/{{$post->thumbnail_image}}&description={{$post->title}}"><img src="/images/pintrest.png" class="social-media-icons"></a>
 
-                <h6 itemprop="articleSection">{{ $post->category or 'Category' }}</h6>
                 <h1 itemprop="headline">{!! clean($post->title) !!}</h1>
 
                 <span itemprop="articleBody">
