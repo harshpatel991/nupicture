@@ -100,6 +100,7 @@ class PostsController extends Controller {
         $s3->putObject(array(
             'ACL'        => 'public-read',
             'Bucket'     => 'topicloop-upload2',
+            'CacheControl' => 'max-age=1814400',
             'Key'        => Post::getImageUploadPath().$thumbnailUploadName,
             'SourceFile' => Post::getBackupImageUploadPath().$thumbnailUploadName,
         ));
@@ -128,6 +129,7 @@ class PostsController extends Controller {
                 $s3->putObject(array(
                     'ACL'        => 'public-read',
                     'Bucket'     => 'topicloop-upload2',
+                    'CacheControl' => 'max-age=1814400',
                     'Key'        => Post::getImageUploadPath().$imageUploadedName,
                     'SourceFile' => Post::getBackupImageUploadPath().$imageUploadedName,
                 ));

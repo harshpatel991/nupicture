@@ -14,7 +14,7 @@
 
                 <span class="h6 highlight-blue pull-right" itemprop="articleSection">{{ $post->category or 'Category' }}</span>
 
-                <h6 style="margin-bottom: 0px;">Tell your friends</h6>
+                <h6 style="margin-bottom: 0px;">Tell yo friends</h6>
                 <a href="https://twitter.com/intent/tweet?url={{Request::url()}}&text={{$post->title}}"><img src="/images/twitter.png" class="social-media-icons"></a>
                 <a href="http://www.facebook.com/sharer/sharer.php?u={{Request::url()}}"><img src="/images/facebook.png" class="social-media-icons"></a>
                 <a href="https://plus.google.com/share?url={{Request::url()}}"><img src="/images/google-plus.png" class="social-media-icons "></a>

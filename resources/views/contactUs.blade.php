@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    Login | {{Config::get('app.name')}}
+    Contact | {{Config::get('app.name')}}
 @endsection
 
 @section('content')
