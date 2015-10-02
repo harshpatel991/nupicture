@@ -91,7 +91,16 @@
                                         <td>{{$recentPost->user_id}}</td>
                                         <td>{{$recentPost->views}}</td>
                                         <td><a href="/preview/{{$recentPost->slug}}" class="btn btn-primary">Preview</a></td>
-                                        <td><a href="/post/approve/{{$recentPost->id}}" class="btn btn-success">Approve</a></td>
+                                        <td>
+                                            {!! Form::open(array('url' => '/post/approve/'.$recentPost->id)) !!}
+                                                <input name="user_id" id="user_id" value="{{$recentPost->user_id}}" type="number" hidden/>
+                                                <textarea rows="4" id="message" name="message" class="form-control" placeholder="Message"></textarea>
+                                                <br>
+                                                {!! Form::submit('Approve', array('class'=>'btn btn-success')) !!}
+                                            {!! Form::close() !!}
+
+                                        </td>
+
                                     </tr>
                                 @endforeach
 

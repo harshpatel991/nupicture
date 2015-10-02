@@ -2,6 +2,8 @@
 
 use App;
 use Auth;
+use Mail;
+use Input;
 use App\Post;
 use App\User;
 use App\Section;
@@ -234,6 +236,16 @@ class PostsController extends Controller {
         $post->status = 'posted';
         $post->posted_at = Carbon::now();
         $post->save();
+
+        $additionalMessage = $request->input('message');
+        $postLink = '/post/'.$post->slug;
+
+        Mail::queue(['emails.approved', 'emails.approved-plain-text'], ['postLink' => $postLink, 'additionalMessage' => $additionalMessage, 'logoPath' => 'http://www.topicloop.com/images/logo.png'], function($message) {
+            $poster = User::whereId(Input::get('user_id'))->first()->email;
+            $message->to($poster)
+                ->bcc('support@topicloop.com', 'Support')
+                ->subject('Your Post Has Been Approved');
+        });
 
         return redirect('/post/'.$post->slug);
     }

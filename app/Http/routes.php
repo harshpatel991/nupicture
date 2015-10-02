@@ -56,7 +56,7 @@ Route::post('/sign-up-notifications',
     ['as' => 'sign-up-notifications', 'uses' => 'HomeController@postEmailNotifications']);
 
 
-Route::get('/post/approve/{post_id}', 'PostsController@approve');
+Route::post('/post/approve/{post_id}', 'PostsController@approve');
 Route::bind('post_id', function($value, $route) {
     $post = App\Post::whereId($value)->first();
     if($post) return $post;
