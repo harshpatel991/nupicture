@@ -33,4 +33,32 @@ class UsersController extends Controller {
 		return view('user.profile', compact('user', 'usersPosts', 'statusToEnglish'));
 	}
 
+    public function preferences() {
+        $user = Auth::user();
+        $email_preferences = explode(',', $user->email_preferences);
+
+        foreach($email_preferences as $index => $email_preference) {
+            if($email_preference == 'true') {
+                $email_preferences[$index] = 'checked';
+            } else {
+                $email_preferences[$index] = '';
+            }
+        }
+
+        return view('user.preferences', compact('user', 'usersPosts', 'statusToEnglish', 'email_preferences'));
+    }
+
+    public function savePreferences(Request $request) {
+        $emailPreferences = $request->get('email-post-reminders') . ',' .
+            $request->get('email-post-submitted') . ',' .
+            $request->get('email-post-published') . ',' .
+            $request->get('email-news');
+
+        $user = Auth::user();
+        $user->email_preferences = $emailPreferences;
+        $user->save();
+
+        return redirect()->back()->with('message', 'Saved!');
+    }
+
 }

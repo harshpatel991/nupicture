@@ -228,27 +228,6 @@ class PostsController extends Controller {
 		return view('post.post', compact('post', 'sections', 'sources', 'postedDate', 'postedBy', 'relatedPosts', 'popularPosts', 'publisherId', 'listNumberCounter'));
 	}
 
-    /**
-     * Approve a post
-     */
-    public function approve($post, Request $request)
-    {
-        $post->status = 'posted';
-        $post->posted_at = Carbon::now();
-        $post->save();
-
-        $additionalMessage = $request->input('message');
-        $postLink = '/post/'.$post->slug;
-
-        Mail::queue(['emails.approved', 'emails.approved-plain-text'], ['postLink' => $postLink, 'additionalMessage' => $additionalMessage, 'logoPath' => 'http://www.topicloop.com/images/logo.png'], function($message) {
-            $poster = User::whereId(Input::get('user_id'))->first()->email;
-            $message->to($poster)
-                ->bcc('support@topicloop.com', 'Support')
-                ->subject('Your Post Has Been Approved');
-        });
-
-        return redirect('/post/'.$post->slug);
-    }
 
     private static function getRandomWeightedElement(array $weightedValues) {
         $rand = mt_rand(1, (int) array_sum($weightedValues));

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration {
 			$table->enum('status', ['good', 'warning', 'unconfirmed']);
             $table->string('confirmation_code', 16)->nullable();
             $table->string('publisher_id');
+            $table->string('email_preference', 100)->default('true,true,true,true');
 			$table->rememberToken();
 			$table->timestamps();
 		});

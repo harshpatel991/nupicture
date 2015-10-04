@@ -1,10 +1,13 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Requests;
 use App\Notification;
 use App\Post;
 use App\User;
 use Carbon\Carbon;
-use App\Http\Requests;
+use Illuminate\Http\Request;
+use Mail;
+use Input;
 
 class AdminController extends Controller {
 
@@ -28,5 +31,31 @@ class AdminController extends Controller {
 
         return view('admin.dashboard', compact('allUsers', 'recentUsers', 'allPosts', 'recentPendingPosts', 'recentUsersCount', 'recentPendingPostsCount', 'newsletterSubscribersCount'));
 	}
+
+    /**
+     * Approve a post
+     */
+    public function approve($post, Request $request)
+    {
+        $post->status = 'posted';
+        $post->posted_at = Carbon::now();
+        $post->save();
+
+        $additionalMessage = $request->input('message');
+        $postLink = '/post/'.$post->slug;
+
+        $emailPreferences = explode(",", User::find($post->user_id)->email_preferences);
+
+        if($emailPreferences[2] == "true") {
+            Mail::queue(['emails.approved', 'emails.approved-plain-text'], ['postLink' => $postLink, 'additionalMessage' => $additionalMessage, 'logoPath' => 'http://www.topicloop.com/images/logo.png'], function ($message) {
+                $poster = User::whereId(Input::get('user_id'))->first()->email;
+                $message->to($poster)
+                    ->bcc('support@topicloop.com', 'Support')
+                    ->subject('Your Post Has Been Approved');
+            });
+        }
+
+        return redirect('/post/'.$post->slug);
+    }
 
 }

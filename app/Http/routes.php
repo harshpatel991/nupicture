@@ -56,7 +56,7 @@ Route::post('/sign-up-notifications',
     ['as' => 'sign-up-notifications', 'uses' => 'HomeController@postEmailNotifications']);
 
 
-Route::post('/post/approve/{post_id}', 'PostsController@approve');
+Route::post('/post/approve/{post_id}', 'AdminController@approve');
 Route::bind('post_id', function($value, $route) {
     $post = App\Post::whereId($value)->first();
     if($post) return $post;
@@ -66,6 +66,8 @@ Route::bind('post_id', function($value, $route) {
 Route::get('/resendConfirmationEmail', 'HomeController@resendConfirmationEmail');
 
 Route::get('/profile', 'UsersController@profile');
+Route::get('/preferences', 'UsersController@preferences');
+Route::post('/preferences', 'UsersController@savePreferences');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

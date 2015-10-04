@@ -16,3 +16,7 @@ For tips on how to increase your page views, check out this page: {{ URL::to('/i
 -The {{Config::get('app.name')}} Team
 <br>
 http://topicloop.com
+<br><br>
+---------------------------
+<br>
+Unsubscribe from these types of emails in your <a href="{{ URL::to('/preferences') }}">Preferences</a>

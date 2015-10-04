@@ -90,7 +90,8 @@
                                             <span class="sr-only">Toggle Dropdown</span>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{{ url('/auth/logout') }}" class="category" id="logout-button"><span itemscope itemtype="http://schema.org/SiteNavigationElement">Logout</span></a></li>
+                                            <li><a href="{{ url('/preferences') }}" class="category" id="logout-button"><span itemscope itemtype="http://schema.org/SiteNavigationElement"><span class="glyphicon glyphicon-cog"></span> Preferences</span></a></li>
+                                            <li><a href="{{ url('/auth/logout') }}" class="category" id="logout-button"><span itemscope itemtype="http://schema.org/SiteNavigationElement"><span class="glyphicon glyphicon-log-out"></span> Logout</span></a></li>
                                         </ul>
                                     </div>
                                 </li>
