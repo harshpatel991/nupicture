@@ -213,7 +213,7 @@ class PostsController extends Controller {
 
 		$relatedPosts = Post::where('status', 'posted')->orderByRaw("RAND()")->limit(3)->get();
 
-        $recentTime = Carbon::now()->subDays(14);
+        $recentTime = Carbon::now()->subDays(100);
 		$popularPosts = Post::where('status', 'posted')->where('created_at', '>', $recentTime->toDateString())->orderBy('views', 'desc')->limit(5)->get();
 
         $appAdWeight = Config::get('app.ad_weight');
