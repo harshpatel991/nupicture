@@ -40,7 +40,7 @@ class HomeController extends Controller {
 	public function index()
 	{
 
-        $recentTime = Carbon::now()->subDays(14);
+        $recentTime = Carbon::now()->subDays(100);
         $popularPosts = Post::where('status', 'posted')->where('created_at', '>', $recentTime->toDateString())->orderBy('views', 'desc')->limit(4)->get();
 
         //TODO: can remove
