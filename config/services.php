@@ -16,23 +16,23 @@ return [
 
 	'mailgun' => [
 		'domain' => 'https://api.mailgun.net/v3/sandbox8da219186f664f479f958d2ac1746725.mailgun.org',
-		'***REMOVED***' => '***REMOVED***',
+		'secret' => '',
 	],
 
 	'mandrill' => [
-		'***REMOVED***' => '',
+		'secret' => '',
 	],
 
 	'ses' => [
 		'key' => '',
-		'***REMOVED***' => '',
+		'secret' => '',
 		'region' => 'us-east-1',
 	],
 
 	'stripe' => [
 		'model'  => 'App\User',
 		'key' => '',
-		'***REMOVED***' => '',
+		'secret' => '',
 	],
 
 ];

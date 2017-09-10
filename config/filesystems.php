@@ -51,7 +51,7 @@ return [
 		's3' => [
 			'driver' => 's3',
 			'key'    => 'your-key',
-			'***REMOVED***' => 'your-***REMOVED***',
+			'secret' => 'your-secret',
 			'region' => 'your-region',
 			'bucket' => 'your-bucket',
 		],

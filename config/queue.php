@@ -52,7 +52,7 @@ return [
 		'sqs' => [
 			'driver' => 'sqs',
 			'key'    => 'your-public-key',
-			'***REMOVED***' => 'your-***REMOVED***-key',
+			'secret' => 'your-secret-key',
 			'queue'  => 'your-queue-url',
 			'region' => 'us-east-1',
 		],

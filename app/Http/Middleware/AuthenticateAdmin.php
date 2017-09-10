@@ -12,7 +12,7 @@ class AuthenticateAdmin {
 	{
         if (Auth::check())
         {
-            if(Auth::user()->email === '***REMOVED***')
+            if(Auth::user()->email === 'ipod998@gmail.com')
             {
                 return $next($request);
             }
